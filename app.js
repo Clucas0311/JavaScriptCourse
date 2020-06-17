@@ -13,11 +13,13 @@ if (num % 2 !== 0);
 // 2 - meets expectations
 // 1 needs improvement
 // anything else - wtf?
-let rating = 1;
+let rating = 213;
 if (rating === 3) {
 	console.log("YOU'RE A SUPERSTAR!");
 } else if (rating === 2) {
 	console.log('MEETS EXPECTATIONS');
 } else if (rating === 1) {
 	console.log('NEEDS IMPROVEMENT');
+} else {
+	console('INVALID RATING!');
 }
