@@ -2,13 +2,22 @@
 	console.log(true);
 }*/
 
-/*let rating = 3;
-if (rating === 3) {
-	console.log("YOU'RE A SUPERSTAR!"); 
-}*/
-
-let num = 37;
+/*let num = 37;
 if (num % 2 !== 0);
 {
 	console.log('ODD NUMBER!');
+} */
+
+// Performance Review
+// 3 - superstar
+// 2 - meets expectations
+// 1 needs improvement
+// anything else - wtf?
+let rating = 1;
+if (rating === 3) {
+	console.log("YOU'RE A SUPERSTAR!");
+} else if (rating === 2) {
+	console.log('MEETS EXPECTATIONS');
+} else if (rating === 1) {
+	console.log('NEEDS IMPROVEMENT');
 }
