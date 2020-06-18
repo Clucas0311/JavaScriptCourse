@@ -1,4 +1,4 @@
-let day = 3;
+let day = 9;
 switch (day) {
 	case 1:
 		console.log('MONDAY');
@@ -21,4 +21,6 @@ switch (day) {
 	case 7:
 		console.log('SUNDAY');
 		break;
+	default:
+		console.log('INVALID DAY!');
 }
