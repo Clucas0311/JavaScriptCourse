@@ -1,4 +1,4 @@
-let day = 9;
+/*let day = 9;
 switch (day) {
 	case 1:
 		console.log('MONDAY');
@@ -23,4 +23,12 @@ switch (day) {
 		break;
 	default:
 		console.log('INVALID DAY!');
-}
+} */
+
+/*let num = 7;
+
+num === 7 ? console.log('LUCKY!') : console.log('BAD'); */
+
+let status = 'offline';
+let color = status === 'offline' ? 'red' : 'green';
+console.log(color);
