@@ -1,4 +1,3 @@
-let animals = [ 'sharks', 'salmon', 'whale', 'bear', 'lizard', 'tortoise' ];
-
-animals.splice(1, 2);
-console.log(animals);
+for (let i = 1; i <= 20; i++) {
+	console.log(`${i} x ${i} = ${i * i}`);
+}
