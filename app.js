@@ -1,9 +1,9 @@
-for (let char of 'cockledoodledoo') {
-	console.log(char.toUpperCase());
-}
+const words1 = [ 'mail', 'milk', 'bath', 'black' ];
+const words2 = [ 'box', 'shake', 'tub', 'berry' ];
 
-let subreddits = [ 'soccer', 'popheads', 'cringe', 'books' ];
-
-for (let sub of subreddits) {
-	console.log(sub);
+for (words of words1) {
+	console.log(words);
+	for (word of words2) {
+		console.log(word);
+	}
 }
