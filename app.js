@@ -1,9 +1,14 @@
-const words1 = [ 'mail', 'milk', 'bath', 'black' ];
-const words2 = [ 'box', 'shake', 'tub', 'berry' ];
+function rollDie() {
+	let roll = Math.floor(Math.random() * 6) + 1;
+	console.log(`Rolled: ${roll}`);
+}
 
-for (words of words1) {
-	console.log(words);
-	for (word of words2) {
-		console.log(word);
+rollDie();
+
+function throwDice(numRolls) {
+	for (let i = 0; i < numRolls; i++) {
+		rollDie();
 	}
 }
+
+throwDice(6);
