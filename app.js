@@ -1,4 +1,4 @@
-function rollDie() {
+/*function rollDie() {
 	let roll = Math.floor(Math.random() * 6) + 1;
 	console.log(`Rolled: ${roll}`);
 }
@@ -11,4 +11,15 @@ function throwDice(numRolls) {
 	}
 }
 
-throwDice(6);
+throwDice(6); */
+
+function containsPurple(arr) {
+	for (let color of arr) {
+		if (color === 'purple' || color === 'magenta') {
+			return true;
+		}
+	}
+	return false;
+}
+
+console.log(containsPurple([ 'red', 'blue', 'magenta' ]));
