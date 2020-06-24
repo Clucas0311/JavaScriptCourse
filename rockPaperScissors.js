@@ -1,7 +1,7 @@
 /* Create a function named getUserChoice that takes in a single parameter userInput */
 const getUserChoice = (userInput) => {
 	userInput = userInput.toLowerCase();
-	if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
+	if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb') {
 		return userInput;
 	} else {
 		console.log('ERROR!');
@@ -45,10 +45,13 @@ const determineWinner = (userChoice, computerChoice) => {
 			return 'You won!';
 		}
 	}
+	if (userChoice === 'bomb') {
+		return 'Congratualations, You Won!';
+	}
 };
 
 const playGame = () => {
-	const userChoice = getUserChoice('rock');
+	const userChoice = getUserChoice('bomb');
 	const computerChoice = getComputerChoice();
 	console.log(`You threw: ${userChoice}`);
 	console.log(`The computer threw: ${computerChoice}`);
