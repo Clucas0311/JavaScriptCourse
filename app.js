@@ -1,10 +1,11 @@
-const doubleArr = (arr) => {
-	const result = [];
-	for (let i = 0; i < arr.length; i++) {
-		let double = arr[i] * 2;
-		result.push(double);
-	}
-	return result;
+const rage = () => {
+	console.log('I HATE EVERYTHING!');
 };
 
-console.log(doubleArr([ 1, 3, 5 ]));
+const repeatNTimes = (action, num) => {
+	for (let i = 0; i < num; i++) {
+		action();
+	}
+};
+
+repeatNTimes(rage, 19);
