@@ -1,25 +1,10 @@
-/*function rollDie() {
-	let roll = Math.floor(Math.random() * 6) + 1;
-	console.log(`Rolled: ${roll}`);
-}
-
-rollDie();
-
-function throwDice(numRolls) {
-	for (let i = 0; i < numRolls; i++) {
-		rollDie();
+const doubleArr = (arr) => {
+	const result = [];
+	for (let i = 0; i < arr.length; i++) {
+		let double = arr[i] * 2;
+		result.push(double);
 	}
-}
+	return result;
+};
 
-throwDice(6); */
-
-function containsPurple(arr) {
-	for (let color of arr) {
-		if (color === 'purple' || color === 'magenta') {
-			return true;
-		}
-	}
-	return false;
-}
-
-console.log(containsPurple([ 'red', 'blue', 'magenta' ]));
+console.log(doubleArr([ 1, 3, 5 ]));
