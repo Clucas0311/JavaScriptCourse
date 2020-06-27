@@ -9,7 +9,7 @@ const repeatNTimes = (action, num) => {
 };
 
 repeatNTimes(rage, 19); */
-
+/*
 function multiplyBy(num) {
 	return function(x) {
 		return x * num;
@@ -36,4 +36,50 @@ function divideBy(num) {
 }
 
 const divide = divideBy(81);
-console.log(9);
+console.log(9); */
+
+// const x = 3;
+
+// function isX1(num) {
+// 	const x = 5;
+// 	return num === x;
+// }
+// console.log(isX1(5));
+
+const numbers = [ 20, 21, 22, 23, 24, 25, 26, 27 ];
+
+numbers.forEach(function(num, idx) {
+	console.log(idx, num);
+});
+
+// const books = [
+// 	{
+// 		title: 'Good Omens',
+// 		authors: [ 'Terry Pratchett', 'Neil Gaiman' ],
+// 		rating: 4.25
+// 	},
+// 	{
+// 		title: 'Bone: The Complete edition',
+// 		authors: [ 'Jeff Smith' ],
+// 		rating: 4.42
+// 	},
+// 	{
+// 		title: 'Americn Gods',
+// 		authors: [ 'Neil Gaiman' ],
+// 		rating: 4.11
+// 	},
+
+// 	{
+// 		title: 'A Gentleman in Moscow',
+// 		authors: [ 'Amor Towles' ],
+// 		rating: 4.36
+// 	}
+// ];
+
+// // books.forEach(function(book) {
+// // 	console.log(book.title.toUpperCase());
+// // });
+
+// for (book of books) {
+// 	console.log(book.title.toUpperCase());
+// }
