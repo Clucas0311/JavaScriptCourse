@@ -46,11 +46,11 @@ console.log(9); */
 // }
 // console.log(isX1(5));
 
-const numbers = [ 20, 21, 22, 23, 24, 25, 26, 27 ];
+// const numbers = [ 20, 21, 22, 23, 24, 25, 26, 27 ];
 
-numbers.forEach(function(num, idx) {
-	console.log(idx, num);
-});
+// numbers.forEach(function(num, idx) {
+// 	console.log(idx, num);
+// });
 
 // const books = [
 // 	{
@@ -83,3 +83,22 @@ numbers.forEach(function(num, idx) {
 // for (book of books) {
 // 	console.log(book.title.toUpperCase());
 // }
+const numbers = [ 20, 21, 22, 23, 24, 25, 26, 27 ];
+const words = [ 'asap', 'byob', 'rsvp', 'diy' ];
+
+const capitalWords = words.map((n) => {
+	return n.toUpperCase().split('').join('.');
+});
+console.log(capitalWords);
+
+// const numDetail = numbers.map(function(n) {
+// 	return {
+// 		value: n,
+// 		isEven: n % 2 === 0
+// 	};
+// });
+// console.log(numDetail);
+// const doubles = numbers.map(function(double) {
+// 	return double * 2;
+// });
+// console.log(doubles);
