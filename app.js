@@ -131,6 +131,15 @@ console.log(9); */
 // const threes = words.every((word) => word.length === 3);
 // console.log(threes);
 
-const nums = [ 3, 4, 5, 6, 7 ];
-const product = nums.reduce((accumulator, currentValue) => accumulator * currentValue);
-console.log(product);
+// const nums = [ 3, 4, 5, 6, 7 ];
+// const product = nums.reduce((accumulator, currentValue) => accumulator * currentValue);
+// console.log(product);
+
+const grades = [ 87, 64, 96, 92, 88, 99, 73, 64 ];
+
+const myGrades = grades.reduce((max, currentVal) => {
+	if (currentVal > max) return currentVal;
+	return max;
+});
+
+console.log(myGrades);
