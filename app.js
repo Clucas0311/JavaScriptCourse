@@ -127,6 +127,10 @@ console.log(9); */
 // const evens = nums.filter((n) => n % 2 === 0);
 // console.log(evens);
 
-const words = [ 'dog', 'dig', 'log', 'bag', 'wag' ];
-const threes = words.every((word) => word.length === 3);
-console.log(threes);
+// const words = [ 'dog', 'dig', 'log', 'bag', 'wag' ];
+// const threes = words.every((word) => word.length === 3);
+// console.log(threes);
+
+const nums = [ 3, 4, 5, 6, 7 ];
+const product = nums.reduce((accumulator, currentValue) => accumulator * currentValue);
+console.log(product);
