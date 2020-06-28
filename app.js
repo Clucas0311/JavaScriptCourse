@@ -122,7 +122,11 @@ console.log(9); */
 // const movie = movies.find((n) => n.includes('Mrs'));
 // console.log(movie);
 
-const nums = [ 34, 35, 67, 54, 109, 102, 32, 9 ];
-// const odds = nums.filter((n) => n % 2 === 1);
-const evens = nums.filter((n) => n % 2 === 0);
-console.log(evens);
+// const nums = [ 34, 35, 67, 54, 109, 102, 32, 9 ];
+// // const odds = nums.filter((n) => n % 2 === 1);
+// const evens = nums.filter((n) => n % 2 === 0);
+// console.log(evens);
+
+const words = [ 'dog', 'dig', 'log', 'bag', 'wag' ];
+const threes = words.every((word) => word.length === 3);
+console.log(threes);
