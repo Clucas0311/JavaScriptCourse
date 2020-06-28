@@ -83,15 +83,15 @@ console.log(9); */
 // for (book of books) {
 // 	console.log(book.title.toUpperCase());
 // }
-const numbers = [ 20, 21, 22, 23, 24, 25, 26, 27 ];
-const words = [ 'asap', 'byob', 'rsvp', 'diy' ];
+// const numbers = [ 20, 21, 22, 23, 24, 25, 26, 27 ];
+// const words = [ 'asap', 'byob', 'rsvp', 'diy' ];
 
-const capitalWords = words.map((n) => {
-	return n.toUpperCase().split('').join('.');
-});
-console.log(capitalWords);
+// const capitalWords = words.map((n) => {
+// 	return n.toUpperCase().split('').join('.');
+// });
+// console.log(capitalWords);
 
-// const numDetail = numbers.map(function(n) {
+//const numDetail = numbers.map(function(n) {
 // 	return {
 // 		value: n,
 // 		isEven: n % 2 === 0
@@ -102,3 +102,18 @@ console.log(capitalWords);
 // 	return double * 2;
 // });
 // console.log(doubles);
+// const square = (n) => {
+// 	return n * n;
+// };
+
+// const square = (n) => n * n;
+// console.log(square(9));
+
+const nums = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
+const doubles = nums.map((n) => n * 4);
+console.log(doubles);
+
+// Map into array where it returns odd or even based on each element
+
+const oddEven = nums.map((n) => (n % 2 === 0 ? 'even' : 'odd'));
+console.log(oddEven);
