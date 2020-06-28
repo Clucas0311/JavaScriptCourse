@@ -109,7 +109,7 @@ console.log(9); */
 // const square = (n) => n * n;
 // console.log(square(9));
 
-const nums = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
+// const nums = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
 // const doubles = nums.map((n) => n * 4);
 // console.log(doubles);
 
@@ -117,7 +117,12 @@ const nums = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
 
 // const oddEven = nums.map((n) => (n % 2 === 0 ? 'even' : 'odd'));
 // console.log(oddEven);
-let movies = [ 'The Fantastic Mr. Fox', 'Mr. and Mrs. Smith', 'Mrs. Doubtfire', 'Mr. Deeds' ];
+// let movies = [ 'The Fantastic Mr. Fox', 'Mr. and Mrs. Smith', 'Mrs. Doubtfire', 'Mr. Deeds' ];
 
-const movie = movies.find((n) => n.includes('Mrs'));
-console.log(movie);
+// const movie = movies.find((n) => n.includes('Mrs'));
+// console.log(movie);
+
+const nums = [ 34, 35, 67, 54, 109, 102, 32, 9 ];
+// const odds = nums.filter((n) => n % 2 === 1);
+const evens = nums.filter((n) => n % 2 === 0);
+console.log(evens);
