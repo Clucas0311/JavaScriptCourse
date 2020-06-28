@@ -110,10 +110,14 @@ console.log(9); */
 // console.log(square(9));
 
 const nums = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
-const doubles = nums.map((n) => n * 4);
-console.log(doubles);
+// const doubles = nums.map((n) => n * 4);
+// console.log(doubles);
 
-// Map into array where it returns odd or even based on each element
+// // Map into array where it returns odd or even based on each element
 
-const oddEven = nums.map((n) => (n % 2 === 0 ? 'even' : 'odd'));
-console.log(oddEven);
+// const oddEven = nums.map((n) => (n % 2 === 0 ? 'even' : 'odd'));
+// console.log(oddEven);
+let movies = [ 'The Fantastic Mr. Fox', 'Mr. and Mrs. Smith', 'Mrs. Doubtfire', 'Mr. Deeds' ];
+
+const movie = movies.find((n) => n.includes('Mrs'));
+console.log(movie);
