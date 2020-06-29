@@ -1,7 +1,6 @@
 function songDecoder(song) {
 	// use replace remove wub and replace it with a closed string
-	decoded = song.replace(/WUB+/g, ' ').trim();
-	return decoded;
+	return song.replace(/(WUB)+/g, ' ').trim();
 }
 
 console.log(songDecoder('AWUBBWUBC'));
