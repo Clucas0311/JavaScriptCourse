@@ -1,9 +1,10 @@
-function songDecoder(song) {
-	// use replace remove wub and replace it with a closed string
-	return song.replace(/(WUB)+/g, ' ').trim();
-}
+/* Suppose we want to write a function that calculates the sum of all numbers from 1 up to and including n*/
+const sumOfNumbers = (n) => {
+	total = 0;
+	for (let i = 1; i <= n; i++) {
+		total += i;
+	}
+	return total;
+};
 
-console.log(songDecoder('AWUBBWUBC'));
-console.log(songDecoder('AWUBWUBWUBBWUBWUBWUBC'));
-console.log(songDecoder('WUBAWUBBWUBCWUB'));
-console.log(songDecoder('WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB'));
+console.log(sumOfNumbers(10));
