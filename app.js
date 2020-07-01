@@ -1,3 +1,9 @@
-const array1 = [ 'a', 'b', 'c' ];
-const array2 = [ 'd', 'e', 'f' ];
-console.log(array1.concat(array2));
+function getRandomNumber(upper) {
+	return Math.floor(Math.random() * upper) + 1;
+}
+
+let counter = 0;
+while (counter < 10) {
+	console.log(`The random number is ${getRandomNumber(10)}`);
+	counter += 1;
+}
