@@ -6,3 +6,14 @@ prices.forEach((price) => {
 });
 
 console.log(total);
+
+const names = [ 'Selma', 'Ted', 'Mike', 'Sam', 'Sharon', 'Marvin' ];
+emptyArray = [];
+
+names.forEach((name) => {
+	if (name.indexOf('S') === 0) {
+		emptyArray.push(name);
+	}
+});
+
+console.log(emptyArray);
