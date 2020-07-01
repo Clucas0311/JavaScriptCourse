@@ -1,9 +1,8 @@
-function getRandomNumber(upper) {
-	return Math.floor(Math.random() * upper) + 1;
-}
+const prices = [ 6.75, 3.1, 4.0, 8.12 ];
+total = 0;
 
-let counter = 0;
-while (counter < 10) {
-	console.log(`The random number is ${getRandomNumber(10)}`);
-	counter += 1;
-}
+prices.forEach((price) => {
+	total += price;
+});
+
+console.log(total);
