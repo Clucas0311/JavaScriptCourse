@@ -7,7 +7,7 @@ let unnecessaryWords = [ 'extremely', 'literally', 'actually' ];
 
 let storyWords = story.split(' ');
 
-console.log(storyWords);
+console.log(storyWords.length);
 
 const betterWords = storyWords.filter((words) => {
 	if (words !== storyWords) {
@@ -34,11 +34,21 @@ console.log('Really count:', reallyCount);
 console.log('Very count:', veryCount);
 console.log('Basically count:', basicallyCount);
 
-const sentences = storyWords.reduce((count, currentValue) => {
-	if (currentValue.indexOf('!') === 0 || currentValue.indexOf('.') === 0) {
+// let sentences = 0
+// storyWords.forEach(word => {
+//   if (word.indexOf('.') === 0 || word.indexOf('!') === 0 )  {
+//     sentences += 1;
+//   }
+// })
+// console.log(sentences)
+
+const sentences = storyWords.reduce((count, words) => {
+	if (words.indexOf('!') || words.indexOf('.')) {
 		return count + 1;
 	}
 	return count;
 }, 0);
 
-console.log(sentences);
+console.log(`Sentences count: ${sentences}`);
+
+console.log(betterWords.join(' '));
