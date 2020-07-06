@@ -17,5 +17,32 @@ const pluralize = (arr) => {
 	return newArray;
 };
 // Uncomment these to check your work!
-const animals = [ 'dog', 'cat', 'tree frog' ];
-console.log(pluralize(animals)); // should log: ["dogs", "cats", "tree frogs"]
+// const animals = [ 'dog', 'cat', 'tree frog' ];
+// console.log(pluralize(animals)); // should log: ["dogs", "cats", "tree frogs"]
+
+// const subtractTwo = map((num) => num * 2);
+// // Uncomment these to check your work!
+// console.log(typeof subtractTwo); // should log: 'function'
+// console.log(typeof map); // should log: 'function'
+// console.log(map([ 3, 4, 5 ], subtractTwo)); // should log: [ 1, 2, 3 ]
+
+// forEach function with two parameters
+const forEach = (array, callback) => {
+	for (let element of array) {
+		// runs a callback on each element
+		callback(element);
+	}
+};
+const map = (nums, callback) => {
+	let result = [];
+	forEach(nums, function(element) {
+		result.push(callback(element));
+	});
+	return result;
+};
+
+// Uncomment these to check your work!
+console.log(typeof forEach); // should log: 'function'
+forEach([ 'a', 'b', 'c' ], (i) => console.log(i)); // should log: 'a', 'b', 'c'
+console.log(typeof map); // should log: 'function'
+console.log(map([ 3, 4, 5 ], (n) => n - 2)); // should log: [1, 2, 3]
