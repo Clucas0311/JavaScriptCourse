@@ -3,7 +3,6 @@ function forEach(array, callback) {
 		callback(array[i]);
 	}
 }
-const multiplyBy2 = (num) => num * 2;
 
 forEach([ 1, 2, 3, 4 ], function(num) {
 	console.log(num * 2);
@@ -35,5 +34,8 @@ const books = [
 		rating: 4.36
 	}
 ];
-
-books.forEach((book) => console.log(book.title));
+const bookie = [];
+forEach(books, function(book) {
+	bookie.push(book.title);
+});
+console.log(bookie);
