@@ -31,10 +31,13 @@ function reduce(array, callback, initialValue) {
 	}
 	return accumulator;
 }
+const orders = [ { amount: 250 }, { amount: 400 }, { amount: 100 }, { amount: 325 } ];
 
 const testingReduce = reduce([ 1, 2, 3, 4, 5, 6 ], (total, currentVal) => total + currentVal);
 console.log(testingReduce);
 
+const sumOfOrders = reduce(orders, (acc, curVal) => acc + curVal.amount, 0);
+console.log(sumOfOrders);
 const grades = [ 87, 64, 96, 92, 88, 99, 73, 70, 64 ];
 const minGrade = reduce(grades, (min, currVal) => Math.min(min, currVal));
 console.log(minGrade);
