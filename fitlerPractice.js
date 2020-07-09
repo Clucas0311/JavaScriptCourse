@@ -30,8 +30,11 @@ const duplicatesBeGone = numbers.filter((number, index, array) => {
 
 console.log(duplicatesBeGone);
 
-const users = [ { name: 'Samir' }, { name: 'Angela' }, { name: 'Beatrice' } ];
+const users = [ { name: 'Samir', age: 27 }, { name: 'Angela', age: 33 }, { name: 'Beatrice', age: 42 } ];
 
-const byeSamir = users.filter((key) => key.name !== 'Samir');
+// const byeSamir = users.filter((key) => key.name !== 'Samir');
+// console.log(byeSamir);
 
-console.log(byeSamir);
+// Ages of users 'Samir is age years old'
+const ages = users.map((user) => `${user.name} is ${user.age} years old.`);
+console.log(ages);
