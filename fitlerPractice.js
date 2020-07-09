@@ -29,3 +29,9 @@ const duplicatesBeGone = numbers.filter((number, index, array) => {
 });
 
 console.log(duplicatesBeGone);
+
+const users = [ { name: 'Samir' }, { name: 'Angela' }, { name: 'Beatrice' } ];
+
+const byeSamir = users.filter((key) => key.name !== 'Samir');
+
+console.log(byeSamir);
