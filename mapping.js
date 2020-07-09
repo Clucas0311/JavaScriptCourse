@@ -18,4 +18,6 @@ const map = (array, callback) => {
 
 const doubleNums = map([ 20, 21, 22, 23, 24, 25, 26, 27 ], (numbs) => numbs * 2);
 
+const divideBy2 = map([ 12, 24, 36, 8, 20, 4 ], (number) => number / 2);
+console.log(divideBy2);
 console.log(doubleNums);
