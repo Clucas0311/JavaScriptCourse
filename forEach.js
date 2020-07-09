@@ -1,8 +1,8 @@
-function forEach(array, callback) {
+const forEach = (array, callback) => {
 	for (let i = 0; i < array.length; i++) {
 		callback(array[i]);
 	}
-}
+};
 
 forEach([ 1, 2, 3, 4 ], function(num) {
 	console.log(num * 2);
