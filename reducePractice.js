@@ -42,3 +42,12 @@ console.log(sumOfOrders);
 
 const minGrade = reduce(grades, (min, currVal) => Math.min(min, currVal));
 console.log(minGrade);
+
+const users = [ { name: 'Samir', age: 27 }, { name: 'Angela', age: 33 }, { name: 'Beatrice', age: 42 } ];
+
+const prop = users.reduce((prop, key) => {
+	prop[key.name] = key.age;
+	return prop;
+}, {});
+
+console.log(prop);

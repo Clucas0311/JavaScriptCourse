@@ -36,5 +36,11 @@ const users = [ { name: 'Samir', age: 27 }, { name: 'Angela', age: 33 }, { name:
 // console.log(byeSamir);
 
 // Ages of users 'Samir is age years old'
-const ages = users.map((user) => `${user.name} is ${user.age} years old.`);
-console.log(ages);
+// const ages = users.map((user) => `${user.name} is ${user.age} years old.`);
+// console.log(ages);
+
+const prop = users.reduce((prop, value) => {
+	prop[value.name] = value.age;
+	return prop;
+}, {});
+console.log(prop);
