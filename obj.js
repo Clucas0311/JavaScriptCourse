@@ -12,3 +12,18 @@ let propName = 'Active Mission';
 const isActive = spaceship['Active Mission'];
 console.log(isActive);
 console.log(spaceship[propName]);
+
+let spaceship = {
+	'Fuel Type': 'Turbo Fuel',
+	homePlanet: 'Earth',
+	color: 'silver',
+	'Secret Mission': 'Discover life outside of Earth.'
+};
+
+// Write your code below
+console.log((spaceship.color = 'glorious gold'));
+
+spaceship.numEngines = 9;
+console.log(spaceship);
+
+delete spaceship['Secret Mission'];
