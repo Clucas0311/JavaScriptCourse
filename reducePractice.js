@@ -72,10 +72,8 @@ const under10 = products.filter((cost) => cost.price < 10).reduce((max, currentV
 });
 // console.log(under10);
 
-const over10 = products.filter((cost) => cost.price > 10).reduce((max, currentVal) => {
-	if (max > currentVal) {
-		return max;
-	}
-	return currentVal;
-});
+const over10 = products
+	.filter((cost) => cost.price > 10)
+	.reduce((max, currentVal) => max + currentVal.price, 0)
+	.toFixed(2);
 console.log(over10);
