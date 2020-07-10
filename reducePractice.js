@@ -70,4 +70,12 @@ const under10 = products.filter((cost) => cost.price < 10).reduce((max, currentV
 	}
 	return currentVal;
 });
-console.log(under10);
+// console.log(under10);
+
+const over10 = products.filter((cost) => cost.price > 10).reduce((max, currentVal) => {
+	if (max > currentVal) {
+		return max;
+	}
+	return currentVal;
+});
+console.log(over10);
