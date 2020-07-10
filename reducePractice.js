@@ -42,7 +42,8 @@ console.log(sumOfOrders);
 
 const minGrade = reduce(grades, (min, currVal) => Math.min(min, currVal));
 console.log(minGrade);
-
+const maxGrade = grades.reduce((max, currentVal) => Math.max(max, currentVal));
+console.log(maxGrade);
 const users = [ { name: 'Samir', age: 27 }, { name: 'Angela', age: 33 }, { name: 'Beatrice', age: 42 } ];
 
 const prop = users.reduce((prop, key) => {
@@ -51,3 +52,22 @@ const prop = users.reduce((prop, key) => {
 }, {});
 
 console.log(prop);
+
+const products = [
+	{ name: 'hard drive', price: 59.99 },
+	{ name: 'lighbulbs', price: 2.59 },
+	{ name: 'paper towels', price: 6.99 },
+	{ name: 'flatscreen monitor', price: 159.99 },
+	{ name: 'cable ties', price: 19.99 },
+	{ name: 'ballpoint pens', price: 4.49 }
+];
+
+// Result: { name: 'paper towels', price: 6.99 }
+
+const under10 = products.filter((cost) => cost.price < 10).reduce((max, currentVal) => {
+	if (max.price > currentVal.price) {
+		return max;
+	}
+	return currentVal;
+});
+console.log(under10);
