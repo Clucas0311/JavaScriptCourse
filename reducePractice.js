@@ -77,3 +77,46 @@ const over10 = products
 	.reduce((max, currentVal) => max + currentVal.price, 0)
 	.toFixed(2);
 console.log(over10);
+
+const purchaseItems = [
+	{
+		name: 'apples',
+		dept: 'groceries',
+		price: 2.49
+	},
+	{
+		name: 'bread',
+		dept: 'groceries',
+		price: 2.99
+	},
+	{
+		name: 'batteries',
+		dept: 'electronics',
+		price: 5.8
+	},
+	{
+		name: 'eggs',
+		dept: 'groceries',
+		price: 3.99
+	},
+	{
+		name: 't-shirts',
+		dept: 'apparel',
+		price: 9.99
+	}
+];
+let groceryTotal;
+
+// groceryTotal should be: 9.47
+// Write your code below
+
+// first reassign the grocery to the solution we are trying to create
+// filter the purchase items array so that it creates a new array with just dept "groceries"
+// reduce the next array - create an intial value starting at zero - acc/totalval, currentVal.price => add these up and return the result
+
+groceryTotal = purchaseItems
+	.filter((depart) => depart.dept === 'groceries')
+	.reduce((total, currentVal) => total + currentVal.price, 0)
+	.toFixed(2);
+
+console.log(groceryTotal);
