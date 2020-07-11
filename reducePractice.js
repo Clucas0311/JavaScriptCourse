@@ -194,5 +194,5 @@ let hobbies;
 
 hobbies = customers
 	.map((user) => user.personal.hobbies.map((hobby) => hobby))
-	.reduce((arr, activities) => [ ...arr, ...activities ], []);
+	.reduce((arr, activities) => arr.concat(activities), []);
 console.log(hobbies);
