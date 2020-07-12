@@ -150,64 +150,49 @@
 // // Result: ['The Iliad', 'The Brothers Karamazov', 'Tenth of December', 'Cloud Atlas', 'One Hundred Years of Solitude', 'Candide'];
 // console.log(book);
 
-// const customerNames = [
-// 	[ 'John', 'Sandy', 'Tyrone', 'Elizabeth', 'Penny' ],
-// 	[ 'Barry', 'Wanda', 'Jamal', 'Hayden' ],
-// 	[ 'Portia', 'Pam', 'Philip' ]
-// ];
-// let flattenedCustomerNames;
+const customerNames = [
+	[ 'John', 'Sandy', 'Tyrone', 'Elizabeth', 'Penny' ],
+	[ 'Barry', 'Wanda', 'Jamal', 'Hayden' ],
+	[ 'Portia', 'Pam', 'Philip' ]
+];
+let flattenedCustomerNames;
 
-// // flattenedCustomerNames should be: ["John", "Sandy", "Tyrone", "Elizabeth", "Penny", "Barry", "Wanda", "Jamal", "Hayden", "Portia", "Pam", "Philip"]
-// // Write your code below
+// flattenedCustomerNames should be: ["John", "Sandy", "Tyrone", "Elizabeth", "Penny", "Barry", "Wanda", "Jamal", "Hayden", "Portia", "Pam", "Philip"]
+// Write your code below
 
-// flattenedCustomerNames = customerNames.reduce((arr, names) => [ ...arr, ...names ], []);
+flattenedCustomerNames = customerNames.reduce((arr, names) => [ ...arr, ...names ], []);
 
-// console.log(flattenedCustomerNames);
+console.log(flattenedCustomerNames);
 
-// const customers = [
-// 	{
-// 		name: 'Tyrone',
-// 		personal: {
-// 			age: 33,
-// 			hobbies: [ 'Bicycling', 'Camping' ]
-// 		}
-// 	},
-// 	{
-// 		name: 'Elizabeth',
-// 		personal: {
-// 			age: 25,
-// 			hobbies: [ 'Guitar', 'Reading', 'Gardening' ]
-// 		}
-// 	},
-// 	{
-// 		name: 'Penny',
-// 		personal: {
-// 			age: 36,
-// 			hobbies: [ 'Comics', 'Chess', 'Legos' ]
-// 		}
-// 	}
-// ];
-// let hobbies;
-
-// // hobbies should be: ["Bicycling", "Camping", "Guitar", "Reading", "Gardening", "Comics", "Chess", "Legos"]
-// // Write your code below
-
-// hobbies = customers
-// 	.map((user) => user.personal.hobbies.map((hobby) => hobby))
-// 	.reduce((arr, activities) => arr.concat(activities), []);
-// console.log(hobbies);
-
-function reduce(array, callback, initialValue) {
-	let accumulator;
-	if ((initailValue = 'undefined')) {
-		accumulator = array[0];
-		array = array.slice(1);
-	} else {
-		accumulator = intialValue;
+const customers = [
+	{
+		name: 'Tyrone',
+		personal: {
+			age: 33,
+			hobbies: [ 'Bicycling', 'Camping' ]
+		}
+	},
+	{
+		name: 'Elizabeth',
+		personal: {
+			age: 25,
+			hobbies: [ 'Guitar', 'Reading', 'Gardening' ]
+		}
+	},
+	{
+		name: 'Penny',
+		personal: {
+			age: 36,
+			hobbies: [ 'Comics', 'Chess', 'Legos' ]
+		}
 	}
+];
+let hobbies;
 
-	for (let i = 0; i < array.length; i++) {
-		accumulator = callback(accumulator, array[i], intitalValue);
-	}
-	return accumulator;
-}
+// hobbies should be: ["Bicycling", "Camping", "Guitar", "Reading", "Gardening", "Comics", "Chess", "Legos"]
+// Write your code below
+
+hobbies = customers
+	.map((user) => user.personal.hobbies.map((hobby) => hobby))
+	.reduce((arr, activities) => arr.concat(activities), []);
+console.log(hobbies);
