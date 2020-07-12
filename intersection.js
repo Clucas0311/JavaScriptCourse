@@ -3,7 +3,7 @@
 // }
 
 function intersection(array) {
-	return array.reduce((arr, currVal) => arr.filter((element) => currVal.includes(element)));
+	return array.reduce((arr, currVal) => [ ...arr, ...curVal ], []);
 }
 
 const arr1 = [ 5, 10, 15, 20 ];
