@@ -54,11 +54,11 @@
 // Runs means callback will take in each individual elements and when invoked it give
 // all the elements
 
-function forEach(array, callback) {
-	for (let i = 0; i < array.length; i++) {
-		callback(array[i]);
-	}
-}
+// function forEach(array, callback) {
+// 	for (let i = 0; i < array.length; i++) {
+// 		callback(array[i]);
+// 	}
+// }
 
 // const arr = [ 1, 2, 3, 4, 5 ];
 // console.log(
@@ -76,13 +76,52 @@ function forEach(array, callback) {
 // iterate ==> using forEach function
 // callback will be each element as an argument pushed into new array
 
-function mapWith(array, callback) {
-	const newArray = [];
-	forEach(array, function(element) {
-		newArray.push(callback(element));
-	});
-	return newArray;
+// function mapWith(array, callback) {
+// 	const newArray = [];
+// 	forEach(array, function(element) {
+// 		newArray.push(callback(element));
+// 	});
+// 	return newArray;
+// }
+
+// const array = [ 4, 5, 6, 7, 8 ];
+// console.log(mapWith(array, (num) => num * 3)); // [12, 15, 18, 21, 24]
+
+// The function reduce takes an array and reduces
+// the elements to a single value.
+// For example it can sum all the numbers,
+// multiply them, or any operation that you can put into a function.
+// Here's how it works. The function has an "accumulator value"
+// which starts as the initialValue and accumulates the output of each loop.
+//  The array is iterated over,
+//  passing the accumulator and the  next array element as
+//  arguments to the callback. The callback's return value becomes the new accumulator value.
+//  The next loop executes with this new accumulator value.
+//  In the example above, the accumulator
+//  begins at 0. add(0,4) is called. The accumulator's value is now 4.
+//  Then add(4, 1) to make it 5.
+//  Finally add(5, 3) brings it to 8, which is returned.
+// create function called reduce(array, callback, initialValue)
+// intialValue empty === undefined
+
+// if there is an initial value accumulator === initial
+// create a loop to iterate over array
+// accumulator = callback(accumulator, array[i])
+function reduce(array, callback, initialValue) {
+	let accumulator;
+	if (initialValue === undefined) {
+		accumulator = array[0];
+		array = array.slice(1);
+	} else {
+		accumulator = initialValue;
+	}
+	for (let i = 0; i < array.length; i++) {
+		accumulator = callback(accumulator, array[i], [ i ], array);
+	}
+	return accumulator;
 }
 
-const array = [ 4, 5, 6, 7, 8 ];
-console.log(mapWith(array, (num) => num * 3)); // [12, 15, 18, 21, 24]
+const arr = [ 4, 5, 6, 7, 8 ];
+const calling = (prev, next) => prev + next;
+const number = 1;
+console.log(reduce(arr, calling, 1)); //===> 31
