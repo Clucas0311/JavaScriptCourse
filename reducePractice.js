@@ -18,21 +18,21 @@
 // // 	return accumulator;
 // // }
 
-// function reduce(array, callback, initialValue) {
-// 	let accumulator;
-// 	if (initialValue === 'undefined') {
-// 		accumulator = array[0];
-// 		array = array.slice(1);
-// 	} else {
-// 		accumulator = initialValue;
-// 	}
-// 	for (let i = 0; i < array.length; i++) {
-// 		accumulator = callback(accumulator, array[i]);
-// 	}
-// 	return accumulator;
-// }
-// const orders = [ { amount: 250 }, { amount: 400 }, { amount: 100 }, { amount: 325 } ];
-// const grades = [ 87, 64, 96, 92, 88, 99, 73, 70, 64 ];
+function reduce(array, callback, initialValue) {
+	let accumulator;
+	if (initialValue === 'undefined') {
+		accumulator = array[0];
+		array = array.slice(1);
+	} else {
+		accumulator = initialValue;
+	}
+	for (let i = 0; i < array.length; i++) {
+		accumulator = callback(accumulator, array[i]);
+	}
+	return accumulator;
+}
+const orders = [ { amount: 250 }, { amount: 400 }, { amount: 100 }, { amount: 325 } ];
+const grades = [ 87, 64, 96, 92, 88, 99, 73, 70, 64 ];
 
 // const testingReduce = reduce([ 1, 2, 3, 4, 5, 6 ], (total, currentVal) => total + currentVal);
 // console.log(testingReduce);
