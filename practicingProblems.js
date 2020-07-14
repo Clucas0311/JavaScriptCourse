@@ -32,12 +32,33 @@
 // invoke that callback(array[i])
 // thus the newArr will be the callback(array[i]) thus pushing it inside
 
-function map(array, callback) {
-	const newArr = [];
+// function map(array, callback) {
+// 	const newArr = [];
+// 	for (let i = 0; i < array.length; i++) {
+// 		newArr.push(callback(array[i]));
+// 	}
+// 	return newArr;
+// }
+// const arr = [ 1, 2, 3, 4, 5 ];
+// console.log(map(arr, (num) => num * 2));
+
+// The function forEach takes an array and a callback,
+// and runs the callback on each element of the array.
+// forEach does not return anything.
+// const arr = [ 1, 2, 3, 4, 5 ];
+// forEach(array, (num) => num + 2);
+
+//ToDO
+// create a function called forEach ==> two parameters ==> array, callback
+// How can we get each element? ===> Looping iterate through array
+// Runs means callback will take in each individual elements and when invoked it give
+// all the elements
+
+function forEach(array, callback) {
 	for (let i = 0; i < array.length; i++) {
-		newArr.push(callback(array[i]));
+		console.log(callback(array[i]));
 	}
-	return newArr;
 }
+
 const arr = [ 1, 2, 3, 4, 5 ];
-console.log(map(arr, (num) => num * 2));
+console.log(forEach(arr, (num) => num + 2)); // 3, 4, 5, 6, 7
