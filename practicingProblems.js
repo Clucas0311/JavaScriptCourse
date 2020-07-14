@@ -56,9 +56,33 @@
 
 function forEach(array, callback) {
 	for (let i = 0; i < array.length; i++) {
-		console.log(callback(array[i]));
+		callback(array[i]);
 	}
 }
 
-const arr = [ 1, 2, 3, 4, 5 ];
-console.log(forEach(arr, (num) => num + 2)); // 3, 4, 5, 6, 7
+// const arr = [ 1, 2, 3, 4, 5 ];
+// console.log(
+// 	forEach(arr, function(num) {
+// 		return num + 2;
+// 	})
+// ); // 3, 4, 5, 6, 7
+
+// In the first part of this challenge,
+// you're going to rebuild map as mapWith. This time you're going
+// to use forEach inside of mapWith instead of using a for loop.
+// ToDo
+// create a new function that takes in two params ==> array, callback
+// create a new array to push new items in
+// iterate ==> using forEach function
+// callback will be each element as an argument pushed into new array
+
+function mapWith(array, callback) {
+	const newArray = [];
+	forEach(array, function(element) {
+		newArray.push(callback(element));
+	});
+	return newArray;
+}
+
+const array = [ 4, 5, 6, 7, 8 ];
+console.log(mapWith(array, (num) => num * 3)); // [12, 15, 18, 21, 24]
