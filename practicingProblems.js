@@ -259,28 +259,61 @@ function reduce(array, callback, initialValue) {
 // i will create an two arrays one for truth and one for false
 // if the callback[i] is true return true
 // else return false
-// if true === false then return false
+// // if true === false then return false
 
-function majority(array, callback) {
-	const truthyArray = [];
-	const falseyArray = [];
-	for (let element of array) {
-		if (callback(element) === true) {
-			truthyArray.push(element);
-		} else {
-			falseyArray.push(element);
+// function majority(array, callback) {
+// 	const truthyArray = [];
+// 	const falseyArray = [];
+// 	for (let element of array) {
+// 		if (callback(element) === true) {
+// 			truthyArray.push(element);
+// 		} else {
+// 			falseyArray.push(element);
+// 		}
+// 	}
+// 	if (truthyArray.length > falseyArray.length) {
+// 		return true;
+// 	}
+// 	return false;
+// }
+
+// const argu = [ 1, 2, 3, 4, 5 ];
+
+// function isOdd(num) {
+// 	return num % 2 === 1;
+// }
+
+// console.log(majority(argu, isOdd));
+
+// Construct a function objectFilter that accepts an object as the first parameter
+// and a callback function as the second parameter. objectFilter will return a
+// new object. The new object will contain only the properties from the input object
+// such that the property's value is equal to the property's key passed into the
+//  callback.
+
+// objectFilter(obj, callback) ==> {obj[keys] = values }
+
+//ToDolist
+// Create a function named objectFilter - two parameters obj, callback
+// newObject = {}
+// for let key in obj
+//  ===> declare prop = obj[key]
+// newObject[prop] = callback(prop)
+// return  newObject
+
+function objectFilter(obj, callback) {
+	const newObject = {};
+	for (let key in obj) {
+		let prop = obj[key];
+		if (prop === callback(prop)) {
+			newObject[key] = callback(prop);
 		}
 	}
-	if (truthyArray.length > falseyArray.length) {
-		return true;
-	}
-	return false;
+	return newObject;
 }
-
-const argu = [ 1, 2, 3, 4, 5 ];
-
-function isOdd(num) {
-	return num % 2 === 1;
-}
-
-console.log(majority(argu, isOdd));
+const cities = {
+	London: 'LONDON',
+	LA: 'Los Angeles',
+	Paris: 'PARIS'
+};
+console.log(objectFilter(cities, (city) => city.toUpperCase()));
