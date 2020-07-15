@@ -145,3 +145,29 @@ function reduce(array, callback, initialValue) {
 // const arr3 = [ 1, 10, 15, 5, 20 ];
 // // console.log(intersection([ arr1, arr2, arr3 ]));
 // console.log(intersection([ arr1, arr2, arr3 ])); //==>  [5, 15]
+
+// Construct a function union that compares input arrays
+// and returns a new array that contains all elements.
+// If there are duplicate elements, only add it once to the new array.
+// Preserve the order of the elements starting
+// from the first element of the first input array. BONUS: Use reduce!
+// ToDo List:
+// declare a function called union ==> one parameter (array)
+// function body:
+// use reduce to flatten prev and next
+// We want to flatten the nested array:
+// concat/ use spread []
+// We want to check if the elements have duplicates
+// We can filter(element, index) the duplicates by index
+// indexOf(element) === index
+
+function union(array) {
+	let flat = array.reduce((prev, next) => prev.concat(next), []);
+	let filtered = flat.filter((element, index) => flat.indexOf(element) === index);
+	return filtered;
+}
+
+arr1 = [ 1, 2, 3, 4 ];
+arr2 = [ 4, 5, 6, 7 ];
+arr3 = [ 7, 8, 9, 10 ];
+console.log(union([ arr1, arr2, arr3 ])); // ===> [1, 2, 3, 4, 5, 6 , 7, 8, 9, 10, 11, 12]
