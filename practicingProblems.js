@@ -377,21 +377,64 @@ function reduce(array, callback, initialValue) {
 // for (let element of array)
 // newObjecto[callback(array[i])]  ===>   newObjecto[callback(array[i])]++
 // if it doesn't were going to set that value === 1
-function countBy(array, callback) {
-	const newObjecto = {};
+// function countBy(array, callback) {
+// 	const newObjecto = {};
+// 	for (let element of array) {
+// 		if (newObjecto[callback(element)]) {
+// 			newObjecto[callback(element)]++;
+// 		} else {
+// 			newObjecto[callback(element)] = 1;
+// 		}
+// 	}
+// 	return newObjecto;
+// }
+// console.log(
+// 	countBy([ 1, 2, 3, 4, 5 ], function(num) {
+// 		if (num % 2 === 0) return 'even';
+// 		else return 'odd';
+// 	})
+// );
+//{key: 1, key2: 3
+
+// Create a function groupBy that accepts an array and a callback,
+//  and returns an object. groupBy will iterate through the array
+//  and perform the callback on each element. Each return value from
+//   the callback will be saved as a key on the object. The value associated
+//   with each key will be an array consisting of all the elements that resulted
+//   in that return value when passed into the callback.
+
+// inputs ==> array and callback as params
+// create an object
+// iterate through array ==> loop through to get its elements
+// callback(array[i]) ==> elements will be arguments for the callback so inside loop
+// key = (callback(element))
+// the value = [all the elements of the array]
+
+//create a function called groupBy(array, callback) takes in two params
+// create an empty object
+// loop through the array for (let element of array)
+// obj[callback(element)] = element
+// return obj
+
+function groupBy(array, callback) {
+	const obj = {};
 	for (let element of array) {
-		if (newObjecto[callback(element)]) {
-			newObjecto[callback(element)]++;
+		let key = callback(element);
+		if (key in obj) {
+			console.log(key, obj, element);
+			obj[key].push(element);
 		} else {
-			newObjecto[callback(element)] = 1;
+			obj[key] = [ element ];
 		}
 	}
-	return newObjecto;
+	return obj;
 }
-console.log(
-	countBy([ 1, 2, 3, 4, 5 ], function(num) {
-		if (num % 2 === 0) return 'even';
-		else return 'odd';
-	})
-);
-//{key: 1, key2: 3
+const decimals = [ 1.3, 2.1, 2.4 ];
+const floored = function(num) {
+	return Math.floor(num);
+};
+console.log(groupBy(decimals, floored));
+
+//  callback(num => num * 2)
+//  array = [1, 2, 3, 4, 5]
+//  {2: 1, 4: 2, 6: 3, 8: 4, 10: 5}
