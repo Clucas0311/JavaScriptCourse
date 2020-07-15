@@ -76,13 +76,13 @@
 // iterate ==> using forEach function
 // callback will be each element as an argument pushed into new array
 
-// function mapWith(array, callback) {
-// 	const newArray = [];
-// 	forEach(array, function(element) {
-// 		newArray.push(callback(element));
-// 	});
-// 	return newArray;
-// }
+function mapWith(array, callback) {
+	const newArray = [];
+	forEach(array, function(element) {
+		newArray.push(callback(element));
+	});
+	return newArray;
+}
 
 // const array = [ 4, 5, 6, 7, 8 ];
 // console.log(mapWith(array, (num) => num * 3)); // [12, 15, 18, 21, 24]
@@ -121,7 +121,27 @@ function reduce(array, callback, initialValue) {
 	return accumulator;
 }
 
-const arr = [ 4, 5, 6, 7, 8 ];
-const calling = (prev, next) => prev + next;
-const number = 1;
-console.log(reduce(arr, calling, 1)); //===> 31
+// const arr = [ 4, 5, 6, 7, 8 ];
+// const calling = (prev, next) => prev + next;
+// const number = 1;
+// console.log(reduce(arr, calling, 1)); //===> 31
+
+// Construct a function intersection that compares input arrays
+// and returns a new array with elements found in all of the inputs.
+//  BONUS: Use reduce!
+// create function called intersection
+// one parameter array
+// nested array ==> compare each array by element
+// reduce takes one element and checks it and then pass it
+// so I can filter the prev.filter(element) see if that element is included
+// in the next element
+
+// function intersection(array) {
+// 	return array.reduce((prev, next) => prev.filter((element) => next.includes(element)));
+// }
+
+// const arr1 = [ 5, 10, 15, 10 ];
+// const arr2 = [ 15, 88, 1, 5, 7 ];
+// const arr3 = [ 1, 10, 15, 5, 20 ];
+// // console.log(intersection([ arr1, arr2, arr3 ]));
+// console.log(intersection([ arr1, arr2, arr3 ])); //==>  [5, 15]

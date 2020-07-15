@@ -1,9 +1,5 @@
 function intersection(array) {
-	return array.reduce((acc, currVal) => {
-		console.log(acc, currVal);
-
-		return acc.filter((element) => currVal.includes(element));
-	});
+	return array.reduce((acc, currVal) => acc.filter((element) => currVal.includes(element)));
 }
 
 // function intersection(array) {
