@@ -501,20 +501,50 @@ function reduce(array, callback, initialValue) {
 // the return true
 // else return false
 
-function commutative(func1, func2, value) {
-	let first = func1(value);
-	let second = func2(first);
-	let third = func2(value);
-	let fourth = func1(third);
-	if (fourth === second) {
-		return true;
-	}
-	return false;
-}
+// function commutative(func1, func2, value) {
+// 	let first = func1(value);
+// 	let second = func2(first);
+// 	let third = func2(value);
+// 	let fourth = func1(third);
+// 	if (fourth === second) {
+// 		return true;
+// 	}
+// 	return false;
+// }
 
-const multBy3 = (n) => n * 3;
-const divBy4 = (n) => n / 4;
-const subtract5 = (n) => n - 5;
-console.log(commutative(multBy3, divBy4, 11)); // should log: true
-console.log(commutative(multBy3, subtract5, 10)); // should log: false
-console.log(commutative(divBy4, subtract5, 48)); // should log: false
+// const multBy3 = (n) => n * 3;
+// const divBy4 = (n) => n / 4;
+// const subtract5 = (n) => n - 5;
+// console.log(commutative(multBy3, divBy4, 11)); // should log: true
+// console.log(commutative(multBy3, subtract5, 10)); // should log: false
+// console.log(commutative(divBy4, subtract5, 48)); // should log: false
+
+// Create a function objFilter that accepts an object and a callback.
+//  objFilter should make a new object, and then iterate through the passed-in object,
+//  using each key as input for the callback. If the output from the callback is equal
+//  to the corresponding value, then that key-value pair is copied into the new object.
+//  objFilter will return this new object.
+
+//create a function named objFilter its going to have two parameters object and callback
+// this functions output should be an object
+// the object parameter needs to looped - for in and its keys should be the arguments
+// for the callback(key)
+// if statement - if the callback(key) === object[key]
+// then the obj[key] = object[key]
+// return object
+
+function objFilter(object, callback) {
+	const obj = {};
+	for (let key in object) {
+		if (callback(key) === object[key]) {
+			obj[key] = object[key];
+		}
+	}
+	return obj;
+}
+const startingObj = {};
+startingObj[6] = 3;
+startingObj[2] = 1;
+startingObj[12] = 4;
+const half = (n) => n / 2;
+console.log(objFilter(startingObj, half)); // // should log: { 2: 1, 6: 3 }
