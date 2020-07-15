@@ -161,13 +161,53 @@ function reduce(array, callback, initialValue) {
 // We can filter(element, index) the duplicates by index
 // indexOf(element) === index
 
-function union(array) {
-	let flat = array.reduce((prev, next) => prev.concat(next), []);
-	let filtered = flat.filter((element, index) => flat.indexOf(element) === index);
-	return filtered;
+// function union(array) {
+// 	let flat = array.reduce((prev, next) => prev.concat(next), []);
+// 	let filtered = flat.filter((element, index) => flat.indexOf(element) === index);
+// 	return filtered;
+// }
+
+// arr1 = [ 1, 2, 3, 4 ];
+// arr2 = [ 4, 5, 6, 7 ];
+// arr3 = [ 7, 8, 9, 10 ];
+// console.log(union([ arr1, arr2, arr3 ])); // ===> [1, 2, 3, 4, 5, 6 , 7, 8, 9, 10, 11, 12]
+
+// Construct a function objOfMatches that accepts two arrays and a callback.
+// objOfMatches will build an object and return it. To build the object,
+// objOfMatches will test each element of the first array using the callback
+// to see if the output matches the corresponding element (by index) of the
+//  second array. If there is a match, the element from the first array becomes
+//  a key in an object, and the element from the second array becomes the
+//  corresponding value.
+// ToDo List:
+// create a function objofMatches that has three parameters array1 array2 callback
+// Function body
+// I need to test each element of the first array ==> reduce
+// Create an empty object
+// if callback(next) === arr2(index)
+// then obj[next] = arr2[index]
+// return obj
+
+function objOfMatches(array1, array2, callback) {
+	return array1.reduce((obj, next, index) => {
+		if (array2[index] === callback(next)) {
+			obj[next] = array2[index];
+		}
+		return obj;
+	}, {});
 }
 
-arr1 = [ 1, 2, 3, 4 ];
-arr2 = [ 4, 5, 6, 7 ];
-arr3 = [ 7, 8, 9, 10 ];
-console.log(union([ arr1, arr2, arr3 ])); // ===> [1, 2, 3, 4, 5, 6 , 7, 8, 9, 10, 11, 12]
+const arr1 = [ 'hi', 'hello', 'good', 'lol', 'smart' ];
+const arr2 = [ 'HI', 'BYE', 'GOOD', 'LAUGH', 'SMART' ]; //==> {"hi": "HI", "good": "GOOD", "smart": "SMART"}
+function call(arr) {
+	return arr.toUpperCase();
+}
+// console.log(arr2);
+
+// const arr1 = [ 'hi', 'howdy', 'bye', 'later', 'hello' ];
+// const arr2 = [ 'HI', 'Howdy', 'BYE', 'later', 'HELLO' ];
+// function uppercaser(str) {
+// 	return str.toUpperCase();
+// }
+// console.log(objOfMatches(arr1, arr2, uppercaser));
+console.log(objOfMatches(arr1, arr2, call));
