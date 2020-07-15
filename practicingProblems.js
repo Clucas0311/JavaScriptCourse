@@ -416,25 +416,62 @@ function reduce(array, callback, initialValue) {
 // obj[callback(element)] = element
 // return obj
 
-function groupBy(array, callback) {
-	const obj = {};
-	for (let element of array) {
-		let key = callback(element);
-		if (key in obj) {
-			console.log(key, obj, element);
-			obj[key].push(element);
-		} else {
-			obj[key] = [ element ];
-		}
-	}
-	return obj;
-}
-const decimals = [ 1.3, 2.1, 2.4 ];
-const floored = function(num) {
-	return Math.floor(num);
-};
-console.log(groupBy(decimals, floored));
+// function groupBy(array, callback) {
+// 	const obj = {};
+// 	for (let element of array) {
+// 		let key = callback(element);
+// 		if (key in obj) {
+// 			console.log(key, obj, element);
+// 			obj[key].push(element);
+// 		} else {
+// 			obj[key] = [ element ];
+// 		}
+// 	}
+// 	return obj;
+// }
+// const decimals = [ 1.3, 2.1, 2.4 ];
+// const floored = function(num) {
+// 	return Math.floor(num);
+// };
+// console.log(groupBy(decimals, floored));
 
 //  callback(num => num * 2)
 //  array = [1, 2, 3, 4, 5]
 //  {2: 1, 4: 2, 6: 3, 8: 4, 10: 5}
+
+// Create a function goodKeys that accepts an object and a callback.
+// The callback will return either true or false.
+// goodKeys will iterate through the object and perform the callback on each value.
+// goodKeys will then return an array consisting only the keys whose
+// associated values yielded a true return value from the callback.
+
+// create a function that will have two parameters those parameter will be one and object
+// the other will be a callback function
+// the goodKeys function will loop through the object and the callback will take
+// in the objects values as arguments
+// the function will create an array based on it arguments where inside the array
+// the keys from the object that were true values when callback function was called inside
+
+// ToDo create a function goodKeys(obj, callback)
+// create an empty array or use map or filter
+// use for in to iterate through the object to get the keys
+// callback(keys) and filter through that to get the true values
+// use filter ==> create a new array to filter out the keys from object that are true
+
+function goodKeys(obj, callback) {
+	let newArr = [];
+	for (let key in obj) {
+		if (callback(obj[key]) === true) {
+			newArr.push(key);
+		}
+	}
+	return newArr;
+}
+
+const sunny = { mac: 'priest', dennis: 'calculating', charlie: 'birdlaw', dee: 'bird', frank: 'warthog' };
+const startsWithBird = function(str) {
+	return str.slice(0, 4).toLowerCase() === 'bird';
+};
+console.log(goodKeys(sunny, startsWithBird));
+
+// console.log(callback(callback));
