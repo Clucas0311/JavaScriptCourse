@@ -301,19 +301,59 @@ function reduce(array, callback, initialValue) {
 // newObject[prop] = callback(prop)
 // return  newObject
 
-function objectFilter(obj, callback) {
-	const newObject = {};
-	for (let key in obj) {
-		let prop = obj[key];
-		if (prop === callback(prop)) {
-			newObject[key] = callback(prop);
+// function objectFilter(obj, callback) {
+// 	const newObject = {};
+// 	for (let key in obj) {
+// 		let prop = obj[key];
+// 		if (prop === callback(prop)) {
+// 			newObject[key] = callback(prop);
+// 		}
+// 	}
+// 	return newObject;
+// }
+// const cities = {
+// 	London: 'LONDON',
+// 	LA: 'Los Angeles',
+// 	Paris: 'PARIS'
+// };
+// console.log(objectFilter(cities, (city) => city.toUpperCase()));
+
+// Create a function prioritize that accepts an array and a callback.
+// The callback will return either true or false. prioritize will iterate through
+// the array and perform the callback on each element, and return a new array,
+//  where all the elements that yielded a return value of true come first in the array,
+//   and the rest of the elements come second.
+
+// inputs ==> array and callback
+// loop through the array to get its elements => those are then going
+// to be arguments in the callback(array[i])
+// going to test each callback(array[i]) ==> if its true place that into an empty array
+// the true come first and the other elements go last.
+// output [callback(arrayitemstrue)][elements that are false] ==> merge array into one
+
+// ToDo List:
+// Create a function named prioritize has two parameters(array, callback)
+//  create a truthyArray = []
+// create a falseyArray  = []
+// for loop the array and its elements are going to be callback[element]
+// if callback[element] is true ==> push truthArray.push(element)
+// Merge with concat or spread
+// return truthyarray.concat(callback[i])
+function prioritize(array, callback) {
+	const truthyArray = [];
+	const falseyArray = [];
+	for (let element of array) {
+		if (callback(element) === true) {
+			truthyArray.push(element);
+		} else {
+			falseyArray.push(element);
 		}
 	}
-	return newObject;
+	return truthyArray.concat(falseyArray);
 }
-const cities = {
-	London: 'LONDON',
-	LA: 'Los Angeles',
-	Paris: 'PARIS'
+
+const startsWithS = function(str) {
+	return str[0] === 's' || str[0] === 'S';
 };
-console.log(objectFilter(cities, (city) => city.toUpperCase()));
+console.log(prioritize([ 'curb', 'rickandmorty', 'seinfeld', 'sunny', 'friends' ], startsWithS)); // should log:
+// ['seinfeld', 'sunny', 'curb', 'rickandmorty', 'friends']
