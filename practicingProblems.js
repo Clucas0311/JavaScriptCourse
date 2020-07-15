@@ -188,20 +188,20 @@ function reduce(array, callback, initialValue) {
 // then obj[next] = arr2[index]
 // return obj
 
-function objOfMatches(array1, array2, callback) {
-	return array1.reduce((obj, next, index) => {
-		if (array2[index] === callback(next)) {
-			obj[next] = array2[index];
-		}
-		return obj;
-	}, {});
-}
+// function objOfMatches(array1, array2, callback) {
+// 	return array1.reduce((obj, next, index) => {
+// 		if (array2[index] === callback(next)) {
+// 			obj[next] = array2[index];
+// 		}
+// 		return obj;
+// 	}, {});
+// }
 
-const arr1 = [ 'hi', 'hello', 'good', 'lol', 'smart' ];
-const arr2 = [ 'HI', 'BYE', 'GOOD', 'LAUGH', 'SMART' ]; //==> {"hi": "HI", "good": "GOOD", "smart": "SMART"}
-function call(arr) {
-	return arr.toUpperCase();
-}
+// const arr1 = [ 'hi', 'hello', 'good', 'lol', 'smart' ];
+// const arr2 = [ 'HI', 'BYE', 'GOOD', 'LAUGH', 'SMART' ]; //==> {"hi": "HI", "good": "GOOD", "smart": "SMART"}
+// function call(arr) {
+// 	return arr.toUpperCase();
+// }
 // console.log(arr2);
 
 // const arr1 = [ 'hi', 'howdy', 'bye', 'later', 'hello' ];
@@ -210,4 +210,37 @@ function call(arr) {
 // 	return str.toUpperCase();
 // }
 // console.log(objOfMatches(arr1, arr2, uppercaser));
-console.log(objOfMatches(arr1, arr2, call));
+// console.log(objOfMatches(arr1, arr2, call));
+
+// Construct a function multiMap that will accept two arrays: an array of values
+// and an array of callbacks. multiMap will return an object whose keys
+// match the elements in the array of values. The corresponding values that
+// are assigned to the keys will be arrays consisting of outputs from the
+// array of callbacks, where the input to each callback is the key.
+
+// inputs two arrays - one array values - array of callbacks
+
+// ToDo List
+// declare a function named multiMap ==> two params arrayVal, arrCallback
+// reduce arrayVal, create an empty {}, obj, next
+// empty array  = []
+// obj[next] = arrVal.map(callback(next)))
+// return that obj
+
+// function multiMap(arrayVal, arrCallback) {
+// 	return arrayVal.reduce((obj, next) => {
+// 		let newArr = next.map((element) => arrCallback(element));
+// 		return (obj[next] = newArr);
+// 	}, {});
+// }
+
+// const arrayofValues = [ 1, 2, 3 ]; // keys
+// function call(num) {
+// 	newArr = [];
+// 	for (element of num) {
+// 		newArr.push(element * 2);
+// 	}
+// 	return newArr;
+// }
+// console.log(multiMap(arrayofValues, call));
+// // {1 : [1], 2 : [2] , 3: [6]}
