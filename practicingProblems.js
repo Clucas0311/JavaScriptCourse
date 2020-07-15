@@ -339,21 +339,59 @@ function reduce(array, callback, initialValue) {
 // if callback[element] is true ==> push truthArray.push(element)
 // Merge with concat or spread
 // return truthyarray.concat(callback[i])
-function prioritize(array, callback) {
-	const truthyArray = [];
-	const falseyArray = [];
+// function prioritize(array, callback) {
+// 	const truthyArray = [];
+// 	const falseyArray = [];
+// 	for (let element of array) {
+// 		if (callback(element) === true) {
+// 			truthyArray.push(element);
+// 		} else {
+// 			falseyArray.push(element);
+// 		}
+// 	}
+// 	return truthyArray.concat(falseyArray);
+// }
+
+// const startsWithS = function(str) {
+// 	return str[0] === 's' || str[0] === 'S';
+// };
+// console.log(prioritize([ 'curb', 'rickandmorty', 'seinfeld', 'sunny', 'friends' ], startsWithS)); // should log:
+// // ['seinfeld', 'sunny', 'curb', 'rickandmorty', 'friends']
+
+// Create a function countBy that accepts an array and a callback, and returns an object.
+// countBy will iterate through the array and perform the callback on each element.
+// Each return value from the callback will be saved as a key on the object.
+// The value associated with each key will be the number of times that particular
+// return value was returned.
+
+// inputs (array, callback)
+// array iteration ==> use for loops, forEach, ==> get the elements
+// elements are going to be arguments to the callback(element)
+// callback(element) ==> when invoked the return value is the objects key
+// the value = how many times the callback(element) is returned
+// outputs =  {}
+
+// ToDo List
+// Declare a function named countBy => it has two parameters (array and callback)
+// const newObjecto = {}
+// for (let element of array)
+// newObjecto[callback(array[i])]  ===>   newObjecto[callback(array[i])]++
+// if it doesn't were going to set that value === 1
+function countBy(array, callback) {
+	const newObjecto = {};
 	for (let element of array) {
-		if (callback(element) === true) {
-			truthyArray.push(element);
+		if (newObjecto[callback(element)]) {
+			newObjecto[callback(element)]++;
 		} else {
-			falseyArray.push(element);
+			newObjecto[callback(element)] = 1;
 		}
 	}
-	return truthyArray.concat(falseyArray);
+	return newObjecto;
 }
-
-const startsWithS = function(str) {
-	return str[0] === 's' || str[0] === 'S';
-};
-console.log(prioritize([ 'curb', 'rickandmorty', 'seinfeld', 'sunny', 'friends' ], startsWithS)); // should log:
-// ['seinfeld', 'sunny', 'curb', 'rickandmorty', 'friends']
+console.log(
+	countBy([ 1, 2, 3, 4, 5 ], function(num) {
+		if (num % 2 === 0) return 'even';
+		else return 'odd';
+	})
+);
+//{key: 1, key2: 3
