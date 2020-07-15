@@ -458,20 +458,63 @@ function reduce(array, callback, initialValue) {
 // callback(keys) and filter through that to get the true values
 // use filter ==> create a new array to filter out the keys from object that are true
 
-function goodKeys(obj, callback) {
-	let newArr = [];
-	for (let key in obj) {
-		if (callback(obj[key]) === true) {
-			newArr.push(key);
-		}
-	}
-	return newArr;
-}
+// function goodKeys(obj, callback) {
+// 	let newArr = [];
+// 	for (let key in obj) {
+// 		if (callback(obj[key]) === true) {
+// 			newArr.push(key);
+// 		}
+// 	}
+// 	return newArr;
+// }
 
-const sunny = { mac: 'priest', dennis: 'calculating', charlie: 'birdlaw', dee: 'bird', frank: 'warthog' };
-const startsWithBird = function(str) {
-	return str.slice(0, 4).toLowerCase() === 'bird';
-};
-console.log(goodKeys(sunny, startsWithBird));
+// const sunny = { mac: 'priest', dennis: 'calculating', charlie: 'birdlaw', dee: 'bird', frank: 'warthog' };
+// const startsWithBird = function(str) {
+// 	return str.slice(0, 4).toLowerCase() === 'bird';
+// };
+// console.log(goodKeys(sunny, startsWithBird));
 
 // console.log(callback(callback));
+
+// Create a function commutative that accepts two callbacks and a value.
+// commutative will return a boolean indicating if the passing the value
+//  into the first function, and then passing the resulting output into
+//   the second function, yields the same output as the same operation with
+//   the order of the functions reversed (passing the value into the second
+// 	function, and then passing the output into the first function).
+
+// inputs Create a function named commutative in has three parameters (callback1, callback2, value)
+// output should be either true or false
+//  your going to take the value  argument pass it into the first function
+// then that number should then be the argument for the second  and you will get a number
+// if you do it backwards placing the value into the second argument then taking that value
+// and placing it into the first function as an argument then the result should be the same
+// both forwards and backwards
+
+//ToDO List
+// create a function named commutative(call1, call2, value)
+// let first = call1(value)
+// let second = call2(first)
+// let third = call2(value)
+// let fourth = call1(third)
+// if fourth === second
+// the return true
+// else return false
+
+function commutative(func1, func2, value) {
+	let first = func1(value);
+	let second = func2(first);
+	let third = func2(value);
+	let fourth = func1(third);
+	if (fourth === second) {
+		return true;
+	}
+	return false;
+}
+
+const multBy3 = (n) => n * 3;
+const divBy4 = (n) => n / 4;
+const subtract5 = (n) => n - 5;
+console.log(commutative(multBy3, divBy4, 11)); // should log: true
+console.log(commutative(multBy3, subtract5, 10)); // should log: false
+console.log(commutative(divBy4, subtract5, 48)); // should log: false
