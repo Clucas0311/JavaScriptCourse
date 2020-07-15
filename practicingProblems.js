@@ -244,3 +244,43 @@ function reduce(array, callback, initialValue) {
 // }
 // console.log(multiMap(arrayofValues, call));
 // // {1 : [1], 2 : [2] , 3: [6]}
+
+// Create a function majority that accepts an array and a callback.
+// The callback will return either true or false. majority will iterate
+// through the array and perform the callback on each element until it can be
+// determined if the majority of the return values from the callback are true.
+//  If the number of true returns is equal to the number of false returns,
+//  majority should return false.
+
+// create a function called majority ==> two parameters (array, callback function )
+// iterate ==> loop through the array parameter and take in the elements as arg
+// for the callback ==> callback(array[i])
+// callback(array[i]) ==> return true/ false
+// i will create an two arrays one for truth and one for false
+// if the callback[i] is true return true
+// else return false
+// if true === false then return false
+
+function majority(array, callback) {
+	const truthyArray = [];
+	const falseyArray = [];
+	for (let element of array) {
+		if (callback(element) === true) {
+			truthyArray.push(element);
+		} else {
+			falseyArray.push(element);
+		}
+	}
+	if (truthyArray.length > falseyArray.length) {
+		return true;
+	}
+	return false;
+}
+
+const argu = [ 1, 2, 3, 4, 5 ];
+
+function isOdd(num) {
+	return num % 2 === 1;
+}
+
+console.log(majority(argu, isOdd));
