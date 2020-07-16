@@ -611,7 +611,7 @@ function reduce(array, callback, initialValue) {
 // arrFunc(prev(element(value) ==> curr(prev)))
 // iterate through it
 // for let element of arrFuncs
-// then callback = element(value)
+// // then callback = element(value)
 
 // function pipe(arrOfFuncs, value) {
 // 	let output = value; // declare a variable value
@@ -640,3 +640,45 @@ function reduce(array, callback, initialValue) {
 // const repeat = (str) => str + str;
 // const capAddlowRepeat = [ capitalize, addLowerCase, repeat ];
 // console.log(pipe(capAddlowRepeat, 'cat')); // should log: 'CATcatCATcat'
+
+// Create a function highestFunc that accepts an object (which will contain functions)
+//  and a subject (which is any value). highestFunc should return the key of the object
+//  whose associated value (which will be a function) returns the largest number, when the
+//   subject is given as input.
+
+// First create a function that you will create two parameters.
+// The first parameter is going to accept an object as an argument
+// this object is an object of all functions
+// the second is going to accept any number/value ==> subject
+// Questions
+// // How can we get these objects values?
+// - Put the values in a variable and invoke the subject on each element
+// How will can you find the max value
+
+// output should be the largest number ==> return the key of the max value of the object
+
+function highestFunc(object, subject) {
+	let obj = {};
+	let max;
+	let newVar;
+
+	for (let key in object) {
+		let values = object[key](subject);
+
+		obj[key] = values;
+		max = Math.max(...Object.values(obj));
+
+		if (max === values) {
+			newVar = key;
+		}
+	}
+	return newVar;
+}
+
+const groupOfFuncs = {};
+groupOfFuncs.double = (n) => n * 2;
+groupOfFuncs.addTen = (n) => n + 10;
+groupOfFuncs.inverse = (n) => n * -1;
+console.log(highestFunc(groupOfFuncs, 5)); // should log: 'addTen'
+console.log(highestFunc(groupOfFuncs, 11)); // should log: 'double'
+console.log(highestFunc(groupOfFuncs, -20)); // should log: 'inverse'
