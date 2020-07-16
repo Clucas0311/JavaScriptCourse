@@ -572,24 +572,71 @@ function reduce(array, callback, initialValue) {
 // sum divide by the total elements ==> so arrCallbacks.length
 // and then multiply that by 10
 
-function rating(arrOfFuncs, value) {
-	let sum = 0;
-	let avg;
-	let arrayLength = arrOfFuncs.length;
-	for (let element of arrOfFuncs) {
-		let callbacks = element(value);
-		if (callbacks === true) {
-			sum++;
-		}
-	}
+// function rating(arrOfFuncs, value) {
+// 	let sum = 0;
+// 	let avg;
+// 	let arrayLength = arrOfFuncs.length;
+// 	for (let element of arrOfFuncs) {
+// 		let callbacks = element(value);
+// 		if (callbacks === true) {
+// 			sum++;
+// 		}
+// 	}
 
-	avg = sum / arrayLength;
-	return avg * 100;
-}
-const isEven = (n) => n % 2 === 0;
-const greaterThanFour = (n) => n > 4;
-const isSquare = (n) => Math.sqrt(n) % 1 === 0;
-const hasSix = (n) => n.toString().includes('6');
-const checks = [ isEven, greaterThanFour, isSquare, hasSix ];
-console.log(rating(checks, 64)); // should log: 100
-console.log(rating(checks, 66)); // should log: 75
+// 	avg = sum / arrayLength;
+// 	return avg * 100;
+// }
+// const isEven = (n) => n % 2 === 0;
+// const greaterThanFour = (n) => n > 4;
+// const isSquare = (n) => Math.sqrt(n) % 1 === 0;
+// const hasSix = (n) => n.toString().includes('6');
+// const checks = [ isEven, greaterThanFour, isSquare, hasSix ];
+// console.log(rating(checks, 64)); // should log: 100
+// console.log(rating(checks, 66)); // should log: 75
+
+// Create a function pipe that accepts an array (of functions) and a value.
+//  pipe should input the value into the first function in the array, and then
+//  use the output from that function as input for the second function, and then
+//  use the output from that function as input for the third function, and so forth,
+//  until we have an output from the last function in the array. pipe should return the
+//   final output.
+
+// create a function named pipe and it will have two parameters
+// 1st parameter will be an array of functions [func1, func2, func3]
+// 2nd will be a value
+// the value will be the argument for the array
+// its going to pass that return value down the array line
+// func1(value) ==> new argument ===> function2(argument)...
+// you can pass the argument using reduce
+// arrFunc(prev(element(value) ==> curr(prev)))
+// iterate through it
+// for let element of arrFuncs
+// then callback = element(value)
+
+// function pipe(arrOfFuncs, value) {
+// 	let output = value; // declare a variable value
+// 	for (let i = 0; i < arrOfFuncs.length; i++) {
+// 		// iterate through array
+// 		output = arrOfFuncs[i](output); // reassign value to the array at the index and the value
+// 		console.log(`OUTPUT: ${output}`);
+// 	}
+// 	return output;
+
+// 	// return arrOfFuncs.reduce((acc, curr) => curr(acc), value);
+
+// 	if (arrOfFuncs.length === 0) return value;
+// 	let output = arrOfFuncs[0](value);
+// 	return pipe(arrOfFuncs.slice(1), output);
+
+// 	console.log('OUTPUT*', output3);
+// }
+// // 	arrOfFuncs.reduce((prev, next, index) => {
+// // 		console.log(prev, r);
+// // 	});
+// // }
+
+// const capitalize = (str) => str.toUpperCase();
+// const addLowerCase = (str) => str + str.toLowerCase();
+// const repeat = (str) => str + str;
+// const capAddlowRepeat = [ capitalize, addLowerCase, repeat ];
+// console.log(pipe(capAddlowRepeat, 'cat')); // should log: 'CATcatCATcat'
