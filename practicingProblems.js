@@ -533,18 +533,63 @@ function reduce(array, callback, initialValue) {
 // then the obj[key] = object[key]
 // return object
 
-function objFilter(object, callback) {
-	const obj = {};
-	for (let key in object) {
-		if (callback(key) === object[key]) {
-			obj[key] = object[key];
+// function objFilter(object, callback) {
+// 	const obj = {};
+// 	for (let key in object) {
+// 		if (callback(key) === object[key]) {
+// 			obj[key] = object[key];
+// 		}
+// 	}
+// 	return obj;
+// }
+// const startingObj = {};
+// startingObj[6] = 3;
+// startingObj[2] = 1;
+// startingObj[12] = 4;
+// const half = (n) => n / 2;
+// console.log(objFilter(startingObj, half)); // // should log: { 2: 1, 6: 3 }
+
+// Create a function rating that accepts an array (of functions) and a value.
+// All the functions in the array will return true or false. rating should return
+// the percentage of functions from the array that return true when the value is used
+// as input.
+
+// create a function named rating
+// in this function it needs to take in two parameters
+// one parameter is going to be an array [func1, func2, func3, func4]
+// and the second parameter will just be a value ==> num
+//  the output of the functions array will be true or false [true, false, false, true]
+// rating should output the percentag of elements that are true
+// the value will the argument in each of the array of functions
+
+//ToDo List
+// Create a function named rating ==> two parameters (arrCallbacks, value)
+// iterate over array of arrCallbacks
+// each element of the array will have the value has the value as an argument
+// ===> element(value)
+// if element(value) === true
+//  then sum++
+// sum divide by the total elements ==> so arrCallbacks.length
+// and then multiply that by 10
+
+function rating(arrOfFuncs, value) {
+	let sum = 0;
+	let avg;
+	let arrayLength = arrOfFuncs.length;
+	for (let element of arrOfFuncs) {
+		let callbacks = element(value);
+		if (callbacks === true) {
+			sum++;
 		}
 	}
-	return obj;
+
+	avg = sum / arrayLength;
+	return avg * 100;
 }
-const startingObj = {};
-startingObj[6] = 3;
-startingObj[2] = 1;
-startingObj[12] = 4;
-const half = (n) => n / 2;
-console.log(objFilter(startingObj, half)); // // should log: { 2: 1, 6: 3 }
+const isEven = (n) => n % 2 === 0;
+const greaterThanFour = (n) => n > 4;
+const isSquare = (n) => Math.sqrt(n) % 1 === 0;
+const hasSix = (n) => n.toString().includes('6');
+const checks = [ isEven, greaterThanFour, isSquare, hasSix ];
+console.log(rating(checks, 64)); // should log: 100
+console.log(rating(checks, 66)); // should log: 75
