@@ -657,28 +657,98 @@ function reduce(array, callback, initialValue) {
 
 // output should be the largest number ==> return the key of the max value of the object
 
-function highestFunc(object, subject) {
-	let obj = {};
-	let max;
-	let newVar;
+// function highestFunc(object, subject) {
+// 	let obj = {};
+// 	let max;
+// 	let newVar;
 
-	for (let key in object) {
-		let values = object[key](subject);
+// 	for (let key in object) {
+// 		let values = object[key](subject);
 
-		obj[key] = values;
-		max = Math.max(...Object.values(obj));
+// 		obj[key] = values;
+// 		max = Math.max(...Object.values(obj));
 
-		if (max === values) {
-			newVar = key;
+// 		if (max === values) {
+// 			newVar = key;
+// 		}
+// 	}
+// 	return newVar;
+// }
+
+// const groupOfFuncs = {};
+// groupOfFuncs.double = (n) => n * 2;
+// groupOfFuncs.addTen = (n) => n + 10;
+// groupOfFuncs.inverse = (n) => n * -1;
+// console.log(highestFunc(groupOfFuncs, 5)); // should log: 'addTen'
+// console.log(highestFunc(groupOfFuncs, 11)); // should log: 'double'
+// console.log(highestFunc(groupOfFuncs, -20)); // should log: 'inverse'
+
+// Define a function myFunc that takes an array and a callback. myFunc should pass each element
+// from the array (in order) into the callback. If the callback returns true, myFunc should
+// return the index of the current element. If the callback never returns true, myFunc
+// should return -1;
+
+// create a function named myFunc and it will have two parameres array and callback
+// loop through array and each element should be placed into the callback
+// if callback([i]) === true
+// return the index
+// if false  return -1
+
+function myFunc(array, callback) {
+	let num = -1;
+	array.forEach((element) => {
+		if (callback(element) === true) {
+			num = array.indexOf(element);
+		} else {
+			num;
 		}
-	}
-	return newVar;
+	});
+	return num;
 }
 
-const groupOfFuncs = {};
-groupOfFuncs.double = (n) => n * 2;
-groupOfFuncs.addTen = (n) => n + 10;
-groupOfFuncs.inverse = (n) => n * -1;
-console.log(highestFunc(groupOfFuncs, 5)); // should log: 'addTen'
-console.log(highestFunc(groupOfFuncs, 11)); // should log: 'double'
-console.log(highestFunc(groupOfFuncs, -20)); // should log: 'inverse'
+const numbers = [ 2, 3, 6, 64, 10, 8, 12 ];
+const evens = [ 2, 4, 6, 8, 10, 12, 64 ];
+
+function isOdd(num) {
+	return num % 2 !== 0;
+}
+
+/*** Uncomment these to check your work! ***/
+console.log(myFunc(numbers, isOdd)); // Output should be 1
+console.log(myFunc(evens, isOdd)); // Output should be -1
+
+// Write a function myForEach that accepts an array and a callback function.
+// Your function should pass each element of the array (in order) into the callback function.
+// The behavior of this function should mirror the functionality of the native .forEach()
+// JavaScript array method as closely as possible.
+
+// Create a function named myForEach
+// is going to have two parameters who's going to take in
+// arguments are going to be an array and a callback
+// pass each element in order === iterating through the array(looping)
+// then we are going to take the element from the array and place them in the callback
+// as arguments. So every time the callback is invoked the element from the array inside will
+// will undergo that whats in that functions body ==> argument is then returned as a number
+// each iteration will result in a new number
+// forEach does:
+//  loops
+//  the callback will perform task on each element
+// it gives you the index of the current value of the array
+// the array in which the function was called on
+// the return value is undefined
+
+function myForEach(array, callback) {
+	for (let i = 0; i < array.length; i++) {
+		callback(array[i], [ i ], array);
+	}
+}
+
+let sum = 0;
+
+function addToSum(num) {
+	sum += num;
+}
+
+const nums = [ 1, 2, 3 ];
+myForEach(nums, addToSum);
+console.log(sum); // Should output 6
