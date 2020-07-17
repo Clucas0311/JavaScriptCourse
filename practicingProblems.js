@@ -694,28 +694,28 @@ function reduce(array, callback, initialValue) {
 // return the index
 // if false  return -1
 
-function myFunc(array, callback) {
-	let num = -1;
-	array.forEach((element) => {
-		if (callback(element) === true) {
-			num = array.indexOf(element);
-		} else {
-			num;
-		}
-	});
-	return num;
-}
+// function myFunc(array, callback) {
+// 	let num = -1;
+// 	array.forEach((element) => {
+// 		if (callback(element) === true) {
+// 			num = array.indexOf(element);
+// 		} else {
+// 			num;
+// 		}
+// 	});
+// 	return num;
+// }
 
-const numbers = [ 2, 3, 6, 64, 10, 8, 12 ];
-const evens = [ 2, 4, 6, 8, 10, 12, 64 ];
+// const numbers = [ 2, 3, 6, 64, 10, 8, 12 ];
+// const evens = [ 2, 4, 6, 8, 10, 12, 64 ];
 
-function isOdd(num) {
-	return num % 2 !== 0;
-}
+// function isOdd(num) {
+// 	return num % 2 !== 0;
+// }
 
-/*** Uncomment these to check your work! ***/
-console.log(myFunc(numbers, isOdd)); // Output should be 1
-console.log(myFunc(evens, isOdd)); // Output should be -1
+// /*** Uncomment these to check your work! ***/
+// console.log(myFunc(numbers, isOdd)); // Output should be 1
+// console.log(myFunc(evens, isOdd)); // Output should be -1
 
 // Write a function myForEach that accepts an array and a callback function.
 // Your function should pass each element of the array (in order) into the callback function.
@@ -737,18 +737,51 @@ console.log(myFunc(evens, isOdd)); // Output should be -1
 // the array in which the function was called on
 // the return value is undefined
 
-function myForEach(array, callback) {
-	for (let i = 0; i < array.length; i++) {
-		callback(array[i], [ i ], array);
-	}
+// function myForEach(array, callback) {
+// 	for (let i = 0; i < array.length; i++) {
+// 		callback(array[i], [ i ], array);
+// 	}
+// }
+
+// let sum = 0;
+
+// function addToSum(num) {
+// 	sum += num;
+// }
+
+// const nums = [ 1, 2, 3 ];
+// myForEach(nums, addToSum);
+// console.log(sum); // Should output 6
+
+// Define a function myFunc that takes an array and a callback. myFunc should pass each element
+// from the array (in order) into the callback. If the callback returns true, myFunc should
+// return the index of the current element. If the callback never returns true, myFunc
+// should return -1;
+
+// Create a function and name it myFunc
+// its going to have two parameters ==> these parameters will take in an array and callback as arguments
+// if callbacks with the element inside invoked returns true
+// How can we get the elements and invoke them as arguments in the callback
+// loop through array and place the elements inside the callback
+// we need the index or we can use forEach(accessing the index) / indexOf
+// create a variable num and store -1 ==> have it be reassigned  based on each condition
+// then return the index of the current element
+// if it returns false ==> then return -1
+
+function myFunc(array, callback) {
+	num = -1;
+	array.forEach((element, index) => {
+		callback(element) === true ? (num = index) : num;
+	});
+	return num;
+}
+const numbers = [ 2, 3, 6, 64, 10, 8, 12 ];
+const evens = [ 2, 4, 6, 8, 10, 12, 64 ];
+
+function isOdd(num) {
+	return num % 2 !== 0;
 }
 
-let sum = 0;
-
-function addToSum(num) {
-	sum += num;
-}
-
-const nums = [ 1, 2, 3 ];
-myForEach(nums, addToSum);
-console.log(sum); // Should output 6
+// /*** Uncomment these to check your work! ***/
+console.log(myFunc(numbers, isOdd)); // Output should be 1
+console.log(myFunc(evens, isOdd)); // Output should be -1
