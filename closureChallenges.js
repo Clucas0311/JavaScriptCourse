@@ -76,18 +76,48 @@ const jasCounter = outer();
 function addByX(x) {
 	let counter = x;
 	return function(y) {
-		console.log(counter + y);
+		return counter + y;
 	};
 }
 const addByTwo = addByX(2);
-addByTwo(1); // => should return 3
-addByTwo(2); // => should return 4
-addByTwo(3); // => should return 5
+// addByTwo(1); // => should return 3
+// addByTwo(2); // => should return 4
+// addByTwo(3); // => should return 5
 
-const addByThree = addByX(3);
-addByThree(1); // => should return 4
-addByThree(2); // => should return 5
+// const addByThree = addByX(3);
+// addByThree(1); // => should return 4
+// addByThree(2); // => should return 5
 
-const addByFour = addByX(4);
-addByFour(4); // => should return 8
-addByFour(5); // => should return 9
+// const addByFour = addByX(4);
+// addByFour(4); // => should return 8
+// addByFour(5); // => should return 9
+
+// Challenge 4
+// Write a function once that accepts a callback as input and returns a function.
+//  When the returned function is called the first time, it should call the callback
+//  and return that output. If it is called any additional times, instead of calling
+//  the callback again it will simply return the output value from the first time it
+//  was called.
+
+// create a function that has one parameter and the argument placed in that parameter will be
+// a callback
+// in the function body of once returns a function
+// when the return function is invoked callback(input)
+// let output = callback(input)
+// if argument ===> return argument
+function once(func) {
+	let input; // create a variable to test
+	function inner(x) {
+		if (input === undefined) {
+			input = func(x);
+		}
+
+		return input;
+	}
+	return inner;
+}
+// /*** Uncomment these to check your work! ***/
+const onceFunc = once(addByTwo);
+console.log(onceFunc(4)); // => should log 6
+console.log(onceFunc(10)); // => should log 6
+console.log(onceFunc(9001)); // => should log 6
