@@ -769,7 +769,7 @@ function reduce(array, callback, initialValue) {
 // if it returns false ==> then return -1
 
 function myFunc(array, callback) {
-	num = -1;
+	let num = -1;
 	array.forEach((element, index) => {
 		callback(element) === true ? (num = index) : num;
 	});
