@@ -118,6 +118,37 @@ function once(func) {
 }
 // /*** Uncomment these to check your work! ***/
 const onceFunc = once(addByTwo);
-console.log(onceFunc(4)); // => should log 6
-console.log(onceFunc(10)); // => should log 6
-console.log(onceFunc(9001)); // => should log 6
+// console.log(onceFunc(4)); // => should log 6
+// console.log(onceFunc(10)); // => should log 6
+// console.log(onceFunc(9001)); // => should log 6
+
+// Challenge 5
+// Write a function after that takes the number of times the callback needs to be
+// called before being executed as the first parameter and the callback as the second
+// parameter.
+
+// create a function named "after" and it is going to check how many times the callback
+// needs to invoked in parameter 1
+// parameter two will contain the callback
+// we will need counter
+// counter will need to incremented everytime the callback is invoked
+
+function after(count, func) {
+	counter = 0;
+	function inner() {
+		counter++;
+		if (counter < count) {
+		} else {
+			return func();
+		}
+	}
+	return inner;
+}
+
+const called = function() {
+	console.log('hello');
+};
+const afterCalled = after(3, called);
+afterCalled(); // => nothing is printed
+afterCalled(); // => nothing is printed
+afterCalled(); // => 'hello' is printed
