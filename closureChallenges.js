@@ -75,15 +75,14 @@ const jasCounter = outer();
 //  Now we are going to create a function addByX that returns a function that will
 //   add an input by x.
 function addByX(x) {
-	let counter = x;
 	return function(y) {
-		return counter + y;
+		return x + y;
 	};
 }
 const addByTwo = addByX(2);
-// addByTwo(1); // => should return 3
-// addByTwo(2); // => should return 4
-// addByTwo(3); // => should return 5
+// console.log(addByTwo(1)); // => should return 3
+// console.log(addByTwo(2)); // => should return 4
+// console.log(addByTwo(3)); // => should return 5
 
 // const addByThree = addByX(3);
 // addByThree(1); // => should return 4
@@ -110,8 +109,10 @@ function once(func) {
 	let input; // create a variable to test
 	function inner(x) {
 		if (input === undefined) {
+			console.log(input);
 			input = func(x);
 		}
+		console.log(input);
 
 		return input;
 	}
@@ -120,8 +121,8 @@ function once(func) {
 // /*** Uncomment these to check your work! ***/
 const onceFunc = once(addByTwo);
 // console.log(onceFunc(4)); // => should log 6
-// console.log(onceFunc(10)); // => should log 6
-// console.log(onceFunc(9001)); // => should log 6
+// // console.log(onceFunc(10)); // => should log 6
+// // console.log(onceFunc(9001)); // => should log 6
 
 // Challenge 5
 // Write a function after that takes the number of times the callback needs to be
@@ -129,7 +130,7 @@ const onceFunc = once(addByTwo);
 // parameter.
 
 // create a function named "after" and it is going to check how many times the callback
-// needs to invoked in parameter 1
+// needs to invoked in parameter 1 = count
 // parameter two will contain the callback
 // we will need counter
 // counter will need to incremented everytime the callback is invoked
@@ -168,13 +169,16 @@ function after(count, func) {
 // invocation
 
 function delay(func, wait) {
-	return setTimeout(func, wait);
+	function inner() {
+		return setTimeout(func, wait);
+	}
+	return inner;
 }
-// let count = 0;
-// const delayedFunc = delay(() => count++, 1000);
-// delayedFunc();
-// console.log(count); // should print '0'
-// setTimeout(() => console.log(count), 1000); // should print '1' after 1 second
+let count = 0;
+const delayedFunc = delay(() => count++, 1000);
+delayedFunc();
+console.log(count); // should print '0'
+setTimeout(() => console.log(count), 1000); // should print '1' after 1 second
 
 //Challenge 7
 // Write a function rollCall that accepts an array of names and returns a function.
@@ -320,8 +324,22 @@ function defineFirstArg(func, arg) {
 	return inner;
 }
 // /*** Uncomment these to check your work! ***/
-const subtract = function(big, small) {
-	return big - small;
-};
-const subFrom20 = defineFirstArg(subtract, 20);
-console.log(subFrom20(5)); // => should log 15
+// const subtract = function(big, small) {
+// 	return big - small;
+// };
+// const subFrom20 = defineFirstArg(subtract, 20);
+// console.log(subFrom20(5)); // => should log 15
+
+//Challenge 11
+// Create a function dateStamp that accepts a function and returns a function.
+//  The returned function will accept however many arguments the passed-in function
+//   accepts, and return an object with a date key that contains a timestamp with the
+//    time of invocation, and an output key that contains the result from invoking the
+//    passed-in function. HINT: You may need to research how to access information on
+//    Date objects.
+
+// create a function named date stamp that will have one parameter which will be a callback
+// function
+// main function create an empty object
+// it is going to have a return function
+//
