@@ -174,11 +174,11 @@ function delay(func, wait) {
 	}
 	return inner;
 }
-let count = 0;
-const delayedFunc = delay(() => count++, 1000);
-delayedFunc();
-console.log(count); // should print '0'
-setTimeout(() => console.log(count), 1000); // should print '1' after 1 second
+// let count = 0;
+// const delayedFunc = delay(() => count++, 1000);
+// delayedFunc();
+// console.log(count); // should print '0'
+// setTimeout(() => console.log(count), 1000); // should print '1' after 1 second
 
 //Challenge 7
 // Write a function rollCall that accepts an array of names and returns a function.
@@ -360,6 +360,43 @@ function dateStamp(func) {
 	return inner;
 }
 /*** Uncomment these to check your work! ***/
-const stampedMultBy2 = dateStamp((n) => n * 2);
-console.log(stampedMultBy2(4)); // => should log { date: (today's date), output: 8 }
-console.log(stampedMultBy2(6)); // => should log { date: (today's date), output: 12 }
+// const stampedMultBy2 = dateStamp((n) => n * 2);
+// console.log(stampedMultBy2(4)); // => should log { date: (today's date), output: 8 }
+// console.log(stampedMultBy2(6)); // => should log { date: (today's date), output: 12 }
+
+// Create a function censor that accepts no arguments. censor will return a function that
+//  will accept either two strings, or one string. When two strings are given, the returned
+//   function will hold onto the two strings as a pair, for future use. When one string is
+//   given, the returned function will return the same string, except all instances of first
+//    strings (of saved pairs) will be replaced with their corresponding second strings
+//    (of those saved pairs).
+
+// create a function named censor with no paramenters
+// the return function is going to have parameters ==> because taking in multiple arguments == rest parameters
+// if two strings are given return function will hold as pairs: objects hold key:value pairs
+// so make the first string key and the second the value {1stString: 2ndString}
+// if one string is given
+function censor() {
+	let obj = {};
+
+	function inner(...args) {
+		if (args.length > 1) {
+			obj[args[0]] = args[1];
+			return obj;
+		} else {
+			let firstString = Object.keys(obj);
+			let secondString = Object.values(obj);
+			let newOutput = args[0];
+			for (let i = 0; i < firstString.length; i++) {
+				newOutput = newOutput.replace(firstString[i], secondString[i]);
+			}
+			return newOutput;
+		}
+	}
+	return inner;
+}
+// /*** Uncomment these to check your work! ***/
+const changeScene = censor();
+console.log(changeScene('dogs', 'cats'));
+changeScene('quick', 'slow');
+console.log(changeScene('The quick, brown fox jumps over the lazy dogs.')); // => should log 'The slow, brown fox jumps over the lazy cats.'
