@@ -338,8 +338,28 @@ function defineFirstArg(func, arg) {
 //    passed-in function. HINT: You may need to research how to access information on
 //    Date objects.
 
-// create a function named date stamp that will have one parameter which will be a callback
-// function
-// main function create an empty object
-// it is going to have a return function
-//
+// create a function that is going to be labeled as dateStamp and it will one parameter
+// the one parameter will accept a callback as an argument
+// its going to have a returned function that will have one parameter
+// create an object that key will be a datekey that shows the time the callback was invoked
+// and a value key that shows the result of passed in function
+//value = callback(x)
+// set  new Date() to a variable ===> so I can get the date and time
+// object.date = todaysDateString()
+// object.output = callback(...args);
+// return object
+
+function dateStamp(func) {
+	let obj = {};
+	function inner(...args) {
+		let todaysDate = new Date();
+		obj.date = todaysDate.toDateString();
+		obj.output = func(...args);
+		return obj;
+	}
+	return inner;
+}
+/*** Uncomment these to check your work! ***/
+const stampedMultBy2 = dateStamp((n) => n * 2);
+console.log(stampedMultBy2(4)); // => should log { date: (today's date), output: 8 }
+console.log(stampedMultBy2(6)); // => should log { date: (today's date), output: 12 }
