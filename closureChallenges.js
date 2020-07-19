@@ -47,7 +47,8 @@ function createFunctionPrinter(input) {
 function outer() {
 	let counter = 0; // this variable is outside incrementCounter's scope
 	function incrementCounter() {
-		counter++;
+		console.log(counter++);
+
 		console.log('counter', counter);
 	}
 	return incrementCounter;
@@ -145,10 +146,68 @@ function after(count, func) {
 	return inner;
 }
 
-const called = function() {
-	console.log('hello');
-};
-const afterCalled = after(3, called);
-afterCalled(); // => nothing is printed
-afterCalled(); // => nothing is printed
-afterCalled(); // => 'hello' is printed
+// const called = function() {
+// 	console.log('hello');
+// };
+// const afterCalled = after(3, called);
+// afterCalled(); // => nothing is printed
+// afterCalled(); // => nothing is printed
+// afterCalled(); // => 'hello' is printed
+
+// Challenge 6
+// Write a function delay that accepts a callback as the first parameter and the wait
+//  in milliseconds before allowing the callback to be invoked as the second parameter.
+//   Any additional arguments after wait are provided to func when it is invoked.
+//   HINT: research setTimeout();
+
+// create a function named delay its going to have a paramter which argument will be a callback
+// callback is function within a function
+// wait will be the second parameter - and it will be the time before callback is invoke
+// so the callback needs to have a pause before it is invoked
+//  return function is going to invoke the callback and there will be a time delay with its
+// invocation
+
+function delay(func, wait) {
+	return setTimeout(func, wait);
+}
+// let count = 0;
+// const delayedFunc = delay(() => count++, 1000);
+// delayedFunc();
+// console.log(count); // should print '0'
+// setTimeout(() => console.log(count), 1000); // should print '1' after 1 second
+
+//Challenge 7
+// Write a function rollCall that accepts an array of names and returns a function.
+// The first time the returned function is invoked, it should log the first name to the console.
+// The second time it is invoked, it should log the second name to the console, and so on, until
+// all names have been called. Once all names have been called, it should log 'Everyone accounted for'.
+
+// create a function named rollCall and it will have one parameter
+// the one parameter will take in an argument that will be an array
+// the function will also return another function
+// each time the returned function is invoked it will give the position of the array
+// so if i call 1 rollCall() = the first element of the array
+// 2 rollCall ==> return the second position of the array...
+// How can we access each position
+// We know we can create counter(backpack) in the first function set equal to zero
+// in the returned we can increment the counter
+// so everytime the function it is incremented by one
+// in the return function counter is going to be in  the position of the index - zero based
+
+function rollCall(names) {
+	let counter = 0;
+	function inner() {
+		let incrementer = names[counter++];
+		if (counter > names.length) {
+			return 'Everyone accounted for';
+		}
+		return incrementer;
+	}
+	return inner;
+}
+
+const rollCaller = rollCall([ 'Victoria', 'Juan', 'Ruth' ]);
+console.log(rollCaller()); // => should log 'Victoria'
+console.log(rollCaller()); // => should log 'Juan'
+console.log(rollCaller()); // => should log 'Ruth'
+console.log(rollCaller()); // => should log 'Everyone accounted for
