@@ -299,6 +299,7 @@ function cycleIterator(array) {
 // console.log(getDay()); // => should log 'Sun'
 // console.log(getDay()); // => should log 'Fri'
 
+//Challenge 10
 // Create a function defineFirstArg that accepts a function and an argument.
 // Also, the function being passed in will accept at least one argument.
 // defineFirstArg will return a new function that invokes the passed-in function
@@ -313,9 +314,9 @@ function cycleIterator(array) {
 // so it has to have the argument and x to invoke it
 
 function defineFirstArg(func, arg) {
-	return function inner(x) {
+	function inner(x) {
 		return func(arg, x);
-	};
+	}
 	return inner;
 }
 // /*** Uncomment these to check your work! ***/
