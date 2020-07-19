@@ -251,7 +251,50 @@ function saveOutput(func, magicWord) {
 const multiplyBy2 = function(num) {
 	return num * 2;
 };
-const multBy2AndLog = saveOutput(multiplyBy2, 'boo');
-console.log(multBy2AndLog(2)); // => should log 4
-console.log(multBy2AndLog(9)); // => should log 18
-console.log(multBy2AndLog('boo')); // => should log { 2: 4, 9: 18 }
+// const multBy2AndLog = saveOutput(multiplyBy2, 'boo');
+// console.log(multBy2AndLog(2)); // => should log 4
+// console.log(multBy2AndLog(9)); // => should log 18
+// console.log(multBy2AndLog('boo')); // => should log { 2: 4, 9: 18 }
+
+//Challenge 9
+// Create a function cycleIterator that accepts an array, and returns a function.
+// The returned function will accept zero arguments. When first invoked, the returned
+// function will return the first element of the array. When invoked a second time, the returned
+//  function will return the second element of the array, and so forth. After returning the last
+//  element of the array, the next invocation will return the first element of the array again, and
+//   continue on with the second after that, and so forth.
+
+// create a function called cycleIterator that will have one parameter and that parameter will take
+// in an array as an argument.
+// it will have a return function inside of it that will have no parameters
+// every time the function is called it will return the first of the array
+// we will use a counter variable as a backpack and every time the function called
+// it will increment throught the array
+// when the array reachs the end it will return the first element and restart all over
+
+// How will create
+// use counter varible that will increment up every time the return function is invoked
+//  if the counter > array.length ==> we're at the end so we need to start over
+// return the counter = 1
+// when array length is greater counter --> increment up
+// array indices array[counter -1]
+
+function cycleIterator(array) {
+	let counter = 0;
+	function inner() {
+		counter++;
+		if (counter === array.length + 1) {
+			counter = 1;
+		}
+		return array[counter - 1];
+	}
+	return inner;
+}
+
+// /*** Uncomment these to check your work! ***/
+const threeDayWeekend = [ 'Fri', 'Sat', 'Sun' ];
+const getDay = cycleIterator(threeDayWeekend);
+console.log(getDay()); // => should log 'Fri'
+console.log(getDay()); // => should log 'Sat'
+console.log(getDay()); // => should log 'Sun'
+console.log(getDay()); // => should log 'Fri'
