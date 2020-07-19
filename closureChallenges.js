@@ -291,10 +291,36 @@ function cycleIterator(array) {
 	return inner;
 }
 
+// // /*** Uncomment these to check your work! ***/
+// const threeDayWeekend = [ 'Fri', 'Sat', 'Sun' ];
+// const getDay = cycleIterator(threeDayWeekend);
+// console.log(getDay()); // => should log 'Fri'
+// console.log(getDay()); // => should log 'Sat'
+// console.log(getDay()); // => should log 'Sun'
+// console.log(getDay()); // => should log 'Fri'
+
+// Create a function defineFirstArg that accepts a function and an argument.
+// Also, the function being passed in will accept at least one argument.
+// defineFirstArg will return a new function that invokes the passed-in function
+//  with the passed-in argument as the passed-in function's first argument.
+// Additional arguments needed by the passed-in function will need to be passed
+// into the returned function.
+
+// create function called defineFirstArg and its going to have a callback function and a
+// argument  as parameters
+// the function being retuned  inside this function is going to have one parameter
+// this parameter will be the argument placed inside the callback funtion
+// so it has to have the argument and x to invoke it
+
+function defineFirstArg(func, arg) {
+	return function inner(x) {
+		return func(arg, x);
+	};
+	return inner;
+}
 // /*** Uncomment these to check your work! ***/
-const threeDayWeekend = [ 'Fri', 'Sat', 'Sun' ];
-const getDay = cycleIterator(threeDayWeekend);
-console.log(getDay()); // => should log 'Fri'
-console.log(getDay()); // => should log 'Sat'
-console.log(getDay()); // => should log 'Sun'
-console.log(getDay()); // => should log 'Fri'
+const subtract = function(big, small) {
+	return big - small;
+};
+const subFrom20 = defineFirstArg(subtract, 20);
+console.log(subFrom20(5)); // => should log 15
