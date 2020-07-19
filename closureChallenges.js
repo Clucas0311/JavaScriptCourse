@@ -206,8 +206,52 @@ function rollCall(names) {
 	return inner;
 }
 
-const rollCaller = rollCall([ 'Victoria', 'Juan', 'Ruth' ]);
-console.log(rollCaller()); // => should log 'Victoria'
-console.log(rollCaller()); // => should log 'Juan'
-console.log(rollCaller()); // => should log 'Ruth'
-console.log(rollCaller()); // => should log 'Everyone accounted for
+// const rollCaller = rollCall([ 'Victoria', 'Juan', 'Ruth' ]);
+// console.log(rollCaller()); // => should log 'Victoria'
+// console.log(rollCaller()); // => should log 'Juan'
+// console.log(rollCaller()); // => should log 'Ruth'
+// console.log(rollCaller()); // => should log 'Everyone accounted for
+
+//Challege 8
+// Create a function saveOutput that accepts a function (that will accept one argument),
+//  and a string (that will act as a password). saveOutput will then return a function
+//  that behaves exactly like the passed-in function, except for when the password string
+//   is passed in as an argument. When this happens, the returned function will return an
+//   object with all previously passed-in arguments as keys, and the corresponding outputs
+//   as values.
+
+// create a function named saveOutput that will have two parameters
+// one parameter will accept and argument ==> callback, the other will accept a string == password
+// so this is closure returning an inner function
+// the inner function will take callback function and when the sting is placed inside as an argument
+// it will return an object the passed in arguments ===> strings as keys and the outputs of the callback invoked as
+// values
+// return object[string] = callback(string)
+// ToDo
+// create a function named saveOutput (func, password) check
+// create an empty object in the outer function  check
+// create a new function called inner one parameter (x)  check
+// create a variable result/value = func(password) check
+// object[password] = result/value check
+// return object check
+// return the inner function
+function saveOutput(func, magicWord) {
+	const object = {};
+	function inner(x) {
+		if (x != magicWord) {
+			let value = func(x);
+			object[x] = value;
+			return value;
+		} else {
+			return object;
+		}
+	}
+	return inner;
+}
+const multiplyBy2 = function(num) {
+	return num * 2;
+};
+const multBy2AndLog = saveOutput(multiplyBy2, 'boo');
+console.log(multBy2AndLog(2)); // => should log 4
+console.log(multBy2AndLog(9)); // => should log 18
+console.log(multBy2AndLog('boo')); // => should log { 2: 4, 9: 18 }
