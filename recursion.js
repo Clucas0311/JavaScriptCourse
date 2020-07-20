@@ -71,6 +71,15 @@ function productOfArray(arr) {
 	}
 	return arr[0] * productOfArray(arr.slice(1));
 }
+function additionOfArray(arr) {
+	if (arr.length === 0) {
+		return 0;
+	}
+	return arr[0] + additionOfArray(arr.slice(1));
+}
 
 console.log(productOfArray([ 1, 2, 3 ])); // 6
 console.log(productOfArray([ 1, 2, 3, 10 ])); // 60
+
+console.log(additionOfArray([ 1, 2, 3 ])); // 6
+console.log(additionOfArray([ 1, 2, 3, 10 ])); // 16
