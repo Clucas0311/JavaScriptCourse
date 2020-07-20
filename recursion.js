@@ -64,3 +64,13 @@ function power(base, exponent) {
 console.log(power(2, 0)); // 1
 console.log(power(2, 2)); // 4
 console.log(power(2, 4)); // 16
+
+function productOfArray(arr) {
+	if (arr.length === 0) {
+		return 1;
+	}
+	return arr[0] * productOfArray(arr.slice(1));
+}
+
+console.log(productOfArray([ 1, 2, 3 ])); // 6
+console.log(productOfArray([ 1, 2, 3, 10 ])); // 60
