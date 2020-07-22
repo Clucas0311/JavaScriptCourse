@@ -283,25 +283,42 @@ const multiplyBy2 = function(num) {
 // when array length is greater counter --> increment up
 // array indices array[counter -1]
 
+// function cycleIterator(array) {
+// 	let counter = 0;
+// 	function inner() {
+// 		counter++;
+// 		if (counter === array.length + 1) {
+// 			counter = 1;
+// 		}
+// 		return array[counter - 1];
+// 	}
+// 	return inner;
+// }
+
 function cycleIterator(array) {
-	let counter = 0;
+	// need a index variable to access the index of the array
+	let i = 0;
+	// create a inner function inside the function no params
 	function inner() {
-		counter++;
-		if (counter === array.length + 1) {
-			counter = 1;
-		}
-		return array[counter - 1];
+		// Grab each element in the array
+		// increment through array by one
+		const result = array[i++];
+		// IF last element the next invocaton will be the first element
+		//  return index =1
+		if (i >= array.length) i = 0;
+		return result;
 	}
+	// return inner;
 	return inner;
 }
 
-// // /*** Uncomment these to check your work! ***/
-// const threeDayWeekend = [ 'Fri', 'Sat', 'Sun' ];
-// const getDay = cycleIterator(threeDayWeekend);
-// console.log(getDay()); // => should log 'Fri'
-// console.log(getDay()); // => should log 'Sat'
-// console.log(getDay()); // => should log 'Sun'
-// console.log(getDay()); // => should log 'Fri'
+// /*** Uncomment these to check your work! ***/
+const threeDayWeekend = [ 'Fri', 'Sat', 'Sun' ];
+const getDay = cycleIterator(threeDayWeekend);
+console.log(getDay()); // => should log 'Fri'
+console.log(getDay()); // => should log 'Sat'
+console.log(getDay()); // => should log 'Sun'
+console.log(getDay()); // => should log 'Fri'
 
 //Challenge 10
 // Create a function defineFirstArg that accepts a function and an argument.
