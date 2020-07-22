@@ -49,14 +49,6 @@ function collectOddValues(arr) {
 
 console.log(collectOddValues([ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]));
 
-function power(base, power) {
-	function inner(base, power) {
-		return base ^ power;
-	}
-	return inner;
-}
-console.log(power(2, 0));
-
 function power(base, exponent) {
 	if (exponent === 0) return 1;
 	return base * power(base, exponent - 1);
