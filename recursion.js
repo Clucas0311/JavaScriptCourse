@@ -75,3 +75,28 @@ console.log(productOfArray([ 1, 2, 3, 10 ])); // 60
 
 console.log(additionOfArray([ 1, 2, 3 ])); // 6
 console.log(additionOfArray([ 1, 2, 3, 10 ])); // 16
+
+console.log('Hello, world!');
+// create a counter variable to track the call
+// let output = '';
+// function repeater(char, counter = 0) {
+// 	// base case:
+// 	// CONDTION:
+// 	// IF length of the output string is > 5; then return char
+// 	if (output.length === 5) {
+// 		return output;
+// 	}
+// 	// RECURSIVE case:
+// 	output += char;
+// 	// repeater(char)
+// 	return repeater(char);
+// }
+function repeater(char, counter = 0) {
+	if (counter === 5) return char;
+	counter++;
+	return char + repeater(char, counter);
+}
+
+// To check if you've completed the challenge, uncomment these console.logs!
+console.log(repeater('g'));
+console.log(repeater('j'));

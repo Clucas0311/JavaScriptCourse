@@ -305,8 +305,11 @@ function cycleIterator(array) {
 		const result = array[i++];
 		// IF last element the next invocaton will be the first element
 		//  return index =1
-		if (i >= array.length) i = 0;
-		return result;
+		if (i >= array.length) {
+			i = 0;
+		} else {
+			return result;
+		}
 	}
 	// return inner;
 	return inner;
