@@ -21,4 +21,23 @@ function countdown(n) {
 
 // it will print every number from the n = number down to 0
 
-countdown(10);
+// countdown(10);
+
+//Write a recursive function sum that calculates the sum of an array of integers.
+
+// create a recursive function named sum it will have one parameter named array
+function sum(array) {
+	// BASE CASE:
+	// Condition IF
+	// when array's length equals zero then we will return 0;
+	if (array.length === 0) return 0;
+
+	// recursive case
+	//  we will add each element of the array to the first index while removing that the first index
+	// on each function invocation.
+	return array[0] + sum(array.slice(1));
+}
+
+// uncomment these to check your work
+console.log(sum([ 1, 1, 1 ])); // -> returns 3
+console.log(sum([ 1, 2, 3, 4, 5, 6 ])); // -> returns 21
