@@ -295,26 +295,6 @@ const multiplyBy2 = function(num) {
 // 	return inner;
 // }
 
-function cycleIterator(array) {
-	// need a index variable to access the index of the array
-	let i = 0;
-	// create a inner function inside the function no params
-	function inner() {
-		// Grab each element in the array
-		// increment through array by one
-		const result = array[i++];
-		// IF last element the next invocaton will be the first element
-		//  return index =1
-		if (i >= array.length) {
-			i = 0;
-		} else {
-			return result;
-		}
-	}
-	// return inner;
-	return inner;
-}
-
 // /*** Uncomment these to check your work! ***/
 const threeDayWeekend = [ 'Fri', 'Sat', 'Sun' ];
 const getDay = cycleIterator(threeDayWeekend);

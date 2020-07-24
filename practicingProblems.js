@@ -136,9 +136,9 @@ function reduce(array, callback, initialValue) {
 // so I can filter the prev.filter(element) see if that element is included
 // in the next element
 
-// function intersection(array) {
-// 	return array.reduce((prev, next) => prev.filter((element) => next.includes(element)));
-// }
+function intersection(array) {
+	return array.reduce((prev, next) => prev.filter((element) => next.includes(element)));
+}
 
 // const arr1 = [ 5, 10, 15, 10 ];
 // const arr2 = [ 15, 88, 1, 5, 7 ];
