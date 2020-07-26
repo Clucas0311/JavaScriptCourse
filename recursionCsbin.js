@@ -50,21 +50,21 @@ function sum(array) {
 
 // create a recursive function named palindrome --> string (parameter)
 function palindrome(string) {
-	// base conditon
-	// we need to create a regular expression to get only alpha symbols set that to a variable
-	// convert  array to string with .join and make sure string is all lowercase
-	let newString = string.replace(/[^a-z0-9]/i, '').toLowerCase();
-	// the length of the word ise zero / one to ==> end the function retrun true
-	if (newString.length === 0 || newString.length === 1) return true;
+	// base conditon:
+	// we need to create a regular expression to get only alphanumeric
+	//symbols set that to a variable
+	string = string.replace(/[^a-z0-9]/i, '').toLowerCase();
+	// the length of the word is zero / one to ==> end the function retrun true
+	if (string.length === 0 || string.length === 1) return true;
 	// if the word at first index does not = word at last index return false;
-	if (newString[0] !== newString[newString.length - 1]) return false;
+	if (string[0] !== string[string.length - 1]) return false;
 	// recursive case
 	// call function - as arguments and slice out the first and last indices
-	return palindrome(newString.slice(1, newString - 2));
+	return palindrome(string.slice(1, string - 2));
 }
-console.log(palindrome('Anne, I vote more cars race Rome-to-Vienna')); //-> true
-console.log(palindrome('llama mall')); //-> true
-console.log(palindrome('jmoney')); //-> false
+// console.log(palindrome('Anne, I vote more cars race Rome-to-Vienna')); //-> true
+// console.log(palindrome('llama mall')); //-> true
+// console.log(palindrome('jmoney')); //-> false
 
 //Challenge 4
 //Write a recursive function isPrime that determines if a number is
@@ -76,15 +76,26 @@ console.log(palindrome('jmoney')); //-> false
 // Divisible by exactly two numbers (itself and one)
 
 function isPrime(num, div = 2) {
-	if (num === 2) return true;
-	if (num % div === 0) return false;
+	// BASE CASE:
+	// if number is less than two it is not prime
+	// if number == 2 it is prime
+	if (num <= 2) return num == 2 ? true : false;
+	// if the number has a remainder it is false
+	// if the number has no remainder then return false
+	// Prime numbers can't be divisible by two
+	if (num % div == 0) return false;
+	// if the divisor is larger than the number then it is most likely a prime number
+	// prime has only two divisors one and itself  so as number increase
+	// all solutions have failed so only other number it can divide into is itself
 	if (div * div > num) return true;
+	// RECURSIVE case:
 
-	// recursive case:
+	// invoke the function and increase the divisor if all cases fail.
 	return isPrime(num, div + 1);
 }
 
-// console.log(isPrime(1)); //-> false
-// console.log(isPrime(2)); //-> true
-// console.log(isPrime(3)); //-> true
-// console.log(isPrime(4)); //-> false
+console.log(isPrime(1)); //-> false
+console.log(isPrime(2)); //-> true
+console.log(isPrime(3)); //-> true
+console.log(isPrime(4)); //-> false
+console.log(isPrime(11)); // -> false
