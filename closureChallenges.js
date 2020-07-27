@@ -318,8 +318,8 @@ console.log(getDay()); // => should log 'Fri'
 // so it has to have the argument and x to invoke it
 
 function defineFirstArg(func, arg) {
-	function inner(x) {
-		return func(arg, x);
+	function inner(...x) {
+		return func(arg, ...x);
 	}
 	return inner;
 }
