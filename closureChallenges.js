@@ -402,6 +402,34 @@ function censor() {
 // changeScene('quick', 'slow');
 // console.log(changeScene('The quick, brown fox jumps over the lazy dogs.')); // => should log 'The slow, brown fox jumps over the lazy cats.'
 
+// create function named censor that will have no parameters
+// function censor() {
+// 	// create a variable and assign to an empty object;
+// 	const obj = {};
+// 	// return a function that will have two parameters --> string one and string two
+// 	function inner(oneString, twoString) {
+// 		// IF Both Stings are given
+// 		// create an object for the function string1 keys,  string2 values
+// 		if (twoString) {
+// 			obj[oneString] = twoString;
+// 			return;
+// 		}
+// 		//CONDITIONAL:
+// 		//IF one string is given then --> return the same string but replace all occurences of that string.
+// 		Object.keys(obj).forEach((key) => {
+// 			oneString = oneString.replace(key, obj[key]);
+// 		});
+// 		return oneString;
+// 	}
+// 	//return inner function
+// 	return inner;
+// }
+// // Uncomment these to check your work!
+// const changeScene = censor();
+// changeScene('dogs', 'cats');
+// changeScene('quick', 'slow');
+// console.log(changeScene('The quick, brown fox jumps over the lazy dogs.')); // should log: 'The slow, brown fox jumps over the lazy cats.'
+
 // Challenge 13
 // There's no such thing as private properties on a JavaScript object! But, maybe there are?
 // Implement a function createSecretHolder(secret) which accepts any value as secret and returns
