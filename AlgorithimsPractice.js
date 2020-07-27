@@ -22,3 +22,25 @@ function countUniqueValues(arr) {
 // console.log(countUniqueValues([ 1, 2, 3, 4, 5, 6, 7, 6, 6, 7 ]));
 
 const favNumber = { number: 11 };
+
+var arr = [ 2, 3, 1, 3, 4, 5, 3, 1 ];
+
+// function getOccurrence(array, value) {
+// 	let count = 0;
+// 	for (let i = 0; i < array.length; i++) {
+// 		if (array[i] === value) {
+// 			count++;
+// 		}
+// 	}
+// 	return count;
+// }
+
+// create a function called getOccurrence that gets the value of how many times an element occurs
+function getOccurrence(array, value) {
+	// return an array filter method and filter out only the elements that are duplicates of one another
+	// then get the length of the array which will give you the amount of occurences
+	return array.filter((element) => element === value).length;
+}
+
+console.log(getOccurrence(arr, 1)); // 2
+console.log(getOccurrence(arr, 3)); // 3
