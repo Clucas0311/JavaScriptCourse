@@ -25,15 +25,15 @@ const favNumber = { number: 11 };
 
 var arr = [ 2, 3, 1, 3, 4, 5, 3, 1 ];
 
-// function getOccurrence(array, value) {
-// 	let count = 0;
-// 	for (let i = 0; i < array.length; i++) {
-// 		if (array[i] === value) {
-// 			count++;
-// 		}
-// 	}
-// 	return count;
-// }
+function getOccurrence(array, value) {
+	let count = 0;
+	for (let i = 0; i < array.length; i++) {
+		if (array[i] === value) {
+			count++;
+		}
+	}
+	return count;
+}
 
 // create a function called getOccurrence that gets the value of how many times an element occurs
 function getOccurrence(array, value) {
@@ -44,3 +44,25 @@ function getOccurrence(array, value) {
 
 console.log(getOccurrence(arr, 1)); // 2
 console.log(getOccurrence(arr, 3)); // 3
+
+// create a function that reverses the number
+
+function reverseNum(num) {
+	// convert number into a string
+	let numToString = num + '';
+
+	// create a loop to reverse the string:
+	// FOR LOOP
+	// STARTING PT:  i = num.length - 1
+	// CONDITION:  i <= 0
+	// decrement
+	for (let i = numToString.length - 1; i >= 0; i--) {}
+	// convert string to number
+	let stringToNumber = parseInt(numToString);
+	if (stringToNumber > num) {
+		return true;
+	} else {
+		return false;
+	}
+}
+console.log(reverseNum(72));
