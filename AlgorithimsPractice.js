@@ -49,16 +49,17 @@ console.log(getOccurrence(arr, 3)); // 3
 
 function reverseNum(num) {
 	// convert number into a string
-	let numToString = num + '';
+	let revNum = num + '';
+	revNum.split('').reverse().join('');
 
 	// create a loop to reverse the string:
 	// FOR LOOP
 	// STARTING PT:  i = num.length - 1
 	// CONDITION:  i <= 0
 	// decrement
-	for (let i = numToString.length - 1; i >= 0; i--) {}
-	// convert string to number
-	let stringToNumber = parseInt(numToString);
+	// 	for (let i = numToString.length - 1; i >= 0; i--) {}
+	// 	// convert string to number
+	let stringToNumber = parseInt(revNum);
 	if (stringToNumber > num) {
 		return true;
 	} else {
