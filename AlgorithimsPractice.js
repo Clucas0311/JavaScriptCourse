@@ -69,14 +69,17 @@ function reverseNum(num) {
 console.log(reverseNum(72));
 
 function reverse(str) {
-	// create a variable called reverse set it equal to an empty string
-	let reverse = '';
-	// create a loop and iterate through the string and add the string at each interval to the reverse string
-	for (let i = 0; i < str.length; i++) {
-		// reassign the variable of reverse to the concatenated string
-		reverse = str[i] + reverse;
-	}
-	return reverse;
+	// // create a variable called reverse set it equal to an empty string
+	// let reverse = '';
+	// // create a loop and iterate through the string and add the string at each interval to the reverse string
+	// for (let i = 0; i < str.length; i++) {
+	// 	// reassign the variable of reverse to the concatenated string
+	// 	reverse = str[i] + reverse;
+	// }
+	// return reverse;
+
+	// first split through the string, then use the reduce method to concat back string
+	return str.split('').reduce((prev, next) => next + prev, '');
 }
 console.log(reverse('apple')); //=== 'leppa');
 console.log(reverse('hello')); //=== 'olleh');
