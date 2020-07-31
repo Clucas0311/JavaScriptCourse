@@ -78,8 +78,13 @@ function reverse(str) {
 	// }
 	// return reverse;
 
+	// reduce way
 	// first split through the string, then use the reduce method to concat back string
-	return str.split('').reduce((prev, next) => next + prev, '');
+	// return str.split('').reduce((prev, next) => next + prev, '');
+
+	// recursion way
+	if (str === '') return str;
+	return reverse(str.substr(1)) + str[0];
 }
 console.log(reverse('apple')); //=== 'leppa');
 console.log(reverse('hello')); //=== 'olleh');
