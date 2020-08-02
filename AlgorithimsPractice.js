@@ -97,6 +97,10 @@ console.log(palindrome('abba')); //=== true;
 console.log(palindrome('abcdefg')); //=== false;
 
 function palindrome(str) {
-	let reverseString = str.split('').reduce((reverse, character) => character + reverse, '');
-	return str === reverseString;
+	// let reverseString = str.split('').reduce((reverse, character) => character + reverse, '');
+	// return str === reverseString;
+	return str.split('').every((char, i) => {
+		console.log(str.length - i - 1);
+		return char === str[str.length - i - 1];
+	});
 }
