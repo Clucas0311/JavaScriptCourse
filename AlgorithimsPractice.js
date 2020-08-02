@@ -49,8 +49,11 @@ console.log(getOccurrence(arr, 3)); // 3
 
 function reverseNum(num) {
 	// convert number into a string
-	let revNum = num + '';
-	revNum.split('').reverse().join('');
+	// let revNum = num + '';
+	// revNum.split('').reverse().join('');
+
+	let intToString = num + '';
+	intToString.split('').reduce((prev, next) => next + prev, '');
 
 	// create a loop to reverse the string:
 	// FOR LOOP
@@ -59,7 +62,7 @@ function reverseNum(num) {
 	// decrement
 	// 	for (let i = numToString.length - 1; i >= 0; i--) {}
 	// 	// convert string to number
-	let stringToNumber = parseInt(revNum);
+	let stringToNumber = parseInt(intToString);
 	if (stringToNumber > num) {
 		return true;
 	} else {
