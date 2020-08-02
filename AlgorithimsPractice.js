@@ -42,8 +42,8 @@ function getOccurrence(array, value) {
 	return array.filter((element) => element === value).length;
 }
 
-console.log(getOccurrence(arr, 1)); // 2
-console.log(getOccurrence(arr, 3)); // 3
+// console.log(getOccurrence(arr, 1)); // 2
+// console.log(getOccurrence(arr, 3)); // 3
 
 // create a function that reverses the number
 
@@ -51,7 +51,6 @@ function reverseNum(num) {
 	// convert number into a string
 	// let revNum = num + '';
 	// revNum.split('').reverse().join('');
-
 	let intToString = num + '';
 	intToString.split('').reduce((prev, next) => next + prev, '');
 
@@ -69,7 +68,7 @@ function reverseNum(num) {
 		return false;
 	}
 }
-console.log(reverseNum(72));
+// console.log(reverseNum(72));
 
 function reverse(str) {
 	// // create a variable called reverse set it equal to an empty string
@@ -89,6 +88,15 @@ function reverse(str) {
 	if (str === '') return str;
 	return reverse(str.substr(1)) + str[0];
 }
-console.log(reverse('apple')); //=== 'leppa');
-console.log(reverse('hello')); //=== 'olleh');
-console.log(reverse('Greetings!')); //=== '!sgniteerG');
+// console.log(reverse('apple')); //=== 'leppa');
+// console.log(reverse('hello')); //=== 'olleh');
+// console.log(reverse('Greetings!')); //=== '!sgniteerG');
+
+// --- Examples:
+console.log(palindrome('abba')); //=== true;
+console.log(palindrome('abcdefg')); //=== false;
+
+function palindrome(str) {
+	let reverseString = str.split('').reduce((reverse, character) => character + reverse, '');
+	return str === reverseString;
+}
