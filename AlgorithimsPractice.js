@@ -51,8 +51,9 @@ function reverseNum(num) {
 	// convert number into a string
 	// let revNum = num + '';
 	// revNum.split('').reverse().join('');
-	let intToString = num + '';
-	intToString.split('').reduce((prev, next) => next + prev, '');
+	// let intToString = num + '';
+	// intToString.split('').reduce((prev, next) => next + prev, '');
+	let revNum = num.toString().split('').reverse().join('');
 
 	// create a loop to reverse the string:
 	// FOR LOOP
@@ -61,14 +62,14 @@ function reverseNum(num) {
 	// decrement
 	// 	for (let i = numToString.length - 1; i >= 0; i--) {}
 	// 	// convert string to number
-	let stringToNumber = parseInt(intToString);
+	let stringToNumber = parseInt(revNum);
 	if (stringToNumber > num) {
 		return true;
 	} else {
 		return false;
 	}
 }
-// console.log(reverseNum(72));
+console.log(reverseNum(72));
 
 function reverse(str) {
 	// // create a variable called reverse set it equal to an empty string
@@ -93,8 +94,8 @@ function reverse(str) {
 // console.log(reverse('Greetings!')); //=== '!sgniteerG');
 
 // --- Examples:
-console.log(palindrome('abba')); //=== true;
-console.log(palindrome('abcdefg')); //=== false;
+// console.log(palindrome('abba')); //=== true;
+// console.log(palindrome('abcdefg')); //=== false;
 
 function palindrome(str) {
 	// let reverseString = str.split('').reduce((reverse, character) => character + reverse, '');
