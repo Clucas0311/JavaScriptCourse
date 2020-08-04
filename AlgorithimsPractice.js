@@ -105,3 +105,36 @@ function palindrome(str) {
 		return char === str[str.length - i - 1];
 	});
 }
+
+// Given a string, return the character that is most
+// commonly used in the string.
+// --- Examples
+console.log(maxChar('abcccccccd')); //=== 'c';
+console.log(maxChar('apple 1231111')); //=== '1';
+
+function maxChar(str) {
+	// create an empty object to pair letters with numbers
+	let charMap = {};
+	// create an variable max assign to zero - reassign to the highest value
+	let max = 0;
+	// create a variable maxChar assign to an empty string - reassign to char
+	let maxChar = '';
+	// iterate through the string pair letters based on occurences
+	for (let char of str) {
+		// create a counter for each character
+		if (!charMap[char]) {
+			charMap[char] = 1;
+		} else {
+			charMap[char]++;
+		}
+	}
+	// iterate through object and assign values to max and the maxChar
+	// based on occurences
+	for (let key in charMap) {
+		if (charMap[key] > max) {
+			max = charMap[key];
+			maxChar = key;
+		}
+	}
+	return maxChar;
+}
