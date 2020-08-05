@@ -149,13 +149,31 @@ console.log(chunk([ 1, 2, 3, 4, 5 ], 4)); //--> [[ 1, 2, 3, 4], [5]]
 console.log(chunk([ 1, 2, 3, 4, 5 ], 10)); //--> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
-	// create an empty array to push chunks elements in
-	const group = [];
-	// create a while loop and stop it when the array length is equal to zero
-	while (array.length > 0) {
-		// inside the loop push the items in but splice them out starting at 0 ending at the size
-		group.push(array.splice(0, size));
+	// // create an empty array to push chunks elements in
+	// const group = [];
+	// // create a while loop and stop it when the array length is equal to zero
+	// while (array.length > 0) {
+	// 	// inside the loop push the items in but splice them out starting at 0 ending at the size
+	// 	group.push(array.splice(0, size));
+	// }
+	// // return group array
+	// return group;
+
+	// create a empty array for the chucked array items
+	const chunked = [];
+	// iterate through the arrays to get the elements
+	for (let element of array) {
+		// create a variable to retrieve the last element of the chunked array
+		const last = chunked[chunked.length - 1];
+		// if the last elements doesn't exist or the last array isn't equal to size
+		if (!last || last.length === size) {
+			// then push [elements] into chunked array
+			chunked.push([ element ]);
+		} else {
+			// otherwise push elements into the last array
+			last.push(element);
+		}
 	}
-	// return group array
-	return group;
+	// return the chunked array
+	return chunked;
 }
