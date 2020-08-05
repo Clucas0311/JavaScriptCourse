@@ -109,8 +109,8 @@ function palindrome(str) {
 // Given a string, return the character that is most
 // commonly used in the string.
 // --- Examples
-console.log(maxChar('abcccccccd')); //=== 'c';
-console.log(maxChar('apple 1231111')); //=== '1';
+// console.log(maxChar('abcccccccd')); //=== 'c';
+// console.log(maxChar('apple 1231111')); //=== '1';
 
 function maxChar(str) {
 	// create an empty object to pair letters with numbers
@@ -137,4 +137,25 @@ function maxChar(str) {
 		}
 	}
 	return maxChar;
+}
+// --- Directions
+// Given an array and chunk size, divide the array into many subarrays
+// where each subarray is of length size
+// --- Examples
+console.log(chunk([ 1, 2, 3, 4 ], 2)); //--> [[ 1, 2], [3, 4]]
+console.log(chunk([ 1, 2, 3, 4, 5 ], 2)); //--> [[ 1, 2], [3, 4], [5]]
+console.log(chunk([ 1, 2, 3, 4, 5, 6, 7, 8 ], 3)); //--> [[ 1, 2, 3], [4, 5, 6], [7, 8]]
+console.log(chunk([ 1, 2, 3, 4, 5 ], 4)); //--> [[ 1, 2, 3, 4], [5]]
+console.log(chunk([ 1, 2, 3, 4, 5 ], 10)); //--> [[ 1, 2, 3, 4, 5]]
+
+function chunk(array, size) {
+	// create an empty array to push chunks elements in
+	const group = [];
+	// create a while loop and stop it when the array length is equal to zero
+	while (array.length > 0) {
+		// inside the loop push the items in but splice them out starting at 0 ending at the size
+		group.push(array.splice(0, size));
+	}
+	// return group array
+	return group;
 }
