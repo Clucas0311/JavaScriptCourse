@@ -142,11 +142,11 @@ function maxChar(str) {
 // Given an array and chunk size, divide the array into many subarrays
 // where each subarray is of length size
 // --- Examples
-console.log(chunk([ 1, 2, 3, 4 ], 2)); //--> [[ 1, 2], [3, 4]]
-console.log(chunk([ 1, 2, 3, 4, 5 ], 2)); //--> [[ 1, 2], [3, 4], [5]]
-console.log(chunk([ 1, 2, 3, 4, 5, 6, 7, 8 ], 3)); //--> [[ 1, 2, 3], [4, 5, 6], [7, 8]]
-console.log(chunk([ 1, 2, 3, 4, 5 ], 4)); //--> [[ 1, 2, 3, 4], [5]]
-console.log(chunk([ 1, 2, 3, 4, 5 ], 10)); //--> [[ 1, 2, 3, 4, 5]]
+// console.log(chunk([ 1, 2, 3, 4 ], 2)); //--> [[ 1, 2], [3, 4]]
+// console.log(chunk([ 1, 2, 3, 4, 5 ], 2)); //--> [[ 1, 2], [3, 4], [5]]
+// console.log(chunk([ 1, 2, 3, 4, 5, 6, 7, 8 ], 3)); //--> [[ 1, 2, 3], [4, 5, 6], [7, 8]]
+// console.log(chunk([ 1, 2, 3, 4, 5 ], 4)); //--> [[ 1, 2, 3, 4], [5]]
+// console.log(chunk([ 1, 2, 3, 4, 5 ], 10)); //--> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
 	// // create an empty array to push chunks elements in
@@ -177,3 +177,37 @@ function chunk(array, size) {
 	// return the chunked array
 	return chunked;
 }
+
+// You are given an array (which will have a length of at least 3) containing integers. The array is
+//   comprised of either entirely odd integers or entirely even integers, except for a single
+//   integer. Write a function numOutlier that takes the array and returns this outlier integer.
+// Ex:
+// numOutlier([2, 12, 4, 100, 4, 11, 2602, 36]) --> 11
+// numOutlier([160, 3, 1719, 19, 11, 13, -21]) --> 160
+
+// create a function numOutlier ---> 1 param array (argument)
+function numOutlier(array) {
+	// create an empty even array
+	let even = [];
+	// create an empty odd array
+	let odd = [];
+	// iterate through the array to get the elements
+	for (let i = 0; i < array.length; i++) {
+		// if array is even pusheven elements in the even array
+		if (array[i] % 2 === 0) {
+			even.push(array[i]);
+		} else if (array[i] % 2 === 1) {
+			// else if array is odd, push odd elements in the odd array
+			odd.push(array[i]);
+		}
+	} // if the length of odd array is greater than even --> return the even array[0]
+	if (even.length > odd.length) {
+		return odd[0];
+	} else {
+		// else return the even array[0]
+		return even[0];
+	}
+}
+
+console.log(numOutlier([ 2, 12, 4, 100, 4, 11, 2602, 36 ]));
+console.log(numOutlier([ 160, 3, 1719, 19, 11, 13, -21 ])); //--> 160
