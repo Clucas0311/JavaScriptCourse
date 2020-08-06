@@ -200,7 +200,7 @@ function numOutlier(array) {
 			// else if array is odd, push odd elements in the odd array
 			odd.push(array[i]);
 		}
-	} // if the length of odd array is greater than even --> return the even array[0]
+	} // if the length of even array is greater than even --> return the odd array[0]
 	if (even.length > odd.length) {
 		return odd[0];
 	} else {
