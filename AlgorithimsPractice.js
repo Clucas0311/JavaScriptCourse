@@ -69,7 +69,7 @@ function reverseNum(num) {
 		return false;
 	}
 }
-console.log(reverseNum(72));
+// console.log(reverseNum(72));
 
 function reverse(str) {
 	// // create a variable called reverse set it equal to an empty string
@@ -203,11 +203,22 @@ function numOutlier(array) {
 	} // if the length of even array is greater than even --> return the odd array[0]
 	if (even.length > odd.length) {
 		return odd[0];
-	} else {
-		// else return the even array[0]
-		return even[0];
 	}
 }
 
-console.log(numOutlier([ 2, 12, 4, 100, 4, 11, 2602, 36 ]));
-console.log(numOutlier([ 160, 3, 1719, 19, 11, 13, -21 ])); //--> 160
+// console.log(numOutlier([ 2, 12, 4, 100, 4, 11, 2602, 36 ]));
+// console.log(numOutlier([ 160, 3, 1719, 19, 11, 13, -21 ])); //--> 160
+
+// replace(/[^\w]/g, "").toLowerCase();
+
+// --- Directions
+// Check to see if two provided strings are anagrams of eachother.
+// One string is an anagram of another if it uses the same characters
+// in the same quantity. Only consider characters, not spaces
+// or punctuation.  Consider capital letters to be the same as lower case
+// --- Examples
+// console.log(anagrams('rail safety', 'fairy tales')) // True
+// console.log( anagrams('RAIL! SAFETY!', 'fairy tales')) // True
+// console.log(anagrams('Hi there', 'Bye there')) // False
+
+function anagrams(stringA, stringB) {}
