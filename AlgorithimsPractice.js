@@ -217,8 +217,77 @@ function numOutlier(array) {
 // in the same quantity. Only consider characters, not spaces
 // or punctuation.  Consider capital letters to be the same as lower case
 // --- Examples
-// console.log(anagrams('rail safety', 'fairy tales')) // True
-// console.log( anagrams('RAIL! SAFETY!', 'fairy tales')) // True
-// console.log(anagrams('Hi there', 'Bye there')) // False
+console.log(anagrams('rail safety', 'fairy tales')); // True
+console.log(anagrams('RAIL! SAFETY!', 'fairy tales')); // True
+console.log(anagrams('Hi there', 'Bye there')); // False
+// function anagrams(stringA, stringB) {
+// 	// use helper functions to create two charMaps of stringA and B
+// 	const aCharMap = buildCharMap(stringA);
+// 	const bCharMap = buildCharMap(stringB);
+// 	// check to see if all characters are the same by checking the keys
+// 	// of each charMap length if the length is not the same then false
+// 	if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+// 		return false;
+// 	}
+// 	// iterate through charMap's to see if the keys match
+// 	for (let char in aCharMap) {
+// 		// if key:Value pairs do not match then its false
+// 		if (aCharMap[char] !== bCharMap[char]) {
+// 			return false;
+// 		}
+// 	}
+// 	// otherwise, return true;
+// 	return true;
+// }
 
-function anagrams(stringA, stringB) {}
+// create a helper function to iterate through the keys of the two strings
+// helper will take in one argument --> the string
+// function buildCharMap(str) {
+// 	// inside the function create an empty object so we can
+// 	const charMap = {};
+// 	// iterate through the string and create key value pairs - based on occurences
+// 	// if punctuation is used - regex to replace punctuation and remove them and change the case to lower
+// 	for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
+// 		// if character- key is present then increment the value if character isn't then set it value to 1
+// 		if ((charMap[char] = charMap[char] + 1 || 1)) {
+// 		}
+// 	}
+// 	// return charMap
+// 	return charMap;
+// }
+
+function anagrams(stringA, stringB) {
+	// create two variables and use the helper function to key:value the two strings
+	const aCharMap = helper(stringA);
+	const bCharMap = helper(stringB);
+	// we need to compare if the string characters match in length -- compare using the keys
+	// so if stringA.length !== stringB.length --> false
+	if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+		return false;
+	}
+	// iterate through one of the strings if the the keys do not match its false
+	for (let char in aCharMap) {
+		if (aCharMap[char] !== bCharMap[char]) {
+			return false;
+		}
+	}
+	// otherwise, it will be true
+	// return true
+	return true;
+}
+
+// create a helper function that will create a character Map for the two strings
+// it will have one parameter --> str
+function helper(str) {
+	// create an object
+	const charMap = {};
+	// iterate through the string but, the string will include
+	// regex for removing punctuation and spaces and convert string to lowercase
+	for (let char of str.replace(/[^\w/]/g, '').toLowerCase()) {
+		// CONDITIONAL - if the character(key) has a value --> increment value, or set the value to 1
+		if ((charMap[char] = charMap[char] + 1 || 1)) {
+		}
+	}
+	// return the object
+	return charMap;
+}
