@@ -291,3 +291,21 @@ function helper(str) {
 	// return the object
 	return charMap;
 }
+
+function findLongestWordLength(str) {
+	// change the string into array
+	const stringToArr = str.split(' ');
+	// create a helper var for the max set --> 0
+	let longestWord = 0;
+	// iterate through the array
+	for (let i = 0; i < stringToArr.length; i++) {
+		// CONDITIONAL IF element > longestWord
+		if (stringToArr[i].length > longestWord) {
+			// reassign the max to w/e is the greater value
+			longestWord = stringToArr[i].length;
+		}
+	}
+	return longestWord;
+}
+
+console.log(findLongestWordLength('The quick brown fox jumped over the lazy dog')); // 6;
