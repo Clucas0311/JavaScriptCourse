@@ -308,4 +308,25 @@ function findLongestWordLength(str) {
 	return longestWord;
 }
 
-console.log(findLongestWordLength('The quick brown fox jumped over the lazy dog')); // 6;
+// console.log(findLongestWordLength('The quick brown fox jumped over the lazy dog')); // 6;
+
+// Return an array consisting of the largest number from each provided sub-array.
+// For simplicity, the provided array will contain exactly 4 sub-arrays.Remember,
+//  you can iterate through an array with a simple for loop, and access each member
+//  with array syntax arr[i].
+
+// return an array ---> make an array to put the max value in
+// it will have subarrays --> within each subarray we need the max --> Math.max in for wach element
+// either --> double iterate or use spread method
+function largestOfFour(arr) {
+	// create an empty array to push items into
+	const newArr = [];
+	// iterate through the array
+	for (let i = 0; i < arr.length; i++) {
+		// then find the max in each array an push inside the array
+		newArr.push(Math.max(...arr[i]));
+	}
+	return newArr;
+}
+
+console.log(largestOfFour([ [ 4, 5, 1, 3 ], [ 13, 27, 18, 26 ], [ 32, 35, 37, 39 ], [ 1000, 1001, 857, 1 ] ]));
