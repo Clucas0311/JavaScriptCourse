@@ -217,9 +217,9 @@ function numOutlier(array) {
 // in the same quantity. Only consider characters, not spaces
 // or punctuation.  Consider capital letters to be the same as lower case
 // --- Examples
-console.log(anagrams('rail safety', 'fairy tales')); // True
-console.log(anagrams('RAIL! SAFETY!', 'fairy tales')); // True
-console.log(anagrams('Hi there', 'Bye there')); // False
+// console.log(anagrams('rail safety', 'fairy tales')); // True
+// console.log(anagrams('RAIL! SAFETY!', 'fairy tales')); // True
+// console.log(anagrams('Hi there', 'Bye there')); // False
 // function anagrams(stringA, stringB) {
 // 	// use helper functions to create two charMaps of stringA and B
 // 	const aCharMap = buildCharMap(stringA);
@@ -330,3 +330,18 @@ function largestOfFour(arr) {
 }
 
 console.log(largestOfFour([ [ 4, 5, 1, 3 ], [ 13, 27, 18, 26 ], [ 32, 35, 37, 39 ], [ 1000, 1001, 857, 1 ] ]));
+
+function anagram(stringA, stringB) {
+	let aString = helper(stringA);
+	let bString = helper(stringB);
+	return aString === bString;
+}
+
+// create a helper function
+// remove none alpha types, change into an array, sort the array, then change back to string - lowecase
+function helper(str) {
+	return str.replace(/[^\w/]/g, '').split('').sort().join('').toLowerCase();
+}
+console.log(anagram('rail safety', 'fairy tales')); // True
+console.log(anagram('RAIL! SAFETY!', 'fairy tales')); // True
+console.log(anagram('Hi there', 'Bye there')); // False
