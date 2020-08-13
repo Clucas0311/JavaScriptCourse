@@ -332,16 +332,40 @@ function largestOfFour(arr) {
 console.log(largestOfFour([ [ 4, 5, 1, 3 ], [ 13, 27, 18, 26 ], [ 32, 35, 37, 39 ], [ 1000, 1001, 857, 1 ] ]));
 
 function anagram(stringA, stringB) {
-	let aString = helper(stringA);
-	let bString = helper(stringB);
-	return aString === bString;
+	return cleaner(stringA) === cleaner(stringB);
 }
 
 // create a helper function
 // remove none alpha types, change into an array, sort the array, then change back to string - lowecase
-function helper(str) {
+function cleaner(str) {
 	return str.replace(/[^\w/]/g, '').split('').sort().join('').toLowerCase();
 }
-console.log(anagram('rail safety', 'fairy tales')); // True
-console.log(anagram('RAIL! SAFETY!', 'fairy tales')); // True
-console.log(anagram('Hi there', 'Bye there')); // False
+// console.log(anagram('rail safety', 'fairy tales')); // True
+// console.log(anagram('RAIL! SAFETY!', 'fairy tales')); // True
+// console.log(anagram('Hi there', 'Bye there')); // False
+
+// --- Directions
+// Write a function that accepts a string.  The function should
+// capitalize the first letter of each word in the string then
+// return the capitalized string.
+// --- Examples
+//   capitalize('a short sentence') --> 'A Short Sentence'
+//   capitalize('a lazy fox') --> 'A Lazy Fox'
+//   capitalize('look, it is working!') --> 'Look, It Is Working!'
+console.log(capitalize('a short sentence'));
+console.log(capitalize('a lazy fox'));
+console.log(capitalize('look, it is working!'));
+function capitalize(str) {
+	// create an empty array
+	const words = [];
+	// convert the string into an array by spliting based on spaces
+	//then iterate through string array
+	for (let word of str.split(' ')) {
+		// uppercase the first letter of the word and
+		// then add it to the word without the first index
+		// push items into word array
+		words.push(word[0].toUpperCase() + word.slice(1));
+	}
+	// return the word array but convert it back into a string
+	return words.join(' ');
+}
