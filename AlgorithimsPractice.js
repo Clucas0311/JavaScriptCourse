@@ -329,7 +329,7 @@ function largestOfFour(arr) {
 	return newArr;
 }
 
-console.log(largestOfFour([ [ 4, 5, 1, 3 ], [ 13, 27, 18, 26 ], [ 32, 35, 37, 39 ], [ 1000, 1001, 857, 1 ] ]));
+// console.log(largestOfFour([ [ 4, 5, 1, 3 ], [ 13, 27, 18, 26 ], [ 32, 35, 37, 39 ], [ 1000, 1001, 857, 1 ] ]));
 
 function anagram(stringA, stringB) {
 	return cleaner(stringA) === cleaner(stringB);
@@ -352,9 +352,9 @@ function cleaner(str) {
 //   capitalize('a short sentence') --> 'A Short Sentence'
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
-console.log(capitalize('a short sentence'));
-console.log(capitalize('a lazy fox'));
-console.log(capitalize('look, it is working!'));
+// console.log(capitalize('a short sentence'));
+// console.log(capitalize('a lazy fox'));
+// console.log(capitalize('look, it is working!'));
 function capitalize(str) {
 	// create an empty array
 	const words = [];
@@ -369,3 +369,46 @@ function capitalize(str) {
 	// return the word array but convert it back into a string
 	return words.join(' ');
 }
+
+// --- Directions
+// Write a function that accepts a positive number N.
+// The function should console log a step shape
+// with N levels using the # character.  Make sure the
+// step has spaces on the right hand side!
+// --- Examples
+//   steps(2)
+//       '# '
+//       '##'
+//   steps(3)
+//       '#  '
+//       '## '
+//       '###'
+//   steps(4)
+//       '#   '
+//       '##  '
+//       '### '
+//       '####'
+
+function steps(n) {
+	// iterate through the rows from 0 to n
+	for (let row = 0; row < n; row++) {
+		// declare an empty string --> stairs
+		let stairs = '';
+		// iterate through the columns
+		for (let column = 0; column < n; column++) {
+			// CONDITIONAL:
+			// if column is less than row
+			if (column <= row) {
+				// then add a pound to staircase
+				stairs += '#';
+			} else {
+				//else and a blank space ' '
+				stairs += ' ';
+			}
+		}
+		// within the row loop console.log the steps during each iteration
+		console.log(stairs);
+	}
+}
+
+steps(4);
