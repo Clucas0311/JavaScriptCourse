@@ -411,4 +411,4 @@ function steps(n) {
 	}
 }
 
-steps(4);
+steps(6);
