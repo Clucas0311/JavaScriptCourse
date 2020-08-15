@@ -390,23 +390,23 @@ function capitalize(str) {
 //       '####'
 
 function steps(n) {
-	// iterate through the rows from 0 to n
-	for (let row = 0; row < n; row++) {
-		// declare an empty string --> stairs
+	// first iteration will be the rows
+	for (let rows = 0; rows < n; rows++) {
+		// declare a variable stairs that will be reassigned
 		let stairs = '';
-		// iterate through the columns
+		// second iteration will be the columns
 		for (let column = 0; column < n; column++) {
-			// CONDITIONAL:
-			// if column is less than row
-			if (column <= row) {
-				// then add a pound to staircase
+			// CONDITIONAL
+			// IF column less than/equal to the row
+			if (column + rows > n - 2) {
+				// then concatanate "#"
 				stairs += '#';
 			} else {
-				//else and a blank space ' '
+				// Otherwise, concat a space to the string
 				stairs += ' ';
 			}
 		}
-		// within the row loop console.log the steps during each iteration
+		// print out each statement through each iteration
 		console.log(stairs);
 	}
 }
