@@ -411,4 +411,48 @@ function steps(n) {
 	}
 }
 
-steps(6);
+// steps(2);
+
+// --- Directions
+// Write a function that accepts a positive number N.
+// The function should console log a pyramid shape
+// with N levels using the # character.  Make sure the
+// pyramid has spaces on both the left *and* right hand sides
+// --- Examples
+//   pyramid(1)
+//       '#'
+//   pyramid(2)
+//       ' # '
+//       '###'
+//   pyramid(3)
+//       '  #  '
+//       ' ### '
+//       '#####'
+
+// create a function pyramid --> one parameter n --> a number argurment
+function pyramid(n) {
+	// create a variable to calculate the midpt.
+	const midpoint = Math.floor((2 * n - 1) / 2);
+	// iterate through the rows from 0 to n
+	for (let row = 0; row < n; row++) {
+		// create a varible levels --> value "" concat with empty space or #
+		let levels = '';
+		// iterate through columns from 0 to n times 2 subtract 1
+		for (let column = 0; column < 2 * n - 1; column++) {
+			// CONDITIONAL
+			// If midpoint minus row is less than column and midpoint plus row is greater than column
+			// add a '#'
+			if (midpoint - row <= column && midpoint + row >= column) {
+				levels += '#';
+			} else {
+				// else..
+				// Add a ' '
+				levels += ' ';
+			}
+		}
+		// print the levels variable during each iteration
+		console.log(levels);
+	}
+}
+
+pyramid(6);
