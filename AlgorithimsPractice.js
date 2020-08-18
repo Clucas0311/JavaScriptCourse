@@ -455,4 +455,34 @@ function pyramid(n) {
 	}
 }
 
-pyramid(6);
+// pyramid(6);
+
+// --- Directions
+// Write a function that returns the number of vowels
+// used in a string.  Vowels are the characters 'a', 'e'
+// 'i', 'o', and 'u'.
+// --- Examples
+//   vowels('Hi There!') --> 3
+//   vowels('Why do you ask?') --> 4
+//   vowels('Why?') --> 0
+
+console.log(vowels('Hi There!'));
+console.log(vowels('Why do you ask?'));
+console.log(vowels('Why?'));
+function vowels(str) {
+	// create a counter variable that will count the characters that are vowels in str
+	let counter = 0;
+	// create an array with the vowels as elements
+	const vowelArr = [ 'a', 'e', 'i', 'o', 'u' ];
+	// iterate through the str when its lower case
+	for (let char of str.toLowerCase()) {
+		// CONDITIONAL:
+		// IF vowel array includes any character in the str
+		if (vowelArr.includes(char)) {
+			// then increment counter
+			counter++;
+		}
+	}
+	// return counter
+	return counter;
+}
