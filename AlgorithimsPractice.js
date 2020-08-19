@@ -466,9 +466,9 @@ function pyramid(n) {
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-console.log(vowels('Hi There!'));
-console.log(vowels('Why do you ask?'));
-console.log(vowels('Why?'));
+// console.log(vowels('Hi There!'));
+// console.log(vowels('Why do you ask?'));
+// console.log(vowels('Why?'));
 function vowels(str) {
 	// create a counter variable that will count the characters that are vowels in str
 	let counter = 0;
@@ -493,17 +493,28 @@ function vowels(str) {
 
 // first create a function named runningSum --> nums
 function runningSum(nums) {
-	// create an empty array --> to push the elements inside
-	const array = [];
 	// create counter add to each element until the array is complete --> push result inside
 	let counter = 0;
-	// iterate through the nums.length
-	for (let i = 0; i < nums.length; i++) {
-		// through each iteration add counter to each element
-		// push the result inside
-		array.push((counter += nums[i]));
-	}
-	// return array
-	return array;
+	// iterate through the nums.length using map
+	const newArr = nums.map((element) => (counter += element));
+	// return newArr
+	return newArr;
 }
-console.log(runningSum([ 1, 2, 3, 4 ])); // [1, 3, 6, 10]
+// console.log(runningSum([ 1, 2, 3, 4 ])); // [1, 3, 6, 10]
+
+//disemvowel
+// Given a string S, remove the vowels 'a', 'e', 'i', 'o', and 'u'
+//from it, and return the new string.
+
+function disemvowel(S) {
+	// create an array with vowel charaters as elements
+	const vowellArray = [ 'a', 'e', 'i', 'o', 'u' ];
+	// convert the S into an array
+	// filter string Array for its elements to check if
+	// any of its elements are found in the vowel array
+	// if indexOf is false then return the newArray
+	// convert the array back into a string
+	return S.split('').filter((element) => vowellArray.indexOf(element) === -1).join('');
+}
+
+console.log(disemvowel('leetcodeisacommunityforcoders'));
