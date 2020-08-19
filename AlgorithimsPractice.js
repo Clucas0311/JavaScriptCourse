@@ -308,7 +308,7 @@ function findLongestWordLength(str) {
 	return longestWord;
 }
 
-console.log(findLongestWordLength('The quick brown fox jumped over the lazy dog')); // 6;
+// console.log(findLongestWordLength('The quick brown fox jumped over the lazy dog')); // 6;
 
 // Return an array consisting of the largest number from each provided sub-array.
 // For simplicity, the provided array will contain exactly 4 sub-arrays.Remember,
@@ -551,4 +551,22 @@ function confirmEnding(str, target) {
 	// else --> it doesn't match ending --> false
 	return false;
 }
-console.log(confirmEnding('Bastian', 'n'));
+// console.log(confirmEnding('Bastian', 'n'));
+
+// Repeat a given string str (first argument) for num times (second argument).
+// Return an empty string if num is not a positive number.
+
+// create a function repeatStringNumTimes(str, num)
+function repeatStringNumTimes(str, num) {
+	// create a helper variable set equal to an empty string
+	let repeater = '';
+	// itreate starting at zero and ending num is greater than the index
+	for (let i = 0; i < num; i++) {
+		// concatanate helper variable with str --> until the num is greater
+		repeater += str;
+	}
+	// return the helper variable
+	return repeater;
+}
+
+console.log(repeatStringNumTimes('abc', 3));
