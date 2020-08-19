@@ -486,3 +486,24 @@ function vowels(str) {
 	// return counter
 	return counter;
 }
+
+// Given an array nums. We define a running sum of an array
+// as runningSum[i] = sum(nums[0]…nums[i]).
+// Return the running sum of nums.
+
+// first create a function named runningSum --> nums
+function runningSum(nums) {
+	// create an empty array --> to push the elements inside
+	const array = [];
+	// create counter add to each element until the array is complete --> push result inside
+	let counter = 0;
+	// iterate through the nums.length
+	for (let i = 0; i < nums.length; i++) {
+		// through each iteration add counter to each element
+		// push the result inside
+		array.push((counter += nums[i]));
+	}
+	// return array
+	return array;
+}
+console.log(runningSum([ 1, 2, 3, 4 ])); // [1, 3, 6, 10]
