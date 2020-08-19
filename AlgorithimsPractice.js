@@ -507,14 +507,15 @@ function runningSum(nums) {
 //from it, and return the new string.
 
 function disemvowel(S) {
-	// create an array with vowel charaters as elements
-	const vowellArray = [ 'a', 'e', 'i', 'o', 'u' ];
-	// convert the S into an array
-	// filter string Array for its elements to check if
-	// any of its elements are found in the vowel array
-	// if indexOf is false then return the newArray
-	// convert the array back into a string
-	return S.split('').filter((element) => vowellArray.indexOf(element) === -1).join('');
+	return S.toLowerCase().replace(/[aeiou]/gi, '');
+	// // create an array with vowel charaters as elements
+	// const vowellArray = [ 'a', 'e', 'i', 'o', 'u' ];
+	// // convert the S into an array
+	// // filter string Array for its elements to check if
+	// // any of its elements are found in the vowel array
+	// // if indexOf is false then return the newArray
+	// // convert the array back into a string
+	// return S.split('').filter((element) => vowellArray.indexOf(element) === -1).join('');
 }
 
 console.log(disemvowel('leetcodeisacommunityforcoders'));
