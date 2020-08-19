@@ -570,3 +570,11 @@ function repeatStringNumTimes(str, num) {
 }
 
 console.log(repeatStringNumTimes('abc', 3));
+
+String.prototype.toJadenCase = function() {
+	// convert  string it into an array split by spaces
+	// create a new array to push uppercase characters in
+	// iterate through the new array
+	// uppercase the first index and add the slice string with the first index removed
+	return this.split(' ').map((element) => element[0].toUpperCase() + element.substr(1)).join(' ');
+};
