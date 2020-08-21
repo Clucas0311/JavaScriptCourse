@@ -624,3 +624,19 @@ function reverseVowels(str) {
 }
 
 console.log(reverseVowels('leetcode'));
+
+// intersection of two arrays
+// create a function called intersection that takes in two params (arr2, arr1)
+function intersection(arr1, arr2) {
+	// iterate through the array using the filter method
+	// if the array1 includes elements that match array two --> creates a new array
+	return (
+		arr1
+			.filter((element) => arr2.includes(element))
+			// then remove duplicates by filtering each element of new array
+			// and checking if new array has the element at at a certain index
+			.filter((ele, index, newArr) => newArr.indexOf(ele) === index)
+	);
+}
+(nums1 = [ 1, 2, 2, 1 ]), (nums2 = [ 2, 2 ]);
+console.log(intersection([ 1, 2, 2, 1 ], [ 2, 2 ]));
