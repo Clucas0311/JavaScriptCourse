@@ -507,18 +507,18 @@ function runningSum(nums) {
 //from it, and return the new string.
 
 function disemvowel(S) {
-	return S.toLowerCase().replace(/[aeiou]/gi, '');
+	// return S.toLowerCase().replace(/[aeiou]/gi, '');
 	// // create an array with vowel charaters as elements
-	// const vowellArray = [ 'a', 'e', 'i', 'o', 'u' ];
+	const vowelArray = [ 'a', 'e', 'i', 'o', 'u' ];
 	// // convert the S into an array
 	// // filter string Array for its elements to check if
 	// // any of its elements are found in the vowel array
 	// // if indexOf is false then return the newArray
 	// // convert the array back into a string
-	// return S.split('').filter((element) => vowellArray.indexOf(element) === -1).join('');
+	return S.toLowerCase().split('').filter((element) => vowelArray.indexOf(element) === -1).join('');
 }
 
-// console.log(disemvowel('leetcodeisacommunityforcoders'));
+console.log(disemvowel('leetcodeisacommunityforcoders'));
 
 // The algorithm to convert from Celsius to Fahrenheit is the temperature in Celsius times 9/5, plus 32.
 // You are given a variable celsius representing a temperature in Celsius. Use the variable fahrenheit
@@ -569,7 +569,7 @@ function repeatStringNumTimes(str, num) {
 	return repeater;
 }
 
-console.log(repeatStringNumTimes('abc', 3));
+// console.log(repeatStringNumTimes('abc', 3));
 
 String.prototype.toJadenCase = function() {
 	// convert  string it into an array split by spaces
@@ -578,3 +578,49 @@ String.prototype.toJadenCase = function() {
 	// uppercase the first index and add the slice string with the first index removed
 	return this.split(' ').map((element) => element[0].toUpperCase() + element.substr(1)).join(' ');
 };
+
+// Write a function that takes a string as input and reverse only the
+//  vowels of a string.
+
+// create a function named reverseVowels --> str
+function reverseVowels(str) {
+	// convert the string to an array --> split ''
+	const strToArr = str.split('');
+	// create a helper function to swap the variables
+	// create a function --> arr, index1, index2
+
+	function swap(arr, index1, index2) {
+		// inside the function [arr[index1], arr[index2]] = [ arr[index2], arr[index1]]
+		return ([ arr[index1], arr[index2] ] = [ arr[index2], arr[index1] ]);
+	}
+	// create a array with vowel characters
+	const arrOfVowel = [ 'a', 'e', 'i', 'o', 'u' ];
+	// create a two pointer
+	// left will be the left side of the string --> 0
+	let left = 0;
+	// right will be the right side which will be array.length - 1 --> last element of the array
+	let right = strToArr.length - 1;
+	// while the left side is less than the right the condition will keep running
+	while (left < right) {
+		// if the vowel array on left does not match any string elements then increment
+		if (arrOfVowel.indexOf(strToArr[left].toLowerCase()) === -1) {
+			left++;
+			continue;
+		}
+		// if the vowel array on the right doesnt not match string array elements then decrement
+		if (arrOfVowel.indexOf(strToArr[right].toLowerCase()) === -1) {
+			right--;
+			continue;
+		}
+		// invoke the swap helper function --> strArray, left, right
+		swap(strToArr, left, right);
+		// left increment
+		left++;
+		// right decrement
+		right--;
+	}
+	// return the string Array but join it back to a string
+	return strToArr.join('');
+}
+
+console.log(reverseVowels('leetcode'));
