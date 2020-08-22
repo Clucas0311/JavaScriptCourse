@@ -638,5 +638,32 @@ function intersection(arr1, arr2) {
 			.filter((ele, index, newArr) => newArr.indexOf(ele) === index)
 	);
 }
-(nums1 = [ 1, 2, 2, 1 ]), (nums2 = [ 2, 2 ]);
 console.log(intersection([ 1, 2, 2, 1 ], [ 2, 2 ]));
+
+// create a function intersect ---> two parameters arr1, arr2
+function intersect(arr1, arr2) {
+	// create a hashmap --> to count the number of occurences each number occurs
+	// create an empty object
+	const numMap = {};
+	// iterate through the first array
+	arr1.forEach((element) => {
+		// if value is in array - increment or // if value doesn't exist set value to 1
+		if ((numMap[element] = numMap[element] + 1 || 1)) {
+		}
+	});
+	// create a new Array to push like elements inside
+	const newArr = [];
+	//iterate through the array2
+	arr2.forEach((element) => {
+		//if arr2 elements are values of numMap and the value is a duplicate
+		if (numMap[element] && numMap[element] > 0) {
+			// then push elements inside the new Array
+			newArr.push(element);
+			// decrease the value so multiples wont exceed.
+			numMap[element]--;
+		}
+	});
+	// return new Array
+	return newArr;
+}
+console.log(intersect([ 1, 2, 2, 1 ], [ 2, 2 ]));
