@@ -648,8 +648,7 @@ function intersect(arr1, arr2) {
 	// iterate through the first array
 	arr1.forEach((element) => {
 		// if value is in array - increment or // if value doesn't exist set value to 1
-		if ((numMap[element] = numMap[element] + 1 || 1)) {
-		}
+		numMap[element] = numMap[element] + 1 || 1;
 	});
 	// create a new Array to push like elements inside
 	const newArr = [];
@@ -667,3 +666,38 @@ function intersect(arr1, arr2) {
 	return newArr;
 }
 console.log(intersect([ 1, 2, 2, 1 ], [ 2, 2 ]));
+
+// Given an array of integers arr, write a function that returns true if and only
+// if the number of occurrences of each value in the array is unique.
+
+// create a function named uniqueOccurences --> arr
+function uniqueOccurences(arr) {
+	// create a hashmap
+	// declare a variable numMap and set it equal to an empty object
+	const numMap = {};
+	// iterate through the array
+	for (let num of arr) {
+		// if numMap[arr] has a value then add 1 or just set the value to 1
+		numMap[num] = numMap[num] + 1 || 1;
+	}
+	// create a variable called values and set it to an array of the numMap's values
+	// sort the numbers  from ascending order
+	const value = Object.values(numMap).sort();
+
+	// create a variable to compare the indices set it equal to zero
+	let j = 0;
+	// iterate through the values array but start i at 1
+	for (let i = 1; i < value.length; i++) {
+		// if values at j index is equal to values at i index
+		if (value[j] === value[i]) {
+			// then solution is false
+			return false;
+		}
+		// increment j so during each iteration it will be a new value
+		j++;
+	}
+	// else the solution will be true - opposite values
+	return true;
+}
+
+console.log(uniqueOccurences([ 1, 2, 2, 1, 1, 3 ]));
