@@ -700,4 +700,20 @@ function uniqueOccurences(arr) {
 	return true;
 }
 
-console.log(uniqueOccurences([ 1, 2, 2, 1, 1, 3 ]));
+// console.log(uniqueOccurences([ 1, 2, 2, 1, 1, 3 ]));
+
+function twoSum(nums, target) {
+	const numIndexes = {};
+	for (let i = 0; i < nums.length; i++) {
+		let currentDiff = target - nums[i];
+		if (numIndexes[currentDiff] != undefined && numIndexes[currentDiff] != i) {
+			console.log(numIndexes[currentDiff] != undefined && numIndexes[currentDiff] != i);
+			return [ numIndexes[currentDiff], i ];
+		} else {
+			console.log((numIndexes[nums[i]] = i));
+			numIndexes[nums[i]] = i;
+		}
+	}
+}
+
+console.log(twoSum([ 3, 2, 4 ], 6));
