@@ -705,13 +705,13 @@ function uniqueOccurences(arr) {
 function twoSum(nums, target) {
 	const numIndexes = {};
 	for (let i = 0; i < nums.length; i++) {
-		let currentDiff = target - nums[i];
-		if (numIndexes[currentDiff] != undefined && numIndexes[currentDiff] != i) {
-			console.log(numIndexes[currentDiff] != undefined && numIndexes[currentDiff] != i);
-			return [ numIndexes[currentDiff], i ];
+		let currentNum = nums[i];
+		const needValue = target - currentNum;
+		const index2 = numIndexes[needValue];
+		if (index2 != null) {
+			return [ index2, i ];
 		} else {
-			console.log((numIndexes[nums[i]] = i));
-			numIndexes[nums[i]] = i;
+			numIndexes[currentNum] = i;
 		}
 	}
 }
