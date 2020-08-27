@@ -716,7 +716,7 @@ function twoSum(nums, target) {
 		const difference = target - newElement;
 		// if the difference variable is in the object
 		// then return the array with the index
-		if (numMap[difference] != null) {
+		if (numMap[difference] !== undefined) {
 			return [ numMap[difference], i ];
 			// otherwise
 			// return the element as the key and index as a value
