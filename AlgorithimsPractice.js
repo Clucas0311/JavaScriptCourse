@@ -702,16 +702,26 @@ function uniqueOccurences(arr) {
 
 // console.log(uniqueOccurences([ 1, 2, 2, 1, 1, 3 ]));
 
+// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+// You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
 function twoSum(nums, target) {
-	const numIndexes = {};
+	// create an variable and assign to an empty object - use as a hash table
+	const numMap = {};
+	// iterate through the nums array
 	for (let i = 0; i < nums.length; i++) {
-		let currentNum = nums[i];
-		const needValue = target - currentNum;
-		const index2 = numIndexes[needValue];
-		if (index2 != null) {
-			return [ index2, i ];
+		// create a const variable for the element
+		const newElement = nums[i];
+		// create a difference variable subtracting the target from the element --> a number
+		const difference = target - newElement;
+		// if the difference variable is in the object
+		// then return the array with the index
+		if (numMap[difference] != null) {
+			return [ numMap[difference], i ];
+			// otherwise
+			// return the element as the key and index as a value
 		} else {
-			numIndexes[currentNum] = i;
+			numMap[newElement] = i;
 		}
 	}
 }
