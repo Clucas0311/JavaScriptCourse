@@ -25,3 +25,17 @@ function accessAProperty(object, key) {
 	// return the result variable
 	return result;
 }
+
+// We are going to complete a function that takes three parameters,
+// an object, a string key, and a newValue, and returns the object after
+// performing a reassignment. Your function should reassign the property's
+// value within the object, located at the string key, to the newValue parameter,
+// and should then return the newly changed object. Below is an example of the code
+// running, assuming that you will have completed the described function: reassignAProperty.
+
+function reassignAProperty(object, key, newValue) {
+	// reassign the property's value in the object, located at the key, to the newValue paramete
+	object[key] = newValue;
+	// return the input object
+	return object;
+}
