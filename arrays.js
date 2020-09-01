@@ -120,3 +120,19 @@ function applyShift(array) {
 	// return the shifted variable
 	return shifted;
 }
+
+// Adding an Element in General (.splice (a))
+// Let us consider the case of wanting to add an element, without replacing
+// anything, to an existing array Let us further consider that we do not want to
+// add the element to the back or the front, as we have done thus far
+// We can do so using the .splice() method:
+
+// splice(starting index, delete count, elements to add to array)
+
+function addAnElementInGeneral(array, index, element) {
+	// add the element to the array at the index given
+	array.splice(index, 0, element);
+	// (be sure not to replace any existing elements)
+	// return the array
+	return array;
+}
