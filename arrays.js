@@ -216,3 +216,19 @@ function applySlice(array, start, end) {
 	// return the sliceOfArray variable
 	return sliceOfArray;
 }
+
+// We are going to complete a function that takes in one array parameter,
+//  and returns a copy of the array. Your function should create a copyOfArray
+//  variable and assign it to a call to the slice method on the array which will
+//  make a copy, and return the copyOfArray variable. Below are examples of the
+//  code running, assuming that you will have completed the described function:
+//  makeACopy.
+
+function makeACopy(array) {
+	// create a copyOfArray variable
+	let copyOfArray;
+	// assign it to a copy of the array
+	copyOfArray = array.slice();
+	// return the copyOfArray variable
+	return copyOfArray;
+}
