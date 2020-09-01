@@ -13,7 +13,7 @@ function applyToString(param) {
 	return stringVersion;
 }
 
-console.log(typeof applyToString(42));
+// console.log(typeof applyToString(42));
 
 // Let us consider the case of wanting to determine where in a string we can find
 // a particular substringWe can do so using the .indexOf() method for string
@@ -56,3 +56,12 @@ function applySubString(string, start, end) {
 	return subString;
 }
 // console.log(applySubString('JavaScript'.substring(2, 9)));
+
+function generateHaiku(firstLine, secondLine, thirdLine) {
+	// create a haiku variable
+	let haiku;
+	// assign it to an expression involving the input lines, such that they format correct when the return value is logged to the console
+	haiku = firstLine + '\n' + secondLine + '\n' + thirdLine;
+	// return the haiku variable
+	return haiku;
+}
