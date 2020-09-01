@@ -34,3 +34,16 @@ function getArrayLength(array) {
 // lastIndex to access the last element in the array, and return the lastElement
 // variable. Below are examples of the code running, assuming that you will have
 // completed the described function: getLastElement.
+
+function getLastElement(array) {
+	// create a lastIndex variable
+	let lastIndex;
+	// assign it to the last index in the array
+	lastIndex = array.length - 1;
+	// create a lastElement variable
+	let lastElement;
+	// assign it to the last element in the string (make use of lastIndex)
+	lastElement = array[lastIndex];
+	// return the lastElement variable
+	return lastElement;
+}
