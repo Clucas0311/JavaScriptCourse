@@ -193,3 +193,26 @@ function isAnArray(input) {
 	// return the result variable
 	return result;
 }
+
+// Slicing a portion of an Array (and making a copy)
+// Let us consider the case of wanting a specific section of an existing array, or:
+// The case of wanting to make a copy of an existing array
+// In both cases, let us further consider that we do not wish to alter the original array
+// We can do so using the .slice() method:
+
+// We are going to complete a function that takes in three parameters, an array and two
+// integer indexes (start, end), and returns a portion of the array from before the
+// start index up to, but not including, the end index. Your function should create a
+// sliceOfArray variable and assign it to a call to the slice method on the array,
+// starting from before start, up to, but not including, end, and return the sliceOfArray
+// variable. Below are examples of the code running, assuming that you will have completed
+// the described function: applySlice.
+
+function applySlice(array, start, end) {
+	// create a sliceOfArray variable
+	let sliceOfArray;
+	// assign it to a portion of the array from before start, up to, but not including end
+	sliceOfArray = array.slice(start, end);
+	// return the sliceOfArray variable
+	return sliceOfArray;
+}
