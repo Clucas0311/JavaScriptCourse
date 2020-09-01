@@ -154,3 +154,22 @@ function removeAnElementInGeneral(array, index) {
 	// return the array
 	return array;
 }
+
+// Let us consider the case of wanting to remove a certain number of elements from an
+// index in an existing array, and add another certain number of elements, in the
+// same place, to the same array We can do so using the .splice() method:
+
+// We are going to complete a function that takes in four parameters, an array,
+// an index, and two new elements, removes 2 elements, beginning at the index,
+// adds the two new elements, and returns the array. Your function should use the
+// .splice() method to remove two elements from the input array, at the given index,
+// adds the two new elements in their place, then return the array. Below are examples
+// of the code running, assuming that you will have completed the described function:
+// applySplice.
+
+function applySplice(array, index, item1, item2) {
+	// remove two elements from the array at the index given, and adds item1 and item2 in their place
+	array.splice(index, 2, item1, item2);
+	// return the array
+	return array;
+}
