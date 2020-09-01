@@ -252,3 +252,69 @@ function applyConcat(array1, array2) {
 	// return the concattedArray variable
 	return concattedArray;
 }
+
+// Transforming an Array into a String
+// Let us consider the case of wanting to transform an array into a string
+// We can do so using the .join() method
+
+// We are going to complete a function that takes in one array parameter
+// (elements will be strings), and one string parameter, and returns a string
+// that is the result of joining the elements of the string together, separated
+// by the string parameter. Your function should create a joinedString variable
+// and assign it to a call to the .join() method, and return the joinedString variable.
+//  Below are examples of the code running, assuming that you will have completed the
+//  described function: applyJoin.
+
+function applyJoin(arrayOfStrings, string) {
+	// create a joinedString variable
+	let joinedString;
+	// assign it to a string which is all of the strings in the input array separated by the input string
+	joinedString = arrayOfStrings.join(string);
+	// return the joinedString variable
+	return joinedString;
+}
+
+// Using the indexOf Method on an Array
+// Let us consider the case of wanting to determine where in an array we can find a
+// particular element
+// We can do so using the .indexOf() method for string
+
+// We are going to complete a function that takes in two parameters (array, element),
+// and returns the index of the array where the element can be found. Your function
+// should create an index variable and assign it to a call of the indexOf() method on
+// the array, and passing element as an argument, and return the index variable.
+// Below are examples of the code running, assuming that you will have completed the
+// described function: applyIndexOfToArray.
+
+// Transforming a String into an Array
+// Let us consider the case of wanting to transform a string into an array
+// We can do so using the .split() method
+
+function applySplit(stringToBeSplit, splitter) {
+	// create a splitString variable
+	let splitString;
+	// assign it to an array which contains the elements in the stringToBeSplit separated by the splitter
+	splitString = stringToBeSplit.split(splitter);
+	// return the splitString variable
+	return splitString;
+}
+
+// Let us consider the case of wanting to determine where in an array
+// we can find a particular elementWe can do so using the .indexOf() method for string
+
+// We are going to complete a function that takes in two parameters
+// (array, element), and returns the index of the array where the element
+// can be found. Your function should create an index variable and assign
+// it to a call of the indexOf() method on the array, and passing element
+// as an argument, and return the index variable. Below are examples of the
+// code running, assuming that you will have completed the described function:
+// applyIndexOfToArray.
+
+function applyIndexOfToArray(array, element) {
+	// create an index variable
+	let index;
+	// assign it to the index inside of array where element can be found
+	index = array.indexOf(element);
+	// return the index variable
+	return index;
+}
