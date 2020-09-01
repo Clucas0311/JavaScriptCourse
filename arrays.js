@@ -47,3 +47,37 @@ function getLastElement(array) {
 	// return the lastElement variable
 	return lastElement;
 }
+// We are going to complete a function that takes in two parameters,
+// an array and an element, adds the element to the end of the array,
+// and returns the array. Your function should use the .push() method
+// to add the input element to the end of the input array, then return
+// that array. Below are examples of the code running, assuming that you
+// will have completed the described function: applyPush.
+
+function applyPush(array, element) {
+	// add the element to the back of the array
+	array.push(element);
+	// return the array
+	return array;
+}
+
+// Removing an Element from the back of an Array
+// Let us consider the case of wanting to remove an element from the back of
+// an existing array
+// We can do so using the .pop() method:
+
+// We are going to complete a function that takes in one parameter, an array,
+// removes the last element from the back of the array, and returns the removed
+// element. Your function should create a popped variable, assign it to an expression
+// using the .pop() method to remove the last element from the array, then return that
+// popped variable. Below are examples of the code running, assuming that you will have
+// completed the described function: applyPop.
+
+function applyPop(array) {
+	// create a popped variable
+	let popped;
+	// assign it to an expression removing the last element from the array
+	popped = array.pop();
+	// return the popped variable
+	return popped;
+}
