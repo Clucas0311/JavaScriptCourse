@@ -99,3 +99,24 @@ function applyUnshift(array, element) {
 	// return the array
 	return array;
 }
+
+// Removing an Element from the front of an Array
+// Let us consider the case of wanting to remove an
+// element from the front of an existing array
+// We can do so using the .shift() method:
+
+// We are going to complete a function that takes in one parameter, an array,
+// removes the first element from the front of the array, and returns the removed
+//  element. Your function should create a shifted variable, assign it to an expression
+//  using the .shift() method to remove the first element from the array, then return that
+// shifted variable. Below are examples of the code running, assuming that you will have
+// completed the described function: applyShift.
+
+function applyShift(array) {
+	// create a shifted variable
+	let shifted;
+	// assign it to an expression removing the first element from the array
+	shifted = array.shift();
+	// return the shifted variable
+	return shifted;
+}
