@@ -16,7 +16,7 @@ function applyToString(param) {
 // console.log(typeof applyToString(42));
 
 // Let us consider the case of wanting to determine where in a string we can find
-// a particular substringWe can do so using the .indexOf() method for string
+// a particular substring We can do so using the .indexOf() method for string
 
 // We are going to complete a function that takes in two parameters (string, subString),
 //  and returns the index of the string where the subString can be found.
