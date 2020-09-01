@@ -232,3 +232,23 @@ function makeACopy(array) {
 	// return the copyOfArray variable
 	return copyOfArray;
 }
+
+// Adding the contents of an Array to another Array
+// Let us consider the case of wanting to add the contents of one array to another array
+// Let us further consider that we do not wish to affect either original array
+// We can do so using the .concat() method
+
+// We are going to complete a function that takes in two array parameters, and returns
+//  an array containing all of the elements of the two input arrays. Your function
+//  should create a concattedArray variable and assign it to a call to the concat
+//  method on the input array, applied to the other input array, and return the
+//  concattedArray variable. Below are examples of the code running, assuming that you
+//  will have completed the described function: applyConcat.
+function applyConcat(array1, array2) {
+	// create a concattedArray variable
+	let concattedArray;
+	// assign it to the contents of both array1 and array2
+	concattedArray = array1.concat(array2);
+	// return the concattedArray variable
+	return concattedArray;
+}
