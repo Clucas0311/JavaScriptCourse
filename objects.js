@@ -120,3 +120,21 @@ function getAllKeys(obj) {
 	// return to the keys variable
 	return keys;
 }
+// Let us consider the case where we want to generate an array of all the values
+// in an object We can do so using the Object.values() method
+
+// We are going to complete a function that takes in one parameter, an object.
+// Your function should create a values variable, and assign it to an expression
+// which generates an array of all of the values in said object by calling
+// Object.values(), then return that values variable. Below is an example of the
+// code running, assuming that you will have completed the described function:
+// getAllValues.
+
+function getAllValues(obj) {
+	// create a values variable
+	let values;
+	// assign it to an expression which will generate an array of all of the values in obj
+	values = Object.values(obj);
+	// return to the values variable
+	return values;
+}
