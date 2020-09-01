@@ -100,3 +100,23 @@ function isAnObject(input) {
 	// return the isObjectAndNotAnArray variable
 	return isObjectAndNotAnArray;
 }
+
+// Generating an array of all keys in an Object Let us consider the case where
+// we want to generate an array of all the keys in an object
+// We can do so using the Object.keys() method
+
+// We are going to complete a function that takes in one parameter,
+// an object. Your function should create a keys variable, and assign
+// it to an expression which generates an array of all of the keys in said
+// object by calling Object.keys(), then return that keys variable. Below is an
+// example of the code running, assuming that you will have completed the described
+// function: getAllKeys.
+
+function getAllKeys(obj) {
+	// create a keys variable
+	let keys;
+	// assign it to an expression which will generate an array of all of the keys in obj
+	keys = Object.keys(obj);
+	// return to the keys variable
+	return keys;
+}
