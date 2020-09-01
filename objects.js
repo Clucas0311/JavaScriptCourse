@@ -69,3 +69,34 @@ function isPropertyPresent(object, key) {
 	// return the isPresent variable
 	return isPresent;
 }
+
+// Determining if a value is an Object
+// Let us consider the case of wanting to determine if a value is an object
+// We can do so using the typeof operator, in conjunction with the Array.isArray() method
+
+// We are going to complete a function that takes in one parameter,
+// possibly an object, and returns whether the input in an object or not.
+// Your function should create several variables (isObject, isNotAnArray,
+// and isObjectAndNotAnArray). Assign isObject to an application of the
+// typeof operator to the input. Assign isNotAnArray to a call to the Array.isArray()
+// method with the ! operator applied as well. Assign isObjectAndNotAnArray to the two
+// previous variabes combined with the && operator, and return the isObjectAndNotAnArray
+// variable. Below are examples of the code running, assuming that you will have completed the
+// described function: isAnObject.
+
+function isAnObject(input) {
+	// create an isObject variable
+	let isObject;
+	// assign it to whether the input is an object type
+	isObject = typeof input === 'object';
+	// create an isNotAnArray variable
+	let isNotAnArray;
+	// assign it to whether the input is not an array
+	isNotAnArray = !Array.isArray(input);
+	// create an isObjectAndNotAnArray variable
+	let isObjectAndNotAnArray;
+	// assign it to a combination of isObject AND isNotAnArray
+	isObjectAndNotAnArray = isObject && isNotAnArray;
+	// return the isObjectAndNotAnArray variable
+	return isObjectAndNotAnArray;
+}
