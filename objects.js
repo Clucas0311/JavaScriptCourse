@@ -39,3 +39,20 @@ function reassignAProperty(object, key, newValue) {
 	// return the input object
 	return object;
 }
+
+// Removing a Property from an Object
+// Let us consider the case of wanting to remove a property from an existing object
+// We can do so using the delete operator:
+
+// We are going to complete a function that takes in two parameters,
+// an object and an key, removes the property located at the input key from
+// the object, and returns the object. Your function should use the delete operator
+// to remove the property at the given key from the input object, then return the object.
+// Below are examples of the code running, assuming that you will have completed the
+// described function: removeAProperty.
+function removeAProperty(object, key) {
+	// remove the property at the given key from the object
+	delete object[key];
+	// return the object
+	return object;
+}
