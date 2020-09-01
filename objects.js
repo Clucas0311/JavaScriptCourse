@@ -56,3 +56,16 @@ function removeAProperty(object, key) {
 	// return the object
 	return object;
 }
+// Checking if a Property is present in an Object
+// Let us consider the case of wanting to determine if a property is present
+// within an object We can do so by realizing that the value of a property that
+// is not present within an object is always undefined Thus, we will access an object
+// at the property's key, and check this against undefined
+function isPropertyPresent(object, key) {
+	// create an isPresent variable
+	let isPresent;
+	// assign it to a comparison between object's value at key and undefined
+	isPresent = object[key] !== undefined;
+	// return the isPresent variable
+	return isPresent;
+}
