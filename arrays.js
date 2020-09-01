@@ -136,3 +136,21 @@ function addAnElementInGeneral(array, index, element) {
 	// return the array
 	return array;
 }
+
+// Let us consider the case of wanting to remove an element from an existing array
+// Let us further consider that we do not want to remove the element from the back
+// or the front, as we have done thus far We can do so using the .splice() method:
+
+// We are going to complete a function that takes in two parameters,
+// an array and an index, removes the element from the index of the array,
+// and returns the array. Your function should use the .splice() method to
+// remove the element from the input array, at the given index, then return the
+// array. Below are examples of the code running, assuming that you will have completed
+// the described function: removeAnElementInGeneral.
+
+function removeAnElementInGeneral(array, index) {
+	// remove the element from the array at the index given
+	array.splice(index, 1);
+	// return the array
+	return array;
+}
