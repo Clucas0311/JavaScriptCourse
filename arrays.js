@@ -81,3 +81,21 @@ function applyPop(array) {
 	// return the popped variable
 	return popped;
 }
+
+// Adding an Element to the front of an Array
+// Let us consider the case of wanting to add an element to the front of an
+// existing array We can do so using the .unshift() method:
+
+// We are going to complete a function that takes in two parameters,
+// an array and an element, adds the element to the front of the array,
+// and returns the array. Your function should use the .unshift() method to
+// add the input element to the front of the input array, then return that array.
+// Below are examples of the code running, assuming that you will have completed
+// the described function: applyUnshift
+
+function applyUnshift(array, element) {
+	// add the element to the front of the array
+	array.unshift(element);
+	// return the array
+	return array;
+}
