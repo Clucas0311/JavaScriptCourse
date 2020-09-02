@@ -39,8 +39,32 @@ function isAnArrayAgain(inputObj, key) {
 	return result;
 }
 
-const resultBoolean1 = isAnArrayAgain({ key1: [ 1, 2, 3 ], key2: 'gg' }, 'key1');
-console.log('should log true:', resultBoolean1);
+// const resultBoolean1 = isAnArrayAgain({ key1: [ 1, 2, 3 ], key2: 'gg' }, 'key1');
+// console.log('should log true:', resultBoolean1);
 
-const resultBoolean2 = isAnArrayAgain({ name: 'Tom', friend: 'Jerry' }, 'friend');
-console.log('should log false:', resultBoolean2);
+// const resultBoolean2 = isAnArrayAgain({ name: 'Tom', friend: 'Jerry' }, 'friend');
+// console.log('should log false:', resultBoolean2);
+
+// Method applied to a Nested Object Let us consider the case where we want to generate an
+// array of all the keys in an object, nested within another object
+// We can do so using the Object.keys() method
+
+// We are going to complete a function that takes in two parameters, an object and a key.
+// Your function should create a keys variable, and assign it to an expression which generates
+//  an array of all of the keys in the nested object located within the input object, by calling
+//   Object.keys(), then return that keys variable. Below is an example of the code running,
+//   assuming that you will have completed the described function: getAllKeysAgain.
+
+function getAllKeysAgain(obj, key) {
+	// create a keys variable
+	let keys;
+	// assign it to an expression which will generate an array of all of the keys located within obj at key
+	keys = Object.keys(obj[key]);
+	// return to the keys variable
+	return keys;
+}
+// var resultKeys = getAllKeysAgain(
+// 	{ firstScore: { part1: 12, part2: 14, part3: 10 }, secondScore: 34, thirdScore: 28 },
+// 	'firstScore'
+// );
+// console.log('should log ["par1", "part2", "part3"]:', resultKeys);
