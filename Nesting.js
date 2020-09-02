@@ -68,3 +68,31 @@ function getAllKeysAgain(obj, key) {
 // 	'firstScore'
 // );
 // console.log('should log ["par1", "part2", "part3"]:', resultKeys);
+
+// Operator applied to an Object within an Array
+// Let us consider the case of wanting to remove a property from an existing object, located within an array
+// We can do so using the delete operator:
+
+// We are going to complete a function that takes in three parameters, an array, an index, and an key,
+// removes the property specified by the input key, located within an object, located at the given index
+// within the input array, and returns the input array. Your function should use the delete operator to
+// remove the property specified by the input key, located within an object, located at the given index
+// within the input array, and returns the input array. Below are examples of the code running, assuming
+// that you will have completed the described function: removeAPropertyAgain.
+
+function removeAPropertyAgain(arrayOfObjects, index, key) {
+	// remove the property at the given key from the object at the given index
+	delete arrayOfObjects[index][key];
+	// return the input array of objects
+	return arrayOfObjects;
+}
+
+// var resultObject1 = removeAPropertyAgain([ { q: 9, r: 10, text: 'bad entry' }, { a: 1, b: 2 } ], 0, 'text');
+// console.log('should log [{q: 9, r: 10}, {a: 1, b: 2}]:', resultObject1);
+
+// var resultObject2 = removeAPropertyAgain(
+// 	[ { key: 'value' }, { first: 'one', second: 'two', why: 452, third: 'three' } ],
+// 	1,
+// 	'why'
+// );
+// console.log('should log [{key: "value"}, {first: "one", second: "two", third: "three"}]:', resultObject2);
