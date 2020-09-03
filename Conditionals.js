@@ -112,11 +112,11 @@ function generateReportSummary(reportTotals, teamName) {
 	}
 }
 
-var result1 = generateReportSummary({ a_team: 12, b_team: 7, c_team: 0 }, 'b_team');
-console.log('should log "b_team has surpassed goal with 7 reports":', result1);
+// var result1 = generateReportSummary({ a_team: 12, b_team: 7, c_team: 0 }, 'b_team');
+// console.log('should log "b_team has surpassed goal with 7 reports":', result1);
 
-var result2 = generateReportSummary({ blue: 18, red: 8, green: 12 }, 'blue');
-console.log('should log "blue has surpassed goal with 18 reports":', result2);
+// var result2 = generateReportSummary({ blue: 18, red: 8, green: 12 }, 'blue');
+// console.log('should log "blue has surpassed goal with 18 reports":', result2);
 
-var result3 = generateReportSummary({ gamma: 1, epsilon: 3, alpha: 4, bravo: 17 }, 'alpha');
-console.log('Should log undefined, because function returned nothing:', result3);
+// var result3 = generateReportSummary({ gamma: 1, epsilon: 3, alpha: 4, bravo: 17 }, 'alpha');
+// console.log('Should log undefined, because function returned nothing:', result3);
