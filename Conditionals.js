@@ -271,17 +271,57 @@ function measureRequiredFruit(fruitTotals) {
 	}
 }
 
-var result1 = measureRequiredFruit({ bananas: 4, strawberries: 12 });
-console.log('should log "We have enough fruit, with 4 bananas, and 12 strawberries":', result1);
+// var result1 = measureRequiredFruit({ bananas: 4, strawberries: 12 });
+// console.log('should log "We have enough fruit, with 4 bananas, and 12 strawberries":', result1);
 
-var result2 = measureRequiredFruit({ bananas: 5, strawberries: 15 });
-console.log('should log "We have enough fruit, with 5 bananas, and 15 strawberries":', result2);
+// var result2 = measureRequiredFruit({ bananas: 5, strawberries: 15 });
+// console.log('should log "We have enough fruit, with 5 bananas, and 15 strawberries":', result2);
 
-var result3 = measureRequiredFruit({ bananas: 2, strawberries: 12 });
-console.log('should log "We do not have enough of both fruits":', result3);
+// var result3 = measureRequiredFruit({ bananas: 2, strawberries: 12 });
+// console.log('should log "We do not have enough of both fruits":', result3);
 
-var result4 = measureRequiredFruit({ bananas: 5, strawberries: 8 });
-console.log('should log "We do not have enough of both fruits":', result4);
+// var result4 = measureRequiredFruit({ bananas: 5, strawberries: 8 });
+// console.log('should log "We do not have enough of both fruits":', result4);
 
-var result5 = measureRequiredFruit({ bananas: 3, strawberries: 9 });
-console.log('should log "We do not have enough of both fruits":', result5);
+// var result5 = measureRequiredFruit({ bananas: 3, strawberries: 9 });
+// console.log('should log "We do not have enough of both fruits":', result5);
+
+// We are going to complete a function that takes in one parameter, a string representing
+//  the choice of Player 1 in a game of rock/paper/scissors, and returns a specific string
+//  for four different cases. Your function should use an if else if statement to determine
+//   which choice the player has made, then should return: 'Player 1 chose rock';
+//   'Player 1 chose paper'; 'Player 1 chose scissors'; or, 'Player 1 has chosen poorly!',
+//   depending upon the value of the input parameter. Below are examples of the code running,
+//   assuming that you will have completed the described function: player1Choice.
+
+function player1Choice(choice) {
+	// if player1 chose rock
+	if (choice === 'rock') {
+		// return "Player 1 chose rock"
+		return 'Player 1 chose rock';
+	} else if (choice === 'paper') {
+		// otherwise if player1 chose paper
+		// return "Player 1 chose paper"
+		return 'Player 1 chose paper';
+	} else if (choice === 'scissors') {
+		// otherwise if player1 chose scissors
+		// return "Player 1 chose scissors"
+		return 'Player 1 chose scissors';
+	} else {
+		// otherwise
+		// return "Player 1 has chosen poorly!"
+		return 'Player 1 has chosen poorly!';
+	}
+}
+
+var result1 = player1Choice('rock');
+console.log('should log "Player 1 chose rock":', result1);
+
+var result2 = player1Choice('paper');
+console.log('should log "Player 1 chose paper":', result2);
+
+var result3 = player1Choice('scissors');
+console.log('should log "Player 1 chose scissors":', result3);
+
+var result4 = player1Choice('gun');
+console.log('should log "Player 1 has chosen poorly!":', result4);
