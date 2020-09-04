@@ -77,17 +77,55 @@ function loopAnArrayAgain(array) {
 		console.log(array[i]);
 	}
 }
-loopAnArrayAgain([ 'a', 'b', 'c', 'd' ]);
+// loopAnArrayAgain([ 'a', 'b', 'c', 'd' ]);
+// // console output:
+// // a
+// // b
+// // c
+// // d
+
+// loopAnArrayAgain([ 1, 2, 3, 4, 5 ]);
+// // console output:
+// // 1
+// // 2
+// // 3
+// // 4
+// // 5
+
+// Loop over a String Again
+// Let us consider the case of wanting to look at, or do something, to the characters in a string
+// We can do so with a specific for loop
+// var string = 'I am a String!';
+
+// for (var i = 0; i < string.length; i++) {
+// 	console.log(string[i]);
+// }
+
+// We are going to complete a function that takes one parameter, a string of characters,
+// and logs all of its characters (one at a time) to the console. Your function should use a
+// for loop to log each character from the beginning to the end of the string, then return nothing.
+// Below is an example of the code running, assuming that you will have completed the described function:
+// loopAStringAgain.
+
+function loopAStringAgain(string) {
+	// create a loop which iterates over the input string
+	for (let i = 0; i < string.length; i++) {
+		// log current string character to the console
+		console.log(string[i]);
+	}
+}
+loopAStringAgain('nodeJS');
+// console output:
+// n
+// o
+// d
+// e
+// J
+// S
+
+loopAStringAgain('abcd');
 // console output:
 // a
 // b
 // c
 // d
-
-loopAnArrayAgain([ 1, 2, 3, 4, 5 ]);
-// console output:
-// 1
-// 2
-// 3
-// 4
-// 5
