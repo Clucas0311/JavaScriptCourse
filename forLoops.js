@@ -168,13 +168,49 @@ function loopStartingAtIndex(array, index) {
 		console.log(array[i]);
 	}
 }
-loopStartingAtIndex([ 'a', 'b', 'c', 'd', 'e' ], 2);
-// console output:
-// c
-// d
-// e
+// loopStartingAtIndex([ 'a', 'b', 'c', 'd', 'e' ], 2);
+// // console output:
+// // c
+// // d
+// // e
 
-loopStartingAtIndex([ 1, 2, 3, 4, 5 ], 3);
+// loopStartingAtIndex([ 1, 2, 3, 4, 5 ], 3);
+// // console output:
+// // 4
+// // 5
+
+// Loop in "reverse" order
+// Let us consider the case of wanting to look at, or do something, to every element in an array, only in reverse order (end to start)
+// We can do so with a specific for loop
+// var numsArray = [ 1, 2, 3, 4, 5 ];
+
+// for (var i = numsArray.length - 1; i > -1; i--) {
+// 	console.log('current index:', i);
+// 	console.log('current element:', numsArray[i]);
+// 	console.log('=============='); //gives context for when each iteration of loop ends
+// }
+// We are going to complete a function that takes one parameter, an array of elements,
+// and logs every element, beginning at the back of the input array and ending at the front
+// of the input array, to the console. Your function should use a loop to log every element
+// from the back of the array, up to the front of the array, then return nothing. Below is an
+// example of the code running, assuming that you will have completed the described function: loopInReverse.
+function loopInReverse(array) {
+	// create a loop which iterates from back to front of the input array
+	for (let i = array.length - 1; i > -1; i--) {
+		// log current array element to the console
+		console.log(array[i]);
+	}
+}
+loopInReverse([ 'a', 'b', 'c', 'd' ]);
+// console output:
+// d
+// c
+// b
+// a
+
+loopInReverse([ 1, 2, 3, 4 ]);
 // console output:
 // 4
-// 5
+// 3
+// 2
+// 1
