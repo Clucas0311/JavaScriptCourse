@@ -201,16 +201,75 @@ function loopInReverse(array) {
 		console.log(array[i]);
 	}
 }
-loopInReverse([ 'a', 'b', 'c', 'd' ]);
-// console output:
-// d
-// c
-// b
-// a
+// loopInReverse([ 'a', 'b', 'c', 'd' ]);
+// // console output:
+// // d
+// // c
+// // b
+// // a
 
-loopInReverse([ 1, 2, 3, 4 ]);
+// loopInReverse([ 1, 2, 3, 4 ]);
+// // console output:
+// // 4
+// // 3
+// // 2
+// // 1
+
+// Using continue
+// Let us consider the case of wanting to move to the next iteration while looping
+// Which is to say, we do not want to end the loop entirely, but we wish to move to
+//  the next iteration of the loop We can do so with the continue statement
+
+// var numsArray = [ 1, 2, 3, 4, 5 ];
+
+// stipulation: do not print out element at index 2
+// for (var i = 0; i < numsArray.length; i++) {
+// 	if (i === 2) {
+// 		console.log('SKIPPED VALUE AT INDEX 2');
+// 		continue; // this tells the loop to go to the next iteration
+// 	}
+// 	console.log('current index:', i);
+// 	console.log('current element:', numsArray[i]);
+// 	console.log('=============='); //gives context for when each iteration of loop ends
+// }
+
+// var restaurants = [ 'The BBQ Pit', 'The Sushi Bamboo', 'Error-Error', 'The Pizza Oven' ];
+
+// for (var i = 0; i < restaurants.length; i++) {
+// 	if (i === 2) {
+// 		continue;
+// 	}
+// 	console.log(restaurants[i]);
+// }
+
+// We are going to complete a function that takes two parameters,
+// an array of elements and an index, and logs every element, except for the element
+// at the input index, to the console. Your function should use a loop to log every element
+// except one at the inputted index, and should also use a continue statement
+// (must use a semi-colon after continue for tests to pass) to skip over the value at the inputted index,
+// then return nothing. Your code should NOT use else. Below is an example of the code running, assuming
+// that you will have completed the described function: useContinue.
+
+function useContinue(array, index) {
+	// create a loop which iterates over the input array
+	for (let i = 0; i < array.length; i++) {
+		// if current index is equal to input index
+		if (i === index) {
+			// use described statement to skip to next iteration of loop (must include semi-colon!)
+			continue;
+		}
+		// log current array element to the console
+		console.log(array[i]);
+	}
+}
+useContinue([ 'a', 'b', 'c', 'd' ], 1);
 // console output:
-// 4
-// 3
-// 2
+// a
+// c
+// d
+
+useContinue([ 1, 2, 3, 4 ], 2);
+// console output:
 // 1
+// 2
+// 4
