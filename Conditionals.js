@@ -392,23 +392,66 @@ function verifyStock(recipeMinimums, stockTomatoes, stockOnions) {
 	}
 }
 
-var result1 = verifyStock({ tomatoes: 3, onions: 7 }, 5, 8);
-console.log(
-	'should log "We have enough tomatoes and onions. There will be 2 extra tomato, and 1 extra onion.":',
-	result1
-);
+// var result1 = verifyStock({ tomatoes: 3, onions: 7 }, 5, 8);
+// console.log(
+// 	'should log "We have enough tomatoes and onions. There will be 2 extra tomato, and 1 extra onion.":',
+// 	result1
+// );
 
-var result2 = verifyStock({ tomatoes: 5, onions: 1 }, 10, 4);
-console.log(
-	'should log "We have enough tomatoes and onions. There will be 5 extra tomato, and 3 extra onion.":',
-	result2
-);
+// var result2 = verifyStock({ tomatoes: 5, onions: 1 }, 10, 4);
+// console.log(
+// 	'should log "We have enough tomatoes and onions. There will be 5 extra tomato, and 3 extra onion.":',
+// 	result2
+// );
 
-var result3 = verifyStock({ tomatoes: 2, onions: 4 }, 1, 1);
-console.log('should log "We need more tomatoes and more onions.":', result3);
+// var result3 = verifyStock({ tomatoes: 2, onions: 4 }, 1, 1);
+// console.log('should log "We need more tomatoes and more onions.":', result3);
 
-var result4 = verifyStock({ tomatoes: 4, onions: 2 }, 3, 4);
-console.log('should log "We have enough onions, but need more tomatoes.":', result4);
+// var result4 = verifyStock({ tomatoes: 4, onions: 2 }, 3, 4);
+// console.log('should log "We have enough onions, but need more tomatoes.":', result4);
 
-var result5 = verifyStock({ tomatoes: 10, onions: 6 }, 11, 4);
-console.log('should log "We have enough tomatoes, but need more onions.":', result5);
+// var result5 = verifyStock({ tomatoes: 10, onions: 6 }, 11, 4);
+// console.log('should log "We have enough tomatoes, but need more onions.":', result5);
+
+// Write a function called "convertScoreToGrade".
+
+// Given a score, "convertScoreToGrade" returns a string representing the letter grade corresponding to the given score.
+
+// Notes:
+
+// (100 - 90) --> 'A'
+// (89 - 80) --> 'B'
+// (79 - 70) --> 'C'
+// (69 - 60) --> 'D'
+// (59 - 0) --> 'F'
+// If the given score is greater than 100 or less than 0, it should return 'INVALID SCORE'.
+
+function convertScoreToGrade(score) {
+	// if score is greater than or equal to 90 and less than  equal to 100
+	if (score >= 90 && score <= 100) {
+		// then return 'A'
+		return 'A';
+	} else if (score >= 80 && score <= 89) {
+		// otherwise if score is greater than or equal to 80 and less than equal to 89
+		// then return 'B'
+		return 'B';
+	} else if (score >= 70 && score <= 79) {
+		//otherwise if score is greater than or equal to 70 and less than equal to 79
+		// then return 'C'
+		return 'C';
+	} else if (score >= 60 && score <= 69) {
+		//otherwise if score is greater than or equal to 60 and less than equal to 69
+		// then return 'D'
+		return 'D';
+	} else if (score >= 0 && score <= 59) {
+		//otherwise if score is greater than or equal to 60 and less than equal to 69
+		// return 'F'
+		return 'F';
+	} else {
+		//otherwise
+		// then return 'INVALID SCORE'
+		return 'INVALID SCORE';
+	}
+}
+var output = convertScoreToGrade(91);
+console.log(output); // --> 'A'
