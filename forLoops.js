@@ -35,17 +35,59 @@ function loopASequenceAgain(start, end) {
 		console.log(start);
 	}
 }
-loopASequenceAgain(2, 5);
+// loopASequenceAgain(2, 5);
+// // console output:
+// // 2
+// // 3
+// // 4
+// // 5
+
+// loopASequenceAgain(3, 7);
+// // console output:
+// // 3
+// // 4
+// // 5
+// // 6
+// // 7
+
+// Loop over an Array Again
+// Let us consider the case of wanting to look at, or do something, do the elements of an array
+// We can do so with a specific for loop
+// This example has more details, for a more robust demonstration
+// You will often hear this described as "iterating over the array"
+
+// var numsArray = [ 1, 2, 3, 4, 5 ];
+
+// for (var i = 0; i < numsArray.length; i++) {
+// 	console.log('current index:', i);
+// 	console.log('current element:', numsArray[i]);
+// 	//gives context for when each iteration of loop ends
+// 	console.log('==============');
+// }
+
+// We are going to complete a function that takes one parameter, an array of elements,
+// and logs all of its elements (one at a time) to the console. Your function should use a
+// for loop to log each element from the beginning to the end of the array, then return nothing.
+// Below is an example of the code running, assuming that you will have completed the described function:
+// loopAnArrayAgain.
+function loopAnArrayAgain(array) {
+	// create a loop which iterates over the input array
+	for (let i = 0; i < array.length; i++) {
+		// log current array element to the console
+		console.log(array[i]);
+	}
+}
+loopAnArrayAgain([ 'a', 'b', 'c', 'd' ]);
 // console output:
+// a
+// b
+// c
+// d
+
+loopAnArrayAgain([ 1, 2, 3, 4, 5 ]);
+// console output:
+// 1
 // 2
 // 3
 // 4
 // 5
-
-loopASequenceAgain(3, 7);
-// console output:
-// 3
-// 4
-// 5
-// 6
-// 7
