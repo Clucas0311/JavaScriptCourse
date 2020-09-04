@@ -70,22 +70,70 @@ function loopAnObjectOfObjects(nestedObject) {
 	}
 }
 
-loopAnObjectOfObjects({ a: { a: 1, b: 2 }, b: { a: 5, b: 6 } });
+// loopAnObjectOfObjects({ a: { a: 1, b: 2 }, b: { a: 5, b: 6 } });
+// // console output:
+// // 1
+// // 2
+// // 5
+// // 6
+
+// loopAnObjectOfObjects({
+// 	structures: { queue: true, stack: false },
+// 	plantLife: { tree: 'leaves' },
+// 	letters: { apple: 'a', bag: 'b', cats: 'c' }
+// });
+// // console output:
+// // true
+// // false
+// // leaves
+// // a
+// // b
+// // c
+
+// Nested Mixed Loop (1)
+// Let us consider the case of wanting to loop over an object (or more than one),
+// inside of our looping over an array
+// We can so do using a for-in loop nested inside of a for loop
+
+// var arrayOfObjects = [ { a: 1, b: 2, c: 3 }, { d: 4, e: 5, f: 6 }, { g: 7, h: 8, i: 9 } ];
+
+// for (var i = 0; i < arrayOfObjects.length; i++) {
+// 	for (var key in arrayOfObjects[i]) {
+// 		console.log(arrayOfObjects[i][key]);
+// 	}
+// }
+
+// We are going to complete a function that takes one parameter, a array of objects,
+// and logs all of its values (log each value in first inner object, one at a time,
+// then second inner object, and so on...) to the console. Your function should use a for-in
+// loop nested inside of a for loop to log each value from all inner objects, then return nothing.
+// Below is an example of the code running, assuming that you will have completed the described function:
+// loopAnArrayOfObjects.
+
+function loopAnArrayOfObjects(arrayOfObjects) {
+	// create a loop which iterates over the input array
+	for (let i = 0; i < arrayOfObjects.length; i++) {
+		// create an inner loop which iterates over current inner object
+		for (let innerObject in arrayOfObjects[i]) {
+			// log current value to the console
+			console.log(arrayOfObjects[i][innerObject]);
+		}
+	}
+}
+
+loopAnArrayOfObjects([ { a: 1, b: 2 }, { z: 5, y: 6 }, { q: 14 } ]);
 // console output:
 // 1
 // 2
 // 5
 // 6
+// 14
 
-loopAnObjectOfObjects({
-	structures: { queue: true, stack: false },
-	plantLife: { tree: 'leaves' },
-	letters: { apple: 'a', bag: 'b', cats: 'c' }
-});
+loopAnArrayOfObjects([ { queue: false, stack: true }, { fish: 'swims' }, { shirt: 's', pop: 'p', eye: 'e' } ]);
 // console output:
-// true
 // false
-// leaves
-// a
-// b
-// c
+// true
+// swims
+// s
+// p
+// e
