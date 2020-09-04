@@ -27,3 +27,39 @@ loopASequence(3, 7);
 // 5
 // 6
 // 7
+
+// Loop over an Array
+// Let us consider the case of wanting to look at, or do something, to the elements of an array
+// We can do so with a specific while loop
+// You will often hear this described as "iterating over the array"
+
+// We are going to complete a function that takes one parameter, an array of elements, and logs all of
+// its elements (one at a time) to the console. Your function should use a while loop to log each element
+//  from the beginning to the end of the array, then return nothing. Below is an example of the code running,
+//  assuming that you will have completed the described function: loopAnArray.
+
+function loopAnArray(array) {
+	// create an index variable
+	let index = 0;
+	// create a loop which iterates over the input array
+	while (index < array.length) {
+		// log current array element to the console
+		console.log(array[index]);
+		// increment value of index variable
+		index++;
+	}
+}
+loopAnArray([ 'a', 'b', 'c', 'd' ]);
+// console output:
+// a
+// b
+// c
+// d
+
+loopAnArray([ 1, 2, 3, 4, 5 ]);
+// console output:
+// 1
+// 2
+// 3
+// 4
+// 5
