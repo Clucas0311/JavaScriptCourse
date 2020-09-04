@@ -262,14 +262,66 @@ function useContinue(array, index) {
 		console.log(array[i]);
 	}
 }
-useContinue([ 'a', 'b', 'c', 'd' ], 1);
+// useContinue([ 'a', 'b', 'c', 'd' ], 1);
+// // console output:
+// // a
+// // c
+// // d
+
+// useContinue([ 1, 2, 3, 4 ], 2);
+// // console output:
+// // 1
+// // 2
+// // 4
+
+// Using break
+// Let us consider the case of wanting to stop looping before the described end of a loop
+// Which is to say, we want the loop to stop immediately, regardless of what the while/for statement says
+// We can do so with the break statement
+
+// var numsArray = [ 1, 2, 3, 4, 5 ];
+
+// // stipulation: do not print out elements with index value greater than 2
+// for (var i = 0; i < numsArray.length; i++) {
+// 	if (i > 2) {
+// 		console.log('FOR LOOP BROKEN');
+// 		break; // this tells the loop to end
+// 	} else {
+// 		console.log('current index:', i);
+// 		console.log('current element:', numsArray[i]);
+// 		console.log('=============='); //gives context for when each iteration of loop ends
+// 	}
+// }
+
+// We are going to complete a function that takes two parameters,
+// an array of elements and an index, and logs every element, except those whose index is greater than the
+// input index. Your function should use a loop to log every element up to and including the element located at
+// the input index, and should also use a break statement (must use a semi-colon after break for tests to pass)
+// to skip over the values with indexes greater than that of the input index, then return nothing.
+// Your code should NOT use else. Below is an example of the code running, assuming that you will have
+// completed the described function: useBreak.
+
+function useBreak(array, index) {
+	// create a loop which iterates over the input array
+	for (let i = 0; i < array.length; i++) {
+		// if current index is greater than input index
+		if (i > index) {
+			// use described statement to stop the loop completely (must include semi-colon!)
+			break;
+		}
+		// log current array element to the console
+		console.log(array[i]);
+	}
+}
+useBreak([ 'a', 'b', 'c', 'd', 'e' ], 2);
 // console output:
 // a
+// b
 // c
-// d
 
-useContinue([ 1, 2, 3, 4 ], 2);
+useBreak([ 1, 2, 3, 4, 5, 6 ], 3);
 // console output:
 // 1
 // 2
+// 3
 // 4
