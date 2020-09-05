@@ -26,5 +26,36 @@ function filterOddElements(arr) {
 	return oddArr;
 }
 
-var output = filterOddElements([ 1, 2, 3, 4, 5 ]);
-console.log(output); // --> [1, 3, 5]
+// var output = filterOddElements([ 1, 2, 3, 4, 5 ]);
+// console.log(output); // --> [1, 3, 5]
+
+// Write a function called "computeSumOfAllElements".
+
+// Given an array of numbers, "computeSumOfAllElements" returns the sum of all the elements
+// in the given array. If input array is empty, your function should return 0.
+
+// create a function named computeSumOfAllElements
+// input one parameter that will be an array
+function computeSumOfAllElements(array) {
+	// EDGE CASE:
+	// IF the array has no elements
+	if (array.length === 0) {
+		// then return 0
+		return 0;
+	}
+	// create a result variable set it to zero
+	let result = 0;
+	// iterate through the array to get its elements
+	for (let i = 0; i < array.length; i++) {
+		// take results variable add it to each element
+		result += array[i];
+	}
+	// return results variable
+	return result;
+}
+
+var result1 = computeSumOfAllElements([ 1, 2, 3 ]);
+console.log('should log 6:', result1);
+
+var result2 = computeSumOfAllElements([]);
+console.log('should log 0:', result2);
