@@ -163,8 +163,59 @@ function countWords(stringOfWords) {
 	return wordMap;
 }
 
-var result1 = countWords('ask a bunch get a bunch');
-console.log('should log "{ask: 1, a: 2, bunch: 2, get: 1}":', result1);
+// var result1 = countWords('ask a bunch get a bunch');
+// console.log('should log "{ask: 1, a: 2, bunch: 2, get: 1}":', result1);
 
-var result2 = countWords('');
+// var result2 = countWords('');
+// console.log('should log "{}":', result2);
+
+function countAllCharacters(string) {
+	// EDGE CASE:
+	// if the string is empty
+	if (string === '') {
+		// return an empty object {}
+		return {};
+	}
+	// create an empty object this will be the charMap
+	const charMap = {};
+	// iterate through the string,
+	// but convert string into and array using split and split by no space
+	for (let char of string.split('')) {
+		// assign the value of the charMap - if it exist then add one to the value
+		// or if value doesn't exist set value to one
+		charMap[char] = charMap[char] + 1 || 1;
+	}
+	// return object
+	return charMap;
+}
+
+// Write a function called "countAllCharacters".
+// Given a string of characters, "countAllCharacters" returns an object where each key
+// is a character in the given string, with its value being how many times that character
+// appeared in the given string. If given an empty string, your function should return
+// an empty object.
+function countAllCharacters(string) {
+	// EDGE CASE:
+	// if the string is empty
+	if (string === '') {
+		// return an empty object {}
+		return {};
+	}
+	// create an empty object this will be the charMap
+	const charMap = {};
+	// iterate through the string,
+	// but convert string into and array using split and split by no space
+	for (let char of string.split('')) {
+		// assign the value of the charMap - if it exist then add one to the value
+		// or if value doesn't exist set value to one
+		charMap[char] = charMap[char] + 1 || 1;
+	}
+	// return object
+	return charMap;
+}
+
+var result1 = countAllCharacters('banana');
+console.log('should log "{b: 1, a: 3, n: 2}":', result1);
+
+var result2 = countAllCharacters('');
 console.log('should log "{}":', result2);
