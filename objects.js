@@ -138,3 +138,33 @@ function getAllValues(obj) {
 	// return to the values variable
 	return values;
 }
+// Write a function called "countWords".
+// Given a string (words separated by spaces), "countWords" returns an object where
+// each key is a word in the given string, with its value being how many times that
+// word appeared in the given string. If given an empty string, your function should
+// return an empty object.
+
+function countWords(stringOfWords) {
+	// EDGE CASE:
+	// if the string of words is empty
+	if (stringOfWords === '') {
+		// then return empty object
+		return {};
+	}
+	// create a wordMap --> just an empty object
+	const wordMap = {};
+	// iterate through the string of words convert to array by spaces
+	for (let word of stringOfWords.split(' ')) {
+		// wordMap with the element as a key has a value
+		// then add one to that value or assign 1 to the value
+		wordMap[word] = wordMap[word] + 1 || 1;
+	}
+	// return object
+	return wordMap;
+}
+
+var result1 = countWords('ask a bunch get a bunch');
+console.log('should log "{ask: 1, a: 2, bunch: 2, get: 1}":', result1);
+
+var result2 = countWords('');
+console.log('should log "{}":', result2);
