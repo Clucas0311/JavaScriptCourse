@@ -335,5 +335,26 @@ function getNthElement(array, n) {
 	// return the array at the index of n
 	return array[n];
 }
-var output = getNthElement([ 1, 3, 5 ], 1);
-console.log(output); // --> 3
+// var output = getNthElement([ 1, 3, 5 ], 1);
+// console.log(output); // --> 3
+
+// Write a function called "getFirstElement".
+// Given an array, "getFirstElement" returns the first element of the given array.
+// Notes:
+// If the given array has a length of 0, it should return undefined.
+
+function getFirstElement(array) {
+	// EDGE CASE
+	// if the array's length is equal to zero
+	if (array.length === 0) {
+		// then return undefined
+		return undefined;
+	}
+	// iterate through the array
+	for (let i = 0; i < array.length; i++) {
+		// return array at index of 0
+		return array[0];
+	}
+}
+var output = getFirstElement([ 1, 2, 3, 4, 5 ]);
+console.log(output); // --> 1
