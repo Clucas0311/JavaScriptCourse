@@ -214,11 +214,11 @@ function countAllCharacters(string) {
 	return charMap;
 }
 
-var result1 = countAllCharacters('banana');
-console.log('should log "{b: 1, a: 3, n: 2}":', result1);
+// var result1 = countAllCharacters('banana');
+// console.log('should log "{b: 1, a: 3, n: 2}":', result1);
 
-var result2 = countAllCharacters('');
-console.log('should log "{}":', result2);
+// var result2 = countAllCharacters('');
+// console.log('should log "{}":', result2);
 
 function addFullNameProperty(obj) {
 	// your code here
@@ -245,8 +245,33 @@ function isPersonOldEnoughToDrive(person) {
 		return false;
 	}
 }
+// var obj = {
+// 	age: 16
+// };
+// var output = isPersonOldEnoughToDrive(obj);
+// console.log(output); // --> true
+
+// Write a function called "isPersonOldEnoughToVote".
+// Given a "person" object, that contains an "age" property, "isPersonOldEnoughToVote"
+// returns whether the given person is old enough to vote.
+// Notes:
+// The legal voting age in the United States is 18.
+
+function isPersonOldEnoughToVote(person) {
+	// create a variable age to access the object age property
+	let age = person.age;
+	// if age is greater than or equal to 18
+	if (age >= 18) {
+		// then return true
+		return true;
+	} else {
+		// otherwise..
+		// return false
+		return false;
+	}
+}
 var obj = {
-	age: 16
+	age: 19
 };
-var output = isPersonOldEnoughToDrive(obj);
-console.log(output); // --> true
+// var output = isPersonOldEnoughToVote(obj);
+// console.log(output); // --> true
