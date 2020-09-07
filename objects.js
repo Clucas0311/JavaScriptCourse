@@ -219,3 +219,10 @@ console.log('should log "{b: 1, a: 3, n: 2}":', result1);
 
 var result2 = countAllCharacters('');
 console.log('should log "{}":', result2);
+
+function addFullNameProperty(obj) {
+	// your code here
+	let firstName = obj.firstName;
+	let lastName = obj.lastName;
+	obj['fullName'] = firstName + ' ' + lastName;
+}
