@@ -226,3 +226,27 @@ function addFullNameProperty(obj) {
 	let lastName = obj.lastName;
 	obj['fullName'] = firstName + ' ' + lastName;
 }
+// Write a function called "isPersonOldEnoughToDrive".
+// Given a "person" object, that contains an "age" property, "isPersonOldEnoughToDrive"
+// returns whether the given person is old enough to drive.
+// Notes:
+// The legal driving age in the United States is 16.
+
+function isPersonOldEnoughToDrive(person) {
+	// access the property of the object person.age
+	let age = person['age'];
+	// if age is greater than or equal to 16
+	if (age >= 16) {
+		// then return true;
+		return true;
+		// otherwise..
+	} else {
+		// return false;
+		return false;
+	}
+}
+var obj = {
+	age: 16
+};
+var output = isPersonOldEnoughToDrive(obj);
+console.log(output); // --> true
