@@ -356,5 +356,22 @@ function getFirstElement(array) {
 		return array[0];
 	}
 }
-var output = getFirstElement([ 1, 2, 3, 4, 5 ]);
-console.log(output); // --> 1
+// var output = getFirstElement([ 1, 2, 3, 4, 5 ]);
+// console.log(output); // --> 1
+
+// Write a function called "addToFront".
+// Given an array and an element, "addToFront" adds the given element to
+// the front of the given array, and returns the given array.
+// Notes:
+// It should be the SAME array, not a new array.
+// In order to do this you should be familiar with the 'unshift' method.
+
+function addToFront(arr, element) {
+	// your code here
+	// return arr unshift the element
+	arr.unshift(element);
+	return arr;
+}
+
+var output = addToFront([ 1, 2 ], 3);
+console.log(output); // -> [3, 1, 2]
