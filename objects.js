@@ -387,3 +387,27 @@ var obj = {
 };
 removeNumbersLessThan(5, obj);
 console.log(obj); // --> { a: 8, c: 'montana' }
+
+// Write a function called "removeStringValuesLongerThan".
+// Given an number and an object, "removeStringValuesLongerThan" removes any properties
+// on the given object whose values are strings longer than the given number.
+
+function removeStringValuesLongerThan(num, obj) {
+	// iterate through the obj to get key
+	for (let key in obj) {
+		// if typeof obj[key] = 'string' and obj[key].length > num
+		if (typeof obj[key] === 'string' && obj[key].length > num) {
+			// delete obj[key]
+			delete obj[key];
+		}
+	}
+	// return obj
+	return obj;
+}
+var obj = {
+	name: 'Montana',
+	age: 20,
+	location: 'Texas'
+};
+removeStringValuesLongerThan(6, obj);
+console.log(obj); // { age: 20, location: 'Texas' }
