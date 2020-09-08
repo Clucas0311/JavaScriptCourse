@@ -441,5 +441,33 @@ function getLengthOfShortestElement(arr) {
 	return min.length;
 }
 
-var output = getLengthOfShortestElement([ 'one', 'two', 'three' ]);
-console.log(output); // --> 3
+// var output = getLengthOfShortestElement([ 'one', 'two', 'three' ]);
+// console.log(output); // --> 3
+
+// Write a function called "getLongestElement".
+// Given an array, "getLongestElement" returns the longest string in the given array.
+// Notes:
+// If there are ties, it returns the first element to appear.
+// If the array is empty, it should return an empty string.
+
+function getLongestElement(arr) {
+	// if the arr length is 0
+	if (arr.length === 0) {
+		// return ''
+		return '';
+	}
+	// create a variable max assign it to the first element of arr
+	let max = arr[0];
+	// iterate through the arr
+	for (let i = 1; i < arr.length; i++) {
+		// if the element length is > than max length
+		if (arr[i].length > max.length) {
+			// reassign max to element
+			max = arr[i];
+		}
+	}
+	// return max
+	return max;
+}
+var output = getLongestElement([ 'one', 'two', 'three' ]);
+console.log(output); // --> 'three'
