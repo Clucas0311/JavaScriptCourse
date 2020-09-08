@@ -286,7 +286,31 @@ function addArrayProperty(obj, key, arr) {
 	// return arr
 	return obj;
 }
-var myObj = {};
-var myArray = [ 1, 3 ];
-addArrayProperty(myObj, 'myProperty', myArray);
-console.log(myObj.myProperty); // --> [1, 3]
+// var myObj = {};
+// var myArray = [ 1, 3 ];
+// addArrayProperty(myObj, 'myProperty', myArray);
+// console.log(myObj.myProperty); // --> [1, 3]
+
+// Write a function called "removeArrayValues".
+// Given an object, "removeArrayValues" removes any properties whose values are arrays.
+
+function removeArrayValues(obj) {
+	// iterate over the obj to get its keys
+	for (let key in obj) {
+		// if the value is an array - Array.isArray(obj[key)) === true
+		if (Array.isArray(obj[key]) === true) {
+			// then delete obj[key]
+			delete obj[key];
+		}
+	}
+	// return obj;
+	return obj;
+}
+
+var obj = {
+	a: [ 1, 3, 4 ],
+	b: 2,
+	c: [ 'hi', 'there' ]
+};
+removeArrayValues(obj);
+console.log(obj); // --> { b: 2 }
