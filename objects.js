@@ -314,3 +314,26 @@ var obj = {
 };
 removeArrayValues(obj);
 console.log(obj); // --> { b: 2 }
+
+// Write a function called "removeNumberValues".
+// Given an object, "removeNumberValues" removes any properties whose values are numbers.
+
+function removeNumberValues(obj) {
+	// iterate through the obj to get the key
+	for (let key in obj) {
+		// if typeof obj[key] equals 'number'
+		if (typeof obj[key] === 'number') {
+			// then delete obj[key]
+			delete obj[key];
+		}
+	}
+	// return obj;
+	return obj;
+}
+var obj = {
+	a: 2,
+	b: 'remaining',
+	c: 4
+};
+removeNumberValues(obj);
+console.log(obj); // --> { b: 'remaining' }
