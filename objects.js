@@ -335,5 +335,30 @@ var obj = {
 	b: 'remaining',
 	c: 4
 };
-removeNumberValues(obj);
-console.log(obj); // --> { b: 'remaining' }
+// removeNumberValues(obj);
+// console.log(obj); // --> { b: 'remaining' }
+
+// Write a function called "removeStringValues".
+// Given an object, "removeStringValues" removes any properties on the given object
+//  whose values are strings.
+
+function removeStringValues(obj) {
+	// your code here
+	// iterate though obj to get the key
+	for (let key in obj) {
+		// if typeof obj[key] equals 'string'
+		if (typeof obj[key] === 'string') {
+			// then delete obj[key]
+			delete obj[key];
+		}
+	}
+	// return obj;
+	return obj;
+}
+
+var obj = {
+	name: 'Sam',
+	age: 20
+};
+removeStringValues(obj);
+console.log(obj); // { age: 20 }
