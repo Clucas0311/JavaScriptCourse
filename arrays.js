@@ -415,3 +415,31 @@ function computeProductOfAllElements(arr) {
 
 var output = computeProductOfAllElements([ 2, 5, 6 ]);
 console.log(output); // --> 60
+
+// Write a function called "getLengthOfShortestElement".
+// Given an array, "getLengthOfShortestElement" returns the length of the shortest
+// string in the given array.
+
+function getLengthOfShortestElement(arr) {
+	// EDGE CASE:
+	// if the arr length is 0
+	if (arr.length === 0) {
+		// return 0
+		return 0;
+	}
+	// create a variable min assign it to a value of 0
+	let min = arr[0];
+	// iterate through the arr to get the element
+	for (let i = 1; i < arr.length; i++) {
+		// if the element length is less than min
+		if (arr[i].length < min.length) {
+			// reassign min to to element.length
+			min = arr[i];
+		}
+	}
+	// return min
+	return min.length;
+}
+
+var output = getLengthOfShortestElement([ 'one', 'two', 'three' ]);
+console.log(output); // --> 3
