@@ -312,8 +312,8 @@ var obj = {
 	b: 2,
 	c: [ 'hi', 'there' ]
 };
-removeArrayValues(obj);
-console.log(obj); // --> { b: 2 }
+// removeArrayValues(obj);
+// console.log(obj); // --> { b: 2 }
 
 // Write a function called "removeNumberValues".
 // Given an object, "removeNumberValues" removes any properties whose values are numbers.
@@ -330,11 +330,11 @@ function removeNumberValues(obj) {
 	// return obj;
 	return obj;
 }
-var obj = {
-	a: 2,
-	b: 'remaining',
-	c: 4
-};
+// var obj = {
+// 	a: 2,
+// 	b: 'remaining',
+// 	c: 4
+// };
 // removeNumberValues(obj);
 // console.log(obj); // --> { b: 'remaining' }
 
@@ -356,9 +356,34 @@ function removeStringValues(obj) {
 	return obj;
 }
 
+// var obj = {
+// 	name: 'Sam',
+// 	age: 20
+// };
+// removeStringValues(obj);
+// console.log(obj); // { age: 20 }
+
+// Write a function called "removeNumbersLessThan".
+// Given a number and an object, "removeNumbersLessThan" removes any properties whose
+// values are numbers less than the given number.
+
+function removeNumbersLessThan(num, obj) {
+	// iterate through the obj to get the keys
+	for (let key in obj) {
+		// if  typeof obj[key] equals 'number' and obj[key] < num
+		if (typeof obj[key] === 'number' && obj[key] < num) {
+			// delete obj[key]
+			delete obj[key];
+		}
+	}
+	// return obj
+	return obj;
+}
+
 var obj = {
-	name: 'Sam',
-	age: 20
+	a: 8,
+	b: 2,
+	c: 'montana'
 };
-removeStringValues(obj);
-console.log(obj); // { age: 20 }
+removeNumbersLessThan(5, obj);
+console.log(obj); // --> { a: 8, c: 'montana' }
