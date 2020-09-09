@@ -456,3 +456,39 @@ var obj = {
 };
 var output = getElementsThatEqual10AtProperty(obj, 'key');
 console.log(output); // --> [10, 10]
+
+// Write a function called "getFirstElementOfProperty".
+// Given an object and a key, "getFirstElementOfProperty" returns the
+// first element of the array located at the given key.
+// Notes:
+// If the array is empty, it should return undefined.
+// If the property at the given key is not an array, it should return undefined.
+// If there is no property at the key, it should return undefined.
+function getFirstElementOfProperty(obj, key) {
+	// EDGE CASES
+	// if there is no property
+	if (obj[key] === undefined) {
+		// return undefined
+		return undefined;
+	}
+	// if the property key is not an array
+	if (Array.isArray(obj[key]) === false) {
+		// return undefined
+		return undefined;
+	}
+	// if property array is empty
+	if (obj[key].length === false) {
+		// return undefined
+		return undefined;
+	}
+	// iterate through the property
+	for (let i = 0; i < obj[key].length; i++) {
+		// return the first index of array
+		return obj[key][0];
+	}
+}
+var obj = {
+	key: [ 1, 2, 4 ]
+};
+var output = getFirstElementOfProperty(obj, 'key');
+console.log(output); // --> 1
