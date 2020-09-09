@@ -471,3 +471,32 @@ function getLongestElement(arr) {
 }
 var output = getLongestElement([ 'one', 'two', 'three' ]);
 console.log(output); // --> 'three'
+
+// Write a function called "findSmallestElement".
+// Given an array of numbers, "findSmallestElement" returns the smallest number
+// within the given array.
+// Notes:
+// If the given array is empty, it should return 0.
+
+function findSmallestElement(arr) {
+	// EDGE CASE:
+	// if the arr length is zero
+	if (arr.length === 0) {
+		// return 0
+		return 0;
+	}
+	// return Math.min(...arr)
+	let min = arr[0];
+	//iterate through the arr for the element
+	for (let element of arr) {
+		if (element < min) {
+			// reassign min
+			min = element;
+		}
+	}
+	// return min
+	return min;
+}
+
+var output = findSmallestElement([ 4, 1, 9, 10 ]);
+console.log(output); // --> 1
