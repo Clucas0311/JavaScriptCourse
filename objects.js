@@ -487,8 +487,42 @@ function getFirstElementOfProperty(obj, key) {
 		return obj[key][0];
 	}
 }
+// var obj = {
+// 	key: [ 1, 2, 4 ]
+// };
+// var output = getFirstElementOfProperty(obj, 'key');
+// console.log(output); // --> 1
+
+// Write a function called "getEvenElementsAtProperty".
+// Given an object and a key, "getEvenElementsAtProperty" returns an array containing
+// all the even elements of the array located at the given key.
+// Notes:
+// If the array is empty, it should return an empty array.
+// If the array contains no even elements, it should return an empty array.
+// If the property at the given key is not an array, it should return an empty array.
+// If there is no property at the given key, it should return an empty array.
+
+function getEvenElementsAtProperty(obj, key) {
+	// if there is no property at the given key
+	if (obj[key] === undefined) {
+		// then return []
+		return [];
+	}
+	// if the property at the given key is not an array
+	if (Array.isArray(obj[key]) === false) {
+		// then return []
+		return [];
+	}
+	// if the array is empty
+	if (obj[key].length === 0) {
+		// then return []
+		return [];
+	}
+	// return the property array using filter to get all even elements
+	return obj[key].filter((element) => element % 2 === 0);
+}
 var obj = {
-	key: [ 1, 2, 4 ]
+	key: [ 1000, 11, 50, 17 ]
 };
-var output = getFirstElementOfProperty(obj, 'key');
-console.log(output); // --> 1
+var output = getEvenElementsAtProperty(obj, 'key');
+console.log(output); // --> [1000, 50]
