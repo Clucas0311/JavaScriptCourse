@@ -529,5 +529,24 @@ function removeElement(array, discarder) {
 	return result;
 }
 
-var output = removeElement([ 1, 2, 3, 2, 1 ], 2);
-console.log(output); // --> [1, 3, 1]
+// var output = removeElement([ 1, 2, 3, 2, 1 ], 2);
+// console.log(output); // --> [1, 3, 1]
+
+// Write a function called "joinArrayOfArrays".
+// Given an array of arrays, "joinArrayOfArrays" returns a single array containing
+// the elements of the nested arrays.
+
+function joinArrayOfArrays(arr) {
+	// create a result array
+	let result = [];
+	// iterate through the first array to get array element
+	for (let i = 0; i < arr.length; i++) {
+		// reassign the result to the concat
+		result = result.concat(arr[i]);
+	}
+	// return result;
+	return result;
+}
+
+var output = joinArrayOfArrays([ [ 1, 4 ], [ true, false ], [ 'x', 'y' ] ]);
+console.log(output); // --> [1, 4, true, false, 'x', 'y']
