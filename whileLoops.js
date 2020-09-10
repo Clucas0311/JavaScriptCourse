@@ -107,3 +107,26 @@ loopAString('abcd');
 // b
 // c
 // d
+
+// Write a function called "getStringLength".
+// Given a string, "getStringLength" returns the length of the given string.
+// Notes:
+// Do NOT use any native 'length' methods.
+// You might consider using 'substring' or 'slice' as alternatives.
+
+function getStringLength(string) {
+	// create a counter variable set to 0
+	let counter = 0;
+	// while the string is not empty
+	while (string !== '') {
+		// slice string at the until it ends
+		string = string.slice(1);
+		//increment counter
+		counter++;
+	}
+	// return counter;
+	return counter;
+}
+
+var output = getStringLength('hello');
+console.log(output); // --> 5
