@@ -526,3 +526,36 @@ var obj = {
 };
 var output = getEvenElementsAtProperty(obj, 'key');
 console.log(output); // --> [1000, 50]
+
+// Write a function called "getSumOfAllElementsAtProperty".
+// Given an object and a key, "getSumOfAllElementsAtProperty" returns the
+// sum of all the elements in the array located at the given key.
+// Notes:
+// If the array is empty, it should return 0.
+// If the property at the given key is not an array, it should return 0.
+// If there is no property at the key, it should return 0.
+
+function getSumOfAllElementsAtProperty(obj, key) {
+	// if there is no property at the key
+	if (obj[key] === undefined) {
+		// then return 0
+		return 0;
+	}
+	// if the property at the given key is not an array
+	if (Array.isArray(obj[key]) === false) {
+		// then return 0
+		return 0;
+	}
+	// if the array is empty
+	if (obj[key].length === 0) {
+		// then return 0
+		return 0;
+	}
+	// return - using reduce sum up all the elements
+	return obj[key].reduce((prev, next) => prev + next);
+}
+var obj = {
+	key: [ 4, 1, 8 ]
+};
+var output = getSumOfAllElementsAtProperty(obj, 'key');
+console.log(output); // --> 13
