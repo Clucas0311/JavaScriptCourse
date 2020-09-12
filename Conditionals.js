@@ -513,5 +513,40 @@ function convertScoreToGradeWithPlusAndMinus(score) {
 	}
 }
 
-var output = convertScoreToGradeWithPlusAndMinus(91);
-console.log(output); // --> 'A-'
+// var output = convertScoreToGradeWithPlusAndMinus(91);
+// console.log(output); // --> 'A-'
+
+// Write a function called "isEvenWithoutModulo".
+// Given a number, "isEvenWithoutModulo" returns whether it is even.
+// Notes:
+// It does so without using the modulo operator (%).
+// It should work for negative numbers and zero.
+
+function isEvenWithoutModulo(num) {
+	// if num equals 1
+	if (num === 1) {
+		// then return false
+		return false;
+	}
+
+	// convert num into positive
+	num = Math.abs(num);
+
+	// while num greater than or equal to two
+	while (num >= 2) {
+		// subtract two from num
+		num -= 2;
+	}
+
+	// if num equals zero
+	if (num === 0) {
+		// then return true
+		return true;
+		// otherwise
+	} else {
+		// return false
+		return false;
+	}
+}
+var output = isEvenWithoutModulo(8);
+console.log(output); // --> true
