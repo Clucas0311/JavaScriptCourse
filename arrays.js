@@ -550,3 +550,87 @@ function joinArrayOfArrays(arr) {
 
 var output = joinArrayOfArrays([ [ 1, 4 ], [ true, false ], [ 'x', 'y' ] ]);
 console.log(output); // --> [1, 4, true, false, 'x', 'y']
+
+// Write a function called "findSmallestNumberAmongMixedElements".
+// Given an array of mixed elements, "findSmallestNumberAmongMixedElements" returns
+// the smallest number within the given array.
+// Notes:
+// If the given array is empty, it should return 0.
+// If the array contains no numbers, it should return 0.
+
+function findSmallestNumberAmongMixedElements(arr) {
+	// if the array is empty
+	if (arr.length === 0) {
+		// then return 0
+		return 0;
+	}
+	// filter through array to get the number elements
+	let num = arr.filter((number) => {
+		// if the element is a number
+		if (typeof number === 'number') {
+			// then return number
+			return number;
+		}
+	});
+	// if num array is empty
+	if (num.length === 0) {
+		// return 0
+		return 0;
+	}
+	// create a variable shortest assign to the value of 0
+	let shortest = num[0];
+	// iterate through the array of numbers
+	for (let i = 0; i < num.length; i++) {
+		// if the element is less than shortest
+		if (num[i] < shortest) {
+			// then reassign shortest to element
+			shortest = num[i];
+		}
+	}
+	// return shortest
+	return shortest;
+}
+// var output = findSmallestNumberAmongMixedElements([ 4, 'lincoln', 9, 'octopus' ]);
+// console.log(output); // --> 4
+
+// Write a function called "getLongestWordOfMixedElements".
+// Given an array of mixed types, "getLongestWordOfMixedElements" returns the
+// longest string in the given array.
+// Notes:
+// If the array is empty, it should return an empty string ("").
+// If the array contains no strings; it should return an empty string.
+
+function getLongestWordOfMixedElements(arr) {
+	// if the arr is empty
+	if (arr.length === 0) {
+		// return ''
+		return '';
+	}
+	// filter out the array for all string elements
+	let string = arr.filter((word) => {
+		// if word is a string
+		if (typeof word === 'string') {
+			// then return word
+			return word;
+		}
+	});
+	// if string is empty
+	if (string.length === 0) {
+		// return ''
+		return '';
+	}
+	// create longest variable set to 0
+	let longest = 0;
+	// iterate through the string array
+	for (let i = 0; i < string.length; i++) {
+		// if element length is greater than max
+		if (string[i].length > longest) {
+			// reassign max to to element
+			longest = string[i];
+		}
+	}
+	// return longest
+	return longest;
+}
+var output = getLongestWordOfMixedElements([ 3, 'word', 5, 'up', 3, 1 ]);
+console.log(output); // --> 'word'
