@@ -325,3 +325,41 @@ useBreak([ 1, 2, 3, 4, 5, 6 ], 3);
 // 2
 // 3
 // 4
+
+// Write a function called "multiply".
+// Given 2 numbers, "multiply" returns their product.
+// Notes:
+// It should not use the multiply operator - *
+
+function multiply(num1, num2) {
+	// create a variable if result is positive set to true
+	let isPositive = true;
+	// if num1 > 0 and num2 < 0 or num1 < 0 and num2 > 0
+	if ((num1 > 0 && num2 < 0) || (num1 < 0 && num2 > 0)) {
+		isPositive = false;
+	}
+
+	// remove negative
+	num1 = Math.abs(num1);
+	num2 = Math.abs(num2);
+	// reassingn isPostive to false
+	// create a total variable set 0
+	let total = 0;
+	// iterate starting at 0 ending until it equals num
+	for (let i = 0; i < num2; i++) {
+		// add total to num1
+		total += num1;
+	}
+	// if isPostive is true
+	if (isPositive) {
+		// return total
+		return total;
+	} else {
+		// otherwise
+		// return -total
+		return -total;
+	}
+}
+
+var output = multiply(4, 7);
+console.log(output); // --> 28
