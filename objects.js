@@ -557,5 +557,27 @@ function getSumOfAllElementsAtProperty(obj, key) {
 var obj = {
 	key: [ 4, 1, 8 ]
 };
-var output = getSumOfAllElementsAtProperty(obj, 'key');
-console.log(output); // --> 13
+// var output = getSumOfAllElementsAtProperty(obj, 'key');
+// console.log(output); // --> 13
+
+// Write a function called "convertObjectToArray" which converts an object literal
+// into an array of arrays, like this:
+
+function convertObjectToArray(obj) {
+	// create a container variable to store elements in
+	const container = [];
+	// iterate through the obj to get key and value
+	for (let key in obj) {
+		// push into container [key, value]
+		container.push([ key, obj[key] ]);
+	}
+	// return container
+	return container;
+}
+var input = {
+	name: 'Holly',
+	age: 35,
+	role: 'producer'
+};
+console.log(convertObjectToArray(input));
+// ----> [['name', 'Holly'], ['age', 35], ['role', 'producer']]
