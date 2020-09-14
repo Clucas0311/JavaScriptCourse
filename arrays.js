@@ -413,8 +413,8 @@ function computeProductOfAllElements(arr) {
 	// add the acc + currentVal and return it
 }
 
-var output = computeProductOfAllElements([ 2, 5, 6 ]);
-console.log(output); // --> 60
+// var output = computeProductOfAllElements([ 2, 5, 6 ]);
+// console.log(output); // --> 60
 
 // Write a function called "getLengthOfShortestElement".
 // Given an array, "getLengthOfShortestElement" returns the length of the shortest
@@ -469,8 +469,8 @@ function getLongestElement(arr) {
 	// return max
 	return max;
 }
-var output = getLongestElement([ 'one', 'two', 'three' ]);
-console.log(output); // --> 'three'
+// var output = getLongestElement([ 'one', 'two', 'three' ]);
+// console.log(output); // --> 'three'
 
 // Write a function called "findSmallestElement".
 // Given an array of numbers, "findSmallestElement" returns the smallest number
@@ -548,8 +548,8 @@ function joinArrayOfArrays(arr) {
 	return result;
 }
 
-var output = joinArrayOfArrays([ [ 1, 4 ], [ true, false ], [ 'x', 'y' ] ]);
-console.log(output); // --> [1, 4, true, false, 'x', 'y']
+// var output = joinArrayOfArrays([ [ 1, 4 ], [ true, false ], [ 'x', 'y' ] ]);
+// console.log(output); // --> [1, 4, true, false, 'x', 'y']
 
 // Write a function called "findSmallestNumberAmongMixedElements".
 // Given an array of mixed elements, "findSmallestNumberAmongMixedElements" returns
@@ -632,5 +632,43 @@ function getLongestWordOfMixedElements(arr) {
 	// return longest
 	return longest;
 }
-var output = getLongestWordOfMixedElements([ 3, 'word', 5, 'up', 3, 1 ]);
-console.log(output); // --> 'word'
+// var output = getLongestWordOfMixedElements([ 3, 'word', 5, 'up', 3, 1 ]);
+// console.log(output); // --> 'word'
+
+function flipPairs(string) {
+	var newString = [];
+	for (var i = 0; i < string.length; i += 2) {
+		//console.log(string[i]);
+		newString.push(string[i + 1], string[i]);
+		console.log(newString);
+	}
+	return newString.join('');
+}
+
+console.log(flipPairs('check out how interesting this problem is'));
+
+var findMaxConsecutiveOnes = function(nums) {
+	// create a variable named count set it equal to zero
+	let largestCount = 0;
+	let currentCount = 0;
+	// iterate through the array
+	for (let element of nums) {
+		// if the element equals 1
+		if (element === 0) {
+			// then assign currentCount to zero;
+			currentCount = 0;
+		} else {
+			currentCount++;
+			console.log(currentCount);
+		}
+		// if the currentCount is larger than largestCount
+		if (currentCount > largestCount) {
+			// then reassign the value of largestCount to currentCount
+			largestCount = currentCount;
+		}
+	}
+	// return largestCount
+	return largestCount;
+};
+
+console.log(findMaxConsecutiveOnes([ 1, 1, 0, 1, 1, 1 ]));
