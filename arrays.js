@@ -688,3 +688,18 @@ var findNumbers = function(nums) {
 	return evenDigits.length;
 };
 console.log(findNumbers((nums = [ 12, 345, 2, 6, 7896 ]))); // 2;
+
+var sortedSquares = function(A) {
+	// create an empty array variable
+	const squaredArray = [];
+	// iterate through the array
+	for (let element of A) {
+		// push into the array each element squared
+		squaredArray.push(element ** 2);
+	}
+	// return the squared array sorted
+	console.log(squaredArray);
+	return squaredArray.sort((a, b) => a - b);
+};
+
+console.log(sortedSquares([ -4, -1, 0, 3, 10 ]));
