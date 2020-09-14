@@ -672,3 +672,19 @@ var findMaxConsecutiveOnes = function(nums) {
 };
 
 console.log(findMaxConsecutiveOnes([ 1, 1, 0, 1, 1, 1 ]));
+
+var findNumbers = function(nums) {
+	// create a evenDigits array to push elements into
+	const evenDigits = [];
+	// iterate through nums
+	for (let element of nums) {
+		// if the element.toString().length is even
+		if (element.toString().length % 2 === 0) {
+			// then push into evenDigits array
+			evenDigits.push(element);
+		}
+	}
+	// return evenDigits array and get the length of it
+	return evenDigits.length;
+};
+console.log(findNumbers((nums = [ 12, 345, 2, 6, 7896 ]))); // 2;
