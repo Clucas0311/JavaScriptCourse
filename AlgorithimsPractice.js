@@ -726,6 +726,8 @@ function twoSum(nums, target) {
 	}
 }
 
+// {3: 0, 2: 1, 4: 2}
+
 console.log(twoSum([ 3, 2, 4 ], 6));
 
 // In this simple exercise, you will build a program that takes a value, integer,

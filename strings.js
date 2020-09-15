@@ -90,3 +90,25 @@ function getIndexOf(char, str) {
 
 var output = getIndexOf('a', 'I am a hacker');
 console.log(output); // --> 2
+
+function LongestWord(sen) {
+	// remove punctuation
+	let noPunc = sen.replace(/[^\w\s]/gi, '');
+	// convert sen into an array with a space delimeter
+	let senArr = noPunc.split(' ');
+	// let max equal the first element of array
+	let max = senArr[0];
+	// iterate through array
+	for (let i = 0; i < senArr.length; i++) {
+		// if element length at second index > max
+		if (senArr[i].length > max.length) {
+			// reassign max to element
+			max = senArr[i];
+		}
+	}
+	//return max
+	return max;
+}
+
+// keep this function call here
+console.log(LongestWord(readline()));

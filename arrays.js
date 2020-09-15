@@ -647,7 +647,7 @@ function flipPairs(string) {
 
 console.log(flipPairs('check out how interesting this problem is'));
 
-var findMaxConsecutiveOnes = function (nums) {
+var findMaxConsecutiveOnes = function(nums) {
 	// create a variable named count set it equal to zero
 	let largestCount = 0;
 	let currentCount = 0;
@@ -671,9 +671,9 @@ var findMaxConsecutiveOnes = function (nums) {
 	return largestCount;
 };
 
-console.log(findMaxConsecutiveOnes([1, 1, 0, 1, 1, 1]));
+console.log(findMaxConsecutiveOnes([ 1, 1, 0, 1, 1, 1 ]));
 
-var findNumbers = function (nums) {
+var findNumbers = function(nums) {
 	// create a evenDigits array to push elements into
 	const evenDigits = [];
 	// iterate through nums
@@ -687,9 +687,9 @@ var findNumbers = function (nums) {
 	// return evenDigits array and get the length of it
 	return evenDigits.length;
 };
-console.log(findNumbers((nums = [12, 345, 2, 6, 7896]))); // 2;
+console.log(findNumbers((nums = [ 12, 345, 2, 6, 7896 ]))); // 2;
 
-var sortedSquares = function (A) {
+var sortedSquares = function(A) {
 	// create an empty array variable
 	const squaredArray = [];
 	// iterate through the array
@@ -702,9 +702,9 @@ var sortedSquares = function (A) {
 	return squaredArray.sort((a, b) => a - b);
 };
 
-console.log(sortedSquares([-4, -1, 0, 3, 10]));
+console.log(sortedSquares([ -4, -1, 0, 3, 10 ]));
 
-var duplicateZeros = function (arr) {
+var duplicateZeros = function(arr) {
 	// iterate through the array
 	for (let i = 0; i < arr.length; i++) {
 		// if the element equals zero
@@ -717,10 +717,9 @@ var duplicateZeros = function (arr) {
 	}
 };
 
-
 function countUniqueValues(arr) {
 	// EDGE CASE:
-	// if the arr is empty 
+	// if the arr is empty
 	if (arr.length === 0) {
 		// then return 0
 		return 0;
@@ -731,11 +730,38 @@ function countUniqueValues(arr) {
 	for (let j = 1; j < arr.length; j++)
 		// if arr[i]  doesn't equal arr[j]
 		if (arr[i] !== arr[j]) {
-			// then increment i 
+			// then increment i
 			i++;
 			// reassign value of arr[i] to arr[j]
 			arr[i] = arr[j];
 		}
 	// return i + 1
-	return i + 1
+	return i + 1;
 }
+
+var twoSum = function(nums, target) {
+	// create a variable left assign to the front of array
+	let left = 0;
+	// create a variable right assign to last element of the array
+	let right = nums.length - 1;
+	// while the left is less than right
+	while (left < right) {
+		// create a variable named sum assign it to nums[left] + nums[right]
+		let sum = nums[left] + nums[right];
+		// if sum equals target
+		if (sum === target) {
+			// return [left, right]
+			console.log([ left, right ]);
+			return [ left, right ];
+		} else if (sum > target) {
+			// otherwise if sum > target
+			//  then right decreases
+			right--;
+		} else {
+			// if sum is less than nums
+			// left increases
+			left++;
+		}
+	}
+};
+console.log(twoSum([ 3, 2, 4 ]));
