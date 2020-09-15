@@ -765,3 +765,33 @@ var twoSum = function(nums, target) {
 	}
 };
 console.log(twoSum([ 3, 2, 4 ]));
+
+// Write a function mergingTripletsAndQuints which adds the corresponding
+// element from array2 if the element from array1 is divisible by 3 or 5 and
+// returns the new array.
+
+function mergingTripletsAndQuints(array1, array2) {
+	// ADD CODE HERE
+	// EDGE CASE:
+	// if the lengths of both arrays doesn't equal each other
+	if (array1.length !== array2.length) {
+		// return []
+		return [];
+	}
+	// create a result array copy of array1
+	let result = array1.slice();
+	// iterate through the array1
+	for (let i = 0; i < array1.length; i++) {
+		// if the element is divisble by 3 or 5
+		if (array1[i] % 3 === 0 || array1[i] % 5 === 0) {
+			// then at the index of result add the two elements
+			result[i] = array1[i] + array2[i];
+		}
+	}
+	// return result array
+	return result;
+}
+
+// Uncomment these to check your work!
+console.log(mergingTripletsAndQuints([ 1, 2, 3, 4, 5, 15 ], [ 1, 3, 6, 7, 8, 9 ])); // expected log [1, 2, 9, 4, 13, 24]
+console.log(mergingTripletsAndQuints([ 1, 1, 3, 9, 5, 15 ], [ 1, 2, 3, 4, 5, 6 ])); // expected log [1, 1, 6, 13, 10, 21]
