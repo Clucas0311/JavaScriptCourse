@@ -354,7 +354,7 @@ function cleaner(str) {
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 // console.log(capitalize('a short sentence'));
 // console.log(capitalize('a lazy fox'));
-// console.log(capitalize('look, it is working!'));
+console.log(capitalize('look, it is working!'));
 function capitalize(str) {
 	// create an empty array
 	const words = [];
@@ -518,7 +518,7 @@ function disemvowel(S) {
 	return S.toLowerCase().split('').filter((element) => vowelArray.indexOf(element) === -1).join('');
 }
 
-console.log(disemvowel('leetcodeisacommunityforcoders'));
+// console.log(disemvowel('leetcodeisacommunityforcoders'));
 
 // The algorithm to convert from Celsius to Fahrenheit is the temperature in Celsius times 9/5, plus 32.
 // You are given a variable celsius representing a temperature in Celsius. Use the variable fahrenheit
@@ -623,7 +623,7 @@ function reverseVowels(str) {
 	return strToArr.join('');
 }
 
-console.log(reverseVowels('leetcode'));
+// console.log(reverseVowels('leetcode'));
 
 // intersection of two arrays
 // create a function called intersection that takes in two params (arr2, arr1)
@@ -638,7 +638,7 @@ function intersection(arr1, arr2) {
 			.filter((ele, index, newArr) => newArr.indexOf(ele) === index)
 	);
 }
-console.log(intersection([ 1, 2, 2, 1 ], [ 2, 2 ]));
+// console.log(intersection([ 1, 2, 2, 1 ], [ 2, 2 ]));
 
 // create a function intersect ---> two parameters arr1, arr2
 function intersect(arr1, arr2) {
@@ -665,7 +665,7 @@ function intersect(arr1, arr2) {
 	// return new Array
 	return newArr;
 }
-console.log(intersect([ 1, 2, 2, 1 ], [ 2, 2 ]));
+// console.log(intersect([ 1, 2, 2, 1 ], [ 2, 2 ]));
 
 // Given an array of integers arr, write a function that returns true if and only
 // if the number of occurrences of each value in the array is unique.
@@ -728,7 +728,7 @@ function twoSum(nums, target) {
 
 // {3: 0, 2: 1, 4: 2}
 
-console.log(twoSum([ 3, 2, 4 ], 6));
+// console.log(twoSum([ 3, 2, 4 ], 6));
 
 // In this simple exercise, you will build a program that takes a value, integer,
 // and returns a list of its multiples up to another value, limit. If limit is a
@@ -752,4 +752,4 @@ function findMultiples(integer, limit) {
 	return arr;
 }
 
-console.log(findMultiples(5, 25)); //[5, 10, 15, 20, 25])
+// console.log(findMultiples(5, 25)); //[5, 10, 15, 20, 25])

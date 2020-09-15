@@ -363,3 +363,17 @@ function multiply(num1, num2) {
 
 var output = multiply(4, 7);
 console.log(output); // --> 28
+
+function multiplyAll(...nums) {
+	// create a variable named product assign to 1
+	let product = 1;
+	// product *= param
+	for (let num of nums) {
+		// multiply the value of product by num and reassign value
+		product *= num;
+	}
+	// return product
+	return product;
+}
+console.log(multiplyAll(9, 4, 5, 6, 7, 2, 1, 8, 3)); // should log: 362880
+console.log(multiplyAll(5, 5, 5, 3)); // should log: 375
