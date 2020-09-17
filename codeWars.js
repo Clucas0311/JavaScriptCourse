@@ -73,7 +73,7 @@ function index(array, n) {
 // Go on and code some pure awesomeness!
 
 function nextId(ids) {
-	// create a variable and assign it to 0
+	//create a variable and assign it to 0
 	let x = 0;
 	// while ids has x as an element run
 	while (ids.includes(x)) {
@@ -82,5 +82,15 @@ function nextId(ids) {
 	}
 	// return x
 	return x;
+	// iterate through the array
+	// for (let i = 0; i < ids.length; i++) {
+	// 	// if the array at particular index doesn't exist
+	// 	if (ids.indexOf(i) === -1) {
+	// 		// then return i
+	// 		return i;
+	// 	}
+	// }
+	// // otherwise return the array length
+	// return ids.length;
 }
 console.log(nextId([ 0, 1, 2, 3, 5 ])); // 4
