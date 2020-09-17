@@ -27,8 +27,8 @@ function isDivideBy(number, a, b) {
 	// return false;
 	return false;
 }
-console.log(isDivideBy(-12, 2, -6)); // true
-console.log(isDivideBy(-12, 2, -5)); // false;
+// console.log(isDivideBy(-12, 2, -6)); // true
+// console.log(isDivideBy(-12, 2, -5)); // false;
 
 // We want an array, but not just any old array, an array with contents!
 // Write a function that produces an array with the numbers 0 to N-1 in it.
@@ -39,11 +39,27 @@ function arr(N) {
 	const container = [];
 	// iterate through the array starting at 0 ending at n
 	for (let i = 0; i < N; i++) {
-		// push elements into container
+		// push index into container
 		container.push(i);
 	}
 	// return empty array
 	return container;
 }
 
-console.log(arr(5));
+// console.log(arr(5));
+
+// You are given an array with positive numbers and a number N.
+// You should find the N-th power of the element in the array with the index N.
+// If N is outside of the array, then return -1. Don't forget that the first
+// element has the index 0.
+
+function index(array, n) {
+	// if n is greater than or equal to array length
+	if (n >= array.length) {
+		// then return -1
+		return -1;
+	} // otherwise
+	// return Math.pow(array[n], n)
+	return Math.pow(array[n], n);
+}
+console.log(index([ 0, 1 ], 0));
