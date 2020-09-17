@@ -73,10 +73,11 @@ function index(array, n) {
 // Go on and code some pure awesomeness!
 
 function nextId(ids) {
+	// sort the ids array
 	//create a variable and assign it to 0
 	let x = 0;
-	// while ids has x as an element run
-	while (ids.includes(x)) {
+	// while ids sort the array has x as an element run
+	while (ids.sort((a, b) => a - b).includes(x)) {
 		// increment x until it has a unknown
 		x++;
 	}
@@ -93,4 +94,18 @@ function nextId(ids) {
 	// // otherwise return the array length
 	// return ids.length;
 }
-console.log(nextId([ 0, 1, 2, 3, 5 ])); // 4
+// console.log(nextId([ 0, 1, 2, 3, 5 ])); // 4
+
+// The cockroach is one of the fastest insects. Write a function which takes its
+// speed in km per hour and returns it in cm per second, rounded down to the integer
+// (= floored).
+
+function cockroachSpeed(s) {
+	//Good Luck!
+	// cm/s = km/h ÷ 0.036
+	// cm/s = s / 0.036 - Math.floor
+	let centimeters = s / 0.036;
+	return Math.floor(centimeters);
+}
+
+console.log(cockroachSpeed(1.08)); // --> 30
