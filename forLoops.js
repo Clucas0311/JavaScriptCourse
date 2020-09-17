@@ -377,3 +377,57 @@ function multiplyAll(...nums) {
 }
 console.log(multiplyAll(9, 4, 5, 6, 7, 2, 1, 8, 3)); // should log: 362880
 console.log(multiplyAll(5, 5, 5, 3)); // should log: 375
+
+// Write a function addingAllTheWeirdStuff which adds the sum of
+// all the odd numbers in array2 to each element under 10 in array1. Similarly,
+// addingAllTheWeirdStuff should also add the sum of all the even numbers in array2 to
+// those elements over 10 in array1.
+// BONUS: If any element in array2 is greater than 20, add 1 to every element in array1.
+
+function addingAllTheWeirdStuff(array1, array2) {
+	// ADD CODE HERE
+	// create a variable for odd, even and add one
+	let oddSum = 0;
+	let evenSum = 0;
+	let addOne = 0;
+	// iterate through the array2
+	for (let element of array2) {
+		// if elements are odd
+		if (element % 2 !== 0) {
+			// then add all the odd elements up
+			oddSum += element;
+		}
+		if (element % 2 === 0) {
+			// get the sum
+			evenSum += element;
+		}
+	}
+
+	// iterate through array2
+	for (let i = 0; i < array2.length; i++) {
+		// if elements are greater than 20
+		if (array2[i] > 20) {
+			// add one to array1
+			addOne += array1[i];
+		}
+	}
+	// create a new array container
+	const container = [];
+	// iterate through array1
+	for (let element of array1) {
+		// if element is less than 10
+		if (element < 10) {
+			// then push(element + odd)
+			container.push(element + oddSum + addOne);
+		} else if (element > 10) {
+			// if element is greater than 10
+			// push (element + even)
+			container.push(element + evenSum + addOne);
+		}
+	}
+	return container;
+}
+
+// Uncomment these to check your work!
+console.log(addingAllTheWeirdStuff([ 1, 3, 5, 17, 15 ], [ 1, 2, 3, 4, 5 ])); // expected log [10, 12, 14, 23, 21]
+console.log(addingAllTheWeirdStuff([ 1, 3, 5, 17, 15, 1 ], [ 1, 2, 3, 4, 5, 22 ])); // expected log [11, 13, 15, 46, 44, 11]
