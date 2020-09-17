@@ -123,4 +123,29 @@ function repeatStr(n, s) {
 	// return repeated string
 	return repeatedString;
 }
-console.log(repeatStr(3, '*')); // "***"
+// console.log(repeatStr(3, '*')); // "***"
+// Given a string of digits, you should replace any digit below 5 with '0' and any digit
+// 5 and above with '1'.
+// Return the resulting string.
+
+function fakeBin(x) {
+	// convert the string into an array
+	let strToArr = x.split('');
+	// iterate through string array
+	for (let i = 0; i < strToArr.length; i++) {
+		// if element < 5
+		if (strToArr[i] < 5) {
+			// reassign the value of the string array to 0
+			strToArr[i] = '0';
+		}
+		// if the element > and equal to 5
+		if (strToArr[i] >= 5) {
+			// reassign element to 1
+			strToArr[i] = 1;
+		}
+	}
+	// convert back into a string
+	// return it
+	return strToArr.join('');
+}
+console.log(fakeBin('45385593107843568')); //'01011110001100111'
