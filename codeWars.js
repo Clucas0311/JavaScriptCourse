@@ -108,4 +108,19 @@ function cockroachSpeed(s) {
 	return Math.floor(centimeters);
 }
 
-console.log(cockroachSpeed(1.08)); // --> 30
+// console.log(cockroachSpeed(1.08)); // --> 30
+
+// Write a function called repeat_str which repeats the given string src
+// exactly count times.
+function repeatStr(n, s) {
+	// create a variable assign to an empty string
+	let repeatedString = '';
+	// iterate starting at 0 anding at n
+	for (let i = 0; i < n; i++) {
+		// concatanate the repeated string with s during each iteration
+		repeatedString += s;
+	}
+	// return repeated string
+	return repeatedString;
+}
+console.log(repeatStr(3, '*')); // "***"
