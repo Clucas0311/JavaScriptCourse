@@ -204,4 +204,31 @@ function firstNonConsecutive(arr) {
 	return null;
 }
 
-console.log(firstNonConsecutive([ 1, 2, 3, 4, 6, 7, 8 ])); // 6
+// console.log(firstNonConsecutive([ 1, 2, 3, 4, 6, 7, 8 ])); // 6
+
+// You get an array of numbers, return the sum of all of the positives ones.
+// Example [1,-4,7,12] => 1 + 7 + 12 = 20
+// Note: if there is nothing to sum, the sum is default to 0.
+
+function positiveSum(arr) {
+	return arr.reduce((sum, element) => {
+		if (element > 0) {
+			sum += element;
+		}
+		return sum;
+	}, 0);
+	// // create a sum variable set 0
+	// let sum = 0;
+	// // iterate through arr
+	// for (let i = 0; i < arr.length; i++) {
+	//   // if element is greater than 0
+	//   if (arr[i] > 0) {
+	// 	// sum plus element
+	// 	sum += arr[i]
+	//   }
+	// }
+	// // return sum
+	// return sum;
+}
+
+console.log(positiveSum([ 1, 2, 3, 4, 5 ])); //15
