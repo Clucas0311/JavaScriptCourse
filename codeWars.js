@@ -148,4 +148,32 @@ function fakeBin(x) {
 	// return it
 	return strToArr.join('');
 }
-console.log(fakeBin('45385593107843568')); //'01011110001100111'
+// console.log(fakeBin('45385593107843568')); //'01011110001100111'
+
+// Given a month as an integer from 1 to 12,
+// return to which quarter of the year it belongs as an integer number.
+// For example: month 2 (February), is part of the first quarter; month 6 (June),
+// is part of the second quarter; and month 11 (November), is part of the fourth quarter.
+const quarterOf = (month) => {
+	// Your code here
+	// if month is less than or equal to 3
+	// if (month <= 3) {
+	// 	// return 1
+	// 	return 1;
+	// } else if (month <= 6) {
+	// 	// if month is less than or equal to 6
+	// 	// return 2
+	// 	return 2;
+	// } else if (month <= 9) {
+	// 	// if month is less than or equal to 9
+	// 	// return 3
+	// 	return 3;
+	// } else {
+	// 	// if month is less than or equal to 12
+	// 	// return 4
+	// 	return 4;
+	// }
+	return Math.ceil(month / 3);
+};
+
+console.log(quarterOf(3)); //  --> 1;
