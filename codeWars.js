@@ -260,12 +260,16 @@ function arrayPlusArray(arr1, arr2) {
 // Always keep the first element and start removing with the next element.
 
 function removeEveryOther(arr) {
-	// filter the array for even index
-	return arr.filter((element, index) => {
-		if (index % 2 === 0) {
-			return element;
-		}
-	});
+	// // filter the array for even index
+	// return arr.filter((element, index) => {
+	// 	if (index % 2 === 0) {
+	// 		return element;
+	// 	}
+	// });
+	for (var i = 1; i < arr.length; i++) {
+		arr.splice(i, 1);
+	}
+	return arr;
 }
 
 console.log(removeEveryOther([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ])); //[1, 3, 5, 7, 9]
