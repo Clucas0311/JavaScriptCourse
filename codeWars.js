@@ -352,4 +352,19 @@ function digitize(n) {
 	return n.toString().split('').reverse().map((element) => Number.parseInt(element));
 }
 
-console.log(digitize(35231)); //[1,3,2,5,3]
+// console.log(digitize(35231)); //[1,3,2,5,3]
+
+// Create a function called that accepts 2 string arguments and returns an
+// integer of the count of
+// occurrences the 2nd argument is found in the first one.
+// If no occurrences can be found, a count of 0 should be returned.
+
+function strCount(str, letter) {
+	//code here
+	// convert str into an array
+	// filter through string array elements that equal the letter
+	// then get the length of that array
+	return str.split('').filter((element) => element === letter).length;
+}
+console.log(strCount('Hello', 'o')); // 1
+console.log(strCount('', 'z')); // 0
