@@ -403,7 +403,7 @@ function sumMix(x) {
 	return x.reduce((prev, next) => Number(prev) + Number(next), 0);
 }
 
-console.log(sumMix([ 9, 3, '7', '3' ])); // 22
+// console.log(sumMix([ 9, 3, '7', '3' ])); // 22
 
 // Create a function that takes 2 positive integers in form of a string as
 // an input, and outputs the sum (also as a string):
@@ -411,4 +411,18 @@ console.log(sumMix([ 9, 3, '7', '3' ])); // 22
 function sumStr(a, b) {
 	return (Number(a) + Number(b)).toString();
 }
-console.log(sumStr('4', '5'));
+// console.log(sumStr('4', '5')); // 9
+
+// Get the number n (n>0) to return the reversed sequence from n to 1.
+const reverseSeq = (n) => {
+	// create an array container to push elements into
+	const container = [];
+	// iterate starting at n and decrease
+	for (let i = n; i >= 1; i--) {
+		// push elements into the container
+		container.push(i);
+	}
+	// return container
+	return container;
+};
+console.log(reverseSeq(5)); //[5, 4, 3, 2, 1])
