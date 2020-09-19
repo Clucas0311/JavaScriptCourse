@@ -306,8 +306,7 @@ console.log(summation(3)); // 6
 // The output should be two capital letters with a dot separating them.
 
 function abbrevName(name) {
-	const initials = name.split(' ').map((element) => element[0]);
-	return initials.join('.').toUpperCase();
+	return name.split(' ').map((element) => element[0]).join('.').toUpperCase();
 	//   // create a an array to push elements into
 	//   const container = [];
 	//   // iterate through the name but convert into array but split by space
