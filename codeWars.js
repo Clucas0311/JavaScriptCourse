@@ -392,5 +392,15 @@ function squareSum(numbers) {
 	// return iterate through numbers and get its elements with map then reduce to get sum
 	return numbers.map((element) => element ** 2).reduce((prev, next) => prev + next, 0);
 }
-console.log(squareSum([ 1, 2 ])); // 5
-console.log(squareSum([ 0, 3, 4, 5 ])); // 50
+// console.log(squareSum([ 1, 2 ])); // 5
+// console.log(squareSum([ 0, 3, 4, 5 ])); // 50
+
+// Given an array of integers as strings and numbers, return the
+// sum of the array values as if all were numbers.
+
+function sumMix(x) {
+	// iterate through array and use the Number method to convert number into element
+	return x.reduce((prev, next) => Number(prev) + Number(next), 0);
+}
+
+console.log(sumMix([ 9, 3, '7', '3' ])); // 22
