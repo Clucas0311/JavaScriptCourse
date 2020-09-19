@@ -442,4 +442,16 @@ function noSpace(x) {
 	// convert the string to an array then join without spaces
 	return x.split(' ').join('');
 }
-console.log(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B')); // '8j8mBliB8gimjB8B8jlB'
+// console.log(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B')); // '8j8mBliB8gimjB8B8jlB'
+
+// Write function isPalindrome that checks if a given string (case insensitive)
+// is a palindrome.
+
+function isPalindrome(x) {
+	// your code here
+	// convert to an array then reverse the string using reduce compare reverse string
+	//   let reversed = x.toLowerCase().split('').reduce((reverse, character) => character + reverse, '')
+	let reversed = x.toLowerCase().split('').reverse().join('');
+	return x.toLowerCase() === reversed;
+}
+console.log(isPalindrome('aba')); //true
