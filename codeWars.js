@@ -252,5 +252,6 @@ function arrayPlusArray(arr1, arr2) {
 	}
 	// return sum
 	return sum;
+	// return arr1.concat(arr2).reduce((sum, next) => sum + next);
 }
 console.log(arrayPlusArray([ 1, 2, 3 ], [ 4, 5, 6 ])); // 21
