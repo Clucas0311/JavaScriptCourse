@@ -254,4 +254,18 @@ function arrayPlusArray(arr1, arr2) {
 	return sum;
 	// return arr1.concat(arr2).reduce((sum, next) => sum + next);
 }
-console.log(arrayPlusArray([ 1, 2, 3 ], [ 4, 5, 6 ])); // 21
+// console.log(arrayPlusArray([ 1, 2, 3 ], [ 4, 5, 6 ])); // 21
+
+// Take an array and remove every second element from the array.
+// Always keep the first element and start removing with the next element.
+
+function removeEveryOther(arr) {
+	// filter the array for even index
+	return arr.filter((element, index) => {
+		if (index % 2 === 0) {
+			return element;
+		}
+	});
+}
+
+console.log(removeEveryOther([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ])); //[1, 3, 5, 7, 9]
