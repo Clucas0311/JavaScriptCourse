@@ -366,5 +366,21 @@ function strCount(str, letter) {
 	// then get the length of that array
 	return str.split('').filter((element) => element === letter).length;
 }
-console.log(strCount('Hello', 'o')); // 1
-console.log(strCount('', 'z')); // 0
+// console.log(strCount('Hello', 'o')); // 1
+// console.log(strCount('', 'z')); // 0
+
+// It's pretty straightforward. Your goal is to create a function that removes
+// the first and last characters of a string. You're given one parameter,
+// the original string. You don't have to worry with strings with less than two characters.
+
+function removeChar(str) {
+	//You got this!
+	// convert the str into an array
+
+	// slice out first element
+	// slice out second element
+	// return the array and change it back to string
+	return str.split('').slice(1, -1).join('');
+}
+
+console.log(removeChar('eloquent')); //'loquen'
