@@ -231,4 +231,26 @@ function positiveSum(arr) {
 	// return sum;
 }
 
-console.log(positiveSum([ 1, 2, 3, 4, 5 ])); //15
+// console.log(positiveSum([ 1, 2, 3, 4, 5 ])); //15
+
+// I'm new to coding and now I want to get the sum of two arrays...actually
+// the sum of all their elements. I'll appreciate for your help.
+// P.S. Each array includes only integer numbers. Output is a number too.
+
+function arrayPlusArray(arr1, arr2) {
+	//return arr1 + arr2; //something went wrong
+	// check to see if arrays length are the same
+	if (arr1.length != arr2.length) {
+		return 0;
+	}
+	// create a variable sum = 0
+	let sum = 0;
+	// iterate through arr1
+	for (let i = 0; i < arr1.length; i++) {
+		// sum plus equal arr1 element + arr2 element
+		sum += arr1[i] + arr2[i];
+	}
+	// return sum
+	return sum;
+}
+console.log(arrayPlusArray([ 1, 2, 3 ], [ 4, 5, 6 ])); // 21
