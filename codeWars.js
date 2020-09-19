@@ -300,3 +300,23 @@ var summation = function(num) {
 };
 
 console.log(summation(3)); // 6
+
+// Write a function to convert a name into initials.
+// This kata strictly takes two words with one space in between them.
+// The output should be two capital letters with a dot separating them.
+
+function abbrevName(name) {
+	const initials = name.split(' ').map((element) => element[0]);
+	return initials.join('.').toUpperCase();
+	//   // create a an array to push elements into
+	//   const container = [];
+	//   // iterate through the name but convert into array but split by space
+	//   for (let element of name.split(' ')) {
+	//     // concat empty string to first element of string array
+	//     container.push(element[0]);
+	//   }
+	//   // return string but join('.')
+	//   return container.join('.').toUpperCase()
+}
+
+console.log(abbrevName('Sam Harris')); //"S.H"
