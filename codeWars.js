@@ -299,14 +299,15 @@ var summation = function(num) {
 	return sum;
 };
 
-console.log(summation(3)); // 6
+// console.log(summation(3)); // 6
 
 // Write a function to convert a name into initials.
 // This kata strictly takes two words with one space in between them.
 // The output should be two capital letters with a dot separating them.
 
 function abbrevName(name) {
-	return name.split(' ').map((element) => element[0]).join('.').toUpperCase();
+	const initials = name.split(' ').map((element) => element[0]).join('.').toUpperCase();
+	return initials;
 	//   // create a an array to push elements into
 	//   const container = [];
 	//   // iterate through the name but convert into array but split by space
@@ -318,4 +319,37 @@ function abbrevName(name) {
 	//   return container.join('.').toUpperCase()
 }
 
-console.log(abbrevName('Sam Harris')); //"S.H"
+// console.log(abbrevName('Sam Harris')); //"S.H"
+
+// Given a random non-negative number, you have to return the digits
+// of this number within an array in reverse order.
+
+function digitize(n) {
+	// convert the n to a string then an array
+	let numToArr = n.toString().split('').reverse();
+	// create an empty array to push elements into
+	let container = [];
+	// iterate through string reverse but convert element into an integer
+	for (let element of numToArr) {
+		container.push(Number.parseInt(element));
+	}
+	// return container
+	return container;
+}
+
+function digitize(n) {
+	// // convert the n to a string then an array
+	// let numToArr = n.toString().split('').reverse();
+	// // create an empty array to push elements into
+	// let container = [];
+	// // iterate through string reverse but convert element into an integer
+	// for (let element of numToArr) {
+	// 	container.push(Number.parseInt(element));
+	// }
+	// // return container
+	// return container;
+
+	return n.toString().split('').reverse().map((element) => Number.parseInt(element));
+}
+
+console.log(digitize(35231)); //[1,3,2,5,3]
