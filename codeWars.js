@@ -468,4 +468,28 @@ function sumTwoSmallestNumbers(numbers) {
 	// add the first and second indices and return it
 	return sorted[0] + sorted[1];
 }
-console.log(sumTwoSmallestNumbers([ 5, 8, 12, 19, 22 ])); // 13
+// console.log(sumTwoSmallestNumbers([ 5, 8, 12, 19, 22 ])); // 13
+
+// Write function alternateCase which switch every letter in string
+// from upper to lower and from lower to upper. E.g: Hello World -> hELLO wORLD
+
+function alternateCase(s) {
+	// create an empty string to concantenate characters
+	let newStr = '';
+	// iterate through string
+	for (let i = 0; i < s.length; i++) {
+		// if s at index is equal to s Upper case
+		if (s[i] === s[i].toUpperCase()) {
+			// then empty string plus s[i].lowerCase
+			newStr += s[i].toLowerCase();
+		} else {
+			// else
+			// empty string plus s[i] upper case
+			newStr += s[i].toUpperCase();
+		}
+	}
+	// return new string
+	return newStr;
+}
+console.log(alternateCase('abc')); //"ABC"
+console.log(alternateCase('Hello World')); // hELLO wORLD
