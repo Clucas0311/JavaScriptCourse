@@ -454,7 +454,7 @@ function isPalindrome(x) {
 	let reversed = x.toLowerCase().split('').reverse().join('');
 	return x.toLowerCase() === reversed;
 }
-console.log(isPalindrome('aba')); //true
+// console.log(isPalindrome('aba')); //true
 
 // Create a function that returns the sum of the two lowest positive
 // numbers given an array of minimum 4 positive integers. No floats or
@@ -491,5 +491,28 @@ function alternateCase(s) {
 	// return new string
 	return newStr;
 }
-console.log(alternateCase('abc')); //"ABC"
-console.log(alternateCase('Hello World')); // hELLO wORLD
+// console.log(alternateCase('abc')); //"ABC"
+// console.log(alternateCase('Hello World')); // hELLO wORLD
+
+// It's the academic year's end, fateful moment of your school report.
+// The averages must be calculated. All the students come to you and entreat
+// you to calculate their average for them. Easy ! You just need to write a script.
+// Return the average of the given array rounded down to its nearest integer.
+
+function getAverage(marks) {
+	//   //TODO : calculate the downwar rounded average of the marks array
+	//   // create a sum variable
+	//   let sum = 0
+	//   // iterate through the array
+	//   for (let i = 0; i < marks.length; i++) {
+	//     // add each element up
+	//     sum += marks[i];
+	//   }
+	//   // return the average / length of array
+	//   return Math.floor(sum / marks.length);
+
+	const sum = marks.reduce((prev, next) => prev + next, 0);
+	return Math.floor(sum / marks.length);
+}
+console.log(getAverage([ 2, 2, 2, 2 ])); // 2
+console.log(getAverage([ 1, 2, 3, 4, 5 ])); //3
