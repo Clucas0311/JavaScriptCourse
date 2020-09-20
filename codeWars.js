@@ -258,6 +258,7 @@ function arrayPlusArray(arr1, arr2) {
 
 // Take an array and remove every second element from the array.
 // Always keep the first element and start removing with the next element.
+// [1, 2, 3, 4, 5, 6, 7]
 
 function removeEveryOther(arr) {
 	// // filter the array for even index
@@ -559,4 +560,22 @@ function makeNegative(num) {
 	}
 	return num;
 }
-console.log(makeNegative(42)); //-42
+// console.log(makeNegative(42)); //-42
+
+// You are going to be given a word. Your job is to return the middle character
+// of the word. If the word's length is odd, return the middle character. If the word's
+// length is even, return the middle 2 characters.
+function getMiddle(string) {
+	// create a variable and assign it to the middle character of the string -> round down
+	let middle = Math.floor(string.length / 2);
+	// if string length is even
+	if (string.length % 2 === 0) {
+		// the return the middle two characters
+		return string[middle - 1] + string[middle];
+	}
+	// otherwise
+	// return the middle character
+	return string[middle];
+}
+
+console.log(getMiddle('test')); //"es"
