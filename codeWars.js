@@ -674,4 +674,18 @@ function even_or_odd(number) {
 	return number % 2 === 0 ? 'Even' : 'Odd';
 }
 
-console.log(even_or_odd(2)); //"Even"
+// console.log(even_or_odd(2)); //"Even"
+
+// In this little assignment you are given a string of space separated numbers,
+// and have to return the highest and lowest number.
+function highAndLow(numbers) {
+	// ...
+	// convert the numbers in to an array push them into a new array converting
+	// elements into numbers
+	const numArr = numbers.split(' ').map((element) => Number(element));
+	// then get the max and min converting them back to strings and return it
+	let max = Math.max(...numArr).toString();
+	let min = Math.min(...numArr).toString();
+	return `${max} ${min}`;
+}
+console.log(highAndLow('4 5 29 54 4 0 -214 542 -64 1 -3 6 -6')); // "542 -214"
