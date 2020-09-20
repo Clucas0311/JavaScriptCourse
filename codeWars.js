@@ -711,4 +711,15 @@ function findShort(s) {
 	return Math.min(...s.split(' ').map((element) => element.length));
 }
 
-console.log(findShort('bitcoin take over the world maybe who knows perhaps')); // 3
+// console.log(findShort('bitcoin take over the world maybe who knows perhaps')); // 3
+
+// Your task is to make a function that can take any non-negative integer as
+// an argument and return it with its digits in descending order. Essentially,
+// rearrange the digits to create the highest possible number.
+
+function descendingOrder(n) {
+	// convert the int into a string then into an array then sort in decescendig order
+	return Number.parseInt(n.toString().split('').sort((a, b) => b - a).join(''));
+}
+
+console.log(descendingOrder(123456789)); // 987654321
