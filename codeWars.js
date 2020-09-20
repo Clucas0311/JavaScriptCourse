@@ -722,4 +722,27 @@ function descendingOrder(n) {
 	return Number.parseInt(n.toString().split('').sort((a, b) => b - a).join(''));
 }
 
-console.log(descendingOrder(123456789)); // 987654321
+// console.log(descendingOrder(123456789)); // 987654321
+
+// Check to see if a string has the same amount of 'x's and 'o's.
+// The method must return a boolean and be case insensitive.
+// The string can contain any char.
+
+function XO(str) {
+	//code here
+	let x = str.match(/x/gi);
+	let o = str.match(/o/gi);
+	return (x && x.length) === (o && o.length);
+}
+
+// console.log(XO('xxOo')); //true
+
+// In this kata you will create a function that takes a list of non-negative
+// integers and strings and returns a new list with the strings filtered out.
+
+function filter_list(l) {
+	// Return a new array with the strings filtered out
+	// use the filter method and filter strings with the typeof method
+	return l.filter((element) => typeof element === 'number');
+}
+console.log(filter_list([ 1, 'a', 'b', 0, 15 ])); //[1,0,15]
