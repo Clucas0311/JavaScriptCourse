@@ -746,3 +746,32 @@ function filter_list(l) {
 	return l.filter((element) => typeof element === 'number');
 }
 console.log(filter_list([ 1, 'a', 'b', 0, 15 ])); //[1,0,15]
+
+// An isogram is a word that has no repeating letters,
+// consecutive or non-consecutive. Implement a function
+// that determines whether a string that contains only letters
+// is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+function isIsogram(str) {
+	// convert the string into an array
+	const strToArr = str.toLowerCase().split('');
+	// create an obj for a hashmap
+	const charMap = {};
+	// iterate through the string array
+	for (let char of strToArr) {
+		charMap[char] = charMap[char] + 1 || 1;
+	}
+	// iterate through charMap
+	for (let key in charMap) {
+		// if the value is greater than 1
+		if (charMap[key] > 1) {
+			// return false;
+			return false;
+		}
+	}
+	// otherwise return true;
+	return true;
+}
+
+console.log(isIsogram('Dermatoglyphics')); // true;
+console.log(isIsogram('isIsogram')); // false;
