@@ -605,4 +605,43 @@ function disemvowel(str) {
 
 	return str.replace(/[aeiou]/gi, '');
 }
-console.log(disemvowel('This website is for losers LOL!')); //"Ths wbst s fr lsrs LL!"
+// console.log(disemvowel('This website is for losers LOL!')); //"Ths wbst s fr lsrs LL!"
+
+// Consider an array/list of sheep where some sheep may be missing from their
+// place. We need a function that counts the number of sheep present in the array
+// (true means present).
+
+function countSheeps(arrayOfSheep) {
+	// TODO May the force be with you
+	// filter through arrayOfSheep and if element === true get length
+	return arrayOfSheep.filter((element) => element === true).length;
+}
+
+var array1 = [
+	true,
+	true,
+	true,
+	false,
+	true,
+	true,
+	true,
+	true,
+	true,
+	false,
+	true,
+	false,
+	true,
+	false,
+	false,
+	true,
+	true,
+	true,
+	true,
+	true,
+	false,
+	false,
+	true,
+	true
+];
+
+console.log(countSheeps(array1)); //== 17, //"There are 17 sheeps in total"
