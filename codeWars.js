@@ -514,8 +514,8 @@ function getAverage(marks) {
 	const sum = marks.reduce((prev, next) => prev + next, 0);
 	return Math.floor(sum / marks.length);
 }
-console.log(getAverage([ 2, 2, 2, 2 ])); // 2
-console.log(getAverage([ 1, 2, 3, 4, 5 ])); //3
+// console.log(getAverage([ 2, 2, 2, 2 ])); // 2
+// console.log(getAverage([ 1, 2, 3, 4, 5 ])); //3
 
 // We will consider a, e, i, o, u as vowels for this Kata (but not y).
 // The input string will only consist of lower cas
@@ -539,4 +539,13 @@ function getCount(str) {
 	return vowelsCount;
 }
 
-console.log(getCount('abracadabra')); // 6
+// console.log(getCount('abracadabra')); // 5
+
+// Very simple, given a number, find its opposite.
+function opposite(number) {
+	//your code here
+	// return -number
+	return -number;
+}
+
+console.log(opposite(1)); // -1;
