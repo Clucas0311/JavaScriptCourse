@@ -5,12 +5,17 @@
 
 function hello(name) {
 	// if name === undefined or an empty string
-	if (name === undefined || name === '') {
-		// then return 'Hello, World!'
-		return 'Hello, World!';
-	} // otherwise..
-	// return Hello, + name[0].toUpperCase() + slice(1).toLowerCase()!
-	return `Hello, ${name[0].toUpperCase() + name.slice(1).toLowerCase()}!`;
+	// if (name === undefined || name === '') {
+	// 	// then return 'Hello, World!'
+	// 	return 'Hello, World!';
+	// } // otherwise..
+	// // return Hello, + name[0].toUpperCase() + slice(1).toLowerCase()!
+	// return `Hello, ${name[0].toUpperCase() + name.slice(1).toLowerCase()}!`;
+	// if (name) {
+	// 	return `Hello, ${name[0].toUpperCase() + name.slice(1).toLowerCase()}!`;
+	// }
+	// return `Hello, World!`;
+	return name ? `Hello, ${name[0].toUpperCase() + name.slice(1).toLowerCase()}! ` : `Hello, World!`;
 }
 // console.log(hello('jOhn'));
 
@@ -54,15 +59,16 @@ function arr(N) {
 // element has the index 0.
 
 function index(array, n) {
-	// if n is greater than or equal to array length
-	if (n >= array.length) {
-		// then return -1
-		return -1;
-	} // otherwise
-	// return Math.pow(array[n], n)
-	return Math.pow(array[n], n);
+	// // if n is greater than or equal to array length
+	// if (n >= array.length) {
+	// 	// then return -1
+	// 	return -1;
+	// } // otherwise
+	// // return Math.pow(array[n], n)
+	// return Math.pow(array[n], n);
+	return n >= array.length ? -1 : Math.pow(array[n], n);
 }
-// console.log(index([ 0, 1 ], 0));
+// console.log(index([ 0, 1 ], 0)); // 1
 
 // Hey awesome programmer!
 // You've got much data to manage and of course you use zero-based and non-negative ID's
@@ -644,7 +650,7 @@ var array1 = [
 	true
 ];
 
-console.log(countSheeps(array1)); //== 17, //"There are 17 sheeps in total"
+// console.log(countSheeps(array1)); //== 17, //"There are 17 sheeps in total"
 
 // Welcome. In this kata, you are asked to square every digit of a number and concatenate
 // them.For example, if we run 9119 through the function, 811181
@@ -659,4 +665,13 @@ function squareDigits(num) {
 	return Number(strNum);
 }
 
-console.log(squareDigits(9119)); //811181
+// console.log(squareDigits(9119)); //811181
+
+// Create a function (or write a script in Shell) that takes an integer as an
+// argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+function even_or_odd(number) {
+	return number % 2 === 0 ? 'Even' : 'Odd';
+}
+
+console.log(even_or_odd(2)); //"Even"
