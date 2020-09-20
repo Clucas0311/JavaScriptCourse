@@ -588,19 +588,21 @@ function getMiddle(string) {
 
 function disemvowel(str) {
 	// create an array of vowels
-	const vowel = [ 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' ];
-	// create a string to concatanate the elements
-	let newStr = '';
-	// convert the str into an array by space
-	// iterate through str array
-	for (let element of str.split('')) {
-		// if the vowel array doesnt contain the element
-		if (vowel.indexOf(element) === -1) {
-			// add the element to the string that isn't a vowel
-			newStr += element;
-		}
-	}
-	// return newStr
-	return newStr;
+	// const vowel = [ 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' ];
+	// // create a string to concatanate the elements
+	// let newStr = '';
+	// // convert the str into an array by space
+	// // iterate through str array
+	// for (let element of str.split('')) {
+	// 	// if the vowel array doesnt contain the element
+	// 	if (vowel.indexOf(element) === -1) {
+	// 		// add the element to the string that isn't a vowel
+	// 		newStr += element;
+	// 	}
+	// }
+	// // return newStr
+	// return newStr;
+
+	return str.replace(/[aeiou]/gi, '');
 }
 console.log(disemvowel('This website is for losers LOL!')); //"Ths wbst s fr lsrs LL!"
