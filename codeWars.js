@@ -645,3 +645,18 @@ var array1 = [
 ];
 
 console.log(countSheeps(array1)); //== 17, //"There are 17 sheeps in total"
+
+// Welcome. In this kata, you are asked to square every digit of a number and concatenate
+// them.For example, if we run 9119 through the function, 811181
+// will come out, because 92 is 81 and 12 is 1.
+
+function squareDigits(num) {
+	//may the code be with you
+	// convert the number into a string then to an array
+	// iterate through array and sqaure each element
+	// then convert back to string
+	let strNum = num.toString().split('').map((element) => element ** 2).join('');
+	return Number(strNum);
+}
+
+console.log(squareDigits(9119)); //811181
