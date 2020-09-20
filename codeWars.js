@@ -516,3 +516,27 @@ function getAverage(marks) {
 }
 console.log(getAverage([ 2, 2, 2, 2 ])); // 2
 console.log(getAverage([ 1, 2, 3, 4, 5 ])); //3
+
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+// The input string will only consist of lower cas
+
+function getCount(str) {
+	// create counter variable
+	var vowelsCount = 0;
+	// create an array of vowels
+	const vowels = [ 'a', 'e', 'i', 'o', 'u' ];
+	// convert the string into an array
+	// iterate though str array
+	for (let i = 0; i < str.split('').length; i++) {
+		// if vowels array includes the array element
+		if (vowels.includes(str[i])) {
+			// count++
+			vowelsCount++;
+		}
+	}
+	// return counter
+
+	return vowelsCount;
+}
+
+console.log(getCount('abracadabra')); // 6
