@@ -688,4 +688,26 @@ function highAndLow(numbers) {
 	let min = Math.min(...numArr).toString();
 	return `${max} ${min}`;
 }
-console.log(highAndLow('4 5 29 54 4 0 -214 542 -64 1 -3 6 -6')); // "542 -214"
+// console.log(highAndLow('4 5 29 54 4 0 -214 542 -64 1 -3 6 -6')); // "542 -214"
+
+// Simple, given a string of words, return the length of the shortest word(s).
+// String will never be empty and you do not need to account for different data types.
+
+function findShort(s) {
+	// convert the string into an array by space
+	const strArr = s.split(' ');
+	// create a variable min and assign it to the first element
+	let min = strArr[0];
+	// iterate through the string array
+	for (let i = 1; i < strArr.length; i++) {
+		// if the element length is less than min length
+		if (strArr[i].length < min.length) {
+			// reassign the value of min to element
+			min = strArr[i];
+		}
+	}
+	// return min length;
+	return min.length;
+}
+
+console.log(findShort('bitcoin take over the world maybe who knows perhaps')); // 3
