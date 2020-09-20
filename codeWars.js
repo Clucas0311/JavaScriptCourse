@@ -578,4 +578,29 @@ function getMiddle(string) {
 	return string[middle];
 }
 
-console.log(getMiddle('test')); //"es"
+// console.log(getMiddle('test')); //"es"
+
+// Trolls are attacking your comment section!
+// A common way to deal with this situation is to remove all of the vowels
+// from the trolls' comments, neutralizing the threat.
+// Your task is to write a function that takes a string and return a new string
+//  with all vowels removed.
+
+function disemvowel(str) {
+	// create an array of vowels
+	const vowel = [ 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' ];
+	// create a string to concatanate the elements
+	let newStr = '';
+	// convert the str into an array by space
+	// iterate through str array
+	for (let element of str.split('')) {
+		// if the vowel array doesnt contain the element
+		if (vowel.indexOf(element) === -1) {
+			// add the element to the string that isn't a vowel
+			newStr += element;
+		}
+	}
+	// return newStr
+	return newStr;
+}
+console.log(disemvowel('This website is for losers LOL!')); //"Ths wbst s fr lsrs LL!"
