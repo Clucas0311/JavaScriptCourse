@@ -745,7 +745,7 @@ function filter_list(l) {
 	// use the filter method and filter strings with the typeof method
 	return l.filter((element) => typeof element === 'number');
 }
-console.log(filter_list([ 1, 'a', 'b', 0, 15 ])); //[1,0,15]
+// console.log(filter_list([ 1, 'a', 'b', 0, 15 ])); //[1,0,15]
 
 // An isogram is a word that has no repeating letters,
 // consecutive or non-consecutive. Implement a function
@@ -753,12 +753,13 @@ console.log(filter_list([ 1, 'a', 'b', 0, 15 ])); //[1,0,15]
 // is an isogram. Assume the empty string is an isogram. Ignore letter case.
 
 function isIsogram(str) {
-	// convert the string into an array
+	// convert the string to lower case letters and  into an array
 	const strToArr = str.toLowerCase().split('');
-	// create an obj for a hashmap
+	// create an obj for a hashmap table for the characters
 	const charMap = {};
-	// iterate through the string array
+	// iterate through the string array to bulid character map
 	for (let char of strToArr) {
+		// if value exist add one if not assign to 1
 		charMap[char] = charMap[char] + 1 || 1;
 	}
 	// iterate through charMap
@@ -773,5 +774,16 @@ function isIsogram(str) {
 	return true;
 }
 
-console.log(isIsogram('Dermatoglyphics')); // true;
-console.log(isIsogram('isIsogram')); // false;
+// console.log(isIsogram('Dermatoglyphics')); // true;
+// console.log(isIsogram('isIsogram')); // false;
+
+// Make a program that filters a list of strings and returns a
+// list with only your friends name in it.
+// If a name has exactly 4 letters in it, you can be sure that
+// it has to be a friend of yours! Otherwise, you can be sure he's not...
+function friend(friends) {
+	//your code here
+	return friends.filter((element) => element.length === 4);
+}
+
+console.log(friend([ 'Ryan', 'Kieran', 'Mark' ]));
