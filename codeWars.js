@@ -909,4 +909,20 @@ function getDivisorsCnt(n) {
 	// return count;
 	return count;
 }
-console.log(getDivisorsCnt(54)); // 8
+// console.log(getDivisorsCnt(54)); // 8
+
+// Your task is to remove all duplicate words from a string,
+// leaving only single (first) words entries.
+
+function removeDuplicateWords(s) {
+	return (
+		s // convert the string into an array
+			.split(' ')
+			// iterate through array and remove duplicates
+			.filter((element, i, array) => array.indexOf(element) === i)
+			// revert the array back into a string
+			.join(' ')
+	);
+}
+
+console.log(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta')); // 'alpha beta gamma delta';
