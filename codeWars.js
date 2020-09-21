@@ -814,27 +814,27 @@ function stray(numbers) {
 	}
 	// return the last element
 	return numbers[numbers.length - 1];
-	// }
-	// console.log(stray([ 1, 1, 2 ])); // 2
+}
+// }
+// console.log(stray([ 1, 1, 2 ])); // 2
 
-	// In this kata you get the start number and the end number of a region and
-	// should return the count of all numbers except numbers with a 5 in it.
-	// The start and the end number are both inclusive!
+// In this kata you get the start number and the end number of a region and
+// should return the count of all numbers except numbers with a 5 in it.
+// The start and the end number are both inclusive!
 
-	function dontGiveMeFive(start, end) {
-		// create an empty array container to get the elements
-		const container = [];
-		// iterate starting at start, ending and equal to end
-		for (let i = start; i <= end; i++) {
-			// if converted string element does not include 5
-			if (!i.toString().includes('5')) {
-				// push into container
-				container.push(i);
-			}
+function dontGiveMeFive(start, end) {
+	// create an empty array container to get the elements
+	const container = [];
+	// iterate starting at start, ending and equal to end
+	for (let i = start; i <= end; i++) {
+		// if converted string element does not include 5
+		if (!i.toString().includes('5')) {
+			// push into container
+			container.push(i);
 		}
-		// return container length
-		return container.length;
 	}
+	// return container length
+	return container.length;
 }
 
 console.log(dontGiveMeFive(4, 17)); // 12
