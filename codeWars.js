@@ -786,7 +786,7 @@ function friend(friends) {
 	return friends.filter((element) => element.length === 4);
 }
 
-console.log(friend([ 'Ryan', 'Kieran', 'Mark' ]));
+// console.log(friend([ 'Ryan', 'Kieran', 'Mark' ]));
 
 // Complete the solution so that it returns true if the first argument(string)
 //  passed in ends with the 2nd argument (also a string).
@@ -796,5 +796,23 @@ function solution(str, ending) {
 	return str.slice(-ending.length) === ending ? true : false;
 }
 
-console.log(solution('abcde', 'cde')); // true
-console.log(solution('abcde', 'abc')); //false
+// console.log(solution('abcde', 'cde')); // true
+// console.log(solution('abcde', 'abc')); //false
+
+// You are given an odd-length array of integers,
+// in which all of them are the same, except for one single number.
+// Complete the method which accepts such an array, and returns that
+// single different number.
+
+function stray(numbers) {
+	// sort through numbers array
+	numbers.sort((a, b) => a - b);
+	// if the first element doesn't equal the second element
+	if (numbers[0] !== numbers[1]) {
+		// then return the first element
+		return numbers[0];
+	}
+	// return the last element
+	return numbers[numbers.length - 1];
+}
+console.log(stray([ 1, 1, 2 ])); // 2
