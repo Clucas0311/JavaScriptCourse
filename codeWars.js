@@ -890,4 +890,23 @@ function sumDigits(number) {
 	// use reduce to calculate the sum but convert each element back into int
 	return number.toString().split('').reduce((prev, next) => Number(prev) + Number(next), 0);
 }
-console.log(sumDigits(10)); // 1
+// console.log(sumDigits(10)); // 1
+
+// Count the number of divisors of a positive integer n.
+
+function getDivisorsCnt(n) {
+	// todo
+	// create a count variable assign to 0
+	let count = 0;
+	// iterate starting at 1 ending at and equal to n
+	for (let i = 1; i <= n; i++) {
+		// if n is divisble by i
+		if (n % i === 0) {
+			// increment count
+			count++;
+		}
+	}
+	// return count;
+	return count;
+}
+console.log(getDivisorsCnt(54)); // 8
