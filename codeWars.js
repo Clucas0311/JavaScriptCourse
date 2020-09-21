@@ -867,8 +867,8 @@ function findSum(n) {
 function inAscOrder(arr) {
 	// iterate through the array
 	for (let i = 0; i < arr.length; i++) {
-		// if arr[i] < arr[i + 1]
-		if (arr[i] >= arr[i + 1]) {
+		// if arr[i] > arr[i + 1]
+		if (arr[i] > arr[i + 1]) {
 			// return false
 			return false;
 		}
@@ -877,4 +877,17 @@ function inAscOrder(arr) {
 	return true;
 }
 
-console.log(!inAscOrder([ 1, 6, 10, 18, 2, 4, 20 ]));
+// console.log(!inAscOrder([ 1, 6, 10, 18, 2, 4, 20 ]));
+
+// Write a function named sumDigits which takes a number as input and
+// returns the sum of the absolute value of each of the number's decimal digits.
+
+function sumDigits(number) {
+	// convert the number into a positive integer
+	number = Math.abs(number);
+	// convert number into a string
+	// convert string into an array
+	// use reduce to calculate the sum but convert each element back into int
+	return number.toString().split('').reduce((prev, next) => Number(prev) + Number(next), 0);
+}
+console.log(sumDigits(10)); // 1
