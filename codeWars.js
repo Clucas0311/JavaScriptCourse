@@ -857,4 +857,24 @@ function findSum(n) {
 	return sum;
 }
 
-console.log(findSum(5)); // 8
+// console.log(findSum(5)); // 8
+
+// In this Kata, your function receives an array of integers as input.
+// Your task is to determine whether the numbers are in ascending order.
+// An array is said to be in ascending order if there are no two adjacent
+// integers where the left integer exceeds the right integer in value.
+
+function inAscOrder(arr) {
+	// iterate through the array
+	for (let i = 0; i < arr.length; i++) {
+		// if arr[i] < arr[i + 1]
+		if (arr[i] >= arr[i + 1]) {
+			// return false
+			return false;
+		}
+	}
+	// return true
+	return true;
+}
+
+console.log(!inAscOrder([ 1, 6, 10, 18, 2, 4, 20 ]));
