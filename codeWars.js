@@ -934,4 +934,25 @@ function sortByLength(array) {
 	// Return an array containing the same strings, ordered from shortest to longest
 	return array.sort((a, b) => a.length - b.length);
 }
-console.log(sortByLength([ 'Beg', 'Life', 'I', 'To' ])); //["I", "To", "Beg", "Life"]
+// console.log(sortByLength([ 'Beg', 'Life', 'I', 'To' ])); //["I", "To", "Beg", "Life"]
+
+// Given an array of integers, find the one that appears an odd number of times.
+function findOdd(A) {
+	// create a numMap
+	const numMap = {};
+	// iterate through array
+	for (let num of A) {
+		// if there is a value then add one or assign 1 (no value)
+		numMap[num] = numMap[num] + 1 || 1;
+	}
+	// iterate through the keys
+	for (let key in numMap) {
+		// if the value of the object is odd
+		if (numMap[key] % 2 !== 0) {
+			// return key but convert back into a number
+			return parseInt(key);
+		}
+	}
+}
+
+console.log(findOdd([ 20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5 ])); // 5
