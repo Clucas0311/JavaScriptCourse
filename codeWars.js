@@ -837,4 +837,24 @@ function dontGiveMeFive(start, end) {
 	return container.length;
 }
 
-console.log(dontGiveMeFive(4, 17)); // 12
+// console.log(dontGiveMeFive(4, 17)); // 12
+
+// Your task is to write function findSum.
+// Upto and including n, this function will return the sum of all multiples of 3 and 5.
+
+function findSum(n) {
+	// create an empty array container to hold elements inside
+	let sum = 0;
+	// iterate starting at 0 and ending and including n
+	for (let i = 0; i <= n; i++) {
+		// if the element are divisible 3 or divisble by 5
+		if (i % 3 === 0 || i % 5 === 0) {
+			// then push elements into container
+			sum += i;
+		}
+	}
+	// use reduce to sum up the elemens of the container and return it
+	return sum;
+}
+
+console.log(findSum(5)); // 8
