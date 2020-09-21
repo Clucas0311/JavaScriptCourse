@@ -925,4 +925,13 @@ function removeDuplicateWords(s) {
 	);
 }
 
-console.log(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta')); // 'alpha beta gamma delta';
+// console.log(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta')); // 'alpha beta gamma delta';
+
+// Write a function that takes an array of strings as an argument and returns a
+// sorted array containing the same strings, ordered from shortest to longest.
+
+function sortByLength(array) {
+	// Return an array containing the same strings, ordered from shortest to longest
+	return array.sort((a, b) => a.length - b.length);
+}
+console.log(sortByLength([ 'Beg', 'Life', 'I', 'To' ])); //["I", "To", "Beg", "Life"]
