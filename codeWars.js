@@ -498,6 +498,18 @@ function alternateCase(s) {
 	// return new string
 	return newStr;
 }
+
+function crazyCaps(str) {
+	let crazyString = '';
+	for (let i = 0; i < str.length; i++) {
+		if (i % 2 === 1) {
+			crazyString += str[i].toUpperCase();
+		} else {
+			crazyString += str[i];
+		}
+	}
+	return crazyString;
+}
 // console.log(alternateCase('abc')); //"ABC"
 // console.log(alternateCase('Hello World')); // hELLO wORLD
 
