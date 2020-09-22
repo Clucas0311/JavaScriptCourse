@@ -998,3 +998,31 @@ function bacteriaTime(currNum, targetNum) {
 	// return minutes when loop finishes
 	return minutes;
 }
+
+// Define a function, oddCouple, that accepts an array of numbers as an argument.
+// oddCouple should return a new array with the first two odd numbers from the original
+// array:
+
+// create a function named oddCouple
+function oddCouple(arr) {
+	// create an empty array
+	const oddArr = [];
+	// iterate thorugh the array
+	for (let i = 0; i < arr.length; i++) {
+		// if element is odd
+		if (arr[i] % 2 === 1) {
+			// then push odd elements into array
+			oddArr.push(arr[i]);
+		}
+		// check to see if the length of the odd array is 2
+		if (oddArr.length === 2)
+			// return odd array
+			return oddArr;
+	}
+	// return odd array
+	return oddArr;
+}
+
+console.log(oddCouple([ 1, 2, 3, 4, 5 ]));
+console.log(oddCouple([ 10, 15, 20 ]));
+console.log(oddCouple(2, 4, 6, 8));
