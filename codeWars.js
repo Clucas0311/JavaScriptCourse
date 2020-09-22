@@ -967,4 +967,34 @@ function findOdd(A) {
 	}
 }
 
-console.log(findOdd([ 20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5 ])); // 5
+// console.log(findOdd([ 20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5 ])); // 5
+
+// Define a function, bacteriaTime, that accepts two arguments:
+
+// currentNum (num) - number of starting bacteria
+// targetNum (num) - desired number of bacteria
+// Assuming that the number of bacteria double every 20 minutes,
+// bacteriaTime should return the number of minutes required for the number of
+// bacteria to grow from the currentNum to a number equal to or larger than the targetNum.
+
+// You can assume the currentNum will be a positive integer. If the targetNum is
+// smaller than the currentNum, return the string 'targetNum must be larger than
+// currentNum'.
+
+// create a function named bacteria time currentNum and targetNum
+function bacteriaTime(currNum, targetNum) {
+	// if the targetNum is less than the currNum
+	if (targetNum < currNum) return 'targetNum must be larger than currentNum';
+	// return 'targetNum must be larger than currentNum'
+	// create a variabe for the minutes
+	let minutes = 0;
+	// while currNum is less than targetNum
+	while (currNum < targetNum) {
+		// currentNum * 2
+		currNum *= 2;
+		// minutes += 20
+		minutes += 20;
+	}
+	// return minutes when loop finishes
+	return minutes;
+}
