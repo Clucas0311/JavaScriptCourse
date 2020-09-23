@@ -163,27 +163,24 @@ console.log(arrayFlattener([ 1, [ 2, 3 ], 4 ])); // => [1, 2, 3, 4]
 // array of animal facts. zooInventory should return a new, flat array.
 // Each element in the new array should be a sentence about each of the animals in the zoo.
 
-// create a function named myZoo --> array
 function zooInventory(array) {
-	// create an array container = [];
+	// create a variable, sentences and assign to an empty array
 	const sentences = [];
 	// iterate through the array
 	for (let i = 0; i < array.length; i++) {
-		// grab the animal element assign it to [0]
+		// grab the elements assign to a variable animal
 		let animal = array[i];
-		// create a variable and assign it to the first element
+		// create a name assign to the first element
 		let name = animal[0];
-		// grab the species element assign it to [1][0]
+		// create a variable species assign to the first element at index 0
 		let species = animal[1][0];
-		// grab the age element and assign it to [1][1]
+		// create an age variable and assign to the first element at index 1
 		let age = animal[1][1];
+		// create a variable called sentence assign to  - name the species is age
 		let sentence = `${name} the ${species} is ${age}.`;
-		// the put inside the array container the elements
+		// push sentence into sentences array
 		sentences.push(sentence);
-		// animal the species is age
 	}
-	// return the container
-	return sentences;
 }
 
 let myZoo = [
