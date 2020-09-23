@@ -121,3 +121,38 @@ for (let i = 0; i < rsvpGroups.length; i++) {
 		console.log(element);
 	}
 }
+
+const grid = [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ];
+const newArr = [];
+for (let i = 0; i < grid.length; i++) {
+	newArr.push(grid[i][1]);
+}
+console.log(newArr);
+
+// Array Flattener
+// Define a function, arrayFlattener, that accepts a two-dimensional array as an argument.
+// arrayFlattener should return a new, one-dimensional array.
+
+function arrayFlattener(array) {
+	// create a variable name it flat assign an empty array
+	const flatArr = [];
+	// iterate through the array
+	for (i = 0; i < array.length; i++) {
+		// assign the element to a varable element
+		const element = array[i];
+		// if the element is an array
+		if (Array.isArray(element)) {
+			// loop through that array again
+			for (let j = 0; j < element.length; j++) {
+				// push into the flat container the element
+				flatArr.push(element[j]);
+			}
+			//otherwise
+		} else {
+			// push the element into the the flat container
+			flatArr.push(element);
+		}
+	}
+	// return flat array
+	return flatArr;
+}
