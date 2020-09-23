@@ -127,7 +127,7 @@ const newArr = [];
 for (let i = 0; i < grid.length; i++) {
 	newArr.push(grid[i][1]);
 }
-console.log(newArr);
+// console.log(newArr);
 
 // Array Flattener
 // Define a function, arrayFlattener, that accepts a two-dimensional array as an argument.
@@ -138,16 +138,16 @@ function arrayFlattener(array) {
 	const flatArr = [];
 	// iterate through the array
 	for (i = 0; i < array.length; i++) {
-		// assign the element to a varable element
+		// grab the current element
 		const element = array[i];
-		// if the element is an array
+		// check to see if the element is an array or not
 		if (Array.isArray(element)) {
 			// loop through that array again
 			for (let j = 0; j < element.length; j++) {
 				// push into the flat container the element
 				flatArr.push(element[j]);
 			}
-			//otherwise
+			//otherwise if not an array
 		} else {
 			// push the element into the the flat container
 			flatArr.push(element);
@@ -156,3 +156,44 @@ function arrayFlattener(array) {
 	// return flat array
 	return flatArr;
 }
+
+console.log(arrayFlattener([ 1, [ 2, 3 ], 4 ])); // => [1, 2, 3, 4]
+
+// Define a function, zooInventory, that accepts a multi-dimensional
+// array of animal facts. zooInventory should return a new, flat array.
+// Each element in the new array should be a sentence about each of the animals in the zoo.
+
+// create a function named myZoo --> array
+function zooInventory(array) {
+	// create an array container = [];
+	const sentences = [];
+	// iterate through the array
+	for (let i = 0; i < array.length; i++) {
+		// grab the animal element assign it to [0]
+		let animal = array[i];
+		// create a variable and assign it to the first element
+		let name = animal[0];
+		// grab the species element assign it to [1][0]
+		let species = animal[1][0];
+		// grab the age element and assign it to [1][1]
+		let age = animal[1][1];
+		let sentence = `${name} the ${species} is ${age}.`;
+		// the put inside the array container the elements
+		sentences.push(sentence);
+		// animal the species is age
+	}
+	// return the container
+	return sentences;
+}
+
+let myZoo = [
+	[ 'King Kong', [ 'gorilla', 42 ] ],
+	[ 'Nemo', [ 'fish', 5 ] ],
+	[ 'Punxsutawney Phil', [ 'groundhog', 11 ] ]
+];
+
+console.log(zooInventory(myZoo));
+/* => ['King Kong the gorilla is 42.',
+		 'Nemo the fish is 5.'
+		 'Punxsutawney Phil the groundhog is 11.']
+  */
