@@ -621,4 +621,28 @@ let transactions = [
 	}
 ];
 
-console.log(lastFridayNight(transactions)); // => 10512
+// console.log(lastFridayNight(transactions)); // => 10512
+
+// create a function nam compareObjects --> obj1 obj2
+function compareObjects(obj1, obj2) {
+	// iterate through obj1 using for in loop
+	for (let key in obj1) {
+		// if obj[key] does not equal obj2[key]
+		if (obj1[key] !== obj2[key]) {
+			// return false
+			return false;
+		}
+	}
+
+	for (let key in obj2) {
+		if (obj2[key] !== obj1[key]) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+console.log(compareObjects({ name: 'nick' }, { name: 'nick' })); // -> true
+
+console.log(compareObjects({ name: 'zeke' }, { name: 'zeke', age: 12 })); // -> false
