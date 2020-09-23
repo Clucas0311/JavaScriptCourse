@@ -592,12 +592,12 @@ function lastFridayNight(array) {
 	let sum = 0;
 	// iterate through the array of transactions
 	for (let i = 0; i < array.length; i++) {
-		// // grab the array element assign to the variable element
-		// const {obj} = array[i];
-		// // then add sum to each iteration of amount
-		// sum += obj['amount'];
-		const { amount } = array[i];
-		sum += amount;
+		// grab the array element assign to the variable element
+		const obj = array[i];
+		// then add sum to each iteration of amount
+		sum += obj['amount'];
+		// const { amount } = array[i];
+		// sum += amount;
 	}
 	// return sum;
 	return sum;
@@ -643,6 +643,68 @@ function compareObjects(obj1, obj2) {
 	return true;
 }
 
-console.log(compareObjects({ name: 'nick' }, { name: 'nick' })); // -> true
+// console.log(compareObjects({ name: 'nick' }, { name: 'nick' })); // -> true
 
-console.log(compareObjects({ name: 'zeke' }, { name: 'zeke', age: 12 })); // -> false
+// console.log(compareObjects({ name: 'zeke' }, { name: 'zeke', age: 12 })); // -> false
+
+let animalNoises = [
+	{
+		dog: {
+			America: 'Woof! Woof!',
+			Germany: 'Wau Wau!',
+			England: 'Bow wow!',
+			Uruguay: 'Jua jua!',
+			Afrikaans: 'Blaf!',
+			Korea: 'Mong mong!',
+			Iceland: 'Voff voff!',
+			Albania: 'Ham!',
+			Algeria: 'Ouaf ouaf!'
+		}
+	},
+	{
+		cat: {
+			America: 'Meow',
+			Germany: 'Miauw!',
+			England: 'mew mew',
+			Uruguay: 'Miau Miau!',
+			Afrikaans: 'Purr',
+			Korea: 'Nyaong!',
+			Iceland: 'Kurnau!',
+			Albania: 'Miau',
+			Algeria: 'Miaou!'
+		}
+	},
+	{
+		chicken: {
+			America: 'Cluck cluck',
+			Germany: 'tock tock tock',
+			England: 'Cluck Cluck',
+			Uruguay: 'gut gut gdak',
+			Afrikaans: 'kukeleku',
+			Korea: 'ko-ko-ko',
+			Iceland: 'Chuck-chuck!',
+			Albania: 'Kotkot',
+			Algeria: 'Cotcotcodet'
+		}
+	}
+];
+f; // declare a function named petSounds animal country
+function petSounds(animal, country) {
+	// iterate over the array of object to get each individual element
+	for (let i = 0; i < animalNoises.length; i++) {
+		// grab the element from the array and store it into a variable animalObject
+		const animalObj = animalNoises[i];
+		// check to see if the animal is in the animalObject
+		if (animal in animalObj) {
+			// store the value of each object into a variable animalObject[animal]
+			let countrySounds = animalObj[animal];
+			// create a varible sounds assign to countrySounds[country]
+			let sounds = countrySounds[country];
+			// format the animal element to have the first character uppercased
+			animal = animal[0].toUpperCase() + animal.slice(1);
+			//  return animal + ' in ' + country + ' say ' + sound;
+			return `${animal}s in ${country} say ${sounds}`;
+		}
+	}
+}
+console.log(petSounds('dog', 'America'));
