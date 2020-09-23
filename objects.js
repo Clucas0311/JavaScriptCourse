@@ -688,7 +688,7 @@ let animalNoises = [
 		}
 	}
 ];
-f; // declare a function named petSounds animal country
+// declare a function named petSounds animal country
 function petSounds(animal, country) {
 	// iterate over the array of object to get each individual element
 	for (let i = 0; i < animalNoises.length; i++) {
@@ -707,4 +707,22 @@ function petSounds(animal, country) {
 		}
 	}
 }
-console.log(petSounds('dog', 'America'));
+// console.log(petSounds('dog', 'America'));
+
+// Define a function frequencyAnalysis that accepts a string of lower-case letters.
+// frequencyAnalysis should return an object containing the count for each letter
+// in the string.
+
+// declare a function name frequencyAnalysis one argument str
+function frequencyAnalysis(str) {
+	// create a character map assign to an empty obj --> put characters and count in
+	const charMap = {};
+	// iterate through the string
+	for (let char of str) {
+		// reassign the value of the charMap if there is a value plus 1 or just assign it to 1
+		charMap[char] = charMap[char] + 1 || 1;
+	}
+	// return the charMap
+	return charMap;
+}
+console.log(frequencyAnalysis('abca')); // => {a: 2, b: 1, c: 1}
