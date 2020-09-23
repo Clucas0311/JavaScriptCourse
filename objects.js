@@ -455,7 +455,7 @@ var obj = {
 	key: [ 1000, 10, 50, 10 ]
 };
 var output = getElementsThatEqual10AtProperty(obj, 'key');
-console.log(output); // --> [10, 10]
+// console.log(output); // --> [10, 10]
 
 // Write a function called "getFirstElementOfProperty".
 // Given an object and a key, "getFirstElementOfProperty" returns the
@@ -525,7 +525,7 @@ var obj = {
 	key: [ 1000, 11, 50, 17 ]
 };
 var output = getEvenElementsAtProperty(obj, 'key');
-console.log(output); // --> [1000, 50]
+// console.log(output); // --> [1000, 50]
 
 // Write a function called "getSumOfAllElementsAtProperty".
 // Given an object and a key, "getSumOfAllElementsAtProperty" returns the
@@ -579,7 +579,7 @@ var input = {
 	age: 35,
 	role: 'producer'
 };
-console.log(convertObjectToArray(input));
+// console.log(convertObjectToArray(input));
 // ----> [['name', 'Holly'], ['age', 35], ['role', 'producer']]
 
 // According to the song, Katy Perry "maxed our credit cards".
@@ -725,4 +725,39 @@ function frequencyAnalysis(str) {
 	// return the charMap
 	return charMap;
 }
-console.log(frequencyAnalysis('abca')); // => {a: 2, b: 1, c: 1}
+// console.log(frequencyAnalysis('abca')); // => {a: 2, b: 1, c: 1}
+
+let classRoom = [
+	{
+		Marnie: [ { Monday: true }, { Tuesday: true }, { Wednesday: true }, { Thursday: true }, { Friday: true } ]
+	},
+	{
+		Lena: [ { Monday: false }, { Tuesday: false }, { Wednesday: true }, { Thursday: false }, { Friday: true } ]
+	},
+	{
+		Shoshanna: [ { Monday: true }, { Tuesday: true }, { Wednesday: false }, { Thursday: true }, { Friday: false } ]
+	},
+	{
+		Jessa: [ { Monday: false }, { Tuesday: false }, { Wednesday: false }, { Thursday: false }, { Friday: true } ]
+	}
+];
+function attendenceCheck(day) {
+	const student = [];
+	for (let i = 0; i < classRoom.length; i++) {
+		const personObj = classRoom[i];
+		for (let name in personObj) {
+			let attended = personObj[name];
+			for (let j = 0; j < attended.length; j++) {
+				const daysPresentObj = attended[j];
+				if (daysPresentObj[day] === true) {
+					student.push(name);
+				}
+			}
+		}
+	}
+	return student;
+}
+
+console.log(attendenceCheck('Monday')); // => ['Marnie', 'Shoshanna']
+
+console.log(attendenceCheck('Wednesday')); // => ['Marnie', 'Lena']
