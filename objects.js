@@ -581,3 +581,44 @@ var input = {
 };
 console.log(convertObjectToArray(input));
 // ----> [['name', 'Holly'], ['age', 35], ['role', 'producer']]
+
+// According to the song, Katy Perry "maxed our credit cards".
+// Define a function, lastFridayNight, takes an array of transactions.
+// lastFridayNight should return the total amount she spent last Friday night.
+
+// create a function named lastFridayNight - array argument
+function lastFridayNight(array) {
+	// create a variable sum  assign to 0 to accumulate the amount
+	let sum = 0;
+	// iterate through the array of transactions
+	for (let i = 0; i < array.length; i++) {
+		// // grab the array element assign to the variable element
+		// const {obj} = array[i];
+		// // then add sum to each iteration of amount
+		// sum += obj['amount'];
+		const { amount } = array[i];
+		sum += amount;
+	}
+	// return sum;
+	return sum;
+}
+let transactions = [
+	{
+		name: 'Tons of glitter',
+		amount: 70
+	},
+	{
+		name: 'Porcelain Pink Flamingos',
+		amount: 92
+	},
+	{
+		name: 'Chandelier replacement',
+		amount: 10000
+	},
+	{
+		name: 'Dinner at TGIF x6',
+		amount: 350
+	}
+];
+
+console.log(lastFridayNight(transactions)); // => 10512
