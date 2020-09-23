@@ -741,23 +741,33 @@ let classRoom = [
 		Jessa: [ { Monday: false }, { Tuesday: false }, { Wednesday: false }, { Thursday: false }, { Friday: true } ]
 	}
 ];
-function attendenceCheck(day) {
+function attendanceCheck(day) {
+	// create an empty array to hold the names inside
 	const student = [];
+	// iterate through the array of objects
 	for (let i = 0; i < classRoom.length; i++) {
+		// grab the first element which will be each student and there object
 		const personObj = classRoom[i];
+		// get the ket for the first object
 		for (let name in personObj) {
+			// grab the object value
 			let attended = personObj[name];
+			// iterate through array of objects
 			for (let j = 0; j < attended.length; j++) {
+				// grab the element for each object
 				const daysPresentObj = attended[j];
+				// if the day is in the obj then return true
 				if (daysPresentObj[day] === true) {
+					// push elements into array
 					student.push(name);
 				}
 			}
 		}
 	}
+	// return array
 	return student;
 }
 
-console.log(attendenceCheck('Monday')); // => ['Marnie', 'Shoshanna']
+console.log(attendanceCheck('Monday')); // => ['Marnie', 'Shoshanna']
 
 console.log(attendenceCheck('Wednesday')); // => ['Marnie', 'Lena']
