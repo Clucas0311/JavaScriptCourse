@@ -96,3 +96,28 @@ function removeAPropertyAgain(arrayOfObjects, index, key) {
 // 	'why'
 // );
 // console.log('should log [{key: "value"}, {first: "one", second: "two", third: "three"}]:', resultObject2);
+
+let relatedThings = [ [ 'Windows', 'MacOS' ], [ 'New York', 'Chicago' ] ];
+
+// console.log(relatedThings[1][0]); // New York
+// console.log(relatedThings[0][1]); // MacOS
+
+let rsvpGroups = [ [ 'Jane', 'Mel' ], 'Jack', [ 'Rohan', 'David', 'Meg' ] ];
+
+// first iterate through the nested array
+for (let i = 0; i < rsvpGroups.length; i++) {
+	// to create a variable called element assign to the the elements[i]
+	let element = rsvpGroups[i];
+	// if the element is an array
+	if (Array.isArray(element)) {
+		// iterate again
+		for (let j = 0; j < element.length; j++) {
+			// console.log(element)
+			console.log(element[j]);
+		}
+	} else {
+		// otherwise
+		// return the non array element
+		console.log(element);
+	}
+}
