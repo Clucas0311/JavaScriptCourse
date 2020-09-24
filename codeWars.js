@@ -1026,3 +1026,35 @@ function oddCouple(arr) {
 console.log(oddCouple([ 1, 2, 3, 4, 5 ]));
 console.log(oddCouple([ 10, 15, 20 ]));
 console.log(oddCouple(2, 4, 6, 8));
+
+// 'Write a function, 'veryOddMutant'. The function accepts an array of numbers.
+// The function should mutate the given array by replacing every even number in the
+// array with the string 'normie'.
+// 'veryOddMutant' should return a count of the number of even numbers it replaced.
+function veryOddMutant(arrNum) {
+	// create a counter variable to accumulate the even elements
+	let count = 0;
+	// iterate through the array
+	for (let i = 0; i < arrNum.length; i++) {
+		// grab the elements and
+		let element = arrNum[i];
+		// if the element is even
+		if (element % 2 === 0) {
+			// reassign the element to normie
+			arrNum[i] = 'normie';
+			// increment count
+			count++;
+		}
+	}
+	//return count;
+	return count;
+}
+
+let allTheNums = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
+let countRemoved = veryOddMutant(allTheNums);
+
+console.log('allTheNums:', allTheNums);
+// [1, 'normie', 3, 'normie', 5, 'normie', 7, 'normie'];
+
+console.log('countRemoved:', countRemoved);
+// 4
