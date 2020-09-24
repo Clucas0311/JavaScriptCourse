@@ -1023,9 +1023,9 @@ function oddCouple(arr) {
 	return oddArr;
 }
 
-console.log(oddCouple([ 1, 2, 3, 4, 5 ]));
-console.log(oddCouple([ 10, 15, 20 ]));
-console.log(oddCouple(2, 4, 6, 8));
+// console.log(oddCouple([ 1, 2, 3, 4, 5 ]));
+// console.log(oddCouple([ 10, 15, 20 ]));
+// console.log(oddCouple(2, 4, 6, 8));
 
 // 'Write a function, 'veryOddMutant'. The function accepts an array of numbers.
 // The function should mutate the given array by replacing every even number in the
@@ -1053,8 +1053,39 @@ function veryOddMutant(arrNum) {
 let allTheNums = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
 let countRemoved = veryOddMutant(allTheNums);
 
-console.log('allTheNums:', allTheNums);
-// [1, 'normie', 3, 'normie', 5, 'normie', 7, 'normie'];
+// console.log('allTheNums:', allTheNums);
+// // [1, 'normie', 3, 'normie', 5, 'normie', 7, 'normie'];
 
-console.log('countRemoved:', countRemoved);
+// console.log('countRemoved:', countRemoved);
 // 4
+
+// Complete the method which returns the number which is most frequent
+// in the given input array. If there is a tie for most frequent number,
+// return the largest number among them.
+function highestRank(arr) {
+	//Your Code logic should written here
+	// create a hashMap
+	const numMap = {};
+	for (let num of arr) {
+		numMap[num] = numMap[num] + 1 || 1;
+	}
+	// put all the values in an array
+	const values = Object.values(numMap);
+	// find the max of the values
+	let max = Math.max(...values);
+	// create a new array for duplicates
+	const newArr = [];
+	for (let key in numMap) {
+		// search to see if the key has a max
+		if (numMap[key] === max) {
+			// push elements into array
+			newArr.push(Number(key));
+		}
+	}
+	// return the max of the values
+
+	return Math.max(...newArr);
+}
+
+const array = [ 12, 10, 8, 12, 7, 6, 4, 10, 12 ];
+console.log(highestRank(array)); // 12
