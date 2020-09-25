@@ -520,9 +520,9 @@ console.log(sumFive(10)); // => 15;
 // return the number of times its been called.
 
 function callCount() {
-	let count = 1;
+	let count = 0;
 	function inner() {
-		return count++;
+		return (count += 1);
 	}
 	return inner;
 }
