@@ -463,8 +463,29 @@ function billerBuilder(state) {
 	return inner;
 }
 
-let newYorkBiller = billerBuilder('NY');
-console.log(newYorkBiller(100)); // => 107.12 (100 * 1.03 * 1.04)
+// let newYorkBiller = billerBuilder('NY');
+// console.log(newYorkBiller(100)); // => 107.12 (100 * 1.03 * 1.04)
 
-let newJersBiller = billerBuilder('NJ');
-console.log(newJersBiller(100)); // => 111.95625 (100 * 1.05 * 1.06625)
+// let newJersBiller = billerBuilder('NJ');
+// console.log(newJersBiller(100)); // => 111.95625 (100 * 1.05 * 1.06625)
+
+// Write a function that generates a 'Times Tables' function for any number passed in.
+// The function should accept a single parameter (a number) and return a function that
+// itself returns the product of that number and any number passed in.
+
+// create a function named timesTable (num1)
+function timesTable(num1) {
+	// create a innerFunction num2
+	function inner(num2) {
+		// return num1 * num2
+		return num1 * num2;
+	}
+	// return innerFunction
+	return inner;
+}
+
+let ninesTable = timesTable(9);
+console.log(ninesTable(8)); // => 72
+
+let twelvesTable = timesTable(12);
+console.log(twelvesTable(100)); // => 1200
