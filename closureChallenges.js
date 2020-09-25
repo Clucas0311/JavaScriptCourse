@@ -527,11 +527,30 @@ function callCount() {
 	return inner;
 }
 
-let newFunction1 = callCount();
-let newFunction2 = callCount();
+// let newFunction1 = callCount();
+// let newFunction2 = callCount();
 
-console.log(newFunction1()); // => 1
-console.log(newFunction1()); // => 2
+// console.log(newFunction1()); // => 1
+// console.log(newFunction1()); // => 2
 
-console.log(newFunction2()); // => 1
-console.log(newFunction2()); // => 2
+// console.log(newFunction2()); // => 1
+// console.log(newFunction2()); // => 2
+
+// Define a function, stringify, that takes a callback and returns a new function.
+// When the new function is called, it should call the callback, and return the value
+// returned by the callback, but not before explicitly coercing the returned value to a
+// string.
+
+function stringify(callback) {
+	function inner(value) {
+		return String(callback(value));
+	}
+	return inner;
+}
+
+function returnsANumber() {
+	return 100;
+}
+
+let newFunction = stringify(returnsANumber);
+console.log(newFunction()); // => '100'
