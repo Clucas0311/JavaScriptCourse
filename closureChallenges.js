@@ -484,8 +484,34 @@ function timesTable(num1) {
 	return inner;
 }
 
-let ninesTable = timesTable(9);
-console.log(ninesTable(8)); // => 72
+// let ninesTable = timesTable(9);
+// console.log(ninesTable(8)); // => 72
 
-let twelvesTable = timesTable(12);
-console.log(twelvesTable(100)); // => 1200
+// let twelvesTable = timesTable(12);
+// console.log(twelvesTable(100)); // => 1200
+
+// Write a function, partial, that accepts a callback and one argument
+// (let's call it 'arg a'). Partial should return a new function. When invoked,
+// the new function will:
+
+// Accept its own argument (let's call it 'arg b')
+// Call the callback, passing in 'arg a' as the first argument and 'arg b' as
+// the second argument
+// Return the value returned by the callback
+
+// create a function named partial two params callback argA
+function partial(callback, argA) {
+	// create a inner function one param argB
+	function inner(argB) {
+		// return callback(argA, argB)
+		return callback(argA, argB);
+	}
+	// return inner
+	return inner;
+}
+function summer(a, b) {
+	return a + b;
+}
+
+let sumFive = partial(summer, 5);
+console.log(sumFive(10)); // => 15;
