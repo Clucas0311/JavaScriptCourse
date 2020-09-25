@@ -283,25 +283,25 @@ const multiplyBy2 = function(num) {
 // when array length is greater counter --> increment up
 // array indices array[counter -1]
 
-// function cycleIterator(array) {
-// 	let counter = 0;
-// 	function inner() {
-// 		counter++;
-// 		if (counter === array.length + 1) {
-// 			counter = 1;
-// 		}
-// 		return array[counter - 1];
-// 	}
-// 	return inner;
-// }
+function cycleIterator(array) {
+	let counter = 0;
+	function inner() {
+		counter++;
+		if (counter === array.length + 1) {
+			counter = 1;
+		}
+		return array[counter - 1];
+	}
+	return inner;
+}
 
 // /*** Uncomment these to check your work! ***/
 const threeDayWeekend = [ 'Fri', 'Sat', 'Sun' ];
 const getDay = cycleIterator(threeDayWeekend);
-console.log(getDay()); // => should log 'Fri'
-console.log(getDay()); // => should log 'Sat'
-console.log(getDay()); // => should log 'Sun'
-console.log(getDay()); // => should log 'Fri'
+// console.log(getDay()); // => should log 'Fri'
+// console.log(getDay()); // => should log 'Sat'
+// console.log(getDay()); // => should log 'Sun'
+// console.log(getDay()); // => should log 'Fri'
 
 //Challenge 10
 // Create a function defineFirstArg that accepts a function and an argument.
@@ -437,3 +437,34 @@ function censor() {
 // the secret
 
 // the outer of function name: createSecretHolder(take one parameter secret)
+
+// Write a function billerBuilder that takes the name of a state as a parameter.
+// billerBuilder should return a new function that takes the price of an item and returns
+// the correct final price of the item, given the following:
+
+// if NY, charge 3% for shipping and 4% for sales tax
+// if NJ, charge 5% for shipping and 6.625% for sales tax
+
+// create a function named billerBuilder (state)
+function billerBuilder(state) {
+	// innerFunction (price)
+	function inner(price) {
+		// if state equals NY
+		if (state === 'NY') {
+			// return price * 1.03 * 1.04
+			return price * 1.03 * 1.04;
+			// otherwise if state === NJ
+		} else {
+			// return price * 1.05 * 1.06625
+			return price * 1.05 * 1.06625;
+		}
+	}
+	// return innerFunction
+	return inner;
+}
+
+let newYorkBiller = billerBuilder('NY');
+console.log(newYorkBiller(100)); // => 107.12 (100 * 1.03 * 1.04)
+
+let newJersBiller = billerBuilder('NJ');
+console.log(newJersBiller(100)); // => 111.95625 (100 * 1.05 * 1.06625)
