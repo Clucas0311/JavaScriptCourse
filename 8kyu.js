@@ -35,3 +35,4 @@ function spEng(sentence) {
 	// convert the sent into lowercase and check to see if it includes english
 	return sentence.toLowerCase().includes('english');
 }
+console.log(spEng('english')); //true
