@@ -86,3 +86,24 @@ function sumMul(n, m) {
 }
 console.log(sumMul(0, 0)); //"INVALID"
 console.log(sumMul(2, 9)); //20)
+
+// The pipes connecting your level's stages together need to be fixed before
+// you recieve any more complaints. Each pipe should be connecting,
+// since the levels ascend, you can assume every number in the sequence after
+// the first index will be greater than the previous and that there will be no duplicates.
+// #Task Given the a list of numbers, return the list so that the values increment by 1
+// for each index up to the maximum value.
+
+function pipeFix(numbers) {
+	// create an array
+	let nums = [];
+
+	// iterate starting at index 0 and ending at including the last element
+	for (let i = numbers[0]; i <= numbers[numbers.length - 1]; i++) {
+		nums.push(i);
+	}
+	// return new array
+	return nums;
+}
+
+console.log(pipeFix([ 6, 9 ])); //[6,7,8,9]
