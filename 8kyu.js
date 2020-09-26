@@ -35,4 +35,18 @@ function spEng(sentence) {
 	// convert the sent into lowercase and check to see if it includes english
 	return sentence.toLowerCase().includes('english');
 }
-console.log(spEng('english')); //true
+// console.log(spEng('english')); //true
+
+//
+var countSheep = function(num) {
+	// create a string to concatanate the sentences together
+	let sheeps = '';
+	// loop through ending at num
+	for (let i = 1; i <= num; i++) {
+		// add the string during each iteration
+		sheeps += `${i} sheep...`;
+	}
+	// return new string
+	return sheeps;
+};
+console.log(countSheep(2)); // "1 sheep...2 sheep..."
