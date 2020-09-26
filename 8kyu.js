@@ -58,4 +58,31 @@ var countSheep = function(num) {
 function smash(words) {
 	return words.join(' ');
 }
-console.log(smash([ 'hello', 'world' ])); //"hello world"
+// console.log(smash([ 'hello', 'world' ])); //"hello world"
+
+// Find the sum of all multiples of n below m
+// Keep in Mind
+// n and m are natural numbers (positive integers)
+// m is excluded from the multiples
+
+function sumMul(n, m) {
+	// edge case if m < 0
+	if (m <= 0) {
+		// return 'INVALID'
+		return 'INVALID';
+	}
+	// create a sum variable to total the num
+	let sum = 0;
+	// loop starting at n and ending and excluding m
+	for (let i = n; i < m; i++) {
+		// if i is divisible by n
+		if (i % n === 0) {
+			// then add i to sum
+			sum += i;
+		}
+	}
+	// return sum
+	return sum;
+}
+console.log(sumMul(0, 0)); //"INVALID"
+console.log(sumMul(2, 9)); //20)
