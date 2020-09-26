@@ -29,4 +29,9 @@ function warnTheSheep(index) {
 		: `Oi! Sheep number ${queue.length - 1 - findWolf}! You are about to be eaten by a wolf!`;
 }
 
-console.log(warnTheSheep([ 'sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'wolf', 'sheep', 'sheep' ]));
+// Given a string of arbitrary length with any ascii characters.
+// Write a function to determine whether the string contains the whole word "English".
+function spEng(sentence) {
+	// convert the sent into lowercase and check to see if it includes english
+	return sentence.toLowerCase().includes('english');
+}
