@@ -136,8 +136,13 @@ function removeSmallest(numbers) {
 		if (copyArr[i] === min) {
 			// then splice out the copyArr at index and the element
 			copyArr.splice(i, 1);
-			// return copyArr
+			// end the loop once its splice
 			return copyArr;
 		}
 	}
 }
+
+function reverseWords(str) {
+	return str.split('').reverse().join('').split(' ').reverse().join(' ');
+}
+console.log(reverseWords('The quick brown fox jumps over the lazy dog.')); //ehT kciuq nworb xof spmuj revo eht yzal .god
