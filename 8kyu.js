@@ -84,8 +84,8 @@ function sumMul(n, m) {
 	// return sum
 	return sum;
 }
-console.log(sumMul(0, 0)); //"INVALID"
-console.log(sumMul(2, 9)); //20)
+// console.log(sumMul(0, 0)); //"INVALID"
+// console.log(sumMul(2, 9)); //20)
 
 // The pipes connecting your level's stages together need to be fixed before
 // you recieve any more complaints. Each pipe should be connecting,
@@ -107,3 +107,28 @@ function pipeFix(numbers) {
 }
 
 console.log(pipeFix([ 6, 9 ])); //[6,7,8,9]
+
+function countToTen(num) {
+	if (num === 10) return 10;
+	console.log(num);
+	num++;
+	return countToTen(num);
+}
+
+// console.log(countToTen(1));
+
+function backwardString(str) {
+	// if str length is zero
+	if (str.length === 0) {
+		// return str
+		console.log(str);
+		// else
+	} else {
+		let lastChar = str[str.length - 1];
+		console.log(lastChar);
+		// return last index plus backwardString(str.substr(1))
+		str = str.slice(0, -1);
+		return backwardString(str);
+	}
+}
+console.log(backwardString('dog'));

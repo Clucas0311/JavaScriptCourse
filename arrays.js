@@ -645,7 +645,7 @@ function flipPairs(string) {
 	return newString.join('');
 }
 
-console.log(flipPairs('check out how interesting this problem is'));
+// console.log(flipPairs('check out how interesting this problem is'));
 
 var findMaxConsecutiveOnes = function(nums) {
 	// create a variable named count set it equal to zero
@@ -671,7 +671,7 @@ var findMaxConsecutiveOnes = function(nums) {
 	return largestCount;
 };
 
-console.log(findMaxConsecutiveOnes([ 1, 1, 0, 1, 1, 1 ]));
+// console.log(findMaxConsecutiveOnes([ 1, 1, 0, 1, 1, 1 ]));
 
 var findNumbers = function(nums) {
 	// create a evenDigits array to push elements into
@@ -687,7 +687,7 @@ var findNumbers = function(nums) {
 	// return evenDigits array and get the length of it
 	return evenDigits.length;
 };
-console.log(findNumbers((nums = [ 12, 345, 2, 6, 7896 ]))); // 2;
+// console.log(findNumbers((nums = [ 12, 345, 2, 6, 7896 ]))); // 2;
 
 var sortedSquares = function(A) {
 	// create an empty array variable
@@ -702,7 +702,7 @@ var sortedSquares = function(A) {
 	return squaredArray.sort((a, b) => a - b);
 };
 
-console.log(sortedSquares([ -4, -1, 0, 3, 10 ]));
+// console.log(sortedSquares([ -4, -1, 0, 3, 10 ]));
 
 var duplicateZeros = function(arr) {
 	// iterate through the array
@@ -764,7 +764,7 @@ var twoSum = function(nums, target) {
 		}
 	}
 };
-console.log(twoSum([ 3, 2, 4 ]));
+// console.log(twoSum([ 3, 2, 4 ]));
 
 // Write a function mergingTripletsAndQuints which adds the corresponding
 // element from array2 if the element from array1 is divisible by 3 or 5 and
@@ -793,5 +793,31 @@ function mergingTripletsAndQuints(array1, array2) {
 }
 
 // Uncomment these to check your work!
-console.log(mergingTripletsAndQuints([ 1, 2, 3, 4, 5, 15 ], [ 1, 3, 6, 7, 8, 9 ])); // expected log [1, 2, 9, 4, 13, 24]
-console.log(mergingTripletsAndQuints([ 1, 1, 3, 9, 5, 15 ], [ 1, 2, 3, 4, 5, 6 ])); // expected log [1, 1, 6, 13, 10, 21]
+// console.log(mergingTripletsAndQuints([ 1, 2, 3, 4, 5, 15 ], [ 1, 3, 6, 7, 8, 9 ])); // expected log [1, 2, 9, 4, 13, 24]
+// console.log(mergingTripletsAndQuints([ 1, 1, 3, 9, 5, 15 ], [ 1, 2, 3, 4, 5, 6 ])); // expected log [1, 1, 6, 13, 10, 21]
+
+// Write a function, arraySum, that accepts an array of numbers
+// and returns the sum of all the numbers in the array (no matter how nested!).
+
+// create a function arraySum that takes in one argument a nested array
+function arraySum(array) {
+	// create a sum variable to add up elements
+	let sum = 0;
+	// iterate through the array
+	for (let i = 0; i < array.length; i++) {
+		// grab the element
+		let element = array[i];
+		// if the array is an array
+		if (Array.isArray(element)) {
+			// then add sum to the arraySum(element)
+			sum += arraySum(element);
+			// otherwise
+		} else {
+			// add sum to the element
+			sum += element;
+		}
+	}
+	// return the sum
+	return sum;
+}
+console.log(arraySum([ 1, [ 2, 3, [ 4 ] ] ])); // => 10
