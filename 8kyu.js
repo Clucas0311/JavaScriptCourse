@@ -117,18 +117,27 @@ function countToTen(num) {
 
 // console.log(countToTen(1));
 
-function backwardString(str) {
-	// if str length is zero
-	if (str.length === 0) {
-		// return str
-		console.log(str);
-		// else
-	} else {
-		let lastChar = str[str.length - 1];
-		console.log(lastChar);
-		// return last index plus backwardString(str.substr(1))
-		str = str.slice(0, -1);
-		return backwardString(str);
+// Given an array of integers, remove the smallest value.
+// Do not mutate the original array/list. If there are multiple elements
+// with the same value, remove the one with a lower index. If you get an empty
+// array/list, return an empty array/list.
+// Don't change the order of the elements that are left.
+
+function removeSmallest(numbers) {
+	// edge case if numbers.length is empty return []
+	if (numbers.length === 0) return [];
+	// find the min
+	let min = Math.min(...numbers);
+	// create a copy of the numbers array
+	let copyArr = numbers.slice();
+	// iterate through copy array
+	for (let i = 0; i < copyArr.length; i++) {
+		// if element equals min
+		if (copyArr[i] === min) {
+			// then splice out the copyArr at index and the element
+			copyArr.splice(i, 1);
+			// return copyArr
+			return copyArr;
+		}
 	}
 }
-console.log(backwardString('dog'));
