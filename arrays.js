@@ -821,3 +821,31 @@ function arraySum(array) {
 	return sum;
 }
 console.log(arraySum([ 1, [ 2, 3, [ 4 ] ] ])); // => 10
+
+// Write a function, theTruthCounts, that accepts a multi-dimensional array of values.
+// theTruthCounts should return the count of all truthy values inside the multidimesional
+// array.
+
+function theTruthCounts(array) {
+	// create a counter variable to accumulate the elements
+	let count = 0;
+	// iterate through the array
+	for (let i = 0; i < array.length; i++) {
+		// grab the element
+		let element = array[i];
+		// if the element is an array
+		if (Array.isArray(element)) {
+			// then get the count of truthy elements in the array
+			count += theTruthCounts(element);
+		} else {
+			// if it is just a value and is true
+			if (element) {
+				// increment count
+				count++;
+			}
+		}
+	} // return count
+	return count;
+}
+
+console.log(theTruthCounts([ 0, [ true, [ 'yes' ] ] ])); // => 2
