@@ -70,4 +70,28 @@ function stray(numbers) {
 		}
 	}
 }
-console.log(stray([ 1, 1, 2 ])); //2
+// console.log(stray([ 1, 1, 2 ])); //2
+
+// Given a number, write a function to output its reverse digits.
+// (e.g. given 123 the answer is 321)
+// Numbers should preserve their sign; i.e. a negative number should still
+// be negative when reversed.
+
+function reverseNumber(n) {
+	// make sure there is no negative number on n
+	let num = Math.abs(n);
+	// convert the num to a string then an array then reverse then back to a string
+	num = num.toString().split('').reverse().join('');
+	// then to a number again
+	num = Number.parseInt(num);
+	// if the original number is negative
+	if (n < 0) {
+		// return -with reversenum
+		return -num;
+		// otherwise
+	} else {
+		// return the reverse num
+		return num;
+	}
+}
+console.log(reverseNumber(-123)); // -321
