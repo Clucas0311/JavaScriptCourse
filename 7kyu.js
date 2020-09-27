@@ -94,7 +94,7 @@ function reverseNumber(n) {
 		return num;
 	}
 }
-console.log(reverseNumber(-123)); // -321
+// console.log(reverseNumber(-123)); // -321
 
 // In this Kata, you will remove the left-most duplicates from a
 //  list of integers and return the result.
@@ -113,4 +113,13 @@ function solve(arr) {
 	return arr.filter((element, index, arr) => arr.lastIndexOf(element) === index);
 }
 
-console.log(solve([ 3, 4, 4, 3, 6, 3 ])); //[4,6,3]
+// console.log(solve([ 3, 4, 4, 3, 6, 3 ])); //[4,6,3]
+
+// Given a string str, reverse it omitting all non-alphabetic characters.
+function reverseLetter(str) {
+	// first remove special characters  and numbers replace with a string
+	str = str.replace(/[^A-Za-z]+/gi, '');
+	// return convert into an array the reverse it then turn back into a string
+	return str.split('').reverse().join('');
+}
+console.log(reverseLetter('ultr53o?n')); //"nortlu"
