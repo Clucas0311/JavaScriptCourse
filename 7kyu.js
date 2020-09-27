@@ -47,6 +47,27 @@ function oddOrEven(array) {
 	// if sum is divisible by 2 - even if not false
 	return sum % 2 === 0 ? 'even' : 'odd';
 }
-console.log(oddOrEven([ 0 ])); //'even'
-console.log(oddOrEven([ 1 ])); //'odd'
-console.log(oddOrEven([])); //'even'
+// console.log(oddOrEven([ 0 ])); //'even'
+// console.log(oddOrEven([ 1 ])); //'odd'
+// console.log(oddOrEven([])); //'even'
+
+// You are given an odd-length array of integers, in which all of them are the same,
+// except for one single number. Complete the method which accepts such an array,
+// and returns that single different number.
+function stray(numbers) {
+	// sort the array for easy access
+	numbers = numbers.sort((a, b) => a - b);
+	// iterate through the array
+	for (let i = 0; i < numbers.length; i++) {
+		// if the element doesn't equals the second element
+		if (numbers[i] !== numbers[i + 1]) {
+			// return the element
+			return numbers[i];
+			// otherwise
+		} else {
+			// return the last element
+			return numbers[numbers.length - 1];
+		}
+	}
+}
+console.log(stray([ 1, 1, 2 ])); //2
