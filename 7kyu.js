@@ -28,4 +28,25 @@ function removeSmallest(numbers) {
 function reverseWords(str) {
 	return str.split('').reverse().join('').split(' ').reverse().join(' ');
 }
-console.log(reverseWords('The quick brown fox jumps over the lazy dog.')); //ehT kciuq nworb xof spmuj revo eht yzal .god
+// console.log(reverseWords('The quick brown fox jumps over the lazy dog.')); //ehT kciuq nworb xof spmuj revo eht yzal .god
+
+// Given a list of numbers, determine whether the sum of its elements is odd or even.
+// Give your answer as a string matching "odd" or "even".
+// If the input array is empty consider it as: [0] (array with a zero).
+
+function oddOrEven(array) {
+	// if the array length is zero
+	if (array.length === 0) {
+		// then the array[0] = 0
+		array[0] = 0;
+	}
+	// create a variable sum to add up elements
+	let sum = 0;
+	//iterate through the array
+	array.forEach((element) => (sum += element));
+	// if sum is divisible by 2 - even if not false
+	return sum % 2 === 0 ? 'even' : 'odd';
+}
+console.log(oddOrEven([ 0 ])); //'even'
+console.log(oddOrEven([ 1 ])); //'odd'
+console.log(oddOrEven([])); //'even'
