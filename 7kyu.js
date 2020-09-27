@@ -101,13 +101,16 @@ console.log(reverseNumber(-123)); // -321
 
 function solve(arr) {
 	// return
-	return (
-		arr
-			//reverse the array
-			.reverse()
-			// filter the array for duplicates
-			.filter((element, i) => arr.indexOf(element) === i)
-			// reverse array back
-			.reverse()
-	);
+	// return (
+	// 	arr
+	// 		//reverse the array
+	// 		.reverse()
+	// 		// filter the array for duplicates
+	// 		.filter((element, i) => arr.indexOf(element) === i)
+	// 		// reverse array back
+	// 		.reverse()
+	// );
+	return arr.filter((element, index, arr) => arr.lastIndexOf(element) === index);
 }
+
+console.log(solve([ 3, 4, 4, 3, 6, 3 ])); //[4,6,3]
