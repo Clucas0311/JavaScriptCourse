@@ -95,3 +95,19 @@ function reverseNumber(n) {
 	}
 }
 console.log(reverseNumber(-123)); // -321
+
+// In this Kata, you will remove the left-most duplicates from a
+//  list of integers and return the result.
+
+function solve(arr) {
+	// return
+	return (
+		arr
+			//reverse the array
+			.reverse()
+			// filter the array for duplicates
+			.filter((element, i) => arr.indexOf(element) === i)
+			// reverse array back
+			.reverse()
+	);
+}
