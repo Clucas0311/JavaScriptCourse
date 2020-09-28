@@ -190,3 +190,6 @@ function arraySum(arr) {
 console.log(arraySum([ 1, 2, [ 1, 2 ] ])); //6
 console.log(arraySum([ 1, 2, 3 ])); //6
 console.log(arraySum([ 1, 2 ])); // 3
+
+const numArr = '1234'.split('');
+console.log(numArr);

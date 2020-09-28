@@ -106,7 +106,7 @@ function pipeFix(numbers) {
 	return nums;
 }
 
-console.log(pipeFix([ 6, 9 ])); //[6,7,8,9]
+// console.log(pipeFix([ 6, 9 ])); //[6,7,8,9]
 
 function countToTen(num) {
 	if (num === 10) return 10;
@@ -116,3 +116,22 @@ function countToTen(num) {
 }
 
 // console.log(countToTen(1));
+// What we want to implement is Array.prototype.filter() function,
+// just like the existing Array.prototype.filter(). Another similar function is
+// _.filter() in underscore.js and lodash.js.
+// The usage will be quite simple, like:
+
+Array.prototype.filter = function(func) {
+	const arr = [];
+	for (let i = 0; i < this.length; i++) {
+		if (func(this[i])) {
+			arr.push(this[i]);
+		}
+	}
+	return arr;
+};
+console.log(
+	[ 1, 2, 3, 4 ].filter((num) => {
+		return num > 3;
+	})
+); // [4]
