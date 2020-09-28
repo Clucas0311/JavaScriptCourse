@@ -122,4 +122,71 @@ function reverseLetter(str) {
 	// return convert into an array the reverse it then turn back into a string
 	return str.split('').reverse().join('');
 }
-console.log(reverseLetter('ultr53o?n')); //"nortlu"
+// console.log(reverseLetter('ultr53o?n')); //"nortlu"
+
+// Have the function ExOh(str) take the str parameter being passed and return the
+// string true if there is an equal number of x's and o's, otherwise return the string
+// false. Only these two letters will be entered in the string, no punctuation or numbers.
+// For example: if str is "xooxxxxooxo" then the output should return false because there
+// are 6 x's and 5 o's.
+
+function ExOh(str) {
+	// convert the str in an array
+	let strArr = str.split('');
+	// filter the str arr for x's and o's
+	let x = strArr.filter((element) => element === 'x');
+	let o = strArr.filter((element) => element === 'o');
+	// compare their lengths
+	if (x.length === o.length) {
+		return true;
+	}
+	return false;
+}
+
+// console.log(ExOh('xoxo')); //true
+
+function twoSum(arr, target) {
+	let hashMap = {};
+	let newArr = [];
+	for (let i = 0; i < arr.length; i++) {
+		let element = arr[i];
+		let elementNeeded = target - arr[i];
+		if (hashMap[elementNeeded] !== undefined) {
+			newArr.push(`${elementNeeded}, ${arr[i]}`);
+		} else {
+			hashMap[element] = i;
+		}
+	}
+	return newArr.join(' ');
+}
+
+// console.log(twoSum([ 3, 5, 2, -4, 8, 11 ], 7));
+
+// You are given an array of values.
+// Sum every number value in the array, and any nested arrays (to any depth).
+// Ignore all other types of values.
+
+function arraySum(arr) {
+	// create a sum variable to add up elements
+	let sum = 0;
+	// iterate through array
+	for (let i = 0; i < arr.length; i++) {
+		// grab the element
+		let element = arr[i];
+		// check to see if the element is an array
+		if (Array.isArray(element)) {
+			// if true then add sum to the arraySum function invoked with the element
+			sum += arraySum(element);
+			// otherwise
+		} else {
+			// add sum to the element
+			sum += element;
+		}
+	}
+	// return sum
+	return sum;
+}
+
+console.log(arraySum([ 1, 2, [ 1, 2 ] ])); //6
+console.log(arraySum([ 1, 2, 3 ])); //6
+console.log(arraySum([ 1, 2 ])); // 3
