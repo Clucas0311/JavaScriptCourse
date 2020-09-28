@@ -130,11 +130,11 @@ Array.prototype.filter = function(func) {
 	}
 	return arr;
 };
-console.log(
-	[ 1, 2, 3, 4 ].filter((num) => {
-		return num > 3;
-	})
-); // [4]
+// console.log(
+// 	[ 1, 2, 3, 4 ].filter((num) => {
+// 		return num > 3;
+// 	})
+// ); // [4]
 
 // You get an array of numbers, return the sum of all of the positives ones.
 // Example [1,-4,7,12] => 1 + 7 + 12 = 20
@@ -146,4 +146,28 @@ function positiveSum(arr) {
 	return sum;
 }
 
-console.log(positiveSum([ 1, 2, 3, 4, 5 ])); //15
+// console.log(positiveSum([ 1, 2, 3, 4, 5 ])); //15
+
+// Removing the first and last elements
+function removeChar(str) {
+	return str.slice(1, -1);
+}
+
+// console.log(removeChar('eloquent')); //'loquen'
+
+// Write a function called repeat_str which repeats the given string src
+// exactly count times
+
+function repeatStr(n, s) {
+	// create a newStr variable and assign to an empty string to concat elements
+	let newStr = '';
+	// iterate through starting at 0 and ending at number
+	for (let i = 0; i < n; i++) {
+		// join together the strings
+		newStr += s;
+	}
+	// return the new str
+	return newStr;
+}
+
+console.log(repeatStr(3, '*')); //"***"
