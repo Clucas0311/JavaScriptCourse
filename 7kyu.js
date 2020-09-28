@@ -178,7 +178,7 @@ function arraySum(arr) {
 			// if true then add sum to the arraySum function invoked with the element
 			sum += arraySum(element);
 			// otherwise
-		} else {
+		} else if (typeof element === 'number') {
 			// add sum to the element
 			sum += element;
 		}
