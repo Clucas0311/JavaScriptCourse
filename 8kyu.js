@@ -264,5 +264,13 @@ function squareSum(numbers) {
 	// return numbers.map((element) => element ** 2).reduce((prev, next) => prev + next, 0);
 	return numbers.reduce((prev, next) => prev + next ** 2, 0);
 }
-console.log(squareSum([ 1, 2 ])); //5
-console.log(squareSum([ 0, 3, 4, 5 ])); // 50
+// console.log(squareSum([ 1, 2 ])); //5
+// console.log(squareSum([ 0, 3, 4, 5 ])); // 50
+
+// Given a random non-negative number, you have to return the digits of this
+// number within an array in reverse order.
+function digitize(n) {
+	// first convert num in to a string, then to an array reverse, then back into a num
+	return n.toString().split('').reverse().map((num) => Number(num));
+}
+console.log(digitize(35231)); //[1,3,2,5,3]
