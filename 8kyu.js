@@ -309,4 +309,26 @@ function countPositivesSumNegatives(input) {
 	// return the new array
 	return [ positive, negative ];
 }
-console.log(countPositivesSumNegatives([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15 ])); // [10, -65].
+// console.log(countPositivesSumNegatives([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15 ])); // [10, -65].
+
+// Sum all the numbers of the array (in F# and Haskell you get a list) except
+// the highest and the lowest element (the value, not the index!).
+// (The highest/lowest element is respectively only one element at each edge,
+// 	even if there are more than one with the same value!)
+
+function sumArray(array) {
+	// if the array is null or no elements or one element
+	if (!array || !array.length || array.length === 1) {
+		// then return 0
+		return 0;
+	}
+	// // sort the array
+	// let sorted = array.sort((a, b) => a - b);
+	// // create a new variable slicing out the first and last elements
+	// let sliced = sorted.slice(1, -1);
+	// // sum up the elements
+	// return sliced.reduce((sum, currVal) => sum + currVal, 0);
+	return array.sort((a, b) => a - b).slice(1, -1).reduce((sum, currVal) => sum + currVal, 0);
+}
+
+console.log(sumArray([ 6, 2, 1, 8, 10 ])); // 16
