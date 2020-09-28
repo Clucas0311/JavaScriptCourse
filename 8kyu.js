@@ -280,7 +280,7 @@ function digitize(n) {
 // The output should be two capital letters with a dot separating them.
 
 function abbrevName(name) {
-	return name.split(' ').map((intial) => intial[0]).join('.');
+	return name.toUpperCase().split(' ').map((intial) => intial[0]).join('.');
 }
 
 console.log(abbrevName('Sam Harris')); //"S.H"
