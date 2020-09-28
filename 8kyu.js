@@ -273,4 +273,14 @@ function digitize(n) {
 	// first convert num in to a string, then to an array reverse, then back into a num
 	return n.toString().split('').reverse().map((num) => Number(num));
 }
-console.log(digitize(35231)); //[1,3,2,5,3]
+// console.log(digitize(35231)); //[1,3,2,5,3]
+
+// Write a function to convert a name into initials. This kata strictly takes
+// two words with one space in between them.
+// The output should be two capital letters with a dot separating them.
+
+function abbrevName(name) {
+	return name.split(' ').map((intial) => intial[0]).join('.');
+}
+
+console.log(abbrevName('Sam Harris')); //"S.H"
