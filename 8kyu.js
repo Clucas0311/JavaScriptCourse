@@ -371,4 +371,14 @@ function countBy(x, n) {
 function simpleMultiplication(number) {
 	return number % 2 === 0 ? number * 8 : number * 9;
 }
-console.log(simpleMultiplication(2)); //16
+// console.log(simpleMultiplication(2)); //16
+
+// Given a string, you have to return a string in which each character
+// (case-sensitive) is repeated once.
+function doubleChar(str) {
+	// convert the str into an array the create a new array and create string
+	// elements of duplicate letters
+	// join the string back to a string
+	return str.split('').map((letter) => `${letter}${letter}`).join('');
+}
+console.log(doubleChar('Adidas')); //"AAddiiddaass"
