@@ -293,5 +293,20 @@ function abbrevName(name) {
 function findNeedle(haystack) {
 	return `found the needle at position ${haystack.indexOf('needle')}`;
 }
-var haystack_1 = [ '3', '123124234', undefined, 'needle', 'world', 'hay', 2, '3', true, false ];
-console.log(findNeedle(haystack_1));
+// var haystack_1 = [ '3', '123124234', undefined, 'needle', 'world', 'hay', 2, '3', true, false ];
+// console.log(findNeedle(haystack_1));
+
+// Given an array of integers.
+// Return an array, where the first element is the count of positives numbers and the
+// second element is sum of negative numbers.
+// If the input array is empty or null, return an empty array.
+function countPositivesSumNegatives(input) {
+	if (!input || input.length === 0) return [];
+	// filter out the positives and get the length
+	let positive = input.filter((element) => element > 0).length;
+	// filter out the negatives and total them up
+	let negative = input.filter((element) => element < 0).reduce((sum, ele) => sum + ele, 0);
+	// return the new array
+	return [ positive, negative ];
+}
+console.log(countPositivesSumNegatives([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15 ])); // [10, -65].
