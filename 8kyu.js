@@ -336,7 +336,16 @@ function sumArray(array) {
 // Given a set of numbers, return the additive inverse of each.
 // Each positive becomes negatives, and the negatives become positives.
 function invert(array) {
-	return array.map((element) => (element === 0 ? element : -element));
+	//return array.map((element) => (element === 0 ? element : -element));
+	return array.map((element) => -element);
 }
 
-console.log(invert([ 1, 2, 3, 4, 5 ])); //[-1,-2,-3,-4,-5]
+// console.log(invert([ 1, 2, 3, 4, -5 ])); //[-1,-2,-3,-4,-5]
+
+// Write function avg which calculates average of numbers in given list.
+function find_average(array) {
+	let sum = array.reduce((prev, next) => prev + next, 0);
+	return Math.floor(sum / array.length);
+}
+
+console.log(find_average([ 1, 1, 1 ])); // 1
