@@ -170,4 +170,57 @@ function repeatStr(n, s) {
 	return newStr;
 }
 
-console.log(repeatStr(3, '*')); //"***"
+// console.log(repeatStr(3, '*')); //"***"
+
+// Write a program that finds the summation of every number from 1 to num.
+// The number will always be a positive integer greater than 0.
+
+var summation = function(num) {
+	// create a sum varible to sum up numbers
+	let sum = 0;
+	// iterate through starting at 1 and including num
+	for (let i = 1; i <= num; i++) {
+		// add sum to each index
+		sum += i;
+	}
+	// return sum
+	return sum;
+};
+// console.log(summation(8)); // 36
+
+// Consider an array/list of sheep where some sheep may be missing from their place.
+// We need a function that counts the number of sheep present in the array
+// (true means present).
+function countSheeps(arrayOfSheep) {
+	// TODO May the force be with you
+	return arrayOfSheep.filter((truthy) => truthy === true).length;
+}
+
+var array1 = [
+	true,
+	true,
+	true,
+	false,
+	true,
+	true,
+	true,
+	true,
+	true,
+	false,
+	true,
+	false,
+	true,
+	false,
+	false,
+	true,
+	true,
+	true,
+	true,
+	true,
+	false,
+	false,
+	true,
+	true
+];
+
+console.log(countSheeps(array1)); // 17
