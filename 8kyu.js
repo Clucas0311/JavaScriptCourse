@@ -331,4 +331,12 @@ function sumArray(array) {
 	return array.sort((a, b) => a - b).slice(1, -1).reduce((sum, currVal) => sum + currVal, 0);
 }
 
-console.log(sumArray([ 6, 2, 1, 8, 10 ])); // 16
+// console.log(sumArray([ 6, 2, 1, 8, 10 ])); // 16
+
+// Given a set of numbers, return the additive inverse of each.
+// Each positive becomes negatives, and the negatives become positives.
+function invert(array) {
+	return array.map((element) => (element === 0 ? element : -element));
+}
+
+console.log(invert([ 1, 2, 3, 4, 5 ])); //[-1,-2,-3,-4,-5]
