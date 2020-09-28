@@ -381,4 +381,22 @@ function doubleChar(str) {
 	// join the string back to a string
 	return str.split('').map((letter) => `${letter}${letter}`).join('');
 }
-console.log(doubleChar('Adidas')); //"AAddiiddaass"
+// console.log(doubleChar('Adidas')); //"AAddiiddaass"
+
+// A hero is on his way to the castle to complete his mission.
+// However, he's been told that the castle is surrounded with a couple of
+// powerful dragons! each dragon takes 2 bullets to be defeated, our hero has
+// no idea how many bullets he should carry.. Assuming he's gonna grab a specific
+// given number of bullets and move forward to fight another specific given number
+// of dragons, will he survive?
+function hero(bullets, dragons) {
+	// if dragon times two is less than or equal to bullets
+	if (dragons * 2 <= bullets) {
+		// return true
+		return true;
+		//otherwise
+	}
+	// return false
+	return false;
+}
+console.log(hero(1500, 751)); //false
