@@ -261,7 +261,8 @@ function basicOp(operation, value1, value2) {
 // into it and then sums the results together.
 
 function squareSum(numbers) {
-	return numbers.map((element) => element ** 2).reduce((prev, next) => prev + next, 0);
+	// return numbers.map((element) => element ** 2).reduce((prev, next) => prev + next, 0);
+	return numbers.reduce((prev, next) => prev + next ** 2, 0);
 }
 console.log(squareSum([ 1, 2 ])); //5
 console.log(squareSum([ 0, 3, 4, 5 ])); // 50
