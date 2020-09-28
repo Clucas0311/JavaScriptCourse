@@ -348,4 +348,19 @@ function find_average(array) {
 	return Math.floor(sum / array.length);
 }
 
-console.log(find_average([ 1, 1, 1 ])); // 1
+// console.log(find_average([ 1, 1, 1 ])); // 1
+
+// Create a function with two arguments that will return an array of the first
+// (n) multiples of (x).Assume both the given number and the number of times to
+// count will be positive numbers greater than 0.
+
+function countBy(x, n) {
+	const arr = [];
+	for (let i = 1; i <= n; i++) {
+		arr.push(i * x);
+	}
+
+	return arr;
+}
+
+console.log(countBy(2, 5)); // [2,4,6,8,10]
