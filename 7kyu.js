@@ -269,4 +269,24 @@ function highAndLow(numbers) {
 	return `${numbers[numbers.length - 1]} ${numbers[0]}`;
 }
 
-console.log(highAndLow('4 5 29 54 4 0 -214 542 -64 1 -3 6 -6')); //"542 -214"
+// console.log(highAndLow('4 5 29 54 4 0 -214 542 -64 1 -3 6 -6')); //"542 -214"
+
+// Welcome. In this kata, you are asked to square
+// every digit of a number and concatenate them.
+// For example, if we run 9119 through the function,
+// 811181 will come out, because 92 is 81 and 12 is 1.
+// Note: The function accepts an integer and returns an integer
+
+function squareDigits(num) {
+	// convert the num into a string then into an array then convert back into num
+	num = num
+		.toString()
+		.split('')
+		.map((element) => Number(element))
+		// square each individual element, convert back into a string no spaces
+		.map((nums) => nums ** 2)
+		.join('');
+	// return the parseInt of the squared numbers
+	return Number(num);
+}
+console.log(squareDigits(9119)); //811181
