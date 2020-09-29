@@ -299,4 +299,15 @@ function disemvowel(str) {
 	return str;
 }
 
-console.log(disemvowel('This website is for losers LOL!')); //"Ths wbst s fr lsrs LL!"
+// console.log(disemvowel('This website is for losers LOL!')); //"Ths wbst s fr lsrs LL!"
+
+// Your task is to make a function that can take any non-negative integer
+// as an argument and return it with its digits in descending order.
+// Essentially, rearrange the digits to create the highest possible number.
+
+function descendingOrder(n) {
+	// convert into a string, into array, convert elements to numbers, then sort
+	n = n.toString().split('').map((num) => Number(num)).sort((a, b) => b - a).join('');
+	return Number(n);
+}
+console.log(descendingOrder(123456789)); //987654321
