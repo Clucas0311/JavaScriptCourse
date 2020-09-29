@@ -258,4 +258,15 @@ function getMiddle(s) {
 	return s[middle];
 }
 
-console.log(getMiddle('middle')); //"dd"
+// console.log(getMiddle('middle')); //"dd"
+
+// In this little assignment you are given a string of space separated numbers,
+// and have to return the highest and lowest number.
+function highAndLow(numbers) {
+	// convert string into an array, create a new array that are all numbers then sort
+	numbers = numbers.split(' ').map((num) => Number(num)).sort((a, b) => a - b);
+	// return a string with the last element and space and first element
+	return `${numbers[numbers.length - 1]} ${numbers[0]}`;
+}
+
+console.log(highAndLow('4 5 29 54 4 0 -214 542 -64 1 -3 6 -6')); //"542 -214"
