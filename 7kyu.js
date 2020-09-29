@@ -289,4 +289,14 @@ function squareDigits(num) {
 	// return the parseInt of the squared numbers
 	return Number(num);
 }
-console.log(squareDigits(9119)); //811181
+// console.log(squareDigits(9119)); //811181
+
+// Your task is to write a function that takes a string and return a
+// new string with all vowels removed.
+function disemvowel(str) {
+	// create a regex to replace vowel elements with ''
+	str = str.replace(/[aeiou]/gi, '');
+	return str;
+}
+
+console.log(disemvowel('This website is for losers LOL!')); //"Ths wbst s fr lsrs LL!"
