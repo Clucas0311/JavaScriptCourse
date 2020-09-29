@@ -215,4 +215,26 @@ function golfScoreCalculator(parList, scoreList) {
 	// return total
 	return total;
 }
-console.log(golfScoreCalculator('443454444344544443', '353445334534445344')); // -1
+// console.log(golfScoreCalculator('443454444344544443', '353445334534445344')); // -1
+
+// Return the number (count) of vowels in the given string.
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+// The input string will only consist of lower case letters and/or spaces.
+
+function getCount(str) {
+	// create a counter variable to count vowels
+	let count = 0;
+	// create an array of vowels to help search vowels
+	const vowels = [ 'a', 'e', 'i', 'o', 'u' ];
+	// iterate through the str
+	for (let letter of str.toLowerCase()) {
+		// if the vowel array includes str element
+		if (vowels.includes(letter)) {
+			// count increments
+			count++;
+		}
+	}
+	// return the count variable
+	return count;
+}
+console.log(getCount('abracadabra')); //5
