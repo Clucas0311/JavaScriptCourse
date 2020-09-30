@@ -748,7 +748,7 @@ function attendanceCheck(day) {
 	for (let i = 0; i < classRoom.length; i++) {
 		// grab the first element which will be each student and there object
 		const personObj = classRoom[i];
-		// get the ket for the first object
+		// get the key for the first object
 		for (let name in personObj) {
 			// grab the object value
 			let attended = personObj[name];

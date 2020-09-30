@@ -310,4 +310,4 @@ function descendingOrder(n) {
 	n = n.toString().split('').map((num) => Number(num)).sort((a, b) => b - a).join('');
 	return Number(n);
 }
-console.log(descendingOrder(123456789)); //987654321
+// console.log(descendingOrder(123456789)); //987654321
