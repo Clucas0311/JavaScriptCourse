@@ -354,7 +354,7 @@ function cleaner(str) {
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 // console.log(capitalize('a short sentence'));
 // console.log(capitalize('a lazy fox'));
-console.log(capitalize('look, it is working!'));
+// console.log(capitalize('look, it is working!'));
 function capitalize(str) {
 	// create an empty array
 	const words = [];
@@ -753,3 +753,43 @@ function findMultiples(integer, limit) {
 }
 
 // console.log(findMultiples(5, 25)); //[5, 10, 15, 20, 25])
+
+// Given an array of integers that is already sorted in ascending order,
+// find two numbers such that they add up to a specific target number.
+// The function twoSum should return indices of the two numbers such that
+// they add up to the target, where index1 must be less than index2.
+// Note:
+// Your returned answers (both index1 and index2) are not zero-based.
+// You may assume that each input would have exactly one solution and
+//  you may not use the same element twice.
+const twoSumII = function(numbers, target) {
+	// create a left pointer assign to 0 - index
+	let left = 0;
+	// create a right pointer assing the the last element numbers.length - 1
+	let right = numbers.length - 1;
+	// while loop -> left is less than right
+	while (left < right) {
+		// sum = numbers[left] + numbers[right]
+		let sum = numbers[left] + numbers[right];
+		// CONDITION:
+		// if sum equals the target
+		if (sum === target) {
+			// return [left, right]
+			// not zero based add 1;
+			return [ left + 1, right + 1 ];
+		}
+		// if sum < target
+		if (sum < target) {
+			// left++;
+			left++;
+			// otherwise
+		} else {
+			// right--;
+			right--;
+		}
+	}
+	// return [];
+	return [];
+};
+
+console.log(twoSumII([ 2, 7, 11, 15 ], 9)); //[1,2]
