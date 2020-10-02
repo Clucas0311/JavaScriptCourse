@@ -311,3 +311,15 @@ function descendingOrder(n) {
 	return Number(n);
 }
 // console.log(descendingOrder(123456789)); //987654321
+
+// Given a 2D array of size m * n. Your task is to find the sum of minimum value
+// in each row.
+function sumOfMinimums(arr) {
+	// const minArr = [];
+	// for (let i = 0; i < arr.length; i++) {
+	// 	minArr.push(Math.min(...arr[i]));
+	// }
+	return arr.reduce((prev, next) => prev + Math.min(...next), 0);
+}
+
+console.log(sumOfMinimums([ [ 7, 9, 8, 6, 2 ], [ 6, 3, 5, 4, 3 ], [ 5, 8, 7, 4, 5 ] ])); //9
