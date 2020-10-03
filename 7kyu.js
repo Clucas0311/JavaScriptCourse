@@ -322,4 +322,18 @@ function sumOfMinimums(arr) {
 	return arr.reduce((prev, next) => prev + Math.min(...next), 0);
 }
 
-console.log(sumOfMinimums([ [ 7, 9, 8, 6, 2 ], [ 6, 3, 5, 4, 3 ], [ 5, 8, 7, 4, 5 ] ])); //9
+// console.log(sumOfMinimums([ [ 7, 9, 8, 6, 2 ], [ 6, 3, 5, 4, 3 ], [ 5, 8, 7, 4, 5 ] ])); //9
+
+var orderedCount = function(text) {
+	if (text.length === 0) {
+		return [];
+	}
+	const charMap = {};
+	for (let letter of text.split('')) {
+		charMap[letter] = charMap[letter] + 1 || 1;
+	}
+	const array = Object.entries(charMap);
+	return array;
+};
+
+console.log(orderedCount('233312')); // [['2', 2], ['3', 3], ['1', 1 ]]

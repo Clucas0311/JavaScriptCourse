@@ -399,4 +399,20 @@ function hero(bullets, dragons) {
 	// return false
 	return false;
 }
-console.log(hero(1500, 751)); //false
+// console.log(hero(1500, 751)); //false
+
+// Given 2 strings, a and b, return a string of the form short+long+short,
+// with the shorter string on the outside and the longer string on the inside.
+// The strings will not be the same length, but they may be empty
+
+function solution(a, b) {
+	// if a is greater than b
+	if (a.length > b.length)
+		// return b + a + b
+		return `${b}${a}${b}`;
+	// otherwise
+	// return a + b + a
+	return `${a}${b}${a}`;
+}
+
+console.log(solution('Soon', 'Me')); //'MeSoonMe'
