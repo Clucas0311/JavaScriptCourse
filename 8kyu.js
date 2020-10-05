@@ -415,4 +415,4 @@ function solution(a, b) {
 	return `${a}${b}${a}`;
 }
 
-console.log(solution('Soon', 'Me')); //'MeSoonMe'
+// console.log(solution('Soon', 'Me')); //'MeSoonMe'
