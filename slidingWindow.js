@@ -1,32 +1,23 @@
 function maxSubArraySum(arr, num) {
-	// create a tempSum sum variable
-	let tempSum = 0;
-	// create a maxSum variable
+	// create helper variables to grab the max and the temp max
 	let maxSum = 0;
-	// create edge case - if the arr length is smaller than the num return null;
-	if (arr.length < num) {
-		return null;
-	}
-	// get the sum variable by adding up the elements starting at 0 until the num
+	let tempSum = 0;
+	// create an edge case if the array is less than the num
+	if (arr.length < num) return null;
+	// iterate through the arr to get the sum starting at 0 ending at the num amount
 	for (let i = 0; i < num; i++) {
 		maxSum += arr[i];
-		console.log(maxSum);
 	}
-	// reassign the value of tempSum to maxSum
+	// reassign the the temp value to the max
 	tempSum = maxSum;
-	console.log((tempSum = maxSum));
-	console.log(tempSum);
-	// loop starting at num value ending at the length of the array
+	// iterate through the array starting at num and ending at the length of the array
 	for (let i = num; i < arr.length; i++) {
-		// tempSum during each iteration will equal the sum of the new subArray
-		// every time the subarray increments forward we subtract the one that is
-		// being moved out of the subarray and add the one in front of it
+		// reassign the temp variable to move by deleting the first index until the sum is found
 		tempSum = tempSum - arr[i - num] + arr[i];
-		console.log(`tempSum: ${tempSum - arr[i - num] + arr[i]}`);
-		console.log(`maxSum: ${maxSum}`);
-		// then get the max value
+		// get the max of the temp and the max
 		maxSum = Math.max(tempSum, maxSum);
 	}
+	// return the maxsum
 	return maxSum;
 }
 
