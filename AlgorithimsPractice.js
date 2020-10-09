@@ -793,3 +793,13 @@ const twoSumII = function(numbers, target) {
 };
 
 console.log(twoSumII([ 2, 7, 11, 15 ], 9)); //[1,2]
+
+function clockAngle(hour, min) {
+	let hourAngle = 0.5 * (60 * hour + min);
+	let minuteHand = 6 * min;
+	var angle = Math.abs(hour - minuteHand);
+	if (angle > 180) {
+		return 360 - angle 
+	} 
+   return angle;
+   }
