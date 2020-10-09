@@ -434,4 +434,11 @@ function feast(beast, dish) {
 	return beast[0] === dish[0] && beast[beast.length - 1] === dish[dish.length - 1] 
 }
 
-  console.log(feast("great blue heron", "garlic naan")) // true
+//   console.log(feast("great blue heron", "garlic naan")) // true
+
+// Given a number n, return the number of positive odd numbers below n, EASY!
+function oddCount(n){
+	return Math.floor(n / 2);
+  }
+
+ console.log(oddCount(15)) // 7
