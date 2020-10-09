@@ -11,4 +11,28 @@ function findOutlier(integers){
   return even.length === 1 ? even[0] : odd[0];
     }
 
-console.log(findOutlier([0, 1, 2])) // 1
+// console.log(findOutlier([0, 1, 2])) // 1
+
+// If we list all the natural numbers below 10 that are multiples 
+// of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+// Finish the solution so that it returns the sum of all the multiples 
+// of 3 or 5 below the number passed in.
+function solution(number){
+    // if number is negative
+    if (number < 0) {
+      // return 0
+      return 0;
+    }
+    // create an empty array 
+    const container = []; 
+    // iterate through starting at 1 ending and not including number
+    for (let i = 1; i < number; i++)
+      // if num % 3  or number % 5
+      if (i % 3 === 0 || i % 5 === 0) {
+        // push contents elements into container
+        container.push(i)
+      }
+    // add the elements up and return the number 
+    return container.reduce((prev, next) => prev + next, 0)
+    
+  }
