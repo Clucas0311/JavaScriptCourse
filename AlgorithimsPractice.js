@@ -803,3 +803,4 @@ function clockAngle(hour, min) {
 	} 
    return angle;
    }
+

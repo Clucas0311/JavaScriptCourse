@@ -36,3 +36,22 @@ function solution(number){
     return container.reduce((prev, next) => prev + next, 0)
     
   }
+
+// Digital root is the recursive sum of all the digits in a number.
+// Given n, take the sum of the digits of n. If that value has more than one digit, 
+// continue reducing in this way until a single-digit number is produced. 
+// The input will be a non-negative integer.
+
+function digital_root(n) {
+  // BASE CASE:
+  // if n is less than 10 --> return n
+  if (n < 10) return n; 
+  // RECURSIVE CASE: 
+  // convert n to a string --> then into an array --> then back into a number 
+  // return digitial_root(with the sum)
+  // then sum the digits up
+  return digital_root(String(n).split('')
+                      .reduce((prev, next) => Number(prev) + Number(next), 0));
+}
+
+console.log(digital_root(16)) // 7; 
