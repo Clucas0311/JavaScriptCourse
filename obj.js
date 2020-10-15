@@ -44,7 +44,7 @@ const team = {
 	[role]: person,
 	[role2]: person2
 };
-console.log(team);
+// console.log(team);
 
 const math = {
 	numbers: [ 1, 2, 3, 4, 5 ],
@@ -62,3 +62,4 @@ const math = {
 console.log(math.add(5, 5));
 console.log(math.subtract(10, 5));
 console.log(math.numbers);
+console.log(math.multiply(2, 4));
