@@ -45,3 +45,20 @@ const team = {
 	[role2]: person2
 };
 console.log(team);
+
+const math = {
+	numbers: [ 1, 2, 3, 4, 5 ],
+	add: function(x, y) {
+		return x + y;
+	},
+	subtract: function(x, y) {
+		return x - y;
+	},
+	multiply: function(x, y) {
+		return x * y;
+	}
+};
+
+console.log(math.add(5, 5));
+console.log(math.subtract(10, 5));
+console.log(math.numbers);
