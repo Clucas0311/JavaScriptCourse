@@ -57,7 +57,7 @@ const math = {
 	multiply: function(x, y) {
 		return x * y;
 	},
-	divide: function(x, y) {
+	divisor: function(x, y) {
 		return x / y;
 	}
 };
