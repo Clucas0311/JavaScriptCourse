@@ -47,7 +47,7 @@ const team = {
 // console.log(team);
 
 const math = {
-	numbers: [ 1, 2, 3, 4, 5 ],
+	number: [ 1, 2, 3, 4, 5 ],
 	add: function(x, y) {
 		return x + y;
 	},
@@ -64,5 +64,5 @@ const math = {
 
 console.log(math.add(5, 5));
 console.log(math.subtract(10, 5));
-console.log(math.numbers);
+console.log(math.number);
 console.log(math.multiply(2, 4));
