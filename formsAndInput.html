@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms and Input</title>
+</head>
+<!-- The action is the server/database that will collect the input  -->
+<form action="process.php">
+    <!-- Seperate labels by div tags -->
+    <div>
+        <!-- Creating a label to get the name -->
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+    </div>
+    <div>
+        <label for="email">Email:</label><br>
+        <input type="email" name="email" id="email">
+    </div>
+    <div>
+        <!-- Creating a message label -->
+        <label for="message">Message:</label><br>
+        <textarea name="message" id="message" cols="50" rows="5"></textarea>
+    </div>
+    <div>
+        <!-- Creating a selection list -->
+        <!-- Creating a label for selections -->
+        <label for="sex">Sex:</label>
+        <select name="sex" id="sex">
+            <!-- Option Labels -->
+            <option value="male">Male</option>
+            <option value="female" selected>Female</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div>
+        <!-- Creating a number field -->
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age">
+    </div>
+    <div>
+        <!-- Inputing a calander -->
+        <label for="birthdate">Birthdate</label>
+        <input type="date" name="birthdate" id="birthdate">
+    </div>
+    <div>
+        <label for="membership">Membership</label>
+        <input type="radio" name="membership" value="simple" id="membership"> Simple
+        <input type="radio" name="membership" value="standard" id="membership"> Standard
+        <input type="radio" name="membership" value="super" id="super"> Super
+    </div>
+
+</form>
+
+<body>
+
+</body>
+
+</html>
