@@ -481,5 +481,19 @@ function shortcut(string) {
 	return string.replace(vowels, '');
 }
 
-console.log(shortcut('codewars')); // --> cdwrs
-console.log(shortcut('goodbye')); // --> gdby
+// console.log(shortcut('codewars')); // --> cdwrs
+// console.log(shortcut('goodbye')); // --> gdby
+
+// Write a function that rearranges an integer into its largest possible value.
+function superSize(num) {
+	// convert the num into a string then into an array
+	num = String(num).split('');
+	// convert back into a number
+	const newNum = num.map((element) => Number(element));
+	// sort in ascending order reverse then convert back into
+	// a string then back into a number
+	return Number(newNum.sort((a, b) => a - b).reverse().join(''));
+}
+console.log(superSize(123456)); //654321
+console.log(superSize(105)); // 510
+console.log(superSize(12)); // 21
