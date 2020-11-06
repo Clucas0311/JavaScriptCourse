@@ -494,6 +494,27 @@ function superSize(num) {
 	// a string then back into a number
 	return Number(newNum.sort((a, b) => a - b).reverse().join(''));
 }
-console.log(superSize(123456)); //654321
-console.log(superSize(105)); // 510
-console.log(superSize(12)); // 21
+// console.log(superSize(123456)); //654321
+// console.log(superSize(105)); // 510
+// console.log(superSize(12)); // 21
+
+// Write a function named setAlarm which receives two parameters. The first parameter, employed,
+// is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
+// The function should return true if you are employed and not on vacation
+// (because these are the circumstances under which you need to set an alarm). It should return false otherwise.
+// Examples:
+console.log(setAlarm(true, true)); //-> false
+console.log(setAlarm(false, true)); //-> false
+console.log(setAlarm(false, false)); //-> false
+console.log(setAlarm(true, false)); //-> true
+
+function setAlarm(employed, vacation) {
+	// if employed === true and vacation === false
+	if (employed === true && vacation === false) {
+		// return true
+		return true;
+	}
+	// otherwise
+	// return false
+	return false;
+}
