@@ -472,4 +472,14 @@ function generateRange(min, max, step) {
 	// return container
 	return container;
 }
-console.log(generateRange(2, 10, 2)); // [2,4,6,8,10]
+// console.log(generateRange(2, 10, 2)); // [2,4,6,8,10]
+
+function shortcut(string) {
+	// create a vowel regex
+	const vowels = /[aeiou]+/g;
+	// replace the characters that contain the vowel with ''
+	return string.replace(vowels, '');
+}
+
+console.log(shortcut('codewars')); // --> cdwrs
+console.log(shortcut('goodbye')); // --> gdby
