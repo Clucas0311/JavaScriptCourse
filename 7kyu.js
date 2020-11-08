@@ -336,4 +336,33 @@ var orderedCount = function(text) {
 	return array;
 };
 
-console.log(orderedCount('233312')); // [['2', 2], ['3', 3], ['1', 1 ]]
+// console.log(orderedCount('233312')); // [['2', 2], ['3', 3], ['1', 1 ]]
+
+// In this Kata, you will be given a string that may have mixed uppercase and lowercase
+// letters and your task is to convert that string to either lowercase only or uppercase only based on:
+// make as few changes as possible.
+// if the string contains equal number of uppercase and lowercase letters, convert the string to lowercase.
+
+function solve(s) {
+	// convert the s into an array and filter for uppercase and lowercases
+	const upper = s.split('').filter((element) => element === element.toUpperCase());
+	const lower = s.split('').filter((element) => element === element.toLowerCase());
+	// if s lower length is greater than s upper length
+	if (lower.length > upper.length) {
+		// convert s into an array an make all elements lowercase then back to string
+		return s.split('').map((element) => element.toLowerCase()).join('');
+		// otherwise
+		// if s upper length is greater than s lower length
+	} else if (upper.length > lower.length) {
+		// convert s into an array an make all elements uppercase then back to string
+		return s.split('').map((element) => element.toUpperCase()).join('');
+	} else {
+		// otherwise convert all to lowercase
+		return s.split('').map((element) => element.toLowerCase()).join('');
+	}
+}
+
+console.log(solve('code')); //"code"
+console.log(solve('CODe')); // CODE
+console.log(solve('COde')); // code
+console.log(solve('Code')); // code
