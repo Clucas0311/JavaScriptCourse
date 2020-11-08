@@ -343,23 +343,34 @@ var orderedCount = function(text) {
 // make as few changes as possible.
 // if the string contains equal number of uppercase and lowercase letters, convert the string to lowercase.
 
+// function solve(s) {
+// 	// convert the s into an array and filter for uppercase and lowercases
+// 	const upper = s.split('').filter((element) => element === element.toUpperCase());
+// 	const lower = s.split('').filter((element) => element === element.toLowerCase());
+// 	// if s lower length is greater than s upper length
+// 	if (lower.length > upper.length) {
+// 		// convert s into an array an make all elements lowercase then back to string
+// 		return s.split('').map((element) => element.toLowerCase()).join('');
+// 		// otherwise
+// 		// if s upper length is greater than s lower length
+// 	} else if (upper.length > lower.length) {
+// 		// convert s into an array an make all elements uppercase then back to string
+// 		return s.split('').map((element) => element.toUpperCase()).join('');
+// 	} else {
+// 		// otherwise convert all to lowercase
+// 		return s.split('').map((element) => element.toLowerCase()).join('');
+// 	}
+// }
+
 function solve(s) {
-	// convert the s into an array and filter for uppercase and lowercases
+	// filter for uppercase and lowercase variables
 	const upper = s.split('').filter((element) => element === element.toUpperCase());
 	const lower = s.split('').filter((element) => element === element.toLowerCase());
-	// if s lower length is greater than s upper length
-	if (lower.length > upper.length) {
-		// convert s into an array an make all elements lowercase then back to string
-		return s.split('').map((element) => element.toLowerCase()).join('');
-		// otherwise
-		// if s upper length is greater than s lower length
-	} else if (upper.length > lower.length) {
-		// convert s into an array an make all elements uppercase then back to string
-		return s.split('').map((element) => element.toUpperCase()).join('');
-	} else {
-		// otherwise convert all to lowercase
-		return s.split('').map((element) => element.toLowerCase()).join('');
-	}
+	// if lowercase.length is greater than or equal to upper.length
+	// then s.toLowerCase()
+	// otherwise
+	// s.toUpperCase()
+	return lower.length >= upper.length ? s.toLowerCase() : s.toUpperCase();
 }
 
 console.log(solve('code')); //"code"
