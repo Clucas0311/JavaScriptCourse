@@ -503,10 +503,6 @@ function superSize(num) {
 // The function should return true if you are employed and not on vacation
 // (because these are the circumstances under which you need to set an alarm). It should return false otherwise.
 // Examples:
-console.log(setAlarm(true, true)); //-> false
-console.log(setAlarm(false, true)); //-> false
-console.log(setAlarm(false, false)); //-> false
-console.log(setAlarm(true, false)); //-> true
 
 function setAlarm(employed, vacation) {
 	// if employed === true and vacation === false
@@ -518,3 +514,21 @@ function setAlarm(employed, vacation) {
 	// return false
 	return false;
 }
+
+console.log(setAlarm(true, true)); //-> false
+console.log(setAlarm(false, true)); //-> false
+console.log(setAlarm(false, false)); //-> false
+console.log(setAlarm(true, false)); //-> true
+
+// This function should test if the factor is a factor of base.
+// Return true if it is a factor or false if it is not.
+
+function checkForFactor(base, factor) {
+	// if base divided by factor equals 1
+	// return false
+	return base % factor === 0 ? true : false;
+}
+console.log(checkForFactor(10, 2)); //true))
+console.log(checkForFactor(63, 7)); //true)
+console.log(checkForFactor(2450, 5)); //true)
+console.log(checkForFactor(24612, 3)); //true
