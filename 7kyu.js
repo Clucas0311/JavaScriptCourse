@@ -364,8 +364,8 @@ var orderedCount = function(text) {
 
 function solve(s) {
 	// filter for uppercase and lowercase variables
-	const upper = s.split('').filter((element) => element === element.toUpperCase());
-	const lower = s.split('').filter((element) => element === element.toLowerCase());
+	const upper = s.split('').filter((ele) => ele === element.toUpperCase());
+	const lower = s.split('').filter((ele) => ele === element.toLowerCase());
 	// if lowercase.length is greater than or equal to upper.length
 	// then s.toLowerCase()
 	// otherwise
