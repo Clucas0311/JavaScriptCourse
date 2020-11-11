@@ -373,7 +373,28 @@ function solve(s) {
 	return lower.length >= upper.length ? s.toLowerCase() : s.toUpperCase();
 }
 
-console.log(solve('code')); //"code"
-console.log(solve('CODe')); // CODE
-console.log(solve('COde')); // code
-console.log(solve('Code')); // code
+// console.log(solve('code')); //"code"
+// console.log(solve('CODe')); // CODE
+// console.log(solve('COde')); // code
+// console.log(solve('Code')); // code
+
+// A Tidy number is a number whose digits are in non-decreasing order.
+// Given a number, Find if it is Tidy or not .
+
+function tidyNumber(n) {
+	// convert the number into an array of numbers
+	// number string comparison are converted back into a number automatically
+	const number = String(n).split('');
+	// iterate through the array
+	// comparing two elements so use minus 1
+	for (let i = 0; i < number.length - 1; i++) {
+		// if the first element is greater than the next element
+		// return false
+		if (number[i] > number[i + 1]) return false;
+	}
+	// otherwise return true;
+	return true;
+}
+console.log(tidyNumber(32)); //==> return (false)
+console.log(tidyNumber(13579)); //==> return (true)
+console.log(tidyNumber(2335)); //==> return (true)
