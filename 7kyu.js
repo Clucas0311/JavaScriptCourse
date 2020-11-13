@@ -395,6 +395,24 @@ function tidyNumber(n) {
 	// otherwise return true;
 	return true;
 }
-console.log(tidyNumber(32)); //==> return (false)
-console.log(tidyNumber(13579)); //==> return (true)
-console.log(tidyNumber(2335)); //==> return (true)
+// console.log(tidyNumber(32)); //==> return (false)
+// console.log(tidyNumber(13579)); //==> return (true)
+// console.log(tidyNumber(2335)); //==> return (true)
+
+// Given a string, capitalize the letters that occupy even indexes and
+// odd indexes separately, and return as shown below. Index 0 will be considered even.
+
+function capitalize(s) {
+	// convert the string into an array
+	const sArr = s.split('');
+	// use map to iterate the elements
+	// if the index is even uppercase otherwise lower case
+	const evenArr = sArr.map((el, i) => (i % 2 === 0 ? el.toUpperCase() : el.toLowerCase()));
+	// repeat step for odd elements
+	// if the index is odd then uppercase otherwise lowercase
+	const oddArr = sArr.map((el, i) => (i % 2 !== 0 ? el.toUpperCase() : el.toLowerCase()));
+	// return the even array convert back to a string, odd array convert back into a string
+	return [ evenArr.join(''), oddArr.join('') ];
+}
+
+console.log(capitalize('abcdef')); //['AbCdEf', 'aBcDeF']
