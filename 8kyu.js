@@ -7,7 +7,7 @@ function sum(numbers) {
 	return numbers.reduce((prev, next) => prev + next, 0);
 }
 
-// console.log(sum([ 1, 5.2, 4, 0, -1 ])); //9.2
+console.log(sum([1, 5.2, 4, 0, -1])); //9.2
 
 // Wolves have been reintroduced to Great Britain. You are a sheep farmer,
 // and are now plagued by wolves which pretend to be sheep. Fortunately,
@@ -38,7 +38,7 @@ function spEng(sentence) {
 // console.log(spEng('english')); //true
 
 //
-var countSheep = function(num) {
+var countSheep = function (num) {
 	// create a string to concatanate the sentences together
 	let sheeps = '';
 	// loop through ending at num
@@ -121,7 +121,7 @@ function countToTen(num) {
 // _.filter() in underscore.js and lodash.js.
 // The usage will be quite simple, like:
 
-Array.prototype.filter = function(func) {
+Array.prototype.filter = function (func) {
 	const arr = [];
 	for (let i = 0; i < this.length; i++) {
 		if (func(this[i])) {
@@ -175,7 +175,7 @@ function repeatStr(n, s) {
 // Write a program that finds the summation of every number from 1 to num.
 // The number will always be a positive integer greater than 0.
 
-var summation = function(num) {
+var summation = function (num) {
 	// create a sum varible to sum up numbers
 	let sum = 0;
 	// iterate through starting at 1 and including num
@@ -271,7 +271,11 @@ function squareSum(numbers) {
 // number within an array in reverse order.
 function digitize(n) {
 	// first convert num in to a string, then to an array reverse, then back into a num
-	return n.toString().split('').reverse().map((num) => Number(num));
+	return n
+		.toString()
+		.split('')
+		.reverse()
+		.map((num) => Number(num));
 }
 // console.log(digitize(35231)); //[1,3,2,5,3]
 
@@ -280,7 +284,11 @@ function digitize(n) {
 // The output should be two capital letters with a dot separating them.
 
 function abbrevName(name) {
-	return name.toUpperCase().split(' ').map((intial) => intial[0]).join('.');
+	return name
+		.toUpperCase()
+		.split(' ')
+		.map((intial) => intial[0])
+		.join('.');
 }
 
 // console.log(abbrevName('Sam Harris')); //"S.H"
@@ -307,7 +315,7 @@ function countPositivesSumNegatives(input) {
 	// filter out the negatives and total them up
 	let negative = input.filter((element) => element < 0).reduce((sum, ele) => sum + ele, 0);
 	// return the new array
-	return [ positive, negative ];
+	return [positive, negative];
 }
 // console.log(countPositivesSumNegatives([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15 ])); // [10, -65].
 
@@ -328,7 +336,10 @@ function sumArray(array) {
 	// let sliced = sorted.slice(1, -1);
 	// // sum up the elements
 	// return sliced.reduce((sum, currVal) => sum + currVal, 0);
-	return array.sort((a, b) => a - b).slice(1, -1).reduce((sum, currVal) => sum + currVal, 0);
+	return array
+		.sort((a, b) => a - b)
+		.slice(1, -1)
+		.reduce((sum, currVal) => sum + currVal, 0);
 }
 
 // console.log(sumArray([ 6, 2, 1, 8, 10 ])); // 16
@@ -379,7 +390,10 @@ function doubleChar(str) {
 	// convert the str into an array the create a new array and create string
 	// elements of duplicate letters
 	// join the string back to a string
-	return str.split('').map((letter) => `${letter}${letter}`).join('');
+	return str
+		.split('')
+		.map((letter) => `${letter}${letter}`)
+		.join('');
 }
 // console.log(doubleChar('Adidas')); //"AAddiiddaass"
 
@@ -492,7 +506,12 @@ function superSize(num) {
 	const newNum = num.map((element) => Number(element));
 	// sort in ascending order reverse then convert back into
 	// a string then back into a number
-	return Number(newNum.sort((a, b) => a - b).reverse().join(''));
+	return Number(
+		newNum
+			.sort((a, b) => a - b)
+			.reverse()
+			.join('')
+	);
 }
 // console.log(superSize(123456)); //654321
 // console.log(superSize(105)); // 510
