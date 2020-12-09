@@ -8,3 +8,15 @@ const math = {
 		return x * y;
 	}
 };
+
+// Shorthand syntax
+
+const auth = {
+	username: 'TommyBot',
+	login() {
+		console.log('LOGGED YOU IN!');
+	},
+	logout() {
+		console.log('LOGGED YOU OUT!');
+	}
+};
