@@ -38,7 +38,21 @@ function removeChar(str) {
 	return str.split('').slice(1, -1).join('');
 }
 
-console.log(removeChar('eloquent')); // 'loquen'
+// console.log(removeChar('eloquent')); // 'loquen'
+
+function repeatStr(n, s) {
+	// create a variable assign to an empty string
+	let newStr = '';
+	// iterate through starting at 0 ending when i < n
+	for (let i = 0; i < n; i++) {
+		// concat newString + s
+		newStr += s;
+	}
+	// return newString
+	return newStr;
+}
+
+console.log(repeatStr(5, '#')); // "#####"
 
 // Wolves have been reintroduced to Great Britain. You are a sheep farmer,
 // and are now plagued by wolves which pretend to be sheep. Fortunately,
