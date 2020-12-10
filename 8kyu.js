@@ -3,7 +3,18 @@ const multiply = (a, b) => {
 	return a * b;
 };
 
-console.log(multiply(2, 2)); // 4
+// console.log(multiply(2, 2)); // 4
+
+// Create a function (or write a script in Shell) that takes an integer as an
+//  argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+function even_or_odd(number) {
+	// if the number is even return even otherwise return odd
+	return number % 2 === 0 ? 'Even' : 'Odd';
+}
+console.log(even_or_odd(2)); // "Even"
+console.log(even_or_odd(0)); // "Even"
+console.log(even_or_odd(3)); // "Odd"
 
 // Write a method sum that takes an array of numbers and returns the sum of the numbers.
 //These may be integers or decimals for Ruby and any instance of Num for Haskell.
@@ -14,7 +25,7 @@ const sum = (numbers) => {
 	return numbers.reduce((prev, next) => prev + next, 0);
 };
 
-console.log(sum([1, 5.2, 4, 0, -1])); //9.2
+// console.log(sum([1, 5.2, 4, 0, -1])); //9.2
 
 // Wolves have been reintroduced to Great Britain. You are a sheep farmer,
 // and are now plagued by wolves which pretend to be sheep. Fortunately,
@@ -554,7 +565,7 @@ function checkForFactor(base, factor) {
 	// return false
 	return base % factor === 0 ? true : false;
 }
-console.log(checkForFactor(10, 2)); //true))
-console.log(checkForFactor(63, 7)); //true)
-console.log(checkForFactor(2450, 5)); //true)
-console.log(checkForFactor(24612, 3)); //true
+// console.log(checkForFactor(10, 2)); //true))
+// console.log(checkForFactor(63, 7)); //true)
+// console.log(checkForFactor(2450, 5)); //true)
+// console.log(checkForFactor(24612, 3)); //true
