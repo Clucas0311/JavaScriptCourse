@@ -27,6 +27,19 @@ const sum = (numbers) => {
 
 // console.log(sum([1, 5.2, 4, 0, -1])); //9.2
 
+// It's pretty straightforward. Your goal is to create a function that removes
+// the first and last characters of a string. You're given one parameter,
+// the original string. You don't have to worry with strings with less than two characters.
+
+function removeChar(str) {
+	// convert the str into array
+	// remove the portion of the array starting at 1 and excluding the last element
+	// return it
+	return str.split('').slice(1, -1).join('');
+}
+
+console.log(removeChar('eloquent')); // 'loquen'
+
 // Wolves have been reintroduced to Great Britain. You are a sheep farmer,
 // and are now plagued by wolves which pretend to be sheep. Fortunately,
 // you are good at spotting them.Warn the sheep in front of the wolf that it is about
