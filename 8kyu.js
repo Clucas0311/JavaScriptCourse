@@ -1,3 +1,10 @@
+// This code does not execute properly. Try to figure out why.
+const multiply = (a, b) => {
+	return a * b;
+};
+
+console.log(multiply(2, 2)); // 4
+
 // Write a method sum that takes an array of numbers and returns the sum of the numbers.
 //These may be integers or decimals for Ruby and any instance of Num for Haskell.
 // The numbers can also be negative. If the array does not contain any numbers then you
