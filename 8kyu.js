@@ -12,9 +12,9 @@ function even_or_odd(number) {
 	// if the number is even return even otherwise return odd
 	return number % 2 === 0 ? 'Even' : 'Odd';
 }
-console.log(even_or_odd(2)); // "Even"
-console.log(even_or_odd(0)); // "Even"
-console.log(even_or_odd(3)); // "Odd"
+// console.log(even_or_odd(2)); // "Even"
+// console.log(even_or_odd(0)); // "Even"
+// console.log(even_or_odd(3)); // "Odd"
 
 // Write a method sum that takes an array of numbers and returns the sum of the numbers.
 //These may be integers or decimals for Ruby and any instance of Num for Haskell.
@@ -552,13 +552,24 @@ function setAlarm(employed, vacation) {
 	return false;
 }
 
-console.log(setAlarm(true, true)); //-> false
-console.log(setAlarm(false, true)); //-> false
-console.log(setAlarm(false, false)); //-> false
-console.log(setAlarm(true, false)); //-> true
+// console.log(setAlarm(true, true)); //-> false
+// console.log(setAlarm(false, true)); //-> false
+// console.log(setAlarm(false, false)); //-> false
+// console.log(setAlarm(true, false)); //-> true
 
 // This function should test if the factor is a factor of base.
 // Return true if it is a factor or false if it is not.
+
+// You get an array of numbers, return the sum of all of the positives ones.
+
+function positiveSum(arr) {
+	//   // filter the arr for positive numbers
+	//   const positive = arr.filter((element) => element > 0)
+	//   // sum up positive array and return it
+	//   return positive.reduce((prev, next) => prev + next, 0);
+	return arr.filter((ele) => ele > 0).reduce((prev, next) => prev + next, 0);
+}
+console.log(positiveSum([-1, -2, -3, -4, -5])); //0
 
 function checkForFactor(base, factor) {
 	// if base divided by factor equals 1
