@@ -52,7 +52,7 @@ function repeatStr(n, s) {
 	return newStr;
 }
 
-console.log(repeatStr(5, '#')); // "#####"
+// console.log(repeatStr(5, '#')); // "#####"
 
 // Wolves have been reintroduced to Great Britain. You are a sheep farmer,
 // and are now plagued by wolves which pretend to be sheep. Fortunately,
@@ -607,3 +607,30 @@ function checkForFactor(base, factor) {
 // console.log(checkForFactor(63, 7)); //true)
 // console.log(checkForFactor(2450, 5)); //true)
 // console.log(checkForFactor(24612, 3)); //true
+
+// const gridGenerator = (size) => {
+// 	let board = '';
+// 	// i is the lines
+// 	for (let i = 0; i < size; i++) {
+// 		//j is the characters
+// 		for (let j = 0; j < size; j++) {
+// 			if ((i + j) % 2 === 0) {
+// 				board += '#';
+// 			} else {
+// 				board += ' ';
+// 			}
+// 		}
+// 		board += '\n';
+// 	}
+// 	return board;
+// };
+
+// console.log(gridGenerator(2));
+
+// Simple, remove the spaces from the string, then return the resultant string.
+function noSpace(x) {
+	// convert the string to array - delimeter being space
+	// convert back to string - with join no delimiter
+	return x.split(' ').join('');
+}
+console.log(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B')); // '8j8mBliB8gimjB8B8jlB'
