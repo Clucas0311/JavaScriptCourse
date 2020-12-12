@@ -633,4 +633,12 @@ function noSpace(x) {
 	// convert back to string - with join no delimiter
 	return x.split(' ').join('');
 }
-console.log(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B')); // '8j8mBliB8gimjB8B8jlB'
+// console.log(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B')); // '8j8mBliB8gimjB8B8jlB'
+
+// Given an array of integers your solution should find the smallest integer.
+
+const findSmallestInt = (args) => {
+	return Math.min(...args);
+};
+
+console.log(findSmallestInt([78, 56, 232, 12, 8])); //8,
