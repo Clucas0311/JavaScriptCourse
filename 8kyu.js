@@ -238,7 +238,8 @@ var summation = function (num) {
 // (true means present).
 function countSheeps(arrayOfSheep) {
 	// TODO May the force be with you
-	return arrayOfSheep.filter((truthy) => truthy === true).length;
+	// return arrayOfSheep.filter((truthy) => truthy === true).length;
+	return arrayOfSheep.filter((element) => element).length;
 }
 
 var array1 = [
