@@ -651,3 +651,9 @@ function squareSum(numbers) {
 	return numbers.map((ele) => ele ** 2).reduce((prev, next) => prev + next, 0);
 }
 console.log(squareSum([1, 2])); // 5
+
+// Now you have to write a function that takes an argument and returns the square of it.
+const square = (num) => {
+	return num ** 2;
+};
+console.log(square(3)); // 9
