@@ -657,3 +657,10 @@ const square = (num) => {
 	return num ** 2;
 };
 console.log(square(3)); // 9
+
+// Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+
+function removeExclamationMarks(s) {
+	return s.replace(/[^\w\s]/gi, '');
+}
+console.log(removeExclamationMarks('Hello World!')); // "Hello World"
