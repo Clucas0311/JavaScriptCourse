@@ -664,3 +664,13 @@ function removeExclamationMarks(s) {
 	return s.replace(/[^\w\s]/gi, '');
 }
 console.log(removeExclamationMarks('Hello World!')); // "Hello World"
+
+function monkeyCount(n) {
+	const arr = [];
+	for (let i = 1; i <= n; i++) {
+		arr.push(i);
+	}
+	return arr;
+}
+
+console.log(monkeyCount(5)); //[1, 2, 3, 4, 5]
