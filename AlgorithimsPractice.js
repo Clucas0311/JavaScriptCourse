@@ -23,7 +23,7 @@ function countUniqueValues(arr) {
 
 const favNumber = { number: 11 };
 
-var arr = [ 2, 3, 1, 3, 4, 5, 3, 1 ];
+var arr = [2, 3, 1, 3, 4, 5, 3, 1];
 
 function getOccurrence(array, value) {
 	let count = 0;
@@ -168,7 +168,7 @@ function chunk(array, size) {
 		// if the last elements doesn't exist or the last array isn't equal to size
 		if (!last || last.length === size) {
 			// then push [elements] into chunked array
-			chunked.push([ element ]);
+			chunked.push([element]);
 		} else {
 			// otherwise push elements into the last array
 			last.push(element);
@@ -338,7 +338,12 @@ function anagram(stringA, stringB) {
 // create a helper function
 // remove none alpha types, change into an array, sort the array, then change back to string - lowecase
 function cleaner(str) {
-	return str.replace(/[^\w/]/g, '').split('').sort().join('').toLowerCase();
+	return str
+		.replace(/[^\w/]/g, '')
+		.split('')
+		.sort()
+		.join('')
+		.toLowerCase();
 }
 // console.log(anagram('rail safety', 'fairy tales')); // True
 // console.log(anagram('RAIL! SAFETY!', 'fairy tales')); // True
@@ -473,7 +478,7 @@ function vowels(str) {
 	// create a counter variable that will count the characters that are vowels in str
 	let counter = 0;
 	// create an array with the vowels as elements
-	const vowelArr = [ 'a', 'e', 'i', 'o', 'u' ];
+	const vowelArr = ['a', 'e', 'i', 'o', 'u'];
 	// iterate through the str when its lower case
 	for (let char of str.toLowerCase()) {
 		// CONDITIONAL:
@@ -509,13 +514,16 @@ function runningSum(nums) {
 function disemvowel(S) {
 	// return S.toLowerCase().replace(/[aeiou]/gi, '');
 	// // create an array with vowel charaters as elements
-	const vowelArray = [ 'a', 'e', 'i', 'o', 'u' ];
+	const vowelArray = ['a', 'e', 'i', 'o', 'u'];
 	// // convert the S into an array
 	// // filter string Array for its elements to check if
 	// // any of its elements are found in the vowel array
 	// // if indexOf is false then return the newArray
 	// // convert the array back into a string
-	return S.toLowerCase().split('').filter((element) => vowelArray.indexOf(element) === -1).join('');
+	return S.toLowerCase()
+		.split('')
+		.filter((element) => vowelArray.indexOf(element) === -1)
+		.join('');
 }
 
 // console.log(disemvowel('leetcodeisacommunityforcoders'));
@@ -571,12 +579,14 @@ function repeatStringNumTimes(str, num) {
 
 // console.log(repeatStringNumTimes('abc', 3));
 
-String.prototype.toJadenCase = function() {
+String.prototype.toJadenCase = function () {
 	// convert  string it into an array split by spaces
 	// create a new array to push uppercase characters in
 	// iterate through the new array
 	// uppercase the first index and add the slice string with the first index removed
-	return this.split(' ').map((element) => element[0].toUpperCase() + element.substr(1)).join(' ');
+	return this.split(' ')
+		.map((element) => element[0].toUpperCase() + element.substr(1))
+		.join(' ');
 };
 
 // Write a function that takes a string as input and reverse only the
@@ -591,10 +601,10 @@ function reverseVowels(str) {
 
 	function swap(arr, index1, index2) {
 		// inside the function [arr[index1], arr[index2]] = [ arr[index2], arr[index1]]
-		return ([ arr[index1], arr[index2] ] = [ arr[index2], arr[index1] ]);
+		return ([arr[index1], arr[index2]] = [arr[index2], arr[index1]]);
 	}
 	// create a array with vowel characters
-	const arrOfVowel = [ 'a', 'e', 'i', 'o', 'u' ];
+	const arrOfVowel = ['a', 'e', 'i', 'o', 'u'];
 	// create a two pointer
 	// left will be the left side of the string --> 0
 	let left = 0;
@@ -717,7 +727,7 @@ function twoSum(nums, target) {
 		// if the difference variable is in the object
 		// then return the array with the index
 		if (numMap[difference] !== undefined) {
-			return [ numMap[difference], i ];
+			return [numMap[difference], i];
 			// otherwise
 			// return the element as the key and index as a value
 		} else {
@@ -762,7 +772,7 @@ function findMultiples(integer, limit) {
 // Your returned answers (both index1 and index2) are not zero-based.
 // You may assume that each input would have exactly one solution and
 //  you may not use the same element twice.
-const twoSumII = function(numbers, target) {
+const twoSumII = function (numbers, target) {
 	// create a left pointer assign to 0 - index
 	let left = 0;
 	// create a right pointer assing the the last element numbers.length - 1
@@ -776,7 +786,7 @@ const twoSumII = function(numbers, target) {
 		if (sum === target) {
 			// return [left, right]
 			// not zero based add 1;
-			return [ left + 1, right + 1 ];
+			return [left + 1, right + 1];
 		}
 		// if sum < target
 		if (sum < target) {
@@ -792,15 +802,42 @@ const twoSumII = function(numbers, target) {
 	return [];
 };
 
-console.log(twoSumII([ 2, 7, 11, 15 ], 9)); //[1,2]
+console.log(twoSumII([2, 7, 11, 15], 9)); //[1,2]
 
 function clockAngle(hour, min) {
 	let hourAngle = 0.5 * (60 * hour + min);
 	let minuteHand = 6 * min;
 	var angle = Math.abs(hour - minuteHand);
 	if (angle > 180) {
-		return 360 - angle 
-	} 
-   return angle;
-   }
+		return 360 - angle;
+	}
+	return angle;
+}
 
+// create a function named vowelsCount
+const vowelsCount = (str) => {
+	// it will take in a str as an argument
+	// convert the str to all lowercase letters
+	str = str.toLowerCase();
+	// return the str convert it into an array
+	return (
+		str
+			.split('')
+			// using reduce iterate through the elements
+			.reduce(
+				(obj, next) => {
+					// to get the values -- intialize with an object of vowels and total value to 0
+					// if the aeiou is includes in the array
+					if ('aeiou'.includes(next)) {
+						// increment the vowel key
+						obj[next]++;
+						// increment total
+						obj['total']++;
+					}
+					// return the obj
+					return obj;
+				},
+				{ a: 0, e: 0, i: 0, o: 0, u: 0, total: 0 }
+			)
+	);
+};
