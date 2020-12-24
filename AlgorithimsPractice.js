@@ -841,3 +841,4 @@ const vowelsCount = (str) => {
 			)
 	);
 };
+console.log(vowelsCount('Hello World!')); //{ a: 0, e: 1, i: 0, o: 2, u: 0, total: 3 }
