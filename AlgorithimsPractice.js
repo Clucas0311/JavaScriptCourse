@@ -842,3 +842,18 @@ const vowelsCount = (str) => {
 	);
 };
 console.log(vowelsCount('Hello World!')); //{ a: 0, e: 1, i: 0, o: 2, u: 0, total: 3 }
+
+function difference(arrayA, arrayB) {
+	return arrayA.filter((element) => {
+	  if (!arrayB.includes(element)) {
+		return element;
+	  }
+	});
+  }
+  
+  function symmetricDiff(array1, array2) {
+	const arrA = difference(array1, array2);
+	const arrB = difference(array2, array1);
+	return arrA.concat(arrB);
+  }
+  
