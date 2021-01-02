@@ -91,7 +91,7 @@ function lastFridayNight(arr) {
 	for (let i = 0; i < arr.length; i++) {
 		// grab the object element
 		let obj = arr[i];
-		// iterate through the object to get its key
+		// add sum and the object amount togeter
 		sum += obj['amount'];
 	}
 	// return sum
