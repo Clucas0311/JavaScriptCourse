@@ -47,22 +47,55 @@ const team = {
 // console.log(team);
 
 const math = {
-	number: [ 1, 2, 3, 4, 5 ],
-	add: function(x, y) {
+	number: [1, 2, 3, 4, 5],
+	add: function (x, y) {
 		return x + y;
 	},
-	subtract: function(x, y) {
+	subtract: function (x, y) {
 		return x - y;
 	},
-	multiply: function(x, y) {
+	multiply: function (x, y) {
 		return x * y;
 	},
-	divisor: function(x, y) {
+	divisor: function (x, y) {
 		return x / y;
 	}
 };
 
-console.log(math.add(5, 5));
-console.log(math.subtract(10, 5));
-console.log(math.number);
-console.log(math.multiply(2, 4));
+// console.log(math.add(5, 5));
+// console.log(math.subtract(10, 5));
+// console.log(math.number);
+// console.log(math.multiply(2, 4));
+
+let transactions = [
+	{
+		name: 'apples',
+		amount: 5
+	},
+	{
+		name: 'kleenex',
+		amount: 2
+	},
+	{
+		name: 'knitting supplies',
+		amount: 10
+	}
+];
+
+// YOUR CODE BELOW
+// create a function named lastFridayNight takes in an array argument
+function lastFridayNight(arr) {
+	// create a sum variable assign the value of 0
+	let sum = 0;
+	// iterate through the array to access the object
+	for (let i = 0; i < arr.length; i++) {
+		// grab the object element
+		let obj = arr[i];
+		// iterate through the object to get its key
+		sum += obj['amount'];
+	}
+	// return sum
+	return sum;
+}
+
+console.log(lastFridayNight(transactions));
