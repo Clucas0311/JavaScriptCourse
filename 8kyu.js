@@ -679,3 +679,7 @@ function past(h, m, s) {
 	return h * 3600000 + m * 60000 + s * 1000;
 }
 past(0, 1, 1); //61000
+
+function squareOrSquareRoot(array) {
+	return array.map((item) => (Math.sqrt(item) == Math.sqrt(item).toFixed(0) ? Math.sqrt(item) : item * item));
+}
