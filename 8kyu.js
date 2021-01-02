@@ -673,4 +673,9 @@ function monkeyCount(n) {
 	return arr;
 }
 
-console.log(monkeyCount(5)); //[1, 2, 3, 4, 5]
+// console.log(monkeyCount(5)); //[1, 2, 3, 4, 5]
+
+function past(h, m, s) {
+	return h * 3600000 + m * 60000 + s * 1000;
+}
+past(0, 1, 1); //61000
