@@ -89,7 +89,7 @@ function lastFridayNight(arr) {
 	let sum = 0;
 	// iterate through the array to access the object
 	for (let i = 0; i < arr.length; i++) {
-		// grab the object element
+		// grab the element which is each object
 		let obj = arr[i];
 		// add sum and the object amount togeter
 		sum += obj['amount'];
@@ -99,3 +99,28 @@ function lastFridayNight(arr) {
 }
 
 console.log(lastFridayNight(transactions));
+
+// create a function compareObjects takes in two objects as arguments
+function compareObjects(obj1, obj2) {
+	// iterate through the first object to get its key
+	for (let key in obj1) {
+		// if the object1[key] doesn't eqaul object[key]
+		if (obj1[key] !== obj2[key]) {
+			// return false
+			return false;
+		}
+	}
+
+	// iterate through the second object and get its key
+	for (let key in obj2) {
+		// if the object2[key] doesn't equal object1[key]
+		if (obj2[key] !== obj1[key]) {
+			// return false
+			return false;
+		}
+	}
+	// if both aren't false return true
+	return true;
+}
+console.log(compareObjects({ a: 1 }, { a: 1, b: 2 })); // false
+console.log(compareObjects({ a: 1, b: 2 }, { a: 1, b: 2 })); //true
