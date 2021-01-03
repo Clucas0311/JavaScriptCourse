@@ -236,4 +236,69 @@ function frequencyAnalysis(str) {
 	}
 	return charMap;
 }
-console.log(frequencyAnalysis('i like pumpkins'));
+// console.log(frequencyAnalysis('i like pumpkins'));
+// Write a function petSounds that takes an animal name and a country name.
+// Using the globally-defined animalNoises array, petSounds should return a sentence
+// that explains which sound the animal makes in the given country.
+let animalNoises = [
+	{
+		dog: {
+			America: 'Woof! Woof!',
+			Germany: 'Wau Wau!',
+			England: 'Bow wow!',
+			Uruguay: 'Jua jua!',
+			Afrikaans: 'Blaf!',
+			Korea: 'Mong mong!',
+			Iceland: 'Voff voff!',
+			Albania: 'Ham!',
+			Algeria: 'Ouaf ouaf!'
+		}
+	},
+	{
+		cat: {
+			America: 'Meow',
+			Germany: 'Miauw!',
+			England: 'mew mew',
+			Uruguay: 'Miau Miau!',
+			Afrikaans: 'Purr',
+			Korea: 'Nyaong!',
+			Iceland: 'Kurnau!',
+			Albania: 'Miau',
+			Algeria: 'Miaou!'
+		}
+	},
+	{
+		chicken: {
+			America: 'Cluck cluck',
+			Germany: 'tock tock tock',
+			England: 'Cluck Cluck',
+			Uruguay: 'gut gut gdak',
+			Afrikaans: 'kukeleku',
+			Korea: 'ko-ko-ko',
+			Iceland: 'Chuck-chuck!',
+			Albania: 'Kotkot',
+			Algeria: 'Cotcotcodet'
+		}
+	}
+];
+
+// create a function named petSounds that takes in two arguments animal and country
+function petSounds(animal, country) {
+	// iterate through the animal noises array to get the animals key
+	for (let i = 0; i < animalNoises.length; i++) {
+		// grab the animal key store in animalObj
+		let animalObj = animalNoises[i];
+		// check to see if the animal key is found in animalObj
+		if (animal in animalObj) {
+			// if it is then store that in the a new variable country sounds to access the sounds
+			let countrySounds = animalObj[animal];
+			// create a variable called sound and assign the value to countrySounds Obj the key being country
+			let sound = countrySounds[country];
+			animal = animal[0].toUpperCase() + animal.slice(1) + 's';
+			// return the final string, concating all of the pieces together
+			return animal + ' in ' + country + ' say ' + sound;
+		}
+	}
+}
+
+console.log(petSounds('dog', 'Iceland')); // => Dogs in Iceland say Voff voff!)
