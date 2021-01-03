@@ -98,7 +98,7 @@ function lastFridayNight(arr) {
 	return sum;
 }
 
-console.log(lastFridayNight(transactions));
+// console.log(lastFridayNight(transactions));
 
 // create a function compareObjects takes in two objects as arguments
 function compareObjects(obj1, obj2) {
@@ -141,8 +141,8 @@ function compareObjects(obj1, obj2) {
 	// otherwise return true
 	return true;
 }
-console.log(compareObjects({ a: 1 }, { a: 1, b: 2 })); // false
-console.log(compareObjects({ a: 1, b: 2 }, { a: 1, b: 2 })); //true
+// console.log(compareObjects({ a: 1 }, { a: 1, b: 2 })); // false
+// console.log(compareObjects({ a: 1, b: 2 }, { a: 1, b: 2 })); //true
 
 let letters = [
 	'a',
@@ -203,29 +203,37 @@ let leetChars = [
 
 // create a function named letterTranslator takes in one argument a str
 function leetTranslator(str) {
-	// create an empty obj to store the letters chars
+	// create an empty object to store the values
 	const obj = {};
 	// iterate through the letters array
 	for (let i = 0; i < letters.length; i++) {
-		// grab the letters element
+		// grab the letters element and store that as a key
 		let key = letters[i];
-		// grab the leetChars element
+		// grab the leetChars element and store that as the value
 		let value = leetChars[i];
-		// store the letter as the key and the leetChars as a value in obj
+		// create the new obj with letters as key and letterChars as a value
 		obj[key] = value;
 	}
-	// create an empty string to concat the corresponding letter to the the value
-	let translation = '';
-	// iterate through the str to get its element
+	// create an empty string to concat the translated string
+	let translated = '';
+	// iterate through the string to get the element
 	for (let i = 0; i < str.length; i++) {
-		// grab its element
-		let element = str[i].toLowerCase();
-		// get the property of from the object with the element
-		// concat the empty string with new str
-		translation += obj[element];
+		// grab the element of the str and make it lowercase
+		let element = str[i];
+		// concat the new String with the translated string
+		translated += obj[element];
 	}
-	// return new String
-	return translation;
+	// return the string
+	return translated;
 }
 
-console.log(leetTranslator('fullstack')); //ph|_|115+@(|<
+// console.log(leetTranslator('fullstack')); //ph|_|115+@(|<
+
+function frequencyAnalysis(str) {
+	const charMap = {};
+	for (let letter of str) {
+		charMap[letter] = charMap[letter] + 1 || 1;
+	}
+	return charMap;
+}
+console.log(frequencyAnalysis('i like pumpkins'));
