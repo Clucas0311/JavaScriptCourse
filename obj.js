@@ -143,3 +143,89 @@ function compareObjects(obj1, obj2) {
 }
 console.log(compareObjects({ a: 1 }, { a: 1, b: 2 })); // false
 console.log(compareObjects({ a: 1, b: 2 }, { a: 1, b: 2 })); //true
+
+let letters = [
+	'a',
+	'b',
+	'c',
+	'd',
+	'e',
+	'f',
+	'g',
+	'h',
+	'i',
+	'j',
+	'k',
+	'l',
+	'm',
+	'n',
+	'o',
+	'p',
+	'q',
+	'r',
+	's',
+	't',
+	'u',
+	'v',
+	'w',
+	'x',
+	'y',
+	'z'
+];
+let leetChars = [
+	'@',
+	'8',
+	'(',
+	'|)',
+	'3',
+	'ph',
+	'g',
+	'#',
+	'l',
+	'_|',
+	'|<',
+	'1',
+	"|'|'|",
+	'//',
+	'0',
+	'|D',
+	'(,)',
+	'|2',
+	'5',
+	'+',
+	'|_|',
+	'|/',
+	"|/|/'",
+	'><',
+	'j',
+	'2'
+];
+
+// create a function named letterTranslator takes in one argument a str
+function leetTranslator(str) {
+	// create an empty obj to store the letters chars
+	const obj = {};
+	// iterate through the letters array
+	for (let i = 0; i < letters.length; i++) {
+		// grab the letters element
+		let key = letters[i];
+		// grab the leetChars element
+		let value = leetChars[i];
+		// store the letter as the key and the leetChars as a value in obj
+		obj[key] = value;
+	}
+	// create an empty string to concat the corresponding letter to the the value
+	let translation = '';
+	// iterate through the str to get its element
+	for (let i = 0; i < str.length; i++) {
+		// grab its element
+		let element = str[i].toLowerCase();
+		// get the property of from the object with the element
+		// concat the empty string with new str
+		translation += obj[element];
+	}
+	// return new String
+	return translation;
+}
+
+console.log(leetTranslator('fullstack'));
