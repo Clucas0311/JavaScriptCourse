@@ -300,5 +300,28 @@ function petSounds(animal, country) {
 		}
 	}
 }
+// console.log(petSounds('dog', 'Iceland')); // => Dogs in Iceland say Voff voff!)
 
-console.log(petSounds('dog', 'Iceland')); // => Dogs in Iceland say Voff voff!)
+// Define a function, dogBreeder, that accepts up to two optional arguments:
+
+// name (string)
+// age (number)
+// dogBreeder should return an object that represents a new dog!
+// If the user doesn't define a name, assume the dog's name is Steve.
+// If the user doesn't define the dog's age, assume the dog's age is 0.
+function dogBreeder(name = 'Steve', age = 0) {
+	if (typeof name === 'number') {
+		age = name;
+		name = 'Steve';
+	}
+	// create an empty obj
+	const obj = {
+		name: name,
+		age: age
+	};
+	// return obj
+	return obj;
+}
+
+console.log(dogBreeder('Sam', 12)); // => {name: 'Sam', age: 12}
+console.log(dogBreeder(15)); // => {name:'Steve', age: 15}
