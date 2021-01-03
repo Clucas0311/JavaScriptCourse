@@ -228,4 +228,4 @@ function leetTranslator(str) {
 	return translation;
 }
 
-console.log(leetTranslator('fullstack'));
+console.log(leetTranslator('fullstack')); //ph|_|115+@(|<
