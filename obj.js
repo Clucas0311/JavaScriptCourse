@@ -122,27 +122,31 @@ function compareObjects(obj1, obj2) {
 	// // if both aren't false return true
 	// return true;
 
-	// grab the keys from both obj1 and obj2
-	const obj1Keys = Object.keys(obj1);
-	const obj2Keys = Object.keys(obj2);
-	// if the object1keys array is not the same length as the object2Keys array
-	if (obj1Keys.length !== obj2Keys.length) {
+	// get all the keys from both obj1 and obj2
+	const obj1Key = Object.keys(obj1);
+	const obj2Key = Object.keys(obj2);
+	// check the length of both key arrays if they are not the same in length
+	if (obj1Key.length !== obj2Key.length) {
 		// return false
 		return false;
 	}
-	// iterate through the obj1Key array to get each element
-	for (let i = 0; i < obj1Keys.length; i++) {
-		// if the element doesn't equal the the element in obj2key array
-		if (obj1Keys[i] !== obj2Keys[i]) {
+	// iterate through the obj1key array
+	for (let i = 0; i < obj1Key.length; i++) {
+		// if the values doesn't exist
+		if (obj1[obj1Key[i]] !== obj2[obj2Key[i]]) {
 			// return false
+			return false;
+		}
+		// if the keys do not match also return false
+		if (obj1Key[i] !== obj2Key[i]) {
 			return false;
 		}
 	}
 	// otherwise return true
 	return true;
 }
-// console.log(compareObjects({ a: 1 }, { a: 1, b: 2 })); // false
-// console.log(compareObjects({ a: 1, b: 2 }, { a: 1, b: 2 })); //true
+console.log(compareObjects({ a: 1 }, { a: 1, b: 2 })); // false
+console.log(compareObjects({ a: 1, b: 2 }, { a: 1, b: 2 })); //true
 
 let letters = [
 	'a',
@@ -201,32 +205,31 @@ let leetChars = [
 	'2'
 ];
 
-// create a function named letterTranslator takes in one argument a str
+// create a function leetTranslator that takes in a str argument
 function leetTranslator(str) {
-	// create an empty object to store the values
+	// create an empty object to store the letters and letterChars as key value pairs
 	const obj = {};
 	// iterate through the letters array
 	for (let i = 0; i < letters.length; i++) {
-		// grab the letters element and store that as a key
+		// grab the element from the letters this will be the key
 		let key = letters[i];
-		// grab the leetChars element and store that as the value
+		// grab the element from the leetChars this will be the value
 		let value = leetChars[i];
-		// create the new obj with letters as key and letterChars as a value
+		// store these key:value pairs in the object
 		obj[key] = value;
 	}
-	// create an empty string to concat the translated string
-	let translated = '';
-	// iterate through the string to get the element
+	// create a empty string to create the new translated string
+	let translation = '';
+	// iterate through the string
 	for (let i = 0; i < str.length; i++) {
-		// grab the element of the str and make it lowercase
-		let element = str[i];
-		// concat the new String with the translated string
-		translated += obj[element];
+		// grab the element from the str make it lowercase - this will be used to access the properties in the obj created
+		let letter = str[i].toLowerCase();
+		// concatenate the the translated empty string to the obj[letter]
+		translation += obj[letter];
 	}
-	// return the string
-	return translated;
+	// return new translated string
+	return translation;
 }
-
 // console.log(leetTranslator('fullstack')); //ph|_|115+@(|<
 
 function frequencyAnalysis(str) {
@@ -323,5 +326,50 @@ function dogBreeder(name = 'Steve', age = 0) {
 	return obj;
 }
 
-console.log(dogBreeder('Sam', 12)); // => {name: 'Sam', age: 12}
-console.log(dogBreeder(15)); // => {name:'Steve', age: 15}
+// console.log(dogBreeder('Sam', 12)); // => {name: 'Sam', age: 12}
+// console.log(dogBreeder(15)); // => {name:'Steve', age: 15}
+
+let classRoom = [
+	{
+		Marnie: [{ Monday: true }, { Tuesday: true }, { Wednesday: true }, { Thursday: true }, { Friday: true }]
+	},
+	{
+		Lena: [{ Monday: false }, { Tuesday: false }, { Wednesday: true }, { Thursday: false }, { Friday: true }]
+	},
+	{
+		Shoshanna: [{ Monday: true }, { Tuesday: true }, { Wednesday: false }, { Thursday: true }, { Friday: false }]
+	},
+	{
+		Jessa: [{ Monday: false }, { Tuesday: false }, { Wednesday: false }, { Thursday: false }, { Friday: true }]
+	}
+];
+
+// create a function named attendanceCheck takes in one argument day
+function attendanceCheck(day) {
+	// create an empty arr container to store the items
+	const arr = [];
+	// iterate through the array to get the object
+	for (let i = 0; i < classRoom.length; i++) {
+		// grab the each element store in studentObj variable
+		let studentObj = classRoom[i];
+		// grab student name which will be the object.keys at the first index
+		let student = Object.keys(studentObj)[0];
+		// store the daysOfWeek
+		let daysOfWeek = studentObj[student];
+		// iterat through the daysOfWeek array
+		for (let j = 0; j < daysOfWeek.length; j++) {
+			// grab the days and store in daysObj
+			const daysObj = daysOfWeek[j];
+			// grab the first element of the keys array
+			let dayName = Object.keys(daysObj)[0];
+			// if the day name equals day and the value of the obj is true
+			if (dayName === day && daysObj[dayName]) {
+				// push student into array
+				arr.push(student);
+			}
+		}
+	}
+	// return array
+	return arr;
+}
+console.log(attendanceCheck('Monday'));
