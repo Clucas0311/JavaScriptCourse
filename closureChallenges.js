@@ -9,7 +9,7 @@
 // When createFunction is called/() it should print "hello"
 // ToDo
 function createFunction() {
-	return function() {
+	return function () {
 		console.log('hello');
 	};
 }
@@ -28,7 +28,7 @@ function createFunction() {
 // inside the return function console.log the parameter
 
 function createFunctionPrinter(input) {
-	return function() {
+	return function () {
 		console.log(input);
 	};
 }
@@ -75,7 +75,7 @@ const jasCounter = outer();
 //  Now we are going to create a function addByX that returns a function that will
 //   add an input by x.
 function addByX(x) {
-	return function(y) {
+	return function (y) {
 		return x + y;
 	};
 }
@@ -105,24 +105,44 @@ const addByTwo = addByX(2);
 // when the return function is invoked callback(input)
 // let output = callback(input)
 // if argument ===> return argument
-function once(func) {
-	let input; // create a variable to test
-	function inner(x) {
-		if (input === undefined) {
-			console.log(input);
-			input = func(x);
-		}
-		console.log(input);
+function once(callback) {
+	// let input; // create a variable to test
+	// function inner(x) {
+	// 	if (input === undefined) {
+	// 		console.log(input);
+	// 		input = func(x);
+	// 	}
+	// 	console.log(input);
 
-		return input;
+	// 	return input;
+	// }
+	// return inner;
+
+	// create a variable hasbeenCalled assign to the value of false this will check if  cb has been called
+	let hasBeenCalled = false;
+	// create a result variable set to undefined this will store the invoked called
+	let result;
+
+	// create an inner function that takes in ... args as an argument
+	function inner(...args) {
+		// if hasBeenCalled is false
+		if (hasBeenCalled === false) {
+			// then result will be reassigned the value of the callback invoked
+			result = callback(...args);
+			// reassign the value of hasBeenCalled to equal true
+			hasBeenCalled = true;
+		}
+		// otherwise return result
+		return result;
 	}
+	// return inner
 	return inner;
 }
 // /*** Uncomment these to check your work! ***/
 const onceFunc = once(addByTwo);
-// console.log(onceFunc(4)); // => should log 6
-// // console.log(onceFunc(10)); // => should log 6
-// // console.log(onceFunc(9001)); // => should log 6
+console.log(onceFunc(4)); // => should log 6
+console.log(onceFunc(10)); // => should log 6
+console.log(onceFunc(9001)); // => should log 6
 
 // Challenge 5
 // Write a function after that takes the number of times the callback needs to be
@@ -252,7 +272,7 @@ function saveOutput(func, magicWord) {
 	}
 	return inner;
 }
-const multiplyBy2 = function(num) {
+const multiplyBy2 = function (num) {
 	return num * 2;
 };
 // const multBy2AndLog = saveOutput(multiplyBy2, 'boo');
@@ -296,7 +316,7 @@ function cycleIterator(array) {
 }
 
 // /*** Uncomment these to check your work! ***/
-const threeDayWeekend = [ 'Fri', 'Sat', 'Sun' ];
+const threeDayWeekend = ['Fri', 'Sat', 'Sun'];
 const getDay = cycleIterator(threeDayWeekend);
 // console.log(getDay()); // => should log 'Fri'
 // console.log(getDay()); // => should log 'Sat'
