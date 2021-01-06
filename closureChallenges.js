@@ -139,10 +139,10 @@ function once(callback) {
 	return inner;
 }
 // /*** Uncomment these to check your work! ***/
-const onceFunc = once(addByTwo);
-console.log(onceFunc(4)); // => should log 6
-console.log(onceFunc(10)); // => should log 6
-console.log(onceFunc(9001)); // => should log 6
+// const onceFunc = once(addByTwo);
+// console.log(onceFunc(4)); // => should log 6
+// console.log(onceFunc(10)); // => should log 6
+// console.log(onceFunc(9001)); // => should log 6
 
 // Challenge 5
 // Write a function after that takes the number of times the callback needs to be
@@ -320,15 +320,14 @@ function cycleIterator(arr) {
 	// create an inner function no arguments
 	function inner() {
 		// increment counter
-		counter++;
+		let result = arr[counter++];
 		// if counter is greater than the length of the array
-		if (counter === arr.length + 1) {
-			// then reassign counter to 1
-			counter = 1;
+		if (counter >= arr.length) {
+			// then reassign counter to 0
+			counter = 0;
 		}
-		// otherwise
-		// return arr[counter minus 1]
-		return arr[counter - 1];
+		// otherwise --> return the result
+		return result;
 	}
 	// return inner
 	return inner;
@@ -337,10 +336,10 @@ function cycleIterator(arr) {
 // /*** Uncomment these to check your work! ***/
 const threeDayWeekend = ['Fri', 'Sat', 'Sun'];
 const getDay = cycleIterator(threeDayWeekend);
-// console.log(getDay()); // => should log 'Fri'
-// console.log(getDay()); // => should log 'Sat'
-// console.log(getDay()); // => should log 'Sun'
-// console.log(getDay()); // => should log 'Fri'
+console.log(getDay()); // => should log 'Fri'
+console.log(getDay()); // => should log 'Sat'
+console.log(getDay()); // => should log 'Sun'
+console.log(getDay()); // => should log 'Fri'
 
 //Challenge 10
 // Create a function defineFirstArg that accepts a function and an argument.
@@ -553,7 +552,7 @@ function summer(a, b) {
 }
 
 let sumFive = partial(summer, 5);
-console.log(sumFive(10)); // => 15;
+// console.log(sumFive(10)); // => 15;
 
 // Write a function, callCount, that returns a new function. The new function should
 // return the number of times its been called.
@@ -592,4 +591,4 @@ function returnsANumber() {
 }
 
 let newFunction = stringify(returnsANumber);
-console.log(newFunction()); // => '100'
+// console.log(newFunction()); // => '100'
