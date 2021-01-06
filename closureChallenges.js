@@ -313,15 +313,24 @@ const multiplyBy2 = function (num) {
 // when array length is greater counter --> increment up
 // array indices array[counter -1]
 
-function cycleIterator(array) {
+// create a function named cycleIterator
+function cycleIterator(arr) {
+	// create a counter variable to check invocation
 	let counter = 0;
+	// create an inner function no arguments
 	function inner() {
+		// increment counter
 		counter++;
-		if (counter === array.length + 1) {
+		// if counter is greater than the length of the array
+		if (counter === arr.length + 1) {
+			// then reassign counter to 1
 			counter = 1;
 		}
-		return array[counter - 1];
+		// otherwise
+		// return arr[counter minus 1]
+		return arr[counter - 1];
 	}
+	// return inner
 	return inner;
 }
 
