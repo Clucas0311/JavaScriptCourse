@@ -155,15 +155,25 @@ console.log(onceFunc(9001)); // => should log 6
 // we will need counter
 // counter will need to incremented everytime the callback is invoked
 
-function after(count, func) {
-	counter = 0;
-	function inner() {
+// create a function named after that takes in two arguments num and callback
+function after(num, callback) {
+	// create a counter variable to check how many times the function invoked
+	// assign the value to 0
+	let counter = 0;
+	// create an inner function with an argument to put in callback ...args
+	function inner(...args) {
+		// increment counter
 		counter++;
-		if (counter < count) {
-		} else {
-			return func();
+		// if the counter is less than num
+		if (counter < num) {
+			// return undefined
+			return undefined;
 		}
+		// otherwise..
+		// return callback with arguments
+		return callback(...args);
 	}
+	// return inner function
 	return inner;
 }
 
