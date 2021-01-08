@@ -851,8 +851,19 @@ function difference(arrayA, arrayB) {
 	});
 }
 
-function symmetricDiff(array1, array2) {
-	const arrA = difference(array1, array2);
-	const arrB = difference(array2, array1);
-	return arrA.concat(arrB);
+// function symmetricDiff(array1, array2) {
+// 	const arrA = difference(array1, array2);
+// 	const arrB = difference(array2, array1);
+// 	return arrA.concat(arrB);
+// }
+function disemvowel(str) {
+	// create an array of vowels
+	const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+	// filter out the string if it includes doesn't include characters then put
+	return str
+		.split('')
+		.filter((letters) => vowels.indexOf(letters) === -1)
+		.join('');
+	// in new array
+	// return it
 }
