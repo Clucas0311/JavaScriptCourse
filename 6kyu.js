@@ -80,4 +80,30 @@ multiplicationTable = function (size) {
 	return tableContainer;
 };
 
-console.log(multiplicationTable(3)); //[[1,2,3], [2,4,6], [3,6,9]]
+// console.log(multiplicationTable(3)); //[[1,2,3], [2,4,6], [3,6,9]]
+
+// Create a function that accepts dimensions, of Rows x Columns,
+// as parameters in order to create a multiplication table sized
+// according to the given dimensions. **The return value of the
+// function must be an array, and the numbers must be Fixnums, NOT strings.
+function multiplicationTable(rows, cols) {
+	// create an array container to hold arrays in named table
+	const tables = [];
+	// iterate through starting at rows and ending at and including row
+	for (let i = 1; i <= rows; i++) {
+		// create a variable named row to use as a container to push iterations into
+		const row = [];
+		// iterate starting at 1 ending at and including cols
+		for (let j = 1; j <= cols; j++) {
+			// push into row the iteration of the first loop times second loop
+			row.push(i * j);
+		}
+		// push into the tables the row container
+		tables.push(row);
+	}
+	// return tables
+	return tables;
+}
+
+console.log(multiplicationTable(2, 2)); //[[1,2],[2,4]])
+console.log(multiplicationTable(3, 3)); //[[1,2,3],[2,4,6],[3,6,9]]
