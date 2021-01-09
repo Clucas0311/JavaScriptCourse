@@ -49,7 +49,35 @@ function digital_root(n) {
 	// convert n to a string --> then into an array --> then back into a number
 	// return digitial_root(with the sum)
 	// then sum the digits up
-	return digital_root(String(n).split('').reduce((prev, next) => prev + Number(next), 0));
+	return digital_root(
+		String(n)
+			.split('')
+			.reduce((prev, next) => prev + Number(next), 0)
+	);
 }
 
-console.log(digital_root(16)); // 7;
+// console.log(digital_root(16)); // 7;
+
+// Your task, is to create NxN multiplication table, of size
+// provided in parameter.
+
+multiplicationTable = function (size) {
+	// create an empty array container to push array elements into
+	const tableContainer = [];
+	// first loop iterate starting at 1 ending at size increment
+	for (let i = 1; i <= size; i++) {
+		// create a row array container to push elements into
+		const row = [];
+		// iterate through the size starting at 1
+		for (let j = 1; j <= size; j++) {
+			// push into array i * j
+			row.push(i * j);
+		}
+		// push into container array
+		tableContainer.push(row);
+	}
+	// return container
+	return tableContainer;
+};
+
+console.log(multiplicationTable(3)); //[[1,2,3], [2,4,6], [3,6,9]]
