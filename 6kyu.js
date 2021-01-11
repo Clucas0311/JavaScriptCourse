@@ -86,7 +86,7 @@ multiplicationTable = function (size) {
 // as parameters in order to create a multiplication table sized
 // according to the given dimensions. **The return value of the
 // function must be an array, and the numbers must be Fixnums, NOT strings.
-function multiplicationTable(rows, cols) {
+function multiplicationTable(rows, columns) {
 	// create an array container to hold arrays in named table
 	const tables = [];
 	// iterate through starting at rows and ending at and including row
@@ -94,7 +94,7 @@ function multiplicationTable(rows, cols) {
 		// create a variable named row to use as a container to push iterations into
 		const row = [];
 		// iterate starting at 1 ending at and including cols
-		for (let j = 1; j <= cols; j++) {
+		for (let j = 1; j <= columns; j++) {
 			// push into row the iteration of the first loop times second loop
 			row.push(i * j);
 		}
