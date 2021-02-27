@@ -867,3 +867,43 @@ function disemvowel(str) {
 	// in new array
 	// return it
 }
+
+var validPalindrome = function (s) {
+	// left pointer to access the first element string
+	let left = 0;
+	// right pointer to access the last element of the string
+	let right = s.length - 1;
+	// iterate as long as left is less than right side
+	while (left < right) {
+		// if the s[left] !== s[right]
+		if (s[left] !== s[right]) {
+			// helperMethod(s, left + 1, right) or helperMethod(s, left, right-1)
+			return helperMethod(s, left + 1, right) || helperMethod(s, left, right - 1);
+		}
+		// increment left
+		left++;
+		// decrement right
+		right--;
+	}
+	// return true
+	return true;
+	// helperMethod (s, left, right)
+	function helperMethod(s, left, right) {
+		// while left < right
+		while (left < right) {
+			// if s[left] !== s[right]
+			if (s[left] !== s[right]) {
+				// then it is false palindrome
+				return false;
+			}
+			// increment left;
+			left++;
+			// decrement right;
+			right--;
+		}
+		// return true
+		return true;
+	}
+};
+
+console.log(validPalindrome('abca'));
