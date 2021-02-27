@@ -907,3 +907,27 @@ var validPalindrome = function (s) {
 };
 
 console.log(validPalindrome('abca'));
+
+var maxProfit = function (prices) {
+	// create a variable to get get the minPrice element
+	let minPrice = prices[0];
+	// create variable to get the maxProfit element
+	let maxProfit = 0;
+	// iterate through the array to get the price of each day
+	for (let i = 1; i < prices.length; i++) {
+		// if the price on that given day is less than minPrice
+		if (prices[i] < minPrice) {
+			// then reassign the value of min to be that lowest Price
+			minPrice = prices[i];
+			// otherwise if the price minus the min is greater than our maxProfit
+		} else if (prices[i] - minPrice > maxProfit) {
+			// reassign value of max profit to price minus the min
+			maxProfit = prices[i] - minPrice;
+		}
+	}
+	// return maxProfit
+	return maxProfit;
+};
+
+console.log(maxProfit([7, 6, 4, 3, 1]));
+console.log(maxProfit([7, 1, 5, 3, 6, 4]));
