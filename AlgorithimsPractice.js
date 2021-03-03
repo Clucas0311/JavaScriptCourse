@@ -929,5 +929,19 @@ var maxProfit = function (prices) {
 	return maxProfit;
 };
 
-console.log(maxProfit([7, 6, 4, 3, 1]));
-console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+// console.log(maxProfit([7, 6, 4, 3, 1]));
+// console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+
+function stringSearch(str1, str2) {
+	for (let i = 0; i < str1.length; i++) {
+		for (let j = 0; j < str2.length; j++) {
+			console.log('i+j', str1[i + j]);
+			if (str1[i + j] !== str2[j]) break;
+			console.log('j+1', j + 1);
+			if (j + 1 === str2.length) return i;
+		}
+	}
+	return -1;
+}
+
+console.log(stringSearch('hello world', 'or'));
